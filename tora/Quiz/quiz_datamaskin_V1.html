@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <title>Quiz om datamaskiner</title>
+        <style>
+            h1 {
+                border: black 1px solid;
+                border-radius: 10px;
+                padding: 5px;
+                color: blue;
+            }
+            img {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <p><a href="index.html">Hjem</a></p>
+        <h1>Velkommen til quizzzzen!</h1>
+        <h3 id="idPoeng">Poeng: 0</h3>
+        <h2>1. Hva betyr CPU?</h2>
+        <img id="idImg1" src="media/fugl2.JPG" alt="Bilde av fugl" height="200" width="267">
+        <p>
+            <button id="id1a">Central Processing Unit</button>
+            <button id="id1b">Circle Parameter Use</button>
+            <button>Centimeter Picture Utility</button>
+        </p>
+    <script>
+        let knapp1aEl = document.getElementById("id1a");
+        let img1El = document.getElementById("idImg1");
+        let poengEl = document.getElementById("idPoeng");
+        knapp1aEl.addEventListener("click",riktig);
+        
+        let poeng=0;
+        
+        function riktig() {
+            knapp1aEl.innerHTML = "Riktig";
+            poeng ++;
+            poengEl.innerHTML = "Poeng: " + poeng + "av 4";
+            knapp1aEl.style.backgroundColor = "green";
+            img1El.style.display = "inline-block";
+            knapp1aEl.removeEventListener("click",riktig);
+        }
+    </script>
+    </body>
+</html>
