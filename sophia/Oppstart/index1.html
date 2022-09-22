@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Liten quiz</title>
+            <link rel="stylesheet" href="CSS/Quiz kapittel 1.css">
+            <style>
+                #idQuiz, #idLink {
+                    display: none;
+                }
+                #idAvsluttCookies {
+                    position: fixed;
+                    bottom: 0;
+                    right: 0;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Liten quiz kapittel 1A</h1><br>
+            <div id="idCookies" class="clDiv">
+                <h2>Cookies</h2>
+                <p>Dette nettstedet vil lagre informasjon på datamaskinen din, og hente den fram igjen.</p>
+                <p>Informasjonen som lagres er valgene du tar her og det du selv skriver inn.</p>
+                <p>Er det ok?</p>
+                <p><button id="idOK">OK</button><span id="idLock">&#128274</span></p>    
+            </div>
+            <!--<h2>Debug<span id="idTest"></span></h2>-->
+            <div id="idQuiz" class="clDiv">
+                <h2>Velkommen inn!</h2>
+                <p><input id="idNavn" type="text" placeholder="Skriv navnet ditt her"> Avslutt med Enter-tasten</p>
+                <h3 id="idLink"><span id="idHei"></span><a href="Quiz_kapittel1.html">Her er det en quiz om datamaskiner</a></h3>
+            </div>
+            <div id="idAvsluttCookies">
+                <button>Avslutt alle cookies!</button>
+            </div>
+            <script>
+                let cookiesEl = document.getElementById("idCookies");
+                let okEl = document.getElementById("idOK");
+                let lockEl = document.getElementById("idLock");
+                let quizEl = document.getElementById("idQuiz");
+                let navnEl = document.getElementById("idNavn");
+                let linkEl = document.getElementById("idLink");
+                let heiEl = document.getElementById("idHei");
+                let avsluttCookiesEl = document.getElementById("idAvsluttCookies");
+
+                okEl.addEventListener("click",okfunk);
+                navnEl.addEventListener("keydown",lagrefunk);
+                avsluttCookiesEl.addEventListener("click",avsluttfunk);
+                
+                //let TestEl = document.getElementById("idTest"); //idTest
+
+                if (localStorage.getItem("cookiesGodkjentForIndex1") === "Ja") {
+                    TestEl.innerHTML = localStorage.getItem("cookiesGodkjentForIndex1"); //test
+                    cookiesEl.style.display = "none"; //vises ikke
+                    quizEl.style.display = "block"; //vises
+                } else {
+                    cookiesEl.style.display = "block"; //vises
+                    quizEl.style.display = "none"; //vises ikke
+                }
+
+                if (localStorage.getItem("lagretNavnForQuiz1") !== null) {
+                    navnEl.value = " " + localStorage.getItem("lagretNavnForQuiz1");
+                    cookiesEl.innerHTML //test
+
+                }
+
+                function okfunk() {
+                    quizEl.style.display = "block"; 
+                    cookiesEl.style.display = "none"; //"tar bort" cookies elementet når ok klikkes
+                    lockEl.innerHTML = "&#128275";
+                    localStorage.setItem("cookiesGodkjentForIndex1","Ja");
+                }
+
+                function lagrefunk(event) {
+                    //console.log(event.keyCode);
+                    //console.log(navnEl.value);
+                    if (event.keyCode === 13) {
+                        localStorage.setItem("lagretNavnForQuiz1",navnEl.value);
+                        heiEl.innerHTML = "Hei " + navnEl.value + "!<br>";
+                        navnEl.value = "";
+                        linkEl.style.display = "inline";
+                    }
+                }
+
+                function avsluttfunk() {
+                    localStorage.removeItem("cookiesGodkjentForIndex1");
+                    localStorage.removeItem("lagretNavnForQuiz1");
+                    navnEl.value = "";
+                    cookiesEl.style.display = "block";
+                    quizEl.style.display = "none";
+                    linkEl.style.display = "none";
+                    heiEl.innerHTML = "";
+                    lockEl.innerHTML = "&#128274"
+                }
+            </script>
+        </body>
+    </html>
