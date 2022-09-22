@@ -1,0 +1,119 @@
+:root {
+    --bakgrunnsfarge: #5A8B59;
+    --farge: #F2C9BF;
+    --farge2: #EEB0A0;
+    --farge-hover: #CD644C;
+    --farge-active: #D3745F;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bakgrunnsfarge);
+}
+
+h2 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+button,
+input,
+.trykkbar {
+    font-size: 1rem;
+    border-radius: 0.2rem;
+    border: none;
+    padding: 0.3rem;
+    margin: 0.1rem;
+}
+
+button,
+.trykkbar {
+    background-color: var(--farge);
+}
+
+input:focus {
+    background-color: var(--farge2) !important;
+}
+
+/* Input som kan kan skrive noe inn i */
+input:not(:disabled) {
+    border: var(--farge-hover) dotted 0.1rem;
+    background-color: var(--farge);
+}
+
+/* Hvis hover, men ikke hvis knappen er disabled*/
+button:hover:not(:disabled),
+.trykkbar:hover {
+    background-color: var(--farge-hover);
+}
+
+button:active,
+.trykkbar:active {
+    background-color: var(--farge-active) !important;
+}
+
+.trykkbar a {
+    color: black;
+}
+
+.skjult {
+    display: none;
+}
+
+.container {
+    width: 85%;
+    padding-bottom: 2rem;
+    margin: auto;
+}
+
+header,
+.rundboks {
+    background-color: var(--farge);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        width: 100%;
+    }
+}
+
+.displayflex {
+    display: flex;
+}
+
+.spacebetween {
+    justify-content: space-between;
+}
+
+.boks {
+    margin-bottom: 1rem;
+}
+
+.boks-right {
+    margin-left: 1rem;
+}
+
+@media only screen and (max-width: 640px) {
+    .displayflex {
+        flex-direction: column;
+    }
+
+    .boks-right {
+        margin-left: unset;
+
+    }
+}
+
+.sticky {
+    position: sticky;
+    top: 1rem;
+}

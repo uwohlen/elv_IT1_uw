@@ -1,0 +1,25 @@
+#div_slett_cookies {
+    position: fixed;
+    bottom: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    background-color: var(--farge);
+    border-radius: 0.35rem;
+    font-size: 1.2rem;
+    padding: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+nav li:hover {
+    background-color: var(--farge-hover);
+}
+
+nav a {
+    color: rgb(0, 0, 0);
+}

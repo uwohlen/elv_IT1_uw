@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8">
+    <title>Quizside</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="displayflex spacebetween">
+            <div>
+                <h1>Quizside</h1>
+                <p>Noe tekst</p>
+            </div>
+            <div class="displayflex spacebetween" style="align-items: center;">
+                <div class="trykkbar">
+                    <a href="../index.html">Gå tilbake</a>
+                </div>
+                <div class="trykkbar boks-right">
+                    <a href="../../index.html">Gå til IT1-siden</a>
+                </div>
+            </div>
+        </header>
+        <div class="displayflex">
+            <div class="boks" style="flex:3">
+                <div id="lagre_sporsmal">
+                    <p>Denne nettsiden vil lagre informasjon på datamaskinen din. Er det greit?</p>
+                    <button id="lagre_greit">Den er grei &#128077</button>
+                </div>
+                <div class="skjult" id="navn_sporsmal">
+                    <p><input id="navn" type="text" placeholder="Skriv navnet ditt her" autocomplete="off"></p>
+                    <p>Trykk enter når du er ferdig.</p>
+                </div>
+                <div class="skjult" id="velkommen_tilbake">
+                    <h2>Velkommen tilbake<span id="navn_ut"></h2>
+                </div>
+                <div id="div_slett_cookies">
+                    <button id="button_slett_cookies">Slett cookies</button>
+                </div>
+            </div>
+            <nav class="boks boks-right" style="flex: 1">
+                <div class="sticky">
+                    <h2>Lenker</h2>
+                    <ul>
+                        <a href="quiz/index.html">
+                            <li>Quiz</li>
+                        </a>
+                        <a href="hangman/index.html">
+                            <li>Hangman</li>
+                        </a>
+                        <a href="mer-javascript/index.html">
+                            <li>Mer Javascript</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+</body>
+
+</html>

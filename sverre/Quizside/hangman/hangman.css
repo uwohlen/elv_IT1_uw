@@ -1,0 +1,20 @@
+input {
+    width: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    color: black;
+}
+
+button#svar_avgitt {
+    font-size: 2rem;
+    width: 8rem;
+}
+
+#ord {
+    min-height: 2.6rem;
+    margin-top: 0.5rem;
+}
+
+.kritisk {
+    color: rgb(155, 33, 33)
+}

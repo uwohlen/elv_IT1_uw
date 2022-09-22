@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dataquiz!</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="quiz.css">
+    <script src="quiz.js" defer></script>
+    <script src="resultat.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Dataquiz!</h1>
+        </header>
+        <div class="displayflex">
+            <div id="quiz" class="boks-left" style="flex: 4">
+                <img src="" width="720" height="720" id="bilde">
+
+                <input type="radio" name="svar" value="0" id="0">
+                <label for="0"></label>
+                <input type="radio" name="svar" value="1" id="1">
+                <label for="1"></label>
+                <input type="radio" name="svar" value="2" id="2">
+                <label for="2"></label>
+                <input type="radio" name="svar" value="3" id="3">
+                <label for="3"></label>
+
+                <p id="resultat"></p>
+                <button id="svar-avgitt">Svar</button>
+                <div class="skjult" id="div-lagre-resultat">
+                    <p>
+                        Vil du lagre resultatet?
+                    </p>
+                    <input id="input-lagre-resultat" placeholder="Ditt navn">
+                    <button id="button-lagre-resultat">Lagre</button>
+                </div>
+            </div>
+            <div class="boks boks-right" style="flex: 5">
+                <h2>Klarer du dataquizen<span id="navn-ut"></span>?</h2>
+                <div class="displayflex spacebetween">
+                    <div>
+                        <h3>Highscorer:</h3>
+                        <table id="tabell">
+                            <tr>
+                                <th>Navn</th>
+                                <th>Antall riktige</th>
+                            </tr>
+                            <tr>
+                                <td>&nbsp</td>
+                                <td>&nbsp</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <p>Forkortelser:</p>
+                        <ul>
+                            <li>CPU: Central Processing Unit</li>
+                            <li>ROM: Read-only Memory</li>
+                            <li>RAM: Random Access Memory</li>
+                            <li>HDD: Hard Disk Drive</li>
+                            <li>SSD: Solid State Drive</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

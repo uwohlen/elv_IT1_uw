@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mer Javascript!</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="mer-javascript.css">
+    <script src="faktoriser.js" defer></script>
+    <script src="abc.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Mer Javascript!</h1>
+        </header>
+        <div class="displayflex">
+            <div class="rundboks" style="flex: 1">
+                <h2>Faktoriser</h2>
+                <input type="number" min="2" step="1" id="input_faktoriser" placeholder="Et tall">
+                <p id="p_faktoriser">Resultatet kommer her!</p>
+            </div>
+            <div class="rundboks boks-right" id="ABC" style="flex: 1">
+                <h2>ABC-metoden</h2>
+                <p>a=<input type="number" value="1" id="a_inn">
+                    , b=<input type="number" value="2" id="b_inn">
+                    , c=<input type="number" value="1" id="c_inn">
+                </p>
+                <p>f(x) = <span id="a_ut"></span><span id="b_ut"></span><span id="c_ut"></span></p>
+                <p id="p_abc">Resultatet kommer her!</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

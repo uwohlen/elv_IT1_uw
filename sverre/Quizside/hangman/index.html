@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hangman</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="hangman.css">
+    <script src="hangman.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Hangman</h1>
+        </header>
+        <div class="displayflex">
+            <div class="boks" style="flex: 5">
+                <div id="ord"></div>
+                <p>Gjett en bokstav:</p>
+                <!-- Input og button er inni et form fordi man da kun trenger å trykke enter for å avgi svar.
+                    onsubmit="return false;" hindrer siden i å lastes på nytt. -->
+                <form onsubmit="return false;" autocomplete="off">
+                    <input id="svar" type="text" maxlength="1">
+                    <button id="svar_avgitt" type="submit">Svar</button>
+                </form>
+                <h3 id="resultat"></h3>
+                <p id="hint_ut"><button id="hint">Trykk her for å få et hint</button></p>
+            </div>
+            <div class="boks boks-right" style="flex: 2">
+                <h2>Liv igjen: <span id="liv_igjen"></span></h2>
+                <h2>Antall bokstaver: <span id="antall_bokstaver"></span></h2>
+                <h2>Brukte bokstaver: </h2>
+                <span style="padding-left: 1rem;" id="brukte_bokstaver"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
