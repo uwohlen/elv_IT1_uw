@@ -1,1 +1,1 @@
-Multiple choice funksjonen på https://xzw.halvor.codes/lister er en quiz. Kildekoden er linket på siden
+Hei! Har brukt alle timene på å hjelpe andre :). Har lagd en quiz typ ting før og håper det viser kompetanse. Multiple choice funksjonen på https://xzw.halvor.codes/lister er en quiz. Kildekoden er linket på siden
