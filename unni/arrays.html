@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title></title>
+    <link rel='stylesheet' href='css/alltid.css'>
+    <style>
+    </style>
+</head>
+<body>
+    <ol id="idol"></ol>
+    <script>
+        let navn = ["Trine","Ole","Per"]; //egentlig localStorage.getItem(...);
+        let poeng = [3,5,1]; //fra quiz-løsningen;
+
+        let idol = document.getElementById("idol");
+        let htmltekst = "";
+
+        let i = 0;
+
+        while (i < navn.length) {
+            htmltekst += "<li>" + navn[i] + ": " + poeng[i] + " poeng</li>"
+            i ++;
+        }
+
+        
+        
+        
+        
+        
+        idol.innerHTML = htmltekst;
+
+
+    </script>
+</body>
+</html>
