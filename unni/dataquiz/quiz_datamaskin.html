@@ -13,6 +13,9 @@
                 width: 10%;
                 padding: 5px;
             }
+            #idLagre, #idol {
+                display: none;
+            }
         </style>
     </head>
     <body>
@@ -28,6 +31,8 @@
         <h1>Velkommen<span id="idNavn"></span>! Test hva du kan om datamaskiner:</h1>
         <div id="idPoengDiv" class="clDiv">
             <h3 id="idPoeng">Poeng: 0</h3>
+            <button id="idLagre">Lagre highscore</button>
+            <ol id="idol"></ol>
         </div>
         <div class="clDiv">
             <h2>1.</h2>
@@ -94,6 +99,8 @@
 
         let poengDivEl = document.getElementById("idPoengDiv");
         let poengEl = document.getElementById("idPoeng");
+        let lagreEl = document.getElementById("idLagre");
+        let idolEl = document.getElementById("idol");
         let navnEl = document.getElementById("idNavn");
 
         let poeng=0;
@@ -117,6 +124,8 @@
         knapp4bEl.addEventListener("click",feil4b);
         knapp4cEl.addEventListener("click",feil4c);
         knapp4dEl.addEventListener("click",feil4d);
+
+        nesteEl.addEventListener("click",highscore);
 
         
         if (localStorage.getItem("lagretNavnForQuiz1") !== null) {
@@ -267,6 +276,8 @@
             knapp4bEl.removeEventListener("click",feil4b);
             knapp4cEl.removeEventListener("click",feil4c);
             knapp4dEl.removeEventListener("click",feil4d);
+            lagreEl.style.display = "inline-block";
+            idolEl.style.display = "inline-block";
         }
 
         function feil4b() {
@@ -278,6 +289,8 @@
             knapp4bEl.removeEventListener("click",feil4b);
             knapp4cEl.removeEventListener("click",feil4c);
             knapp4dEl.removeEventListener("click",feil4d);
+            lagreEl.style.display = "inline-block";
+            idolEl.style.display = "inline-block";
         }
 
         function feil4c() {
@@ -289,6 +302,8 @@
             knapp4bEl.removeEventListener("click",feil4b);
             knapp4cEl.removeEventListener("click",feil4c);
             knapp4dEl.removeEventListener("click",feil4d);
+            lagreEl.style.display = "inline-block";
+            idolEl.style.display = "inline-block";
         }
 
         function feil4d() {
@@ -300,6 +315,12 @@
             knapp4bEl.removeEventListener("click",feil4b);
             knapp4cEl.removeEventListener("click",feil4c);
             knapp4dEl.removeEventListener("click",feil4d);
+            lagreEl.style.display = "inline-block";
+            idolEl.style.display = "inline-block";
+        }
+
+        function highscore() {
+            
         }
     </script>
     </body>
