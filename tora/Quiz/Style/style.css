@@ -5,13 +5,31 @@
 #noscore{
     display: none;
 }
-
+.center{    
+    text-align: center;
+}
 
 h1 {
     font-size: 64px;
     text-align: center;
     margin: 30px;
 }
+
+#score {
+    text-align: center;
+    max-width: fit-content;
+    border: black 1px solid;
+    border-radius: 10px;
+    display: block;
+    margin: 30px auto 0 auto;
+    background-color: white;
+
+
+}
+
+
+
+
 .top {
     position: absolute;
     padding-top: 5px;
@@ -22,7 +40,6 @@ h1 {
     height: 70px;
     font-size: 50px;
 }
-
 
 .poeng {
     position: absolute;
@@ -52,10 +69,6 @@ main {
     display: none;
 }
 
-.center {
-    text-align: center;
-
-}
 .neste {
     display: none;
     background-color: rgb(74, 74, 255);
@@ -71,6 +84,23 @@ main {
     max-width: fit-content;  
     cursor:pointer;
 }
+#hjem {
+    display: none;
+    background-color: rgb(188, 188, 255);
+    color: white;
+    position: absolute;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    left: 65px;
+    bottom: 30px;
+    border: black 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    max-width: fit-content;  
+    cursor:pointer;
+}
+
+
 .del1 {
     display: block;
 }
