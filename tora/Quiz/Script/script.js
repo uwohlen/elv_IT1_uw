@@ -36,31 +36,60 @@ function riktigSvar(event) {
         poeng ++;
         poengEl.innerHTML = "Poeng: " + poeng + " av 4";
         nesteArray[neste].style.display="block"
-        neste ++;
-        riktig ++;
-        spm ++;
     }
     knapper = true
 }
-
 function feilSvar(event) {
     if (knapper===false) {
         event.target.innerHTML="feil"
         event.target.style.backgroundColor="rgb(255, 72, 72)"
         riktigSvarArray[riktig].style.backgroundColor="rgb(87,255,124)"
         nesteArray[neste].style.display="block"
-        neste ++;
-        riktig ++;
-        spm ++;
+        
     }
     knapper = true
 }
-
 function nesteFunk(event) {
+    neste ++;
+    riktig ++;
+    spm ++;
+    if (neste === 4) {
+        nesteArray[4].style.display="block"
+        document.getElementById("hjem").style.display="block"
+    }  
     event.target.style.display="none"
     spmArray[spm-1].style.display="none"
     spmArray[spm].style.display="block"
     knapper = false
-    sluttpoengEl.innerHTML = "Du fikk " + poeng + " av 4 poeng, bra jobba!"       
+    sluttpoengEl.innerHTML = "Du fikk " + poeng + " av 4 poeng, bra jobba!"     
+    
 }
+
+
+let idol = document.getElementById("idol");
+let navnArray = ["Tora","Nora","Mora"];
+let poengArray= [10,6,5];
+let i = 0;
+let htmltext = "";
+
+let highscoreEl = document.getElementById("highscore");
+highscoreEl.addEventListener("click",highscoreFunk);
+
+function highscoreFunk() {
+    navnArray.push(localStorage.lagretNavnForQuiz1);
+    poengArray.push(poeng); 
+}
+
+while (i < navnArray.length) {
+    htmltext += "<li>" + navnArray[i] + ": " + poengArray[i] + " poeng</li>"
+    i ++;
+
+}
+
+idol.innerHTML += htmltext;
+
+
+
+
+
 
