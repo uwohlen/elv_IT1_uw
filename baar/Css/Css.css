@@ -74,14 +74,12 @@
     margin:auto;
     width: 780px;
     border: 2px;
-    border-color: rgb(199, 4, 4);
+    border-color: rgb(7, 4, 4);
     background-color: rgb(48, 65, 65);
     border-radius: 15px;
     border-style: solid;
     font-family: 'Black Ops One', cursive;
-    -webkit-text-fill-color: rgb(10, 8, 8);
-    -webkit-text-stroke-color: red;
-    -webkit-text-stroke-width: 0.05px; 
+
 }
 
 
