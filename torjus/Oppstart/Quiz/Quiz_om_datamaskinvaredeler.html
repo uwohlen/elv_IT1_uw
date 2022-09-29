@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <link rel="Stylesheet" href="../Styleark.css">
+        <title>Quiz om datamaskinvaredeler</title>
+        <style>
+            /*h1 {
+                border: black 1px solid;
+                border-radius: 10px;
+                padding: 5px;
+                text-align: center;
+
+            }*/
+            
+            
+            
+            
+        </style>
+    </head>
+    <body>
+        <div class="Menu">
+            <p id="Hovedside" class="Menus"><button id="Hovedsideb" class="MenuL" onclick="document.location='../index.html'">Hjem</button></p> <p id="Quiz" class="Menus"><button id="Quizb" class="MenuL" onclick="document.location='Quiz_om_datamaskinvaredeler.html'">Quiz</button></p>
+            <p id="Prosjekt3" class="Menus"><button id="Prosjekt3b" class="MenuL" onclick="document.location='Prosjekt3.html'">Prosjekt 3</button></p><p id="Prosjekt4" class="Menus"><button id="Prosjekt4b" class="MenuL" onclick="document.location='Prosjekt4.html'">Prosjekt 4</button></p>
+            <p id="Prosjekt5" class="Menus"><button id="Prosjekt5b" class="MenuL" onclick="document.location='Prosjekt5.html'">Prosjekt 5</button></p><p id="Prosjekt6" class="Menus"><button id="Prosjekt6b" class="MenuL" onclick="document.location='Prosjekt6.html'">Prosjekt 6</button></p>
+        </div>
+        <Center>
+        <h1>Velkommen til quizzen, <span id="IdNavn"></span></h1>
+        <h2 id="idPoeng">Poeng : 0/4</h2>
+        <div id="spm1">
+            <h2 id="id1" class="Spm">1) Hvilken del av PC-en overoppheter mest?</h2>
+            <img src="Bilder/Oppgave_1.jpg" width="302.4"  height="403.2"  alt="Bilde av en harddisk" > <br>
+            <button id="id1a" class="ans">A) CPU</button>
+            <button id="id1b" class="ans">B) RAM</button><br>
+            <button id="id1c" class="ans">C) ROM</button>
+            <button id="id1d" class="ans">D) Hovedkortet</button>
+        </div>
+        <div id="spm2" class="hspm">
+            <h3 id="id2" class="Spm">2) Hvor mange RAM er det på bilde?</h3>
+            <img src="Bider/Oppgave_2.jpg" width="302.4"  height="403.2"  alt="Bilde av RAM-brikker" > <br>
+            <button id="id2a" class="ans">A) 1 GB</button>
+            <button id="id2b" class="ans">B) 8 GB</button><br>
+            <button id="id2c" class="ans">C) 2</button>
+            <button id="id2d" class="ans">D) 512 MB</button>
+        </div>
+        <div id="spm3" class="hspm">
+            <h4 id="id3" class="Spm">3) Hva er et annet navn på RAM?</h4>
+            <img src="Bilder/Oppgave_3.jpg" width="403.2"  height="302.4"  alt="Bilde av en CPU" > <br>
+            <button id="id3a" class="ans">A) Arbeidsminne</button>
+            <button id="id3b" class="ans">B) Langtidsminne</button><br>
+            <button id="id3c" class="ans">C) Leseminne</button>
+            <button id="id3d" class="ans">D) Prossessor</button>
+        </div>
+        <div id="spm4" class="hspm">
+            <h5 id="id4" class="Spm">4) Hvilken del av PC-en er det som bestemmer hvor mye du kan ha lastet ned?</h5>
+            <img src="Bilder/Oppgave_4.jpg" width="302.4"  height="403.2"  alt="Bilde av Hovedkortet" > <br>
+            <button id="id4a" class="ans">A) HDD</button>
+            <button id="id4b" class="ans">B) RAM</button><br>
+            <button id="id4c" class="ans">C) ROM</button>
+            <button id="id4d" class="ans">D) CPU</button>
+        </div>
+        </Center>
+        <div id="frgspm" class="swspm"><button id="lastspm">Forrige spørsmål</button></div>
+        <div id="nstspm" class="swspm"><button id="nxtspm">Neste spørsmål</button></div>
+    <script>
+        let Knappnxtspm = document.getElementById("nxtspm");
+        Knappnxtspm.addEventListener("click",nxtspms);
+        let Knapplastspm = document.getElementById("lastspm")
+        Knapplastspm.addEventListener("click",lastspms)
+        
+        let spm1 = document.getElementById("spm1")
+        let spm2 = document.getElementById("spm2")
+        let spm3 = document.getElementById("spm3")
+        let spm4 = document.getElementById("spm4")
+        
+
+        let ElNavn = document.getElementById("IdNavn");
+        if (localStorage.getItem("LagretNavnForQuiz") !== null) {
+            ElNavn.innerHTML = " " + localStorage.getItem("LagretNavnForQuiz");
+        }
+        
+        var nxtspmclick = 0;
+        function lastspms() {
+            nxtspmclick --
+            console.log(nxtspmclick)
+            if (nxtspmclick === 0) {                
+                spm2.style.display= "none"
+                spm1.style.display= "block"
+                frgspm.style.display= "none"
+            }
+            else if (nxtspmclick === 1) {                
+                spm3.style.display= "none"
+                spm2.style.display= "block"
+                
+            }
+            else {
+                spm4.style.display= "none"
+                spm3.style.display= "block"
+                nstspm.style.display= "block"
+            }
+        }
+        function nxtspms () {
+            nxtspmclick ++
+            console.log(nxtspmclick)
+            if (nxtspmclick === 1) {                
+                spm1.style.display= "none"
+                spm2.style.display= "block"
+                frgspm.style.display= "inline-block"
+                
+            }
+            else if (nxtspmclick === 2) {                
+                spm2.style.display= "none"
+                spm3.style.display= "block"
+                
+            }
+            else {
+                spm3.style.display= "none"
+                spm4.style.display= "block"
+                nstspm.style.display= "none"
+            }
+        }
+
+        let PoengEl = document.getElementById("idPoeng");
+        let Poeng = 0;
+
+
+        let Knapp1aEl = document.getElementById("id1a");
+        Knapp1aEl.addEventListener("click",Korrekt1a);
+
+        function Korrekt1a () {
+            Knapp1aEl.innerHTML="Riktig";
+            Poeng ++ ;
+            PoengEl.innerHTML = "Poeng: " + Poeng + "/4";
+            Knapp1aEl.removeEventListener("click", Korrekt1a);
+            Knapp1bEl.removeEventListener("click", Feil1b);
+            Knapp1cEl.removeEventListener("click", Feil1c);
+            Knapp1dEl.removeEventListener("click", Feil1d);
+            Knapp1aEl.style.backgroundColor = "green";
+        }
+
+
+        let Knapp1bEl = document.getElementById("id1b");
+        Knapp1bEl.addEventListener("click",Feil1b);
+        
+        function Feil1b () {
+            Knapp1bEl.innerHTML="Feil";
+            Knapp1aEl.removeEventListener("click", Korrekt1a)
+            Knapp1bEl.removeEventListener("click", Feil1b)
+            Knapp1cEl.removeEventListener("click", Feil1c)
+            Knapp1dEl.removeEventListener("click", Feil1d)
+            Knapp1bEl.style.backgroundColor = "red";
+            Knapp1aEl.style.backgroundColor = "green";
+        }
+
+        
+        let Knapp1cEl = document.getElementById("id1c");
+        Knapp1cEl.addEventListener("click",Feil1c);
+
+        function Feil1c () {
+            Knapp1cEl.innerHTML="Feil";
+            Knapp1aEl.removeEventListener("click", Korrekt1a)
+            Knapp1bEl.removeEventListener("click", Feil1b)
+            Knapp1cEl.removeEventListener("click", Feil1c)
+            Knapp1dEl.removeEventListener("click", Feil1d)
+            Knapp1cEl.style.backgroundColor = "red";
+            Knapp1aEl.style.backgroundColor = "green";
+        }
+        
+
+        let Knapp1dEl = document.getElementById("id1d");
+        Knapp1dEl.addEventListener("click",Feil1d);
+
+        function Feil1d () {
+            Knapp1dEl.innerHTML="Feil";
+            Knapp1aEl.removeEventListener("click", Korrekt1a)
+            Knapp1bEl.removeEventListener("click", Feil1b)
+            Knapp1cEl.removeEventListener("click", Feil1c)
+            Knapp1dEl.removeEventListener("click", Feil1d)
+            Knapp1dEl.style.backgroundColor = "red";
+            Knapp1aEl.style.backgroundColor = "green";
+        }
+
+
+
+        let Knapp2aEl = document.getElementById("id2a");
+        Knapp2aEl.addEventListener("click",Feil2a);
+
+        function Feil2a () {
+            Knapp2aEl.innerHTML="Feil";
+            Knapp2aEl.removeEventListener("click", Feil2a)
+            Knapp2bEl.removeEventListener("click", Feil2b)
+            Knapp2cEl.removeEventListener("click", Korrekt2c)
+            Knapp2dEl.removeEventListener("click", Feil2d)
+            Knapp2aEl.style.backgroundColor = "red";
+            Knapp2cEl.style.backgroundColor = "green";
+        }
+
+
+        let Knapp2bEl = document.getElementById("id2b");
+        Knapp2bEl.addEventListener("click",Feil2b);
+
+        function Feil2b () {
+            Knapp2bEl.innerHTML="Feil";
+            Knapp2aEl.removeEventListener("click", Feil2a)
+            Knapp2bEl.removeEventListener("click", Feil2b)
+            Knapp2cEl.removeEventListener("click", Korrekt2c)
+            Knapp2dEl.removeEventListener("click", Feil2d)
+            Knapp2bEl.style.backgroundColor = "red";
+            Knapp2cEl.style.backgroundColor = "green";
+        }
+
+
+        let Knapp2cEl = document.getElementById("id2c");
+        Knapp2cEl.addEventListener("click",Korrekt2c);
+
+        function Korrekt2c () {
+            Knapp2cEl.innerHTML="Korrekt";
+            Poeng ++ ;
+            PoengEl.innerHTML = "Poeng: " + Poeng + "/4";
+            Knapp2aEl.removeEventListener("click", Feil2a)
+            Knapp2bEl.removeEventListener("click", Feil2b)
+            Knapp2cEl.removeEventListener("click", Korrekt2c)
+            Knapp2dEl.removeEventListener("click", Feil2d)
+            Knapp2cEl.style.backgroundColor = "green";
+        }
+
+
+        let Knapp2dEl = document.getElementById("id2d");
+        Knapp2dEl.addEventListener("click",Feil2d)
+
+        function Feil2d () {
+            Knapp2dEl.innerHTML="Feil";
+            Knapp2aEl.removeEventListener("click", Feil2a)
+            Knapp2bEl.removeEventListener("click", Feil2b)
+            Knapp2cEl.removeEventListener("click", Korrekt2c)
+            Knapp2dEl.removeEventListener("click", Feil2d)
+            Knapp2dEl.style.backgroundColor = "red";
+            Knapp2cEl.style.backgroundColor = "green";
+        }
+
+        let Knapp3aEl = document.getElementById("id3a");
+        Knapp3aEl.addEventListener("click",Korrekt3a);
+        
+        function Korrekt3a () {
+            Knapp3aEl.innerHTML="Korrekt";
+            Poeng ++ ;
+            PoengEl.innerHTML = "Poeng: " + Poeng + "/4";
+            Knapp3aEl.removeEventListener("click", Korrekt3a)
+            Knapp3bEl.removeEventListener("click", Feil3b)
+            Knapp3cEl.removeEventListener("click", Feil3c)
+            Knapp3dEl.removeEventListener("click", Feil3d)
+            Knapp3aEl.style.backgroundColor = "green";
+        }
+
+
+        let Knapp3bEl = document.getElementById("id3b");
+        Knapp3bEl.addEventListener("click",Feil3b);
+
+        function Feil3b () {
+            Knapp3bEl.innerHTML="Feil";
+            Knapp3aEl.removeEventListener("click", Korrekt3a)
+            Knapp3bEl.removeEventListener("click", Feil3b)
+            Knapp3cEl.removeEventListener("click", Feil3c)
+            Knapp3dEl.removeEventListener("click", Feil3d)
+            Knapp3bEl.style.backgroundColor = "red";
+            Knapp3aEl.style.backgroundColor = "green";
+        }
+
+        let Knapp3cEl = document.getElementById("id3c");
+        Knapp3cEl.addEventListener("click",Feil3c);
+
+        function Feil3c () {
+            Knapp3cEl.innerHTML="Feil";
+            Knapp3aEl.removeEventListener("click", Korrekt3a)
+            Knapp3bEl.removeEventListener("click", Feil3b)
+            Knapp3cEl.removeEventListener("click", Feil3c)
+            Knapp3dEl.removeEventListener("click", Feil3d)
+            Knapp3cEl.style.backgroundColor = "red";
+            Knapp3aEl.style.backgroundColor = "green";
+        }
+
+        let Knapp3dEl = document.getElementById("id3d");
+        Knapp3dEl.addEventListener("click",Feil3d);
+
+        function Feil3d () {
+            Knapp3dEl.innerHTML="Feil";
+            Knapp3aEl.removeEventListener("click", Korrekt3a)
+            Knapp3bEl.removeEventListener("click", Feil3b)
+            Knapp3cEl.removeEventListener("click", Feil3c)
+            Knapp3dEl.removeEventListener("click", Feil3d)
+            Knapp3dEl.style.backgroundColor = "red";
+            Knapp3aEl.style.backgroundColor = "green";
+        }
+
+
+        let Knapp4aEl = document.getElementById("id4a");
+        Knapp4aEl.addEventListener("click",Korrekt4a);
+
+        function Korrekt4a () {
+            Knapp4aEl.innerHTML="Korrekt";
+            Poeng ++ ;
+            PoengEl.innerHTML = "Poeng: " + Poeng + "/4";
+            Knapp4aEl.removeEventListener("click", Korrekt4a)
+            Knapp4bEl.removeEventListener("click", Feil4b)
+            Knapp4cEl.removeEventListener("click", Feil4c)
+            Knapp4dEl.removeEventListener("click", Feil4d)
+            Knapp4aEl.style.backgroundColor = "green";
+        }
+
+
+        let Knapp4bEl = document.getElementById("id4b");
+        Knapp4bEl.addEventListener("click",Feil4b);
+
+        function Feil4b () {
+            Knapp4bEl.innerHTML="Feil";
+            Knapp4aEl.removeEventListener("click", Korrekt4a)
+            Knapp4bEl.removeEventListener("click", Feil4b)
+            Knapp4cEl.removeEventListener("click", Feil4c)
+            Knapp4dEl.removeEventListener("click", Feil4d)
+            Knapp4bEl.style.backgroundColor = "red";
+            Knapp4aEl.style.backgroundColor = "green";
+        }
+
+        let Knapp4cEl = document.getElementById("id4c");
+        Knapp4cEl.addEventListener("click",Feil4c);
+
+        function Feil4c () {
+            Knapp4cEl.innerHTML="Feil";
+            Knapp4aEl.removeEventListener("click", Korrekt4a)
+            Knapp4bEl.removeEventListener("click", Feil4b)
+            Knapp4cEl.removeEventListener("click", Feil4c)
+            Knapp4dEl.removeEventListener("click", Feil4d)
+            Knapp4cEl.style.backgroundColor = "red";
+            Knapp4aEl.style.backgroundColor = "green";
+        }
+
+        let Knapp4dEl = document.getElementById("id4d");
+        Knapp4dEl.addEventListener("click",Feil4d);
+
+        function Feil4d () {
+            Knapp4dEl.innerHTML="Feil";
+            Knapp4aEl.removeEventListener("click", Korrekt4a)
+            Knapp4bEl.removeEventListener("click", Feil4b)
+            Knapp4cEl.removeEventListener("click", Feil4c)
+            Knapp4dEl.removeEventListener("click", Feil4d)
+            Knapp4dEl.style.backgroundColor = "red";
+            Knapp4aEl.style.backgroundColor = "green";
+        }
+
+    </script>
+    </body>
+</html>
