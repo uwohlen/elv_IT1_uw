@@ -1,0 +1,38 @@
+.clDiv {
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+
+h1{
+    border: rgb(231, 28, 28) 5px solid;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: darksalmon;
+}
+
+#idQuiz{
+    border: rgb(231, 28, 28) 5px solid;
+    border-radius: 8px;
+    background-color: darksalmon;
+}
+
+#idIndexslay{
+    border: rgb(231, 28, 28) 5px solid;
+    border-radius: 8px;
+    background-color: darksalmon;  
+}
+
+#idUendelig{
+    border: rgb(231, 28, 28) 5px solid;
+    border-radius: 8px;  
+    background-color: darksalmon;
+}
+
+#idTilbake{
+    border: rgb(231, 28, 28) 5px solid;
+    border-radius: 8px;  
+    background-color: darksalmon;
+}
+
+
+    
