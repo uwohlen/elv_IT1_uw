@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html lang="no">
+        <head>
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="CSSIndex.css">
+            <title> lolern </title>
+        </head>
+        <body>
+            <h1> Wassup ladies n gantlemen, boys n girls </h1>
+            <h2> Velkommen til min første nettside </h2>
+            <h2>Denne nettsiden vil lagre informasjonen din, er det ok?</h2>
+            <div id="cookibtns">
+                <button id="okbtn"> OK </button>
+                <button id="avsluttbtn" onclick="avsluttfunk()"; > Avslutt cookies </button> 
+            </div>
+            <div id="navn">
+                <p><input id="idNavn" type="text" placeholder="Skriv navnet ditt her">Avslutt med Enter-tasten</p>
+            </div>
+            <div id="bilde1">
+                <img src="Gemini4.0.jpg" alt="bilde av gemini">
+            </div>
+            <button id="quizbtn"> <a href="Quiz_datamaskin.html"> Trykk her for quizzzy!!! </button></a><br>
+            <script>
+                let x = 0;
+                let retning = false
+                let interval = setInterval(draw_img, 10);
+                function draw_img() {
+                    if (x > window.innerWidth-270) {
+                        retning = true;
+                    } if (x < 0) {
+                        retning = false;
+                    } if (retning == true) {
+                        x-=5;
+                    } else {
+                        x+=5;
+                    }
+                document.getElementById("bilde1").style.marginLeft = x+"px";
+                }
+// Cookies
+        let navnEl = document.getElementById("idNavn");
+        navnEl.addEventListener("keydown",lagrefunk);
+        function lagrefunk(event) {
+            //console.log(event.keyCode); <marquee behaviour="scroll" direction="down"></marquee>
+            //console.log(navnEl.value);
+            
+            if (event.keyCode === 13) {
+                localStorage.setItem("Quiz_datamaskin.html",navnEl.value);
+            }
+        }
+        function avsluttfunk() {
+            localStorage.removeItem("lagrefunk");
+            localStorage.removeItem("Quiz_datamaskin.html");
+            cookieEl.style.display = "block";
+            quizEl.style.display = "none";
+            linkEl.style.display = "none";
+            heiEl.innerHTML = "";
+            lockEl.innerHTML = "&#128274";
+        }   
+            </script>
+        </body>
+
+    </html>

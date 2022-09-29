@@ -1,0 +1,54 @@
+body {
+    text-align: center;
+    font-family: comic sans ms;
+}
+#midten1{
+    position: relative;
+    top: 70px;
+}
+#sporsmol{
+   font-size: 60px;
+}
+#poeng{
+    position: absolute;
+    text-align: right;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+}
+.btn1 {
+    background-color: lightskyblue;
+    font-size: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn2{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn3{
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#neste1{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+#forrige1{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+#HeiNavn{
+    position: absolute;
+    top: 20px;
+    right: 30%;
+    left:30%;
+    font-size: 35px;
+}
