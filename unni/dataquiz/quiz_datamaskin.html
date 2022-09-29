@@ -16,6 +16,14 @@
             #idLagre, #idol {
                 display: none;
             }
+            
+            .high {
+                width: 100px;
+                display: inline-block;
+                border: 1px solid black;
+                border-radius: 5px;
+                padding: 5px;
+            }
         </style>
     </head>
     <body>
@@ -31,7 +39,7 @@
         <h1>Velkommen<span id="idNavn"></span>! Test hva du kan om datamaskiner:</h1>
         <div id="idPoengDiv" class="clDiv">
             <h3 id="idPoeng">Poeng: 0</h3>
-            <button id="idLagre">Lagre highscore</button>
+            <button id="idLagre">Lagre highscore?</button><br>
             <ol id="idol"></ol>
         </div>
         <div class="clDiv">
@@ -75,7 +83,7 @@
                 <button id="id4d">d) </button>
             </p>
         </div>
-      
+    <script src='js/funksjonsbibliotek.js'></script>  
     <script>
         let knapp1aEl = document.getElementById("id1a");
         let knapp1bEl = document.getElementById("id1b");
@@ -101,6 +109,7 @@
         let poengEl = document.getElementById("idPoeng");
         let lagreEl = document.getElementById("idLagre");
         let idolEl = document.getElementById("idol");
+
         let navnEl = document.getElementById("idNavn");
 
         let poeng=0;
@@ -125,7 +134,7 @@
         knapp4cEl.addEventListener("click",feil4c);
         knapp4dEl.addEventListener("click",feil4d);
 
-        nesteEl.addEventListener("click",highscore);
+        lagreEl.addEventListener("click",highscorefunk);
 
         
         if (localStorage.getItem("lagretNavnForQuiz1") !== null) {
@@ -319,8 +328,49 @@
             idolEl.style.display = "inline-block";
         }
 
-        function highscore() {
+        function highscorefunk() {
+            let navn = "";
+            let navneliste = [];
+            let poengliste = [];
+            let htmltekst = "";
+
+            if (localStorage.getItem("lagretNavnForQuiz1") !== null) {
+                navn = localStorage.getItem("lagretNavnForQuiz1");
+            }
             
+            if (localStorage.getItem("lagretHighScoreForQuiz1") === null) {
+                navneliste.push(navn);
+                poengliste.push(poeng);
+                let resultat = [poengliste,navneliste];
+                localStorage.setItem("lagretHighScoreForQuiz1",JSON.stringify(resultat)); 
+            }
+            else {
+                let resultat = JSON.parse(localStorage.getItem("lagretHighScoreForQuiz1"));
+                poengliste = resultat[0];
+                navneliste = resultat[1];
+                poengliste.push(poeng);
+                navneliste.push(navn);
+                resultat = sorterToArrays(poengliste,navneliste);
+                poengliste = resultat[0];
+                navneliste = resultat[1];
+                localStorage.setItem("lagretHighScoreForQuiz1",JSON.stringify(resultat)); 
+            }
+
+            let i = 0;
+
+            while (i < navneliste.length && i < 5) {
+                htmltekst += "<li><span class='high'>" + navneliste[i] + "</span>:<span class='high'>" + poengliste[i] + "</span></li>";
+
+                i++;
+            }
+
+            idolEl.innerHTML = htmltekst;
+
+            poengDivEl.style.zIndex = 1;
+            poengDivEl.style.rigth = "8px";
+            poengDivEl.style.left = "8px";
+            poengDivEl.style.width = "60%";
+            poengDivEl.style.backgroundColor = "brown";
         }
     </script>
     </body>
