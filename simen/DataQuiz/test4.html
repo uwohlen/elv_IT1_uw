@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8">
+    <title>Oppgave 4</title>
+    <link rel="stylesheet" type="text/css" href="css/stilsil.css">
+</head>
+
+<body>
+    <div class="center">
+        <h1>Datamaskin Quiz</h1>
+        <h2>4. Hvilke komponent skal denne delen kjøle?</h2>
+        <img src="Media/CPU kjoler.jpg" alt="Datamaskin del"><br><br>
+        <button id="0" style="margin-left: 15px">GPU</button>
+        <button id="1">CPU</button>
+        <button id="2">RAM</button>
+        <button class="center button" style="margin-left: 5px;" id="svar">Next</button>
+        <a href="TestFerdig.html"> <button class="center button" style="margin-left: 5px;" id="Next">Next</button></a>
+    </div>
+    <script>
+        let poeng = 0
+        let Rettsvar = 3
+        let knapp1 = document.getElementById("0");
+        let knapp2 = document.getElementById("1");
+        let knapp3 = document.getElementById("2");
+        let avSvar = document.getElementById("svar")
+        avSvar.addEventListener("click", AvgiSvar)
+        let Next = document.getElementById("Next")
+
+        knapp1.addEventListener("click", svarFeil)
+        knapp2.addEventListener("click", svarRett)
+        knapp3.addEventListener("click", svarFeil2)
+
+        avSvar.addEventListener("click", AvgiSvar)
+        function svarRett() {
+            avSvar.style.display = "inline-block"
+            knapp2.style.backgroundColor = "#ff8e42a7"
+            knapp1.style.backgroundColor = ""
+            knapp3.style.backgroundColor = ""
+            Rettsvar = 2
+        }
+        function svarFeil2() {
+            avSvar.style.display = "inline-block"
+            knapp3.style.backgroundColor = "#ff8e42a7"
+            knapp1.style.backgroundColor = ""
+            knapp2.style.backgroundColor = ""
+            Rettsvar = 1
+        }
+        function svarFeil() {
+            avSvar.style.display = "inline-block"
+            knapp1.style.backgroundColor = "#ff8e42a7"
+            knapp2.style.backgroundColor = ""
+            knapp3.style.backgroundColor = ""
+            Rettsvar = 0
+        }
+        function AvgiSvar() {
+            avSvar.removeEventListener("click", AvgiSvar)
+            knapp1.removeEventListener("click", svarFeil)
+            knapp2.removeEventListener("click", svarRett)
+            knapp3.removeEventListener("click", svarFeil2)
+            avSvar.style.display = "none"
+            knapp1.style.backgroundColor = ""
+            knapp2.style.backgroundColor = ""
+            knapp3.style.backgroundColor = ""
+            Next.style.display = "inline-block"
+            if (Rettsvar === 2) {
+                poeng = 1;
+            }
+            if (Rettsvar === 1) {
+                knapp3.style.backgroundColor = "#FF5252"
+                poeng = 0;
+            }
+            if (Rettsvar === 0) {
+                knapp1.style.backgroundColor = "#FF5252"
+                poeng = 0;
+            }
+            knapp2.style.backgroundColor = "#33FF6E"
+            localStorage.setItem("PoengTilQuiz14", poeng);
+            console.log(poeng)
+        }
+
+    </script>
+</body>
+
+</html>

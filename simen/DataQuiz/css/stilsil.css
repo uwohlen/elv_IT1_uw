@@ -1,0 +1,131 @@
+body {
+  background-color: rgba(173, 216, 230, 0.977);
+}
+
+button {
+  outline: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 2px solid #424242;
+  color: #424242;
+  background: 0 0;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1.5px 0px;
+  font-weight: 800;
+  font-size: 16px;
+  height: 42px;
+}
+
+button:hover {
+  background-color: rgba(116, 116, 116, 0.299);
+}
+
+button:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+img {
+  border: #ffffff 5px solid;
+  border-radius: 10px;
+  width: 100%;
+  height: 25%;
+
+}
+
+.center {
+  margin: auto;
+  width: 25%;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+input {
+  background: 0 0;
+  cursor: pointer;
+  border: 2px solid #424242;
+  outline: none;
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 8px;
+  color: #424242;
+}
+
+input:focus {
+  background-color: #61616178;
+  border: 2px solid #313131;
+}
+
+::placeholder {
+  color: #424242;
+}
+
+#navn {
+  display: none;
+  margin: auto;
+  width: 25%;
+}
+
+label {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+text {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+#ShowLink {
+  display: none;
+}
+
+.button {
+  display: none;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border: 2px solid #424242;
+  color: #424242;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1.5px 0px;
+  font-weight: 800;
+  font-size: 16px;
+  height: 42px;
+}
+
+.button:hover {
+  background-color: #d3d3d3;
+}
+
+.blink {
+  color: #fff;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  animation: blinkingBackground 3s infinite;
+}
+
+@keyframes blinkingBackground {
+  0% {
+    background-color: #10c018;
+  }
+
+  25% {
+    background-color: #1056c0;
+  }
+
+  50% {
+    background-color: #ef0a1a;
+  }
+
+  75% {
+    background-color: #254878;
+  }
+
+  100% {
+    background-color: #04a1d5;
+  }
+}

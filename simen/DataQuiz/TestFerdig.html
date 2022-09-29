@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/stilsil.css">
+</head>
+
+<body>
+    <a href="../index.html" style="position: fixed; top: 10px;"><button>Tilbake</button></a>
+    <div class="center">
+        <h1 class="blink" id="Score">Du fikk /4 poeng</h1>
+        <h2 id="Status">Wow, du lurte koden</h2>
+    </div>
+    <script>
+        let poeng1 = Number(localStorage.getItem("PoengTilQuiz11"));
+        let poeng2 = Number(localStorage.getItem("PoengTilQuiz12"));
+        let poeng3 = Number(localStorage.getItem("PoengTilQuiz13"));
+        let poeng4 = Number(localStorage.getItem("PoengTilQuiz14"));
+        poeng = poeng1 + poeng2 + poeng3 + poeng4
+        let ScoreEL = document.getElementById("Score")
+        let StatusEL = document.getElementById("Status")
+
+        ScoreEL.innerHTML = "Du fikk  " + poeng + "/4 mulige poeng";
+        if (poeng == 0) {
+            StatusEL.innerHTML = "Du kan ikke mye om datamaskiner "
+        }
+        if (poeng == 1) {
+            StatusEL.innerHTML = "Du kan litt om datamaskiner"
+        }
+        if (poeng == 2) {
+            StatusEL.innerHTML = "Du kan en del om datamaskiner"
+        }
+        if (poeng == 3) {
+            StatusEL.innerHTML = "Du kan mye om datamaskiner"
+        }
+        if (poeng == 4) {
+            StatusEL.innerHTML = "Du er et data geni!"
+        }
+
+    </script>
+</body>
+
+</html>
