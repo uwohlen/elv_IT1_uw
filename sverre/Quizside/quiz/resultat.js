@@ -2,6 +2,8 @@ const DIV_LAGRE_RESULTAT = document.getElementById("div-lagre-resultat");
 const INPUT_LAGRE_RESULTAT = document.getElementById("input-lagre-resultat");
 const BUTTON_LAGRE_RESULTAT = document.getElementById("button-lagre-resultat");
 
+const DIV_KAN_IKKE_LAGRE = document.getElementById("div-kan-ikke-lagre");
+
 const TABELL = document.getElementById("tabell");
 
 let highscorer;
@@ -30,8 +32,13 @@ function last_highscorer() {
 function quiz_ferdig() {
     BUTTON_SVAR.style.display = "none";
     P_RESULTAT.innerHTML = "Du fikk " + antall_riktige + " av " + ANTALL_SPORSMAL + " riktige. Det er " + Math.round(antall_riktige / ANTALL_SPORSMAL * 100) + "%.";
-    DIV_LAGRE_RESULTAT.style.display = "unset";
-    BUTTON_LAGRE_RESULTAT.addEventListener("click", lagre_resultat);
+
+    if (localStorage.getItem("navnForste") === null) {
+        DIV_KAN_IKKE_LAGRE.style.display = "unset";
+    } else {
+        DIV_LAGRE_RESULTAT.style.display = "unset";
+        BUTTON_LAGRE_RESULTAT.addEventListener("click", lagre_resultat);
+    }
 }
 
 function lagre_resultat() {

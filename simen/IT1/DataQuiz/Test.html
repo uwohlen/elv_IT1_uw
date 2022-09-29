@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8">
+    <title> Test 123 </title>
+    <link rel="stylesheet" type="text/css" href="css/stilsil.css">
+</head>
+
+<body>
+    <div class="center">
+        <h3>Velkommen<span id="idNavn"></span>! Test hva du kan om datamaskiner:</h3>
+        <h2>1. Hvilke komponent avbildes her?</h2>
+        <img src="Media/CPU2.jpg" alt="Datamaskin del"><br><br>
+        <button id="0" style="margin-left: 15px">CDUP</button>
+        <button id="1">SSC</button>
+        <button id="2">CPU</button>
+        <button class="center button" style="margin-left: 5px;" id="svar">Svar</button>
+        <a href="test2.html"> <button class="center button" style="margin-left: 5px;" id="Next">Next</button></a>
+    </div>
+    <script>
+        let navnV = localStorage.getItem("lagretNavnForQuiz1")
+        let navnEL = document.getElementById("idNavn")
+        let poeng = 0
+        let Rettsvar = 3
+        let knapp1 = document.getElementById("0");
+        let knapp2 = document.getElementById("1");
+        let knapp3 = document.getElementById("2");
+        let avSvar = document.getElementById("svar")
+        let Next = document.getElementById("Next")
+
+
+        knapp1.addEventListener("click", svarFeil)
+        knapp2.addEventListener("click", svarFeil2)
+        knapp3.addEventListener("click", svarRett)
+
+        if (localStorage.getItem("lagretNavnForQuiz1") !== null) {
+            navnEL.innerHTML = " " + navnV
+        }
+
+        avSvar.addEventListener("click", AvgiSvar)
+        function svarFeil() {
+            avSvar.style.display = "inline-block"
+            knapp1.style.backgroundColor = "#ff8e42a7"
+            knapp2.style.backgroundColor = ""
+            knapp3.style.backgroundColor = ""
+            Rettsvar = 0
+        }
+        function svarFeil2() {
+            avSvar.style.display = "inline-block"
+            knapp2.style.backgroundColor = "#ff8e42a7"
+            knapp1.style.backgroundColor = ""
+            knapp3.style.backgroundColor = ""
+            Rettsvar = 1
+        }
+        function svarRett() {
+            avSvar.style.display = "inline-block"
+            knapp3.style.backgroundColor = "#ff8e42a7"
+            knapp1.style.backgroundColor = ""
+            knapp2.style.backgroundColor = ""
+            Rettsvar = 2
+        }
+        function AvgiSvar() {
+            avSvar.removeEventListener("click", AvgiSvar)
+            knapp1.removeEventListener("click", svarFeil)
+            knapp2.removeEventListener("click", svarFeil2)
+            knapp3.removeEventListener("click", svarRett)
+            avSvar.style.display = "none"
+            knapp1.style.backgroundColor = ""
+            knapp2.style.backgroundColor = ""
+            knapp3.style.backgroundColor = ""
+            Next.style.display = "inline-block"
+
+            if (Rettsvar === 2) {
+                poeng = 1;
+            }
+            if (Rettsvar === 1) {
+                knapp2.style.backgroundColor = "#FF5252"
+                poeng = 0;
+            }
+            if (Rettsvar === 0) {
+                knapp1.style.backgroundColor = "#FF5252"
+                poeng = 0;
+            }
+            localStorage.setItem("PoengTilQuiz11", poeng);
+            knapp3.style.backgroundColor = "#33FF6E"
+        }
+
+    </script>
+</body>
+
+</html>

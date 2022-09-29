@@ -58,8 +58,9 @@ button:active,
     background-color: var(--farge-active) !important;
 }
 
-.trykkbar a {
-    color: black;
+.trykkbar {
+    color: black !important;
+    text-decoration: underline solid black !important;
 }
 
 .skjult {
@@ -105,6 +106,11 @@ header,
 @media only screen and (max-width: 640px) {
     .displayflex {
         flex-direction: column;
+    }
+
+    .boks,
+    .boks-right {
+        margin: 1rem 0;
     }
 
     .boks-right {

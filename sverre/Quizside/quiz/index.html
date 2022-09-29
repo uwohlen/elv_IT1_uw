@@ -12,8 +12,17 @@
 
 <body>
     <div class="container">
-        <header>
-            <h1>Dataquiz!</h1>
+        <header class="displayflex spacebetween">
+            <div>
+                <h1>Dataquiz!</h1>
+            </div>
+            <div class="displayflex" style="align-items: center;">
+                <a href="../index.html">
+                    <div class="trykkbar">
+                        Gå tilbake
+                    </div>
+                </a>
+            </div>
         </header>
         <div class="displayflex">
             <div id="quiz" class="boks-left" style="flex: 4">
@@ -30,6 +39,11 @@
 
                 <p id="resultat"></p>
                 <button id="svar-avgitt">Svar</button>
+                <div class="skjult" id="div-kan-ikke-lagre">
+                    <p>
+                        For å lagre resultatet må du godta lagring av informasjon på datamaskinen.
+                    </p>
+                </div>
                 <div class="skjult" id="div-lagre-resultat">
                     <p>
                         Vil du lagre resultatet?
