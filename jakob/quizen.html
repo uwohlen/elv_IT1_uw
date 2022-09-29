@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="quizen.js"></script>
+</head>
+
+<body class=" font-serif" onload="init()">
+    <div class="">
+        <nav class="flex bg-white justify-between p-3 fixed w-screen outline outline-1 z-10">
+            <div class="p-4">
+                <a href="index.html">Tilbake</a>
+            </div>
+            <p class="p-4 font-thin text-xl">Gaaaal quiz</p>
+            <a class="p-4 hover:bg-slate-50 rounded-md" href="">
+                <div> Hjelp</div>
+            </a>
+        </nav>
+
+        <div id="quizen" class=" w-screen">
+            <br>
+            <br>
+            <div class="">
+                <span class="flex pt-36 pb-10 justify-center" id="spm" onclick="test()"></span>
+                <div class=" grid grid-rows-2 grid-flow-col gap-10 m-3 justify-center">
+                    <div id="alt1"
+                    class=" flex p-4 rounded-md h-40 w-96 items-center justify-center shadow-lg hover:shadow-2xl bg-white"
+                    onclick="handleAnswer(1)"></div>
+                <div id="alt2"
+                    class=" flex p-4 rounded-md h-40 w-96 items-center justify-center shadow-lg hover:shadow-2xl bg-white"
+                    onclick="handleAnswer(2)"></div>
+                <div id="alt3"
+                    class=" flex p-4 rounded-md h-40 w-96 items-center justify-center shadow-lg hover:shadow-2xl bg-white"
+                    onclick="handleAnswer(3)"></div>
+                <div id="alt4"
+                    class=" flex p-4 rounded-md h-40 w-96 items-center justify-center shadow-lg hover:shadow-2xl bg-white"
+                    onclick="handleAnswer(4)"></div>
+                </div>
+                <div></div>
+            </div>
+            
+        </div>
+        <br>
+        <div class="flex w-screen items-end h-40 absolute">
+
+            <div id="forrige"
+                class="hidden mb-80 ml-4 flex p-4 rounded-md hover:scale-125 ease-in-out duration-150 items-center justify-center bg-white"
+                onclick="forrigeSpm(0)">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-12 h-12">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+
+            </div>
+            <div class="flex w-screen justify-center">
+                <div id="poeng"
+                class=" flex w-2/3 h-40  p-3 rounded-md shadow-2xl items-center justify-center hover:bg-slate-400 bg-white">
+                Her vises poeng
+            </div>
+            </div>
+            <div id="Neste"
+                class="hidden flex  mb-80 p-5 mr-6  rounded-md hover:scale-125 ease-in-out duration-150 items-center justify-center bg-white"
+                onclick="nesteSpm(0)">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-12 h-12">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="finishPage" class="hidden ">
+        <div class="w-1/2  bg-white h-1/2 rounded-3xl shadow-2xl flex-col">
+            <br>
+            <br>
+            <div id="gratulerer" class="pt-3 flex w-full text-3xl justify-center">Gratulerer!</div>
+            <div class="flex w-full text-2xl justify-center">Du fikk:</div>
+            <br>
+            <div id="sluttPoeng" class="flex w-full text-2lg justify-center"></div>
+            <br>
+            <div id="prøveIgjen" onclick="igjen()">Vil du prøve igjen? Trykk her</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
