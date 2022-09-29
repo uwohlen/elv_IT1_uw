@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+       <title> Hensikt med quizen </title>
+       <link rel="stylesheet" href="alltid.css">
+       <style>
+            img {
+             border: 10px solid #ffb3ec;}
+             h1 {
+                border:rgb(67, 230, 67) 4px solid; 
+                background-color: #ffb3ec;
+                }
+
+            ul{
+                list-style-type: none;
+                margin: 0;
+                padding:0;
+                }
+            ul li{
+                display: inline;
+                }
+
+            ul a{
+                padding: 5px 30px;
+                color:black;
+                font-weight: bold;
+                text-decoration: none;
+                background-color:#ffb3ec;
+                }
+
+            ul a:hover {
+                background-color: aquamarine;
+                }
+                    
+            .meny {
+                border:#4C6793 10px double;
+                background-color: white;
+                font-family: Lucida Handwriting;
+                }
+                    
+           
+         
+
+           .kult{
+               position: relative;
+               background: #393d3a;
+               color: #fff;
+               border:none;
+               outline:none;
+               font-size: 18px;
+               text-transform: uppercase;
+               letter-spacing: 2px;
+               border-radius: 50px;
+               width: 180px;
+               height: 50px;
+               margin: pointer;
+           }        
+           .kult:first-child:hover{
+               background: 
+               linear-gradient(90deg,
+               #07a7f1,#fa46ac,
+               #fae736,#07a7f1);
+               background-size: 400%;
+           }
+           .kult:last-child:hover{
+               background:
+               linear-gradient(90deg,
+               #07a7f1,#fa46ac,
+               #fae736,#07a7f1);
+               background-size: 400%;
+               
+           }
+           .kult:first-child:before,
+           .kult:last-child:before{
+               content:'';
+               position: absolute;
+               background: inherit;
+               top: -5px;
+               right:-5px;
+               bottom: -5px;
+               left: -5px;
+               border-radius: 50px;
+               filter:blur(20px);
+               opacity: 0;
+               transition: opacity 0.5s;
+           }
+           .kult:first-child:hover:before,
+           .kult:last-child:hover:before{
+               opacity: 1;
+               z-index: -1;
+           }
+           .kult:hover{
+               z-index: 1;
+               animation: glow 8slinear infinite;
+           }
+           @keyframes glow{
+               0%{
+                   background-position: 0%;
+               }
+               100%{
+                   background-position:400%;
+               }
+           }
+
+
+
+
+
+
+       </style>
+</head>
+<body>
+
+    <div class="meny">  
+        <h2>Meny</h2>
+            <ul>
+                <a href="index.html" class="kult" >startsside</a>
+                <a href="alle_forste_nettside.html" class="kult">quizen</a>
+            </ul>
+        <p>
+
+        </p>
+    </div>
+       
+   
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./questions.css"         
+    </head> 
+    <body>
+            <a href="quiz.html">Tilbake til forside</a>
+        <center>
+            <h1>Spørsmål:</h1>
+            <h2 id="idPoeng" class="poeng">Poeng: 0</h2>
+            <p1><strong>
+        <div class="knapper">
+            1:Hvordan lagrer en HHD informasjonen?<br><br><img src="bilder/HHD.jpg" width="150" height="200">
+            </p1><br><br>
+            <button id="id1a" onclick="Riktig('id1a')">Mekanisk</button><br><br>
+            <button id="id1b" onclick="Feil('id1b')">Elektronisk</button><br><br>
+            <button id="id1c" onclick="Feil('id1c')">På papir</button><br><br><br>
+            
+            <p2><strong>
+            2:Hva står CPU for?<br><br><img src="bilder/cpu.jpg" width="150" height="200"><br>
+            </p2><br><br>
+            <button id="id1d" onclick="Feil('id1d')">Central power utility</button><br><br>
+            <button id="id1e" onclick="Riktig('id1e')">Central processor unit</button><br><br>
+            <button id="id1f" onclick="Feil('id1f')">Central power unit</button><br><br><br>
+            
+            <p3><strong>
+            3:Hva gjør batteriet til en PC?<br><br><img src="bilder/batteri.jpg" width="150" height="200">
+            </p3><br><br>
+            <button id="id1g" onclick="Feil('id1g')">Lader telefonen din</button><br><br>
+            <button id="id1h" onclick="Feil('id1h')">Gir deg støt</button><br><br>
+            <button id="id1i" onclick="Riktig('id1i')">Gir datamaskinen strømmen den trenger</button><br><br><br>  
+            
+            <p1><strong>
+            4: Fullfør settningen, RAM er datamaskinminnet som lagrer informasjon som et program trenger når det...<br><br><img src="bilder/ram.jpg" width="150" height="200">
+            </p1><br><br>    
+            <button id="id1j" onclick="Riktig('id1j')">Kjører</button><br><br>
+            <button id="id1k" onclick="Feil('id1k')">Ikke kjører</button><br><br>
+                <button id="id1l" onclick="Feil('id1l')">Er avslått</button>
+        </center> 
+        </div>  
+        <script>
+            let Poeng = 0;
+            let PoengEl = document.getElementById('idPoeng');
+            console.log(PoengEl)
+            function Riktig(id){
+                document.getElementById(id).innerHTML="Riktig";
+                document.getElementById(id).style.backgroundColor ="green";
+                Poeng ++;
+                PoengEl.innerHTML="Poeng:"+Poeng
+                document.getElementById(id).removeAttribute("onclick");
+            }
+            function Feil(id){
+                document.getElementById(id).innerHTML ="Feil";
+                document.getElementById(id).style.backgroundColor ="red";
+            }
+        </script>
+    </body>    
+</html>
