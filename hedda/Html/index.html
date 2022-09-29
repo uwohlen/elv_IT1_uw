@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Heddas nettside</title>
+  <link rel="stylesheet" herf="quiz_1.css">
+  <style>
+    #idQuiz, #idlink {
+      display: none;
+
+    }
+
+    #idAvsluttCookies {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+   <h1>Velkommen til Heddas nettside!</h1>
+   <div id="idCookies" class="clDiv">
+     <h2>Cookies</h2>
+     <p>Denne nettsiden vil lagre informasjon på datamskinen din, og hente det fram igjen</p>
+     <p>informasjonen som lagres er valgene du tar her og det du selv skriver inn</p>
+     <p>er det ok?</p>
+     <p><button id= "idOk"></button><span id="idLock">&#127850</span></p>
+
+
+   </div>
+   <divid="idCookies" class="clDiv">
+   <h2>Velkommen inn</h2>
+   <p></o><input id="idnavn" type="text" placeholder="skriv navnet ditt her"></p>
+   <h3 id="idLink"><span id="idHei"></span><a href="quiz_data.html">Klikk på linken for å ta quizzen</a></h3>
+   </div>
+   <div id="idAvsluttCookies">
+     <button>Avslutt alle cookies</button>
+   </div>
+<script>
+let cookieEl = document.getElementById("idCookies");
+let okEl = document.getElementById("idOk");
+let LockEl = document.getElementById("idLock");
+let QuizEl = document.getElementById("idQuiz");
+let NavnEl = document.getElementById("idNavn");
+let LinkEl = document.getElementById("idLink");
+let HeiEl = document.getElementById("idHei");
+let idAvsluttCookiesEl = document.getElementById("IdAvsluttCookies")
+
+okEl.addEventListener("click",okfunk);
+NavnEl.addEventListener("keydown",lagrefunk);
+idAvsluttCookiesEl.addEventListener("click",avsluttfunk)
+
+if (localStorage.getItem("cookiesGodkjentForindex1") == "ja") {
+  coockie.El.style.display = "none";
+  QuizEl.style.display = "block";
+
+}
+function okfuk() {
+  QuizEl.style.display = "block";
+  LockEl.innerHTML = "&#127850";
+  
+}
+
+
+
+  
+</script>
+   <button>OK</button>
+   <div>
+     <input id="idnavn" type="text" placeholder="skriv navnet ditt her">
+    <h3><a href="quiz_data.html">Klikk på denne linken for å ta quzzen
+    </a></h3>
+   </div>
+   <script>
+     let navnEl = document.getElementById("idnavn");
+     navnEl.addEventListener("keydown",lagrefunk);
+
+     function lagrefunk(event) {
+       console.log(event.keyCode)
+       console.log(navnEl.value);
+       
+       if (event.keyCode === 13) {
+         localStorage.setItem("lagretNavnforQuiz1", navnEl.value)
+
+       }
+   }
+   </script>
+</body>
+</html>
