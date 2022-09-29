@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My document</title>
+
+    <link rel="stylesheet" href="Stilark.css">
+
+    <style>
+
+    
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+        <button><a href="Main page .html">Main page</a></button>
+    </div>
+     
+<div id="hoved">
+
+    <h1>Welcome to my page</h1>
+    <p>To raske spørsmål du må svare på</p>
+    <h3 id="idPoeng">Poeng:0</h3>
+    
+</div>
+<div id="hoved">
+
+
+    <h1>Spørsmål 1</h1>
+    <h2>Hvem er dette?</h2>
+    <img src="./bilder/Ronaldo.jpeg" width="265" height="331" alt="Cristiano Ronaldo">
+    <br>
+    <button id="id1a" onclick="Feil('id1a')">Lionel Messi</button>
+    <button id="id1b" onclick="Riktig('id1b')">Cristiano Ronaldo</button>
+    <button id="id1c" onclick="Feil('id1c')">Neymar Jr</button> <br>
+
+</div>
+
+<div id="hoved">
+    <h1>Spørsmål 2</h1>
+    <h2>Hvem er dette?</h2>
+    <img src="./bilder/Messi.webp" width="512" height="288" alt="Lionel Messi">
+    <br>
+    <button id="id2a" onclick="Riktig('id2a')">Lionel Messi</button>
+    <button id="id2b" onclick="Feil('id2b')">Neymar Jr</button>
+    <button id="id2c" onclick="Feil('id2c')">Luis Suarez</button>
+    <br><br><br>
+
+</div>
+
+<div id="hoved">
+    <h3>Bli litt mer kjent med dem!</h3>
+    <a href="https://www.youtube.com/watch?v=Ht1wQJTpNAA" target="_blank">Messis highlights</a> <br>
+    <a href="https://www.youtube.com/watch?v=OUKGsb8CpF8" target="_blank">Ronaldos highlights</a>
+
+
+</div>
+
+<script>
+
+    let poeng=0;
+    let poengEL=document.getElementById("idPoeng")
+
+       function Riktig(id){
+            document.getElementById(id).innerHTML = "Riktig";
+            document.getElementById(id).style.backgroundColor="green";
+            poeng++
+            poengEL.innerHTML="Poeng:"+poeng
+
+    } 
+        
+    
+        function Feil(id){
+            document.getElementById(id).innerHTML = "Feil";
+            document.getElementById(id).style.backgroundColor="red";
+        }
+    
+        
+    
+    
+    
+    
+      
+    </script>
+    
+</body>
+</html>

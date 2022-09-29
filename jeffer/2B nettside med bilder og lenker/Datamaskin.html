@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datamaskin quiz</title>
+
+<style>
+    body {
+        background-image: url(./Bilder/Databakgrunn.webp); 
+    font-family: Georgia, serif; 
+    }
+    #hoved {
+    width: 80%;                /* bredde: 60 % av vinduet */
+    margin: 10px auto;        /* 100 px over elementet, auto midtstiller det */
+    padding: 40px;             /* luft mellom kantlinjene og innholdet */
+    background-color: white;   /* hvit bakgrunnsfarge */
+    border: 4px solid  black; /* grå kantlinje */
+    }
+
+
+    #p {
+        width: 20%;
+        margin: 10px auto;
+        padding: 20px;             /* luft mellom kantlinjene og innholdet */
+        background-color: white;   /* hvit bakgrunnsfarge */
+        border: 2px solid  black; 
+        text-align: center;
+    }
+
+    #que {
+        width: 50%;
+        margin: 20px auto;
+        padding: 20px;             /* luft mellom kantlinjene og innholdet */
+        background-color: white;   /* hvit bakgrunnsfarge */
+        border: 2px solid  black; 
+        text-align:center;
+
+    }
+    
+
+
+
+    
+</style>
+
+
+
+<body>
+
+    <div>
+       <button><a href="Main page .html">Main page</a></button>
+    </div>
+    
+    <div id="hoved">
+
+        <h1>Velkommen til min datamaskin quiz <span id="idNavn"></span>!</h1> 
+    </div>
+    <div id="p">
+        <h2 id="idpoeng">Poeng:0</h2>
+
+    </div>
+
+    <div id="que">
+        <h2>1.Hva er dette?</h2>
+        <img src="./Bilder/supermicro-x11ssh-gf-1585-mikro-atx-hovedkort.avif" width="450" height="250" alt="hovekort">
+        <br>
+        <button id="id1a" onclick="Riktig('id1a')">Hovedkort</button>
+        <button id="id1b" onclick="Feil('id1b')">Ram</button>
+        <button id="id1c" onclick="Feil('id1c')">Harddisk</button>
+    </div>
+
+    <div id="que">
+        <h2>2.Hva er dette?</h2>
+        <img src="./Bilder/Prosessor.jpeg" alt="Proseccor">
+        <br>
+        <button id="id2a" onclick="Feil('id2a')">Ram</button>
+        <button id="id2b" onclick="Riktig('id2b')">Processor</button>
+        <button id="id2c" onclick="Feil('id2c')">GPU</button>
+    </div>
+    <div id="que">
+        <h2>3.Hva er dette?</h2>
+        <img src="./Bilder/Ram.jpeg">
+        <br>
+        <button id="id3a" onclick="Feil('id3a')">GPU</button>
+        <button id="id3b" onclick="Feil('id3b')">SSD</button>
+        <button id="id3c" onclick="Riktig('id3c')">Ram</button>
+    </div>
+    
+    <div id="que">
+        <h2>4.Hva er dette?</h2>
+        <img src="./Bilder/GPU.jpeg">
+        <br>
+        <button id="id4a" onclick="Feil('id4a')">Arbeidsminne</button>
+        <button id="id4b" onclick="Riktig('id4b')">GPU</button>
+        <button id="id4c" onclick="Feil('id4c')">Ram</button>
+    </div>
+
+    <script>
+        
+    </script>
+
+    <script>
+        let poeng=0;
+        let poengEL=document.getElementById("idpoeng")
+        let navnEl = document.getElementById("idNavn")
+        if (localStorage.getItem("Navn") !== null) {
+            navnEl.innerHTML = " " + localStorage.getItem("Navn");
+        }
+
+           function Riktig(id){
+                document.getElementById(id).innerHTML = "Riktig";
+                document.getElementById(id).style.backgroundColor="green";
+                poeng++
+                poengEL.innerHTML="Poeng:"+poeng      
+        } 
+            
+        
+            function Feil(id){
+                document.getElementById(id).innerHTML = "Feil";
+                document.getElementById(id).style.backgroundColor="red";
+
+                
+            }
+
+        </script>
+
+</body>
+
+</html>
+
+   

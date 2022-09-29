@@ -1,0 +1,35 @@
+body {
+    background-color: green; 
+font-family: Georgia, serif; 
+}
+#hoved {
+width: 80%;                /* bredde: 60 % av vinduet */
+margin: 10px auto;        /* 100 px over elementet, auto midtstiller det */
+padding: 40px;             /* luft mellom kantlinjene og innholdet */
+background-color: white;   /* hvit bakgrunnsfarge */
+border: 4px solid  black; /* grå kantlinje */
+}
+
+
+a {
+color: blue;
+text-decoration-color: #a6dbf8;
+}
+a:visited {
+color: purple;
+}
+a:hover {
+color: #EB5940;
+text-decoration-color: #cccccc;
+}
+a:active {
+text-decoration: none;
+}
+a:focus {
+color: #EB5940;
+text-decoration-color: #cccccc;      
+}
+
+#hidden {
+    display: none;
+}
