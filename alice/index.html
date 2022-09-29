@@ -1,156 +1,29 @@
-<!DOCTYPE html> 
-    <html>
-        <head>
-            <title>Lusens nettside</title>
-            <style>
-                #idQuiz, #idLink {
-                    display: none; 
-                }
-
-                #idAvsluttCookies {
-                    position: fixed;
-                    top: 1%;
-                    right: 0.5%;
-                }
-
-            </style>
-        </head>
-        <body>
-            <style>
-                .dropbtn {
-                    background-color: lightskyblue;
-                    color: black;
-                    padding: 8px;
-                    font-size: 16px;
-                    border: none;
-                    cursor: pointer;
-                    font-family: 'Times New Roman', Times, serif;
-                }
-                .dropbtn:hover, .dropbtn:focus {
-                    background-color: lightskyblue;
-                }
-                .dropdown {
-                    position: relative;
-                    display: inline-block;
-                }
-                .dropdown-content {
-                    display: none;
-                    position: absolute;
-                    background-color: #f9f9f9;
-                    min-width: 160px;
-                    overflow: auto;
-                    box-shadow: 0px 8px 16px 0px black(0,0,0,0.2);
-                }
-                .dropdown-content a {
-                    color: black;
-                    padding: 12px 16px;
-                    text-decoration: none;
-                    display: block;
-                }
-                .dropdown-content a:hover {background-color: #f1f1f1}
-                .show {display:block;}
-                body {
-                    background-color: honeydew;
-                }
-                h1 {
-                    border: lightskyblue 10px solid;
-                    padding: 5px;
-                }
-                button {
-                    cursor: pointer;
-                }
-            </style>
-
-            <h1>Velkommen til denne nettsiden!</h1> 
-            <div class="dropdown">
-                <button id="menyKnapp" class="dropbtn">Meny</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="../finalbossnettside.html">Oversikt</a>
-                    <a href="quisDatamaskin.html">Quiz</a>
-                    <a href="index.html">Hjem</a>
-                </div>
-            <div id="idCookies" class="clDiv" style="display: inline;">
-                <h2>Cookies &#128124</h2>
-                <p>Dette nettstedet vil lagre informasjon på datamaskinen din, og bruke den igjen senere.</p>
-                <p>Informasjonen som lagres er valgene du tar her og det du selv skriver inn.</p>
-                <p>Er det ok?</p>
-                <p>
-                    <button id="idOK">OK</button>
-                    <span id="idLock"></span>
-                </p>
-            </div>
-            <div id="idQuiz" class="clDiv" style="display: none;">
-                <h3>Ta en quiz om datamaskiner!</h3>
-                <p>
-                    <input id="idNavn" type="text" placeholder="Skriv navnet ditt her">
-                    avslutt med enter tasten
-                </p>
-            
-            <h4 id="idLink" style="display: none;">
-                <span id="idHei"> </span>
-                <a href="quisDatamaskin.html">her er det en quiz om datamaskiner</a>
-            </h4>
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <title>NETTSIDE MED ALT</title>        
+    </head>
+    <body>
+        <style>                
+            body {
+                background-color: honeydew;
+                background-image: url("../media/peis.jpg");
+            }
+            div {
+                background-color: lightcyan;
+                border: lightskyblue 7px solid;
+            }
+            h1 {
+                background-color: lightcyan;
+                border: lightskyblue 7px solid;
+            }
+        </style>
+        <h1>MINE PROSJEKTER LOL &#128081</h1>
+        <div>
+            <a href="oppstart/index.html">quis forside</a> <br>
+            <a href="oppstart/quisDatamaskin.html">quis nettside</a> <br>
+            <a href="../index.html">tilbake til IT1 klassen</a>
         </div>
-        <div id="idAvsluttCookies">
-            <button>Avslutt alle cookies!</button>
-        </div>
-            
-        <script>
-            document.getElementById("menyKnapp").onclick = function() {myFunction()};
-
-            function myFunction() {
-                document.getElementById("myDropdown").classList.toggle("show");
-                }
-
-           let cookieEl = document.getElementById("idCookies");
-           let okEl = document.getElementById("idOK");
-           let lockEl = document.getElementById("idLock");
-           let quizEl = document.getElementById("idQuiz");
-           let navnEl = document.getElementById("idNavn");
-           let linkEl = document.getElementById("idLink");
-           let heiEl = document.getElementById("idHei");
-           let avsluttCookiesEl = document.getElementById("idAvsluttCookies")
-
-           okEl.addEventListener("click",okfunk);
-           navnEl.addEventListener("keydown",lagrefunk);
-           avsluttCookiesEl.addEventListener("click",avsluttfunk)
-
-           if (localStorage.getItem("cookiesGodkjentForIndex1") === "ja") {
-               cookieEl.style.display = "inline";
-               quizEl.style.display = "none";
-           }
-
-           function okfunk() {
-               quizEl.style.display = "block";
-               lockEl.innerHTML = "&#128128";
-               localStorage.setItem("cookiesGodkjentForIndex1","ja");
-           }
-
-           function lagrefunk(event) {
-               //console.log(event.keyCode);
-               //console.log(navnEl.value);
-               if (event.keyCode === 13) {
-                   localStorage.setItem("sdfghjklQ",navnEl.value);
-                   heiEl.innerHTML = "Hei " + navnEl.value + "!<br>";
-                   navnEl.value = "";
-                   linkEl.style.display = "inline";
-               }
-           }
-
-           function avsluttfunk() {
-               localStorage.removeItem("cookiesGodkjentForIndex1");
-               localStorage.removeItem("sdfghjklQ");
-               cookieEl.style.display = "block";
-               quizEl.style.display = "none";
-               linkEl.style.display = "none";
-               heiEl.innerHTML = "";
-               lockEl.innerHTML = "&#128128";
-           }
-        </script>
-          
-        </body>
-    </hmtl>
-
-
-
-
+    </body>
+</html>
