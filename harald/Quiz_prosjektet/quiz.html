@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <Title> Quiz </Title>
+        <link rel="icon" type="image/x-icon" href="Bilder/Emoticonshd.com-Emoji-Emoticon-Cool-Sunglasses.ico">
+        <link rel="stylesheet" href="CSS/QuizCSS.css">
+        <style>
+            html{
+                scroll-behavior:smooth;
+            }
+        </style>
+    </head>
+    <body>
+        <style>
+
+        </style>
+        <h1>Quiz om datamaskiner!</h1>
+        <div class="meny">
+        <center><h3><span id="idNavn"></span></h3>
+        <h3 id="idPoeng"> Poeng: 0</h3>
+        <h3><a href="Index.html">Hjemmeside</a></h3></center>
+        </div>
+        
+            
+<!-- Spørsmål 1-->
+        <h2>Hva er galt med denne prosessoren?</h2>
+        <img id="idImgQuiz1" src="Bilder/CPUKopi.png" alt="Bilde av Cpu" class="centerImg">
+        <p>
+            <center>
+                <button id="id1a">For mye kjølepasta</button>
+                <button id="id1b">Rette pins</button>
+                <button id="id1c">Bøyde pins</button>
+                <button id="id1d">Misfargede pins</button>
+            </center>
+<!-- Spørsmål 2-->
+        <h2>Hva heter denne typen inngang?</h2>
+        <img id="idImgQuiz2" src="Bilder/USBKopi.png" alt="Bilde av USB" class="centerImg">
+        <p>
+            <center>
+                <button id="id2a">USB type A</button>
+                <button id="id2b">USB type B</button>
+                <button id="id2c">USB type C</button>
+                <button id="id2d">Micro USB</button>
+            </center>
+        </p>
+<!-- Spørsmål 3-->
+        <h2>Hvordan type lagring er dette?</h2>
+        <img id="idImgQuiz3" src="Bilder/HDDKopi.png" alt="Bilde av USB" class="centerImg">
+        <p>
+            <center>
+                <button id="id3a">HDD</button>
+                <button id="id3b">SSD</button>
+                <button id="id3c">CD</button>
+                <button id="id3d">RAM</button>
+            </center>
+<!-- Spørsmål 4-->
+        <h2>Hvilken komponent skal denne viften kobles til?</h2>
+        <img id="idImgQuiz4" src="Bilder/VifteKopi.png" alt="Bilde av USB" class="centerImg">
+        <p>
+            <center>
+                <button id="id4a">Minne</button>
+                <button id="id4b">Strømtilførsel</button>
+                <button id="id4c">Tastatur</button>
+                <button id="id4d">Prosessor</button>
+            </center>
+<!-- Sum-->
+        <center><h2 id="poengEnd">Gratulerer <span id="idNavn"></span>! Du fikk poeng</h2></center>
+<!-- Javaskript-->
+            <script>
+
+                let poengDivEl = document.getElementById("idPoengDiv");
+                let poengEl = document.getElementById("idPoeng");
+                let navnEl = document.getElementById("idNavn");
+                let poengEnd = document.getElementById("poengEnd")
+                
+                let poeng=0;
+
+                let knapp1aEl = document.getElementById("id1a");
+                let knapp1bEl = document.getElementById("id1b");
+                let knapp1cEl = document.getElementById("id1c");
+                let knapp1dEl = document.getElementById("id1d");
+                
+                let knapp2aEl = document.getElementById("id2a");
+                let knapp2bEl = document.getElementById("id2b");
+                let knapp2cEl = document.getElementById("id2c");
+                let knapp2dEl = document.getElementById("id2d");
+                
+                let knapp3aEl = document.getElementById("id3a");
+                let knapp3bEl = document.getElementById("id3b");
+                let knapp3cEl = document.getElementById("id3c");
+                let knapp3dEl = document.getElementById("id3d");
+                
+                let knapp4aEl = document.getElementById("id4a");
+                let knapp4bEl = document.getElementById("id4b");
+                let knapp4cEl = document.getElementById("id4c");
+                let knapp4dEl = document.getElementById("id4d");
+
+                knapp1aEl.addEventListener("click",feil1a);
+                knapp1bEl.addEventListener("click",feil1b);
+                knapp1cEl.addEventListener("click",riktig1c);
+                knapp1dEl.addEventListener("click",feil1d);
+        
+                knapp2aEl.addEventListener("click",riktig2a);
+                knapp2bEl.addEventListener("click",feil2b);
+                knapp2cEl.addEventListener("click",feil2c);
+                knapp2dEl.addEventListener("click",feil2d);
+        
+                knapp3aEl.addEventListener("click",riktig3a);
+                knapp3bEl.addEventListener("click",feil3b);
+                knapp3cEl.addEventListener("click",feil3c);
+                knapp3dEl.addEventListener("click",feil3d);
+                
+                knapp4aEl.addEventListener("click",feil4a);
+                knapp4bEl.addEventListener("click",feil4b);
+                knapp4cEl.addEventListener("click",feil4c);
+                knapp4dEl.addEventListener("click",riktig4d);
+
+        function feil1a() {
+            knapp1aEl.innerHTML = "Feil";
+            poeng --;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp1aEl.style.backgroundColor = "tomato";
+            knapp1aEl.removeEventListener("click",feil1a);
+            knapp1bEl.removeEventListener("click",feil1b);
+            knapp1cEl.removeEventListener("click",riktig1c);
+            knapp1dEl.removeEventListener("click",feil1d);
+            window.scroll(0,500);
+        }
+
+        function feil1b() {
+            knapp1bEl.innerHTML = "Feil";
+            poeng --;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp1bEl.style.backgroundColor = "tomato";
+            knapp1aEl.removeEventListener("click",feil1a);
+            knapp1bEl.removeEventListener("click",feil1b);
+            knapp1cEl.removeEventListener("click",riktig1c);
+            knapp1dEl.removeEventListener("click",feil1d);
+            window.scroll(0,500);
+        }
+
+        function riktig1c() {
+            knapp1cEl.innerHTML = "Riktig";
+            poeng ++;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp1cEl.style.backgroundColor = "forestgreen";
+            knapp1aEl.removeEventListener("click",feil1a);
+            knapp1bEl.removeEventListener("click",feil1b);
+            knapp1cEl.removeEventListener("click",riktig1c);
+            knapp1dEl.removeEventListener("click",feil1d);
+            window.scroll(0,500);
+        }
+
+        function feil1d() {
+            knapp1dEl.innerHTML = "Feil";
+            poeng --;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp1dEl.style.backgroundColor = "tomato";
+            knapp1aEl.removeEventListener("click",feil1a);
+            knapp1bEl.removeEventListener("click",feil1b);
+            knapp1cEl.removeEventListener("click",riktig1c);
+            knapp1dEl.removeEventListener("click",feil1d);
+            window.scroll(0,500);
+        }
+
+
+        function riktig2a() {
+            knapp2aEl.innerHTML = "Riktig";
+            poeng ++;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp2aEl.style.backgroundColor = "forestgreen";
+            knapp2aEl.removeEventListener("click",riktig2a);
+            knapp2bEl.removeEventListener("click",feil2b);
+            knapp2cEl.removeEventListener("click",feil2c);
+            knapp2dEl.removeEventListener("click",feil2d);
+            window.scroll(0,900);
+        }
+
+        function feil2b() {
+            knapp2bEl.innerHTML = "Feil";
+            poeng --;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp2bEl.style.backgroundColor = "tomato";
+            knapp2aEl.removeEventListener("click",riktig2a);
+            knapp2bEl.removeEventListener("click",feil2b);
+            knapp2cEl.removeEventListener("click",feil2c);
+            knapp2dEl.removeEventListener("click",feil2d);
+            window.scroll(0,900);
+        }
+
+        function feil2c() {
+            knapp2cEl.innerHTML = "Feil";
+            poeng --;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp2cEl.style.backgroundColor = "tomato";
+            knapp2aEl.removeEventListener("click",riktig2a);
+            knapp2bEl.removeEventListener("click",feil2b);
+            knapp2cEl.removeEventListener("click",feil2c);
+            knapp2dEl.removeEventListener("click",feil2d);
+            window.scroll(0,900);
+        }
+
+        function feil2d() {
+            knapp2dEl.innerHTML = "Feil";
+            poeng --;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp2dEl.style.backgroundColor = "tomato";
+            knapp2aEl.removeEventListener("click",riktig2a);
+            knapp2bEl.removeEventListener("click",feil2b);
+            knapp2cEl.removeEventListener("click",feil2c);
+            knapp2dEl.removeEventListener("click",feil2d);
+            window.scroll(0,900);
+        }
+
+
+        function riktig3a() {
+            knapp3aEl.innerHTML = "Riktig";
+            poeng ++;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp3aEl.style.backgroundColor = "forestgreen";
+            knapp3aEl.removeEventListener("click",riktig3a);
+            knapp3bEl.removeEventListener("click",feil3b);
+            knapp3cEl.removeEventListener("click",feil3c);
+            knapp3dEl.removeEventListener("click",feil3d);
+            window.scroll(0,1300);
+        }
+
+        function feil3b() {
+            knapp3bEl.innerHTML = "Feil";
+            poeng --;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp3bEl.style.backgroundColor = "tomato";
+            knapp3aEl.removeEventListener("click",riktig3a);
+            knapp3bEl.removeEventListener("click",feil3b);
+            knapp3cEl.removeEventListener("click",feil3c);
+            knapp3dEl.removeEventListener("click",feil3d);
+            window.scroll(0,1300);
+        }
+
+        function feil3c() {
+            knapp3cEl.innerHTML = "Feil";
+            poeng --;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp3cEl.style.backgroundColor = "tomato";
+            knapp3aEl.removeEventListener("click",riktig3a);
+            knapp3bEl.removeEventListener("click",feil3b);
+            knapp3cEl.removeEventListener("click",feil3c);
+            knapp3dEl.removeEventListener("click",feil3d);
+            window.scroll(0,1300);
+        }
+
+        function feil3d() {
+            knapp3dEl.innerHTML = "Feil";
+            poeng --;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp3dEl.style.backgroundColor = "tomato";
+            knapp3aEl.removeEventListener("click",riktig3a);
+            knapp3bEl.removeEventListener("click",feil3b);
+            knapp3cEl.removeEventListener("click",feil3c);
+            knapp3dEl.removeEventListener("click",feil3d);
+            window.scroll(0,1300);
+        }
+
+
+        function feil4a() {
+            knapp4aEl.innerHTML = "Feil";
+            poeng --;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp4aEl.style.backgroundColor = "tomato";
+            poengEnd.style.display ="inline-block"
+            poengEnd.innerHTML = "Gratulerer du fikk "+ poeng +" poeng!"
+            knapp4aEl.removeEventListener("click",feil4a);
+            knapp4bEl.removeEventListener("click",feil4b);
+            knapp4cEl.removeEventListener("click",feil4c);
+            knapp4dEl.removeEventListener("click",riktig4d);
+            window.scroll(0,1500)
+        }
+
+        function feil4b() {
+            knapp4bEl.innerHTML = "Feil";
+            poeng --;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp4bEl.style.backgroundColor = "tomato";
+            poengEnd.style.display ="inline-block"
+            poengEnd.innerHTML = "Gratulerer du fikk "+ poeng +" poeng!"
+            knapp4aEl.removeEventListener("click",feil4a);
+            knapp4bEl.removeEventListener("click",feil4b);
+            knapp4cEl.removeEventListener("click",feil4c);
+            knapp4dEl.removeEventListener("click",riktig4d);
+            window.scroll(0,1500)
+        }
+
+        function feil4c() {
+            knapp4cEl.innerHTML = "Feil";
+            poeng --;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp4cEl.style.backgroundColor = "tomato";
+            poengEnd.style.display ="inline-block"
+            poengEnd.innerHTML = "Gratulerer du fikk "+ poeng +" poeng!"
+            knapp4aEl.removeEventListener("click",feil4a);
+            knapp4bEl.removeEventListener("click",feil4b);
+            knapp4cEl.removeEventListener("click",feil4c);
+            knapp4dEl.removeEventListener("click",riktig4d);
+            window.scroll(0,1500)
+        }
+
+        function riktig4d() {
+            knapp4dEl.innerHTML = "Riktig";
+            poeng ++;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp4dEl.style.backgroundColor = "forestgreen";
+            poengEnd.style.display ="inline-block"
+            poengEnd.innerHTML = "Gratulerer du fikk "+ poeng +" poeng!"
+            knapp4aEl.removeEventListener("click",feil4a);
+            knapp4bEl.removeEventListener("click",feil4b);
+            knapp4cEl.removeEventListener("click",feil4c);
+            knapp4dEl.removeEventListener("click",riktig4d);
+            window.scroll(0,1500)   
+        
+        
+
+        }
+        if (localStorage.getItem("lagretNavnForQuiz1") !== null) {
+            navnEl.innerHTML = " " + localStorage.getItem("lagretNavnForQuiz1");
+        }
+
+            </script>
+    </body>
+</html>
