@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf_8">
+    <title>insane quiz</title>
+  </head>
+  <style>
+    h1{color: blueviolet;}
+    button{cursor: pointer;}
+
+    #toprightdiv{
+      position: fixed;
+      left: 20px;
+      top: 0px;
+      padding-left: 15px; padding-right: 15px;
+      margin-top: 10px;
+      margin-right: 10px;
+      border-radius: 10px;
+      border: black 5px solid;
+      }
+
+    #q1{display: inline-block;}
+    #q2{display: none;}
+    #q3{display: none;}
+    #q4{display: none;}
+
+    .nextbutton{
+      position: fixed;
+      display: none;
+      border: blue 5px solid;
+      right: 25px;
+      bottom: 25px;
+      width: auto;
+      height: auto;
+      background-color: beige;
+      } 
+
+    #endscreen{
+      display: none;
+      } 
+
+    #hjem{
+      border: 5px black solid;
+      border-radius: 5px;
+      }
+
+    #retry{
+      border: 5px white solid;
+      border-radius: 5px;
+      padding-right: 33px;
+      padding-left: 33px;
+      }
+  </style>
+
+  <body style="background-color:burlywood;">
+
+    <div class="toprightdiv" id="toprightdiv">
+      <center>
+        <h3><a href="QuizForside.html">Hjem</a></h3>
+        <h3 id="poeng">poeng: 0</h3>
+        <h3><a href="insaneQuiz.html"><span width="50" height="37">&#8634;</span> </a></h3>
+      </center>
+    </div>
+
+    <center>
+        
+      <h1>Dette er en bra quiz. Velkommen <span id="idNavn"></span> </h1>
+           
+      
+      <div class="q1" id="q1">
+        <center>
+          <h2>Hva står CPU for?</h2>
+          <img src="MediaQuiz/cpu.jpg" alt="cpu" height="400" width="auto">
+        
+          <p>
+            <button id="1a">Cross Predator Underwear</button>
+            <button id="1b">Computer Personal United</button>
+            <button id="1c">Civil Population Unit</button>
+            <button id="1d">Central Processing Unit</button>
+          </p>
+        </center>
+      </div>
+
+      <div class="q2" id="q2">
+        <center>
+          <h2>hva er dette?</h2>
+          <img src="MediaQuiz/hovedkort.jpg" alt="Hovedkort" height="400" width="auto">
+          <p>
+            <button id="2a">Skjermkort</button>
+            <button id="2b">Minne</button>
+            <button id="2c">Hovedkort</button>
+            <button id="2d">Batteri</button>
+          </p>
+        </center>
+      </div>
+
+      <div class="q3" id="q3">
+        <center>
+          <h2>Hva er RAM?</h2>
+          <img src="MediaQuiz/ram.jpg" alt="Ram" height="400" width="auto">
+          <p>
+            <button id="3a">Batteriene</button>
+            <button id="3b">Wifikobling</button>
+            <button id="3c">Bluetoothkobling</button>
+            <button id="3d">Arbeidsminne</button>
+          </p>
+        </center>
+      </div>
+
+      <div class="q4" id="q4">
+        <center>
+          <h2>Hvilken rolle har viften</h2>
+          <img src="MediaQuiz/vifte.jpg" alt="vifte" height="400" width="auto">
+          <p>
+            <button id="4a">Kjøle ned pc-en</button>
+            <button id="4b">Blåse vekk støv</button>
+            <button id="4c">Holde pc-en stille</button>
+            <button id="4d">For estetikk</button>
+          </p>
+        </center>
+      </div>
+
+      <div class="endscreen" id="endscreen">
+        <center>
+          <h2 id="sluttpoeng">Gratulerer du fikk Poeng!</h2>
+          <a href="QuizForside.html"><img id="hjem" src="MediaQuiz/hjem.PNG" alt="tilbake til forsiden" height="200" width="autp"></a>
+          <a href="insaneQuiz.html"><img id="retry" src="MediaQuiz/retry.png" alt="ta quiz på nytt" height="200" width="auto"></a>
+        </center>
+      </div>
+
+        
+      <div class="nextbutton" id="next1"><p>Neste Spørsmål ---> </p></div>
+      <div class="nextbutton" id="next2"><p>Neste Spørsmål ---> </p></div>
+      <div class="nextbutton" id="next3"><p>Neste Spørsmål ---> </p></div>
+      <div class="nextbutton" id="end"><p>Ferdig ---> </p></div>
+
+
+
+    </center>   
+    <script>
+
+      let Poeng = document.getElementById("poeng")
+      let poeng=0;
+      let sluttpoeng=document.getElementById("sluttpoeng")
+
+      let navnEl = document.getElementById("idNavn")
+      if (localStorage.getItem("lagretnavnforquiz") !== null) {
+        navnEl.innerHTML = localStorage.getItem("lagretnavnforquiz");
+      }
+
+      let meny=document.getElementById("toprightdiv")
+      let q1=document.getElementById("q1")
+      let q2=document.getElementById("q2")
+      let q3=document.getElementById("q3")
+      let q4=document.getElementById("q4")
+      let endscreen=document.getElementById("endscreen")
+
+      let nestespm1=document.getElementById("next1")
+      let nestespm2=document.getElementById("next2")
+      let nestespm3=document.getElementById("next3")
+      let endbutton=document.getElementById("end")
+      let klikknext1=document.getElementById("next1")
+      let klikknext2=document.getElementById("next2")
+      let klikknext3=document.getElementById("next3")
+      let klikkend=document.getElementById("end")
+
+      klikknext1.addEventListener("click",nextfunk1)
+      klikknext2.addEventListener("click",nextfunk2)
+      klikknext3.addEventListener("click",nextfunk3)
+      klikkend.addEventListener("click",endfunk)
+
+      function nextfunk1() {
+        q1.style.display="none"
+        q2.style.display = "inline-block";
+        klikknext1.style.display="none"
+      }
+
+      function nextfunk2() {
+        q2.style.display="none"
+        q3.style.display = "inline-block";
+        klikknext2.style.display="none"
+      }
+
+      function nextfunk3() {
+        q3.style.display="none"
+        q4.style.display = "inline-block";
+        klikknext3.style.display="none"
+      }
+
+      function endfunk() {
+        q4.style.display="none";
+        endscreen.style.display="inline-block"
+        meny.style.display="none"
+        klikkend.style.display="none"
+        sluttpoeng.innerHTML="Gratulerer du fikk " + poeng + " poeng";
+        }
+
+    
+
+      let knapp1a=document.getElementById("1a")
+      let knapp1b=document.getElementById("1b")
+      let knapp1c=document.getElementById("1c")
+      let knapp1d=document.getElementById("1d")
+      knapp1a.addEventListener("click",feil1a)
+      knapp1b.addEventListener("click",feil1b)
+      knapp1c.addEventListener("click",feil1c)
+      knapp1d.addEventListener("click",riktig1d)
+
+      function feil1a() {
+        knapp1a.innerHTML ="Feil:(";
+        knapp1a.style.backgroundColor = "red";
+        poeng -= 1
+        Poeng.innerHTML ="poeng: " +poeng
+        knapp1a.removeEventListener("click",feil1a)
+      }
+
+      function feil1b() {
+        knapp1b.innerHTML ="Feil:(";
+        knapp1b.style.backgroundColor = "red";
+        poeng -= 1
+        Poeng.innerHTML ="poeng: " +poeng
+        knapp1b.removeEventListener("click",feil1b)
+      }
+
+      function feil1c() {
+        knapp1c.innerHTML ="Feil:(";
+        knapp1c.style.backgroundColor = "red";
+        poeng -= 1
+        Poeng.innerHTML ="poeng: " +poeng
+        knapp1c.removeEventListener("click",feil1c)
+      }
+
+      function riktig1d() {
+        knapp1d.innerHTML ="Korrekt";
+        knapp1d.style.backgroundColor = "green";
+        poeng += 5
+        Poeng.innerHTML ="poeng: " +poeng
+        nestespm1.style.display="inline-block"
+        knapp1d.removeEventListener("click",riktig1d)
+      }
+
+
+      let knapp2a=document.getElementById("2a")
+      let knapp2b=document.getElementById("2b")
+      let knapp2c=document.getElementById("2c")
+      let knapp2d=document.getElementById("2d")
+      knapp2a.addEventListener("click",feil2a)
+      knapp2b.addEventListener("click",feil2b)
+      knapp2c.addEventListener("click",riktig2c)
+      knapp2d.addEventListener("click",feil2d)
+
+      function feil2a() {
+        knapp2a.innerHTML="Feil";
+        knapp2a.style.backgroundColor="red";
+        poeng -= 1
+        Poeng.innerHTML ="poeng: " +poeng
+        knapp2a.removeEventListener("click",feil2a)
+      }
+
+      function feil2b() {
+        knapp2b.innerHTML="Feil";
+        knapp2b.style.backgroundColor="red";
+        poeng -= 1
+        Poeng.innerHTML ="poeng: " +poeng
+        knapp2b.removeEventListener("click",feil2b)
+      }
+
+      function riktig2c() {
+        knapp2c.innerHTML="Det stemmer";
+        knapp2c.style.backgroundColor="green";
+        poeng += 5
+        Poeng.innerHTML ="poeng: " +poeng
+        nestespm2.style.display="inline-block"
+        knapp2c.removeEventListener("click",feil2c)
+      }
+
+      function feil2d() {
+        knapp2d.innerHTML="Feil";
+        knapp2d.style.backgroundColor="red";
+        poeng -= 1
+        Poeng.innerHTML ="poeng: " +poeng
+        knapp2d.removeEventListener("click",feil2d)
+      }
+
+      let knapp3a=document.getElementById("3a")
+      let knapp3b=document.getElementById("3b")
+      let knapp3c=document.getElementById("3c")
+      let knapp3d=document.getElementById("3d")
+      knapp3a.addEventListener("click",feil3a)
+      knapp3b.addEventListener("click",feil3b)
+      knapp3c.addEventListener("click",feil3c)
+      knapp3d.addEventListener("click",riktig3d)
+
+      function feil3a(){
+        knapp3a.innerHTML="Feil";
+        knapp3a.style.backgroundColor="red";
+        poeng -= 1
+        Poeng.innerHTML ="poeng: " +poeng
+        knapp3a.removeEventListener("click",feil3a)  
+      }
+
+      function feil3b(){
+        knapp3b.innerHTML="Feil";
+        knapp3b.style.backgroundColor="red";
+        poeng -= 1
+        Poeng.innerHTML ="poeng: " +poeng
+        knapp3b.removeEventListener("click",feil3b)  
+      }   
+
+      function feil3c(){
+        knapp3c.innerHTML="Feil";
+        knapp3c.style.backgroundColor="red";
+        poeng -= 1
+        Poeng.innerHTML ="poeng: " +poeng
+        knapp3c.removeEventListener("click",feil3c)  
+      }
+
+      function riktig3d(){
+        knapp3d.innerHTML="Korrekt";
+        knapp3d.style.backgroundColor="green";
+        poeng += 5
+        Poeng.innerHTML ="poeng: " +poeng
+        nestespm3.style.display="inline-block"
+        knapp3d.removeEventListener("click",feil3d) 
+      }
+
+
+      let knapp4a=document.getElementById("4a")
+      let knapp4b=document.getElementById("4b")
+      let knapp4c=document.getElementById("4c")
+      let knapp4d=document.getElementById("4d")
+      knapp4a.addEventListener("click",riktig4a)
+      knapp4b.addEventListener("click",feil4b)
+      knapp4c.addEventListener("click",feil4c)
+      knapp4d.addEventListener("click",feil4d)
+
+      function riktig4a() {
+        knapp4a.innerHTML="Perfekt:)"
+        knapp4a.style.backgroundColor = "green";
+        poeng += 5
+        Poeng.innerHTML ="poeng: " +poeng
+        endbutton.style.display="inline-block"
+        knapp4a.removeEventListener("click",riktig4a)
+      }
+
+      function feil4b() {
+        knapp4b.innerHTML="Feil"
+        knapp4b.style.backgroundColor = "red";
+        poeng -= 1  
+        Poeng.innerHTML ="poeng: " +poeng
+        knapp4a.removeEventListener("click",feil4b)
+      }
+
+      function feil4c() {
+        knapp4c.innerHTML="Feil"
+        knapp4c.style.backgroundColor = "red";
+        poeng -= 1
+        Poeng.innerHTML ="poeng: " +poeng
+        knapp4c.removeEventListener("click",feil4c)
+      }
+
+      function feil4d() {
+        knapp4d.innerHTML="Feil"
+        knapp4d.style.backgroundColor = "red";
+        poeng -= 1
+        Poeng.innerHTML ="poeng: " +poeng
+        knapp4d.removeEventListener("click",feil4d)
+      }
+
+    </script>
+  </body>
+</html>

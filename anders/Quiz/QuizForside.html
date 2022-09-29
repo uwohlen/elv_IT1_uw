@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+  <head><meta charset="utf-8"><title>QUIZ</title></head>
+  <body style="background-color: burlywood;">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Nedlastede_programmer/style.css">
+    
+<a href="index-index.html">index-index</a>
+    <center>
+        <h2 id="h21">Denne nettsiden vil lagre informasjon på datamskinen din. er det ok?</h2><button id="idok">OK</button>
+        <div id="iddiv1" style="display: none;">
+          <h2>Perfekt:)</h2>
+            <p><input id="idNavn" type="text" placeholder="Skriv navnet ditt her"> Avslutt med enter-tasten</p>
+            <h3 id="linkquiz" style="display: none;"><a href="insaneQuiz.html">Klikk Her For Quiz</a></h3>
+        </div>
+        </center>
+        <script>
+          let linkquiz = document.getElementById("linkquiz")
+          let navnEl = document.getElementById("idNavn")
+          navnEl.addEventListener("keydown",lagrefunk)
+    
+          function lagrefunk(event) {
+            console.log(event.keyCode);
+            console.log(navnEl.value);
+
+            if (event.keyCode===13) {
+              localStorage.setItem("lagretnavnforquiz",navnEl.value)
+              linkquiz.style.display="inline-block"
+          }
+          }
+
+          let knappok = document.getElementById("idok")
+          let popdiv = document.getElementById("iddiv1")
+          let h21 = document.getElementById("h21")
+          knappok.addEventListener("click",popdivfunk)
+
+          function popdivfunk(){
+            popdiv.style.display = "inline-block";
+            knappok.style.display="none";
+            h21.style.display="none";
+          }
+
+
+
+
+       </script>
+  </body>
