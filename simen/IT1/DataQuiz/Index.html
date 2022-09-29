@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>cookies</title>
+
+    <link rel="stylesheet" type="text/css" href="css/stilsil.css">
+</head>
+
+<body>
+    <div class="center">
+        <h2 style="width: max-width ;">Det lagres informasjon på pc-en din</h2>
+        <h3>Er det ok?</h1>
+            <button  id="OKb">OK</button>
+    </div>
+    <div id="navn">
+        <h3>Hva heter du?</h3>
+        <p><input id="idNavn" type="text" placeholder="Avslutt med enter"></p>
+        <a href="Test.html"><button style="display: none;" id="Next">Next</button></a>
+    </div>
+    <div>
+    <a href="../index.html" style="position: fixed; top: 10px;" ><button>Tilbake</button></a>
+
+    <script>
+        let Next = document.getElementById("Next")
+        let cookies = document.getElementById("OKb")
+        let showNavn = document.getElementById("navn")
+        let navnEl = document.getElementById("idNavn");
+        cookies.addEventListener("click", cookiesF)
+        navnEl.addEventListener("keydown", lagrefunk);
+
+        function lagrefunk(event) {
+            console.log(navnEl.value);
+
+            if (event.keyCode === 13) {
+                localStorage.setItem("lagretNavnForQuiz1", navnEl.value);
+                navnEl.value = "";
+                Next.style.display = "inline-block"
+            }
+        }
+        function cookiesF() {
+            console.log("hello")
+            showNavn.style.display = "block"
+
+        }
+    </script>
+</body>
+
+</html>
