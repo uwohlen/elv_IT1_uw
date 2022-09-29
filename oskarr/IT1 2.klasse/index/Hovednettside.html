@@ -1,0 +1,80 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/IND1.css">
+</head>
+<body>
+
+    <div class="banner">
+        <div class="navbar">
+            <img src="Media/logo-removebg-preview.png" class="logo-removebg-preview">
+        </div>
+        <div id="idCockies" class="clDiv">
+            <h1>Velkommen</h1>
+            <p>Dette er Oskar Ripels nettside</p>
+            <p>Denne nettsiden vil lagre informasjon på datamaskinen din, og hente det fram igjen</p>
+            <p>Aksepterer du cookies?</p>
+            <p><button id="idOK" onclick="cookiesOk"><span></span>OK</button> <span id="idLock">&#128274</span></p>
+        </div>
+        <div id="idQuiz" class="clDiv" hidden>
+            <h2>Velkommen inn!</h2>
+            <p><input id="idNavn" type="text" placeholder="Skriv navnet ditt her"> Avslutt med Enter-tasten</p>
+            <h3 id="idLink"><span id="idHei"></span><a href="../Oppstart/Quiz1.html" style="color:aliceblue;"> Her er en quiz om datamaskiner</a></h3>
+        </div>
+        </div>
+        </div>
+    </div>
+    <script>
+        let coockieEl = document.getElementById("idCockies")
+        let okEl = document.getElementById("idOK");
+        let lockEl = document.getElementById("idLock");
+        let quizEl = document.getElementById("idQuiz");
+        let navnEl = document.getElementById("idNavn");
+        let linkEl = document.getElementById("idLink");
+        let heiEl = document.getElementById("idHei");
+
+        let avsluttCookiesEl = document.getElementById("idAvsluttCookies")
+        
+        okEl.addEventListener("click",okfunk);
+        navnEl.addEventListener("keydown",lagrefunk);
+        avsluttCookiesEl.addEventListener("click",avsluttfunk)
+
+        if (localStorage.getItem("cookiesGodkjentForIndex1") === "Ja") {
+            cookieEl.style.display = "none";
+            quizEl.style.display = "block";
+        }
+
+      function okfunk() {
+            quizEl.style.display = "block";
+            lockEl.innerHTML = "&#128275";
+            localStorage.setItem("cookiesGodkjentForIndex1","Ja");
+            coockieEl.style.display = "none";
+        }
+
+        function lagrefunk(event) {
+            //console.log(event.keyCode);
+            //console.log(navnEl.value);
+            if (event.keyCode === 13) {
+                localStorage.setItem("lagretNavnForQuiz1",navnEl.value);
+                heiEl.innerHTML = "Hei " + navnEl.value + "!<br>";
+                navnEl.value = "";
+                linkEl.style.display = "inline";
+            }
+        }
+
+        function avsluttfunk() {
+            localStorage.removeItem("cookiesGodkjentForIndex1");
+            localStorage.removeItem("lagretNavnForQuiz1");
+            cookieEl.style.display = "block";
+            quizEl.style.display = "none";
+            linkEl.style.display = "none";
+            heiEl.innerHTML = "";
+            lockEl.innerHTML = "&#128274";
+        }
+        
+
+    </script>
+    </script>
+ 
+    
+</body>
+</html>
