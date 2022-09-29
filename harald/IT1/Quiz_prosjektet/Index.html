@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <Title> Hjemmeside </Title>
+        <link rel="icon" type="image/x-icon" href="Bilder/Emoticonshd.com-Emoji-Emoticon-Cool-Sunglasses.ico">
+        <link rel="stylesheet" href="CSS/QuizCSS.css">
+        <style>
+              #idQuiz, #idLink {
+                display: none;
+            }
+            
+            #idAvsluttCookies {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Haralds quiz om datamaskiner</h1>
+        <div id="idCookies" class="clDiv">
+            <h2>Cookies</h2>
+            <p>Dette nettstedet vil lagre informasjon på datamaskinen din, og hente den fram igjen.</p>
+            <p>Informasjonen som lagres er valgene du tar her og det du selv skriver inn.</p>
+            <p>Er det ok?</p>
+            <p><button id="idOK" onclick="skjulFunk">OK</button></p>    
+        </div>
+        <div id="idQuiz" class="clDiv">
+            <h2>Velkommen!</h2>
+            <center><p><input id="idNavn" type="text" placeholder="Skriv navnet ditt her"></p></center>
+        </div>      
+            <center><div class="startup"><h3 id="idLink"><span id="idHei"></span><a href="quiz.html">Ta quizzen! </a></h3></div></center>
+        <div id="idAvsluttCookies" class="meny">
+            <button>Avslutt alle cookies!</button>
+        </div>
+        <div class="meny">
+            <center>
+            <h3><a href="../Index-index.html">Alle mine prosjekter</a></h3></center>
+        </div>
+<!--Javaskript-->
+        <script>
+            let cookieEl = document.getElementById("idCookies");
+            let okEl = document.getElementById("idOK");
+            let lockEl = document.getElementById("idLock");
+            let quizEl = document.getElementById("idQuiz");
+            let navnEl = document.getElementById("idNavn");
+            let linkEl = document.getElementById("idLink");
+            let heiEl = document.getElementById("idHei");
+            let avsluttCookiesEl = document.getElementById("idAvsluttCookies")
+    
+            okEl.addEventListener("click",okFunk);
+            okEl.addEventListener("click",skjulFunk);
+            navnEl.addEventListener("keydown",lagreFunk);
+            avsluttCookiesEl.addEventListener("click",avsluttFunk)
+    
+            if (localStorage.getItem("cookiesGodkjentForIndex1") === "Ja") {
+                cookieEl.style.display = "none";
+                quizEl.style.display = "block";
+            }
+            
+            function okFunk() {
+                quizEl.style.display = "block";
+                localStorage.setItem("cookiesGodkjentForIndex1","Ja");
+            }
+            function skjulFunk() {
+                var cookieEl = document.getElementById("idCookies");
+                if (cookieEl.style.display === "none") {
+                    cookieEl.style.display = "block";
+                } else {
+                    cookieEl.style.display = "none";
+                 }
+            }           
+
+        
+
+            
+
+    
+            function lagreFunk(event) {
+                //console.log(event.keyCode);
+                //console.log(navnEl.value);
+                if (event.keyCode === 13) {
+                    localStorage.setItem("lagretNavnForQuiz1",navnEl.value);
+                    heiEl.innerHTML = "Hei " + navnEl.value + "!<br>";
+                    navnEl.value = "";
+                    linkEl.style.display = "inline";
+                }
+            }
+    
+            function avsluttFunk() {
+                localStorage.removeItem("cookiesGodkjentForIndex1");
+                localStorage.removeItem("lagretNavnForQuiz1");
+                cookieEl.style.display = "block";
+                quizEl.style.display = "none";
+                linkEl.style.display = "none";
+                heiEl.innerHTML = "";
+                lockEl.innerHTML = "&#128274";
+            }
+        </script> 
+    </body>
+
+</html>
