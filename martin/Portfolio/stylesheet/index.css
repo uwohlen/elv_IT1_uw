@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+ 
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,1)), url(../media/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.content{
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+
+
+    mix-blend-mode: difference; 
+}
+
+.content h1{
+    color:chocolate;
+    font-size: 150px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 100px;
+}
+
+
+
+
+
+
