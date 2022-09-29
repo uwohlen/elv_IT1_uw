@@ -53,6 +53,7 @@ function nytt_sporsmal() {
         for (let i = 0; i < MERKER.length; i++) {
             let merke = MERKER[i];
             merke.innerHTML = spsm[Number(merke.htmlFor)];
+            merke.style.textDecoration = "unset";
         }
 
     }
@@ -72,19 +73,23 @@ function svar_avgitt() {
     for (let i = 0; i < KNAPPER.length; i++) {
         let knapp = KNAPPER[i];
         if (knapp.checked) {
-            valgt_index = Number(knapp.value);
+            valgt_index = i;
             break;
         }
     }
 
-    if (valgt_index === spsm[5]) {
+    let riktig_index = spsm[5];
+    if (valgt_index === riktig_index) {
         antall_riktige++;
         P_RESULTAT.innerHTML = "Riktig!";
     } else {
-        P_RESULTAT.innerHTML = "Feil. Riktig svar var " + spsm[spsm[5]] + ".";
+        P_RESULTAT.innerHTML = "Feil. Riktig svar var " + spsm[riktig_index] + ".";
+        MERKER[valgt_index].style.textDecoration = "line-through red";
     }
 
-    SPORSMAL.splice(sporsmal_index, 1);
+    MERKER[riktig_index].style.textDecoration = "underline";
+
+    SPORSMAL.splice(sporsmal_index, 1); //Fjerner spørsmålet fra listen over spørsmål
 }
 
 nytt_sporsmal();
