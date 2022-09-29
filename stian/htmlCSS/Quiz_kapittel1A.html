@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Quiz om datamaskiner</title>
+    </head>
+    <body>
+        <div class="a">
+            <p id="top"><a href="../index_0.html">Til index</a></p>
+        </div>
+        <div class="a">
+            <p id="top"><a href="index.html">Til startsiden</a></p>
+        </div>
+        <h1>Hva kan du om datamaskiner <span id="idnavn"></span>?</h1>
+        <div class="sticky">
+            <h2 id="idPoeng">Poeng: 0</h2><br><br>
+        </div>
+        <div class="b">
+                <h3>1.Hva er avbildet?</h3>
+                <img id="idImg1" src="Media/prosessor.jpg" alt="Bilde av PC-del" height="250">
+                <p>
+                    <button id="id1A">A) Hovedkort</button><br>
+                    <button id="id1B">B) Prosessor</button><br>
+                    <button id="id1C">C) Arbeidsminne</button><br>
+                    <button id="id1D">D) Grafikkort</button><br><br>
+                </p>
+            <div id="sp2">
+                <h4>2.Hva er et annet navn på arbeidsminne?</h4>
+                <img src="Media/RAM.jpg" alt="Bilde av arbeidsminne" height="250">
+                <p>
+                    <button id="id2A">A) RAM</button><br>
+                    <button id="id2B">B) HDD</button><br>
+                    <button id="id2C">C) SSR</button><br>
+                    <button id="id2D">D) GPU</button><br><br>
+                </p>
+            </div>
+            <div id="sp3">
+                <h5>3.Hva er prosessorens hovedoppgave?</h5>
+                <img src="Media/prosessor.jpg" alt="Bilde av PC-del" height="250">
+                <p>
+                    <button id="id3A">A) Inneholde informasjon om hvordan maskinen skal starte opp</button><br>
+                    <button id="id3B">B) Behandle informasjon før det vises på skjermen</button><br>
+                    <button id="id3C">C) Lagre informasjon</button><br>
+                    <button id="id3D">D) Utføre beregninger og tar beslutninger basert på det binære tallsystemet</button><br><br>
+                </p>
+            </div>
+            <div id="sp4">
+                <h6>4.Hvor befinnes leseminne?</h6>
+                <img src="Media/Hovedkort.jpg" alt="Der leseminne befinnes" height="250">
+                <p>
+                    <button id="id4A">A) Hovedkort </button><br>
+                    <button id="id4B">B) Prosessor</button><br>
+                    <button id="id4C">C) Arbeidsminne</button><br>
+                    <button id="id4D">D) lesekort</button><br><br>
+                </p>
+            </div>
+        </div>
+    <script>
+        let navnEl = document.getElementById("idnavn");
+        if (localStorage.getItem("navn_til_quiz1A")!==null) {
+            navnEl.innerHTML = "" + localStorage.getItem("navn_til_quiz1A");
+        }
+        let poengEl = document.getElementById("idPoeng");
+
+        let img1El = document.getElementById("idImg1");
+        let knapp1AEl = document.getElementById("id1A"); 
+        knapp1AEl.addEventListener("click",feil11)
+        function feil11() {
+            knapp1AEl.innerHTML="Feil!"
+        }
+        let knapp1BEl = document.getElementById("id1B");
+        knapp1BEl.addEventListener("click",korrekt) 
+        function korrekt() {
+            knapp1BEl.innerHTML="Riktig!"
+        }
+        let knapp1CEl = document.getElementById("id1C");
+        knapp1CEl.addEventListener("click",feil12)
+        function feil12() {
+            knapp1CEl.innerHTML="Feil!"
+        }
+        let knapp1DEl = document.getElementById("id1D");
+        knapp1DEl.addEventListener("click",feil13)
+        function feil13() {
+            knapp1DEl.innerHTML="Feil!"
+        }
+
+        let knapp2AEl = document.getElementById("id2A"); 
+        knapp2AEl.addEventListener("click",korrekt2)
+        function korrekt2() {
+            knapp2AEl.innerHTML="Riktig!"
+        }
+        let knapp2BEl = document.getElementById("id2B");
+        knapp2BEl.addEventListener("click",feil21) 
+        function feil21() {
+            knapp2BEl.innerHTML="Feil!"
+        }
+        let knapp2CEl = document.getElementById("id2C");
+        knapp2CEl.addEventListener("click",feil22)
+        function feil22() {
+            knapp2CEl.innerHTML="Feil!"
+        }
+        let knapp2DEl = document.getElementById("id2D");
+        knapp2DEl.addEventListener("click",feil23)
+        function feil23() {
+            knapp2DEl.innerHTML="Feil!"
+        }
+
+        let knapp3AEl = document.getElementById("id3A"); 
+        knapp3AEl.addEventListener("click",feil31)
+        function feil31() {
+            knapp3AEl.innerHTML="Feil!"
+        }
+        let knapp3BEl = document.getElementById("id3B");
+        knapp3BEl.addEventListener("click",feil32) 
+        function feil32() {
+            knapp3BEl.innerHTML="Feil!"
+        }
+        let knapp3CEl = document.getElementById("id3C");
+        knapp3CEl.addEventListener("click",feil33)
+        function feil33() {
+            knapp3CEl.innerHTML="Feil!"
+        }
+        let knapp3DEl = document.getElementById("id3D");
+        knapp3DEl.addEventListener("click",korrekt3)
+        function korrekt3() {
+            knapp3DEl.innerHTML="Riktig!"
+        }
+
+        let knapp4AEl = document.getElementById("id4A"); 
+        knapp4AEl.addEventListener("click",korrekt4)
+        function korrekt4() {
+            knapp4AEl.innerHTML="Riktig!"
+        }
+        let knapp4BEl = document.getElementById("id4B");
+        knapp4BEl.addEventListener("click",feil41) 
+        function feil41() {
+            knapp4BEl.innerHTML="Feil!"
+        }
+        let knapp4CEl = document.getElementById("id4C");
+        knapp4CEl.addEventListener("click",feil42)
+        function feil42() {
+            knapp4CEl.innerHTML="Feil!"
+        }
+        let knapp4DEl = document.getElementById("id4D");
+        knapp4DEl.addEventListener("click",feil43)
+        function feil43() {
+            knapp4DEl.innerHTML="Feil!"
+        }
+
+        let poeng=0;
+        function feil11() {
+            knapp1AEl.innerHTML= "Feil!";
+            poeng--;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp1AEl.style.backgroundColor = "red";
+            img1El.style.display = "inline-block";
+            knapp1AEl.removeEventListener("click",feil11);
+        }
+        function korrekt() {
+            knapp1BEl.innerHTML= "Riktig!";
+            poeng++;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp1BEl.style.backgroundColor = "green";
+            img1El.style.display = "inline-block";
+            sp2.style.display="block"
+            knapp1BEl.removeEventListener("click",korrekt);
+        }
+        function feil12() {
+            knapp1CEl.innerHTML= "Feil!";
+            poeng--;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp1CEl.style.backgroundColor = "red";
+            img1El.style.display = "inline-block";
+            knapp1CEl.removeEventListener("click",feil12);
+        }
+        function feil13() {
+            knapp1DEl.innerHTML= "Feil!";
+            poeng--;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp1DEl.style.backgroundColor = "red";
+            img1El.style.display = "inline-block";
+            knapp1DEl.removeEventListener("click",feil13);
+        }
+
+        function korrekt2() {
+            knapp2AEl.innerHTML= "Riktig!";
+            poeng++;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp2AEl.style.backgroundColor = "green";
+            img1El.style.display = "inline-block";
+            sp3.style.display="block"
+            knapp2AEl.removeEventListener("click",korrekt2);
+        }
+        function feil21() {
+            knapp2BEl.innerHTML= "Feil!";
+            poeng--;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp2BEl.style.backgroundColor = "red";
+            img1El.style.display = "inline-block";
+            knapp1BEl.removeEventListener("click",feil21);
+        }
+        function feil22() {
+            knapp2CEl.innerHTML= "Feil!";
+            poeng--;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp2CEl.style.backgroundColor = "red";
+            img1El.style.display = "inline-block";
+            knapp2CEl.removeEventListener("click",feil22);
+        }
+        function feil23() {
+            knapp2DEl.innerHTML= "Feil!";
+            poeng--;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp2DEl.style.backgroundColor = "red";
+            img1El.style.display = "inline-block";
+            knapp2DEl.removeEventListener("click",feil23);
+        }
+
+        function feil31() {
+            knapp3AEl.innerHTML= "Feil!";
+            poeng--;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp3AEl.style.backgroundColor = "red";
+            img1El.style.display = "inline-block";
+            knapp3AEl.removeEventListener("click",feil31);
+        }
+        function feil32() {
+            knapp3BEl.innerHTML= "Feil!";
+            poeng--;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp3BEl.style.backgroundColor = "red";
+            img1El.style.display = "inline-block";
+            knapp3BEl.removeEventListener("click",feil32);
+        }
+        function feil33() {
+            knapp3CEl.innerHTML= "Feil!";
+            poeng--;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp3CEl.style.backgroundColor = "red";
+            img1El.style.display = "inline-block";
+            knapp3CEl.removeEventListener("click",feil33);
+        }
+        function korrekt3() {
+            knapp3DEl.innerHTML= "Riktig!";
+            poeng++;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp3DEl.style.backgroundColor = "green";
+            img1El.style.display = "inline-block";
+            sp4.style.display="block"
+            knapp3DEl.removeEventListener("click",korrekt3);
+        }
+
+        function korrekt4() {
+            knapp4AEl.innerHTML= "Riktig!";
+            poeng++;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp4AEl.style.backgroundColor = "green";
+            img1El.style.display = "inline-block";
+            knapp4AEl.removeEventListener("click",korrekt4);
+        }
+        function feil41() {
+            knapp4BEl.innerHTML= "Feil!";
+            poeng--;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp4BEl.style.backgroundColor = "red";
+            img1El.style.display = "inline-block";
+            knapp4BEl.removeEventListener("click",feil41);
+        }
+        function feil42() {
+            knapp4CEl.innerHTML= "Feil!";
+            poeng--;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp4CEl.style.backgroundColor = "red";
+            img1El.style.display = "inline-block";
+            knapp4CEl.removeEventListener("click",feil42);
+        }
+        function feil43() {
+            knapp4DEl.innerHTML= "Feil!";
+            poeng--;
+            poengEl.innerHTML = "Poeng: "+ poeng;
+            knapp4DEl.style.backgroundColor = "red";
+            img1El.style.display = "inline-block";
+            knapp4DEl.removeEventListener("click",feil43);
+        }
+    </script>
+    </body>
+</html>
