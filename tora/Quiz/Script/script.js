@@ -53,9 +53,13 @@ function nesteFunk(event) {
     neste ++;
     riktig ++;
     spm ++;
-    if (neste === 4) {
-        nesteArray[4].style.display="block"
+    if (neste+1 === nesteArray.length ) {
         document.getElementById("hjem").style.display="block"
+        nesteArray[nesteArray.length - 1].style.display="block"
+        if( localStorage.lagretNavn === "false") {
+            nesteArray[nesteArray.length - 1].style.display="none"
+        }
+        
     }  
     event.target.style.display="none"
     spmArray[spm-1].style.display="none"

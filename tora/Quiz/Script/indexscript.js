@@ -11,6 +11,7 @@ let navnEl = document.getElementById("idNavn");
             
             if (event.keyCode === 13) {
                 localStorage.setItem("lagretNavnForQuiz1",navnEl.value);
+                localStorage.setItem("lagretNavn","true")
          }
         }  
 
@@ -20,7 +21,8 @@ function okfunk() {
     del1el.style.display="none"
     del2el.style.display="block"
     localStorage.setItem("lagretNavnForQuiz1"," ")
-    
+    localStorage.setItem("lagretNavn","false")
+
 
     
     
