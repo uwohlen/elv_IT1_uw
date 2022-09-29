@@ -1,0 +1,103 @@
+
+    body{
+        margin: 0;
+        background-color: #8BBCCC;
+        text-align: center;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    }
+  
+    .meny {
+        border:#4C6793 10px double;
+        background-color: white;
+        font-family: Lucida Handwriting;
+        
+        
+      
+    }
+
+    ul a{
+        padding: 5px 30px;
+        color:black;
+        font-weight: bold;
+        text-decoration: none;
+        background-color:#ffb3ec;
+    }
+    
+    img {
+        border: 10px solid #4C6793;}
+    h1 {
+        border:rgb(67, 230, 67) 4px solid; 
+        background-color: #ffb3ec;
+    }
+
+    h2 {
+        border-color: beige;
+        background-color:white;
+        border-radius:  10px;
+    }
+    
+    
+    .kult{
+        position: relative;
+        background: #393d3a;
+        color: #fff;
+        border:none;
+        outline:none;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-radius: 50px;
+        width: 180px;
+        height: 50px;
+        margin: pointer;
+    }        
+    .kult:first-child:hover{
+        background: 
+        linear-gradient(90deg,
+        #07a7f1,#fa46ac,
+        #fae736,#07a7f1);
+        background-size: 400%;
+    }
+    .kult:last-child:hover{
+        background:
+        linear-gradient(90deg,
+        #07a7f1,#fa46ac,
+        #fae736,#07a7f1);
+        background-size: 400%;
+        
+    }
+    .kult:first-child:before,
+    .kult:last-child:before{
+        content:'';
+        position: absolute;
+        background: inherit;
+        top: -5px;
+        right:-5px;
+        bottom: -5px;
+        left: -5px;
+        border-radius: 50px;
+        filter:blur(20px);
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    .kult:first-child:hover:before,
+    .kult:last-child:hover:before{
+        opacity: 1;
+        z-index: -1;
+    }
+    .kult:hover{
+        z-index: 1;
+        animation: glow 8slinear infinite;
+    }
+    @keyframes glow{
+        0%{
+            background-position: 0%;
+        }
+        100%{
+            background-position:400%;
+        }
+    }
+
+
+   

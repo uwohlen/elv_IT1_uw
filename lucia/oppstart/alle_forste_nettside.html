@@ -1,0 +1,343 @@
+ <!DOCTYPE html>
+
+        
+        <html lang="no">
+             <head>
+                <title> Quiz om datamaskinen </title>
+                <link rel="stylesheet" href="alltid.css">
+                
+                <style>
+                    .btn1{
+                        cursor: pointer;
+                        font-size: 20px;
+                        color: rgb(35, 2, 66);
+                        background-color:#ffb3ec;
+                        border-color: rgb(64, 231, 231);
+                    }
+        
+                    body{
+                        background-color: 8BBCCC;
+                        text-align: center;
+
+                    }
+                
+                    
+                    #idpoeng{
+                        position: fixed;
+                        top: 10px;
+                        right: 25px;
+                        font-size: 30px;
+                        border: 10px dotted #5C2E7E;
+                        background-color: #ffb3ec;
+                        border-radius: 5px;
+                    }
+                  
+                    img {
+                        border: 10px solid #ffb3ec;}
+                    h1 {
+                        border:#5C2E7E 4px solid; 
+                        background-color: #ffb3ec;
+                    }
+
+                    ul{
+                        list-style-type: none;
+                        margin: 0;
+                        padding:0;
+                    }
+                    ul li{
+                        display: inline;
+                        }
+
+                    ul a{
+                            padding: 5px 30px;
+                            color:black;
+                            font-weight: bold;
+                            text-decoration: none;
+                            background-color:#ffb3ec;
+                        }
+
+                    ul a:hover {
+                            background-color: aquamarine;
+                        }
+                    
+                    .meny {
+                        border:#4C6793 10px double;
+                        background-color: white;
+                        font-family: Lucida Handwriting;
+                    }
+                    
+                    #velkommen{
+                        border: #4C6793 5px double;
+                        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    }
+        
+                </style>
+                
+             </head>
+
+
+    <Body>
+       
+        <div class="meny">  
+            <h2>Meny</h2>
+                <ul>
+                    <a href="index.html" class="kult" >Tilbake igjen</a>
+                    <a href="informasjon.html" class="kult">Informasjon</a>
+                </ul>
+            <h1 id="velkommen">Velkommen til Quizen<span id="idnavn"></span>!</h1>   
+        </div>
+          
+
+        <h3 id="idpoeng">Poeng 0 av 4</h3>
+         
+
+        <div id="spm1">
+        <h1>Spørsmål 1</h1>
+            <h2>Hva betyr CPU?</h2>
+            <img src="../oppstart/bildemappe/prossesor.png" width ="336" height ="448"> <br> <div> trykk på svaret</div>
+        <p>
+        </p>
+            <button class="btn1" id="id1a">circle parameter use</button>
+            <button class="btn1" id="id1b">circle photo unit</button>
+            <button class="btn1" id="id1c">central processing unit</button>
+            <button class="btn1" id="id1d">centimeter picture utility</button>
+        </div> 
+
+
+        <h1>Spørsmål 2</h1>
+            <h2>Hva er dette her da ?</h2>
+            <img src="../oppstart/bildemappe/blueray.png" width ="336" height ="448">
+        <p>
+        </p>
+           <button class="btn1" id="id2a">vet ikke</button>
+           <button class="btn1" id="id2b">dvd spiller</button>
+           <button class="btn1" id="id2d">en pc</button>
+           <button class="btn1" id="id2c">blue ray</button>
+    
+
+        <h1>Spørsmål 3 </h1>
+            <h2>Hva står HTML for</h2>
+            <img src="../oppstart/bildemappe/question.png" width="300" height="300"> 
+        <p>
+        </p>
+            <button class="btn1" id="id3a">HydroText Markup Language</button>
+            <button class="btn1" id="id3b">Hypertextile Markup Language</button>
+            <button class="btn1" id="id3c">How To Make Language</button>
+            <button class="btn1" id="id3d">HyperText Markup Language</button>
+
+
+        <h1>Spørsmål 4 </h1>
+            <h2>Hvilken påstand om SSD-kort stemmer IKKE?</h2>
+            <img src="../oppstart/bildemappe/ssd.PNG" width="450" height="=408">
+        <p>
+        </p>
+            <button class="btn1" id="id4a">Enn SSD er blitt mer rimelig å bruke</button>
+            <button class="btn1" id="id4b">Enn SSD er saktere enn en HDD</button>
+            <button class="btn1" id="id4c">lagrer data elektronisk , og ikke mekanisk</button>
+            <button class="btn1" id="id4d">flashminnebasert lagringsenhet som erstatter mekaniske harddisker</button>
+
+        
+ 
+
+        <script>
+
+            let poengEl=document.getElementById("idpoeng");
+            let navnEl=document.getElementById("idnavn");
+        
+
+            let poeng=0;
+            if (localStorage.getItem("lagretNavnForQuiz1") !== null) {
+                navnEl.innerHTML = " " + localStorage.getItem("lagretNavnForQuiz1");
+            }
+        
+//Spørsmål 1 
+
+        function riktig() {
+            console.log("Hei"); //Denne skriver ut til console.
+            knapp1aEl.innerHTML = "Riktig";
+            poeng ++;
+            poengEl.innerHTML = "Poeng: " + poeng;
+            knapp1aEl.style.backgroundColor = "green";
+            img1El.style.display = "inline-block";
+            knapp1aEl.removeEventListener("click",riktig);
+            //knapp1aEl.disabled = true;
+            
+            }
+        
+
+        function poengOpp() {
+            poeng ++;
+            poengEl.innerHTML = "Poeng " + poeng + " av 4";
+        }
+
+
+
+        let knapp1aEl = document.getElementById("id1a");
+            knapp1aEl.addEventListener("click",Feil1a )
+            function Feil1a(){
+
+                knapp1aEl.innerHTML = "Feil :(";
+                knapp1aEl.style.backgroundColor = "red";
+
+
+            }
+
+            let knapp1bEl = document.getElementById("id1b");
+            knapp1bEl.addEventListener("click",Feil1b )
+            function Feil1b(){
+
+                knapp1bEl.innerHTML = "Feil :(";
+                knapp1bEl.style.backgroundColor = "red";
+
+            }
+
+
+            
+
+            let knapp1cEl = document.getElementById("id1c");
+            knapp1cEl.addEventListener("click",riktig1c )
+            function riktig1c(){
+
+                knapp1cEl.innerHTML = "Riktig, nice";
+                knapp1cEl.style.backgroundColor = "green";
+                knapp1cEl.removeEventListener("click",riktig1c);
+
+                poengOpp()
+            }
+
+            let knapp1dEl = document.getElementById("id1d");
+            knapp1dEl.addEventListener("click",Feil1d )
+            function Feil1d(){
+
+                knapp1dEl.innerHTML = "Bra gjettet, men feil";
+                knapp1dEl.style.backgroundColor = "red";
+
+            }
+
+
+
+//Spørsmål 2    
+        let knapp2aEl = document.getElementById("id2a");
+            knapp2aEl.addEventListener("click",Feil2a )
+            function Feil2a(){
+
+                knapp2aEl.innerHTML = "Feil :(";
+                knapp2aEl.style.backgroundColor = "red";
+            }
+            
+            let knapp2bEl = document.getElementById("id2b");
+            knapp2bEl.addEventListener("click",riktig2b )
+            function riktig2b(){
+
+                knapp2bEl.innerHTML = "riktig :)";
+                knapp2bEl.style.backgroundColor = "green";
+                knapp2bEl.removeEventListener("click",riktig2b);
+
+                poengOpp()
+            }
+            
+            let knapp2cEl = document.getElementById("id2c");
+            knapp2cEl.addEventListener("click",Feil2c )
+            function Feil2c(){
+
+                knapp2cEl.innerHTML = "taper :)";
+                knapp2cEl.style.backgroundColor = "red";
+            }
+
+            let knapp2dEl = document.getElementById("id2d");
+            knapp2dEl.addEventListener("click",Feil2d )
+            function Feil2d(){
+
+                knapp2dEl.innerHTML = "prøv igjen dgb";
+                knapp2dEl.style.backgroundColor = "red";
+
+            }
+
+//Spørsmål 3   
+
+        let knapp3aEl = document.getElementById("id3a");
+            knapp3aEl.addEventListener("click",Feil3a )
+            function Feil3a(){
+
+                knapp3aEl.innerHTML = "Feil :(";
+                knapp3aEl.style.backgroundColor = "red";
+            }
+
+
+            let knapp3bEl = document.getElementById("id3b");
+            knapp3bEl.addEventListener("click",Feil3b )
+            function Feil3b(){
+
+                knapp3bEl.innerHTML = "Feil :(";
+                knapp3bEl.style.backgroundColor = "red";
+            }
+
+
+            let knapp3cEl = document.getElementById("id3c");
+            knapp3cEl.addEventListener("click",Feil3c )
+            function Feil3c(){
+
+                knapp3cEl.innerHTML = "Feil :(";
+                knapp3cEl.style.backgroundColor = "red";
+            }
+
+            let knapp4bEl = document.getElementById("id4b");
+            knapp4bEl.addEventListener("click",riktig4b )
+            function riktig4b(){
+
+                knapp4bEl.innerHTML = "Riktig,dette er en feil påstand";
+                knapp4bEl.style.backgroundColor = "green";
+                knapp4bEl.removeEventListener("click",riktig3d);
+
+                poengOpp()
+            }
+           
+//Spørsmål 4
+        let knapp4aEl = document.getElementById("id4a");
+            knapp4aEl.addEventListener("click",Feil4a )
+            function Feil4a(){
+
+                knapp4aEl.innerHTML = "Dette er en riktig påstand :(";
+                knapp4aEl.style.backgroundColor = "red";
+            }
+
+            let knapp3dEl = document.getElementById("id3d");
+            knapp3dEl.addEventListener("click",riktig3d )
+            function riktig3d(){
+
+                knapp3dEl.innerHTML = "Riktig, nice";
+                knapp3dEl.style.backgroundColor = "green";
+                knapp3dEl.removeEventListener("click",riktig3d);
+
+                poengOpp()
+            }
+            
+            let knapp4cEl = document.getElementById("id4c");
+            knapp4cEl.addEventListener("click",Feil4c )
+            function Feil4c(){
+
+                knapp4cEl.innerHTML = "Dette er en riktig påstand :(";
+                knapp4cEl.style.backgroundColor = "red";
+            }
+
+            let knapp4dEl = document.getElementById("id4d");
+            knapp4dEl.addEventListener("click",Feil4d )
+            function Feil4d(){
+
+                knapp4dEl.innerHTML = "Dette er en riktig påstand :(";
+                knapp4dEl.style.backgroundColor = "red";
+            }
+
+
+
+
+        
+
+        </script>
+
+    </Body>
+
+</html>
+        
+        
+        

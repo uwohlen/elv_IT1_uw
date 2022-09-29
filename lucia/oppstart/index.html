@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+   <html>
+      <head>
+        <title>Lucias nettside</title>
+        <link rel="stylesheet" href="alltid.css">
+    
+
+        <style>
+
+            #idquiz, #idlink {
+            display: none;
+        }
+            h1{
+                border: #4C6793 double 10px;
+                text-align:center;
+            }
+            img{
+                visibility: hidden;
+            }
+
+           #avslutt{
+                text-align: center 10px;
+                font-size: 20px;
+                border: 10px double #4C6793;
+                background-color: #ffb3ec;
+                border-radius: 10px;
+                cursor: pointer;
+           }
+
+           
+
+           .marg {
+                border: solid black 1px;
+                border-radius: 5px;
+                width: 60%;
+                margin: auto;
+                padding: 10px;
+                text-align: start;
+                background-color: #fffff0;
+           }
+           h3{
+               font-size: 30px;
+               
+           }
+           .kult{
+            border: radius 50px;
+            padding: 10px;
+            margin-top: 10px;
+
+           }
+          
+
+        
+           
+       
+
+        </style>
+
+    </head>
+    <body>
+        <div class="meny">  
+            <h2>Meny</h2>
+                <ul>
+                <a href="informasjon.html" class="kult">Informasjon</a>
+                <a href="../index.html" class="kult">index</a>
+                </ul>
+        </div>
+        <p>
+
+        </p>
+       <div class="marg">
+            <h1>Velkommen til Quizen!</h1>
+
+            <div id="idcookies" class="clDiv">
+                <h2>Cookies</h2>
+                <p>Dette nettstedet vil lagre informasjon på datamaskinen din, og hente den fram igjen.</p>
+                <p>Informasjonen som lagres er valgene du tar her og det du selv skriver inn.</p>
+                <p>Er det ok?</p>
+                <p><button id="idoK">OK</button><span id="idlock">&#128274</span></p>    
+            </div>
+
+            <div id="idquiz" class="clDiv">
+                <h2>velkommen inn!</h2>
+                <p> <input id="idnavn" type="text" placeholder="skriv inn navnet ditt her"> Avslutt med enter tasten </p>
+
+                <h3 id="idlink"><span id="idhei"></span>
+                <p></p>
+                <a class="kult" href="alle_forste_nettside.html">her er det quiz om datamskiner</a></h3>
+                <p></p>
+            </div>
+                 <p></p>
+            <div id="idavsluttcookies">
+                <button id="avslutt">Avslutt alle cookies!</button>
+            </div>
+    </div>
+    
+
+
+    <script>
+
+        let cookieEl= document.getElementById("idcookies");
+        let okEl= document.getElementById("idoK");
+        let lockEl=document.getElementById("idlock");
+        let quizEl= document.getElementById("idquiz");
+        let navnEl= document.getElementById("idnavn");
+        let linkEl= document.getElementById ("idlink");
+        let heiEl = document.getElementById("idhei");
+        let avsluttCookiesEl=document.getElementById("idavsluttcookies");
+ 
+       
+        okEl.addEventListener("click",okfunk);
+        navnEl.addEventListener("keydown",lagrefunk);
+        avsluttCookiesEl.addEventListener("click",avsluttfunk)
+       
+        
+        if (localStorage.getItem("cookiesGodkjentForIndex1") === "Ja") {
+            cookieEl.style.display="none";
+            quizEl.style.display ="block";
+        }
+
+        function okfunk() {
+            quizEl.style.display = "block";
+            lockEl.innerHTML = "&#128275";
+            localStorage.setItem("cookiesGodkjentForIndex1","Ja");
+           
+        }
+
+        function lagrefunk(event) {
+            //console.log(event.keyCode);
+            //console.log(navnEl.value);
+            if (event.keyCode === 13) {
+                localStorage.setItem("lagretNavnForQuiz1",navnEl.value);
+                heiEl.innerHTML = "Hei " + navnEl.value + "!<br>";
+                navnEl.value = "";
+                linkEl.style.display = "inline";
+            }
+        }
+
+        function avsluttfunk() {
+        localStorage.removeItem("cookiesGodkjentForIndex1");
+        localStorage.removeItem("lagretNavnForQuiz1");
+        cookieEl.style.display = "block";
+        quizEl.style.display = "none";
+        linkEl.style.display = "none";
+        heiEl.innerHTML = "";
+        lockEl.innerHTML = "&#128274";
+        }
+
+
+
+    </script>
+    
+</body>
+ 
+   
+            
+</html>
