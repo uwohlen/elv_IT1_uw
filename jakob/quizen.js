@@ -96,6 +96,7 @@ function handleAnswer(alt) {
         document.getElementById("poeng").innerText = "Poeng:" + poengene
         sporsmal[currentSpm].svart = true;
 
+        window.localStorage.setItem(window.localStorage.getItem("navnet")+"_poeng", poengene)
 
         isWaiting = true
         setTimeout(() => {
@@ -231,4 +232,5 @@ function viderefeil(){
         feil = 0 
     }, 100);
 }
+
 
