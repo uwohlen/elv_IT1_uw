@@ -17,11 +17,30 @@
     
 }
 
-.project_section h1{
+h1{
     font-weight: normal;
     font-weight: 100;
     text-align: center;
     font-size: 6vh;
+}
+
+.cookie_notification{
+    width: 50%;
+    margin: auto;
+    height: auto;
+}
+
+.cookie_notification h3{
+    font-size: 3vh;
+    text-align: center;
+    font-weight: 100;
+}
+
+.cookie_notification input{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 3vh;
 }
 
 .row{
@@ -39,19 +58,23 @@
 
     border-radius: 1vh;
     border: 2.5px;
-    border-color: #e2e2e2;
+    border-color: #262626;
     border-style:solid;
     
 
     text-align: center;
 
-    transition-duration: 0.5s;
+    transition-duration: 0.3s;
 
 }
 
 .column:hover{
+    border-color: #e2e2e2;
     background-color: #e2e2e2;
+    cursor: pointer;
+
 }
+
 
 .column h3{
     font-weight:lighter;
@@ -75,8 +98,14 @@
 }
 
   
-  .row:after {
+.row:after {
     content: "";
     display: table;
     clear: both;
   }
+
+.tint_screen{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}

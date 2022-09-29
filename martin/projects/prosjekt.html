@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="no">
     <head>
         <title>Prosjekter</title>
@@ -7,23 +7,45 @@
     </head>
     <body>
         
+        
+        
+
         <div class="banner">
             
+            
+
             <div class="navbar">
            
                 <ul>
                     <li><a href="../index.html">Hjem</a></li>
                     <li><a href="#">Prosjekter</a></li>
-                    <li><a href="../../../index.html">Tilbake til IT1</a></li>
+                    <li><a href="../../index.html">Tilbake til IT1</a></li>
                 </ul>
             </div>   
 
         </div>
 
-        <div class="project_section" on>
+        <div class="cookie_notification" id="cookiesId">
+            <h1>Vi bruker cookies!</h1>
+            <br><br><br>
+            <h3>Ved å skrive inn navnet ditt og trykke enter <br>
+                Godtar du til at enkelte nettsider vil lagre informasjonen din</h3>
+            <br><br><br>
+
+
+            <input id="navnId" type="text" placeholder="Skriv navnet ditt her">
+
+            <br><br><br>
+            <h3>Avslutt med ENTER for å gi samtykke</h3>
+
+        </div>
+
+        <div class="project_section" id="projectsId">
                 
-            <h1>Prosjektene mine</h1>
-        
+            <h1>Velkommen,<span id="savedNavnId"></span>!</h1>
+            
+            
+
             <div class="row">
                 
                 <div class="column" onclick="window.open('https://openprocessing.org/sketch/565462', '_blank')">
@@ -42,20 +64,87 @@
                     <h4>JS</h4>
                 </div>
 
-                <div class="column">
+                <div class="column" onclick="window.open('./Quiz/quiz.html')">
 
                     <h3>Quiz om Datamaskiner</h3>
-                    <img src="../media/background.jpg">
-                    <p>Er ikke ferdig enda</p>
+                    <img src="../media/quiz.jpeg">
+                    <p>Hvor mye kan du om datamaskiner? (2022) 
+                        <br> <br>
+                        Test deg og din kunnskap om datmaskiner i denne korte quizen.
+                    </p>
                     <h4>JS</h4>
 
                 </div>
                 
+
             </div>
-                  
+
+            <br><br><br>
+            
+            <div class="column" onclick="FjernCookies()">
+                <h4 style="font-weight: 500;">Avslutt cookies</h4>
+            </div>
+
            
         </div>
+
+        <script> 
+
+        let navnEl = document.getElementById("navnId"); 
+        let savedNavnEl = document.getElementById("savedNavnId")
+
+        let cookiesEl = document.getElementById("cookiesId")
+        let projectsEl = document.getElementById("projectsId");
         
+
+        console.log(localStorage.getItem("lagretNavn"));
+        
+        if(localStorage.getItem("lagretNavn") == null){
+
+            CookiesNotActive();
+
+            navnEl.addEventListener("keydown",lagrefunk); 
+            
+
+            function lagrefunk(event) { 
+        
+                
+                if (event.keyCode == 13) { 
+                
+                    localStorage.setItem("lagretNavn",navnEl.value);
+                    
+                    CookiesActive();
+                    savedNavnEl.innerHTML = " " + localStorage.getItem("lagretNavn");
+
+                
+                } 
+                
+            } 
+        }
+        else{
+            CookiesActive();
+            savedNavnEl.innerHTML = " " + localStorage.getItem("lagretNavn");
+        }
+
+        function FjernCookies(){
+            localStorage.removeItem("lagretNavn");
+            CookiesNotActive();
+        }
+
+        
+        
+        function CookiesActive(){
+            cookiesEl.style.display = "none";
+            projectsEl.style.display = "block";
+        }
+        function CookiesNotActive(){
+
+            projectsEl.style.display = "none";
+            cookiesEl.style.display = "block";
+        }
+
+        </script> 
+
         
     </body>
 </html>
