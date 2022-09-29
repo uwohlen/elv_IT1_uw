@@ -12,12 +12,20 @@
                     bottom: 0;
                     right: 0;
                 }
+
             </style>
         </head>
         <body>
-            <h1>Liten quiz kapittel 1A</h1><br>
+            <div class="a">
+                <ul>
+                    <!--<li><a class="active" href="index1.html">&#x2302</a></li>-->
+                    <li><a class="active" href="../index.html">&#x2302</a></li>
+                    <li><a href="Quiz_kapittel1.html">Quiz</a></li> 
+                </ul><br><br><br>
+            </div>
+            <!--<h1>Liten quiz kapittel 1A</h1><br>-->
             <div id="idCookies" class="clDiv">
-                <h2>Cookies</h2>
+                <h2>Cookies&#127850</h2>
                 <p>Dette nettstedet vil lagre informasjon på datamaskinen din, og hente den fram igjen.</p>
                 <p>Informasjonen som lagres er valgene du tar her og det du selv skriver inn.</p>
                 <p>Er det ok?</p>
@@ -46,10 +54,10 @@
                 navnEl.addEventListener("keydown",lagrefunk);
                 avsluttCookiesEl.addEventListener("click",avsluttfunk);
                 
-                //let TestEl = document.getElementById("idTest"); //idTest
+                //let TestEl = document.getElementById("idTest"); //Debug
 
                 if (localStorage.getItem("cookiesGodkjentForIndex1") === "Ja") {
-                    TestEl.innerHTML = localStorage.getItem("cookiesGodkjentForIndex1"); //test
+                    //TestEl.innerHTML = localStorage.getItem("cookiesGodkjentForIndex1"); //Debug
                     cookiesEl.style.display = "none"; //vises ikke
                     quizEl.style.display = "block"; //vises
                 } else {

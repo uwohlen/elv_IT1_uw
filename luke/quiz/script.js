@@ -17,6 +17,7 @@ const resultContainer = document.getElementById('result_cont');
 const restartButton = document.getElementById('replay');
 const exitButton = document.getElementById('exit');
 const scoreboard = document.getElementById('scoreboard');
+const nameEntry = document.getElementById('username');
 
 var shuffledQuestions, currentQuestion, completedQuiz, points, username;
 var clickedQuestion = false;
@@ -189,6 +190,11 @@ function displayResults() {
     document.getElementById('score_text').innerHTML = 'Poeng : <b>' + points + '</b>';
 }
 
+nameEntry.addEventListener('keydown', (event) => {
+    if(event.keyCode === 13) {
+        saveName();
+    }
+});
 submitName.addEventListener('click', saveName);
 continueButton.addEventListener('click', showQuiz);
 restartButton.addEventListener('click', () => {
@@ -199,7 +205,7 @@ exitButton.addEventListener('click', () => {
     hideElements();
     disableCookies.style.display = 'flex';
     startButton.style.display = 'inline-block';
-})
+});
 startButton.addEventListener('click', () => {
     startButton.style.display = 'none';
     getNameData();
@@ -214,10 +220,10 @@ nextButton.addEventListener('click', () => {
         currentQuestion++;
         loadQuestion();
     }
-})
+});
 disableCookies.addEventListener('click', () => {
     localStorage.clear();
     hideElements();
     cookieConsent();
-})
+});
 

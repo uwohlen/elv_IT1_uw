@@ -48,7 +48,7 @@
             <button id="S1A3" class="Black">     Cold Problem Unit             </button>
             <button id="S1A4" class="Black">     Crease Problem unit           </button><br>
             <br>
-            <img src="CPU.png" style="border-radius: 50%;" 
+            <img src="CPU.png" class="QuizBilder" 
                 width="400" 
                 height="500" />
         
@@ -64,7 +64,7 @@
     
         <!-- Spørsmål 3 + bilde2 -->
         <div id="Spørsmål3" style="visibility: hidden;">
-            <img src="Vifte.png" style="border-radius: 50%;" 
+            <img src="Vifte.png" class="QuizBilder" 
                 width="400" 
                 height="500" />
             <h2 class="Standard">Spørsmål 3. Hva styrer hvor mange programmer du kan ha åpne samtidig?</h2>
@@ -77,27 +77,27 @@
 
         <!-- Spørsmål 4 + Bilde 3 -->
         <div id="Spørsmål4" style="visibility: hidden;">
-            <img src="RAM.png" style="border-radius: 50%;" 
+            <img src="RAM.png" class="QuizBilder"
                 width="400" 
                 height="500" />
-            <h2 class="Standard">Spørsmål 4. Hvilke verktøy brukte man før for å overføre informasjon manuelt fra en pc til en annen?</h2>
+            <h2 class="Standard">Spørsmål 4. Hvor hadde man filmer lagret før netflix?</h2>
             <button id="S4A1" class="Black">     E-post     </button>
-            <button id="S4A2" class="Black">     CD     </button>
-            <button id="S4A3" class="Black">     Brevdue     </button>
-            <button id="S4A4" class="Black">     Hardisk     </button><br>
+            <button id="S4A2" class="Black">     CD         </button>
+            <button id="S4A3" class="Black">     Brevdue    </button>
+            <button id="S4A4" class="Black">     Hardisk    </button><br>
             <br>
         </div>
 
         <!-- Bilde 4 -->
         <div id="Bilde4" style="visibility: hidden; ">
-            <img src="CD.png" style="border-radius: 50%;" 
+            <img src="CD.png" class="QuizBilder"
                 width="400" 
                 height="500" />
         </div>
     </div>
 
     <!-- Score -->
-    <h1 id="Ferdig" class="Score">Gratulerer! du fikk <span id=Poeng2></span> av 4 poeng</h1>
+    <h1 id="Ferdig" class="Score"> Gratulerer! du fikk <span id=Poeng2></span> av 4 poeng</h1>
 
 
     <script>
@@ -317,7 +317,7 @@
             KnappS4A2.disabled = true;
             Bilde4El.style.visibility = "visible";
             Poeng2El.innerHTML=poeng;
-            FerdigEl.style.display = "inline-block";
+            FerdigEl.style.visibility = "visible";
         }
 
         let KnappS4A3=document.getElementById("S4A3");

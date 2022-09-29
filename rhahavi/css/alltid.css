@@ -1,0 +1,49 @@
+body {
+
+    background-color: lightblue;
+    text-align: center;
+   
+
+}
+ul{
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    background-color: rgb(83, 158, 184);
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li a {
+        display: block;
+        text-align: center;
+        width: 60px;
+        padding: 8px; 
+        /*background-color:#dddddd*/
+        
+      }
+
+li a:hover {
+        background-color:rgb(114, 176, 197);
+
+}
+li {
+    display: inline; 
+    float: left;
+    border-right: 1px solid white;
+}     
+
+.active {
+    background-color: rgb(49, 136, 165);
+
+}
+h1 {
+    color:white;
+    text-align: center;
+    border:white 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+}
+

@@ -1,0 +1,108 @@
+<!DOCtype html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <title>Quiz om data</title>
+        <style>
+            h1{
+               border: black 1px solid;
+             border-radius: 5px;
+             padding: 8px;
+            }
+        </style>
+        </head>
+
+    <body>
+            <p><a href="index.html">Hjem</a></p>
+            <h1>Velkommen til quizzen<span id="idnavn"></span>!</h1>
+             <h3 id="idPoeng">Poeng: 0</h3>
+            <h2>hva betyr CPU?</h2>
+            <img src="media/question.jpg" width="150px" height="200px" alt="bilde av spørsmålstegn">
+            <p>
+            <button id="id1a">Circkle parameter use</button>
+            <button id="id1b">central Prossesing unit</button>
+            <button id="id1c">Centimeter picture utility</button>
+            </p>
+            <h2>hva betyr RAM?</h2>
+     <button id="id2a">random accsess memory</button>
+     <button id="id2b">radical alert motion </button>
+     <button id="id2c">raw adobe mainframe</button>
+
+     <script>
+
+        let poeng=0;
+        let poengEl = document.getElementById("idPoeng")
+         let knapp1aEl = document.getElementById("id1a"); 
+         let navnEl = document.getElementById("idnavn")
+
+         knapp1aEl.addEventListener("click",riktig1);
+         function riktig1() {
+            knapp1aEl.innerHTML = "riktig";
+            poeng++
+            poengEl.innerHTML = "Poeng: " +poeng
+         
+            knapp1aEl.style.backgroundColor ="green";
+            knapp1bEl.removeEventListener("click",feil1)
+
+
+            
+
+        }
+
+        let knapp1bEl = document.getElementById("id1b");
+        knapp1bEl.addEventListener("click",feil1)
+        function feil1() {
+            knapp1bEl.innerHTML = "feil";
+            knapp1bEl.style.backgroundColor ="red";
+            knapp1aEl.removeEventListener("click",riktig1);
+
+
+            
+        }
+
+        let knapp1cEl = document.getElementById("id1c");
+        knapp1cEl.addEventListener("click",feil2)
+        function feil2() {
+            knapp1cEl.innerHTML = "feil";
+            knapp1cEl.style.backgroundColor ="red";
+            knapp1aEl.removeEventListener("click",riktig1);
+            knapp1bEl.removeEventListener("click",feil1);
+
+            
+
+        }
+
+
+        let knapp2aEl = document.getElementById("id2a");
+        knapp2aEl.addEventListener("click", riktig2)
+        function riktig2() {
+            knapp2aEl.innerHTML = "riktig";
+            poeng++
+            poengEl.innerHTML = "Poeng: " +poeng
+            knapp2aEl.style.backgroundColor ="green";
+
+        }
+
+        
+
+        if (localStorage.getItem("lagretNavnforQuiz1") !== null) {
+        navnEl.innerHTML = " " + 
+        localStorage.getItem("lagretNavnforQuiz1")
+
+    }
+        
+    
+
+
+
+
+    
+
+
+
+</script>
+
+
+
+     </body>
+</html>

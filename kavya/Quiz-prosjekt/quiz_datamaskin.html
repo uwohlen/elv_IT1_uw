@@ -67,23 +67,20 @@
                 padding: 5px;
             }
             
-
         </style>
     </head>
-    
     <body>
              
         <div class="dropdown">
         <button id="minKnapp" class="dropbtn">Meny</button>
         <div id="myDropdown" class="dropdown-content">
             <a href="index.html">Hjem</a>
-            <a href="Kavyasprosjekter.html">Oversikt</a>
+            <a href="../Kavyasprosjekter.html">Oversikt</a>
         </div>
         </div>
 
         <h1>Velkommen<span id="idNavn"></span>! Test hva du kan om datamaskiner:</h1>       
             <h3 id="idPoeng">Poeng: 0</h3> 
-
 
 
         <h2> 1. Hvor er prosessoren plassert?  </h2>
@@ -105,8 +102,6 @@
         <button id="id3c"> C) Skjermkort </button> <br> <br>
         <button id="id3d"> D) Arbeidsminne </button> <br> <br>
 
-
-
         <h2> 4. Hva er det bilde av her? </h2>
         <img src="media/prosessor.png" alt="Bilde av del" heigth="200" width="200"><br> <br>
         <button id="id4a"> A) Hovedkort  </button> <br> <br>
@@ -115,7 +110,6 @@
         <button id="id4d" onclick="ferdigQuiz()">D) Prosessor </button> <br> <br>
         <p id="ferdigmedhele"></p>
         
-
         
     <script> 
         document.getElementById("minKnapp").onclick = function() {myFunction()};
@@ -123,7 +117,6 @@
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");
         }
-
 
         let knapp1aEl = document.getElementById("id1a");
         let poengEl = document.getElementById("idPoeng");
@@ -135,7 +128,6 @@
         if (localStorage.getItem("LagretNavnForQuiz1") !== null) {
             navnEl.innerHTML = " " + localStorage.getItem("LagretNavnForQuiz1")
         }
-
 
         function riktig1a() {
             console.log("Hei"); 
@@ -211,7 +203,6 @@
             knapp2bEl.removeEventListener("click",feil2b)
             knapp2dEl.removeEventListener("click",feil2d)           
         }
-
         let knapp2dEl = document.getElementById("id2d");
         knapp2dEl.addEventListener("click",feil2d)  
         function feil2d() {
@@ -317,6 +308,4 @@
 
     </body>
 </html>
-
-
 

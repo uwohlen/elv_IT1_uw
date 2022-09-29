@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <link rel="stylesheet" href="css/allltid.css">
+        <meta charset="UTF-8">
+        <title>Quiz om datamaskiner</title>
+        <style>
+           
+            img {
+                display: none;
+            }
+            button {
+                cursor:pointer;
+            }
+
+            
+            
+        </style>
+    </head>
+        <body>
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="quiz om datamaskin.html">Quiz</a></li>
+                <li><a href="../index.html">Ferdig</a></li>
+            </ul>
+            
+          <br>
+            <h1>Velkommen til quizzen<span id="idnavn"></span>&#128155!</h1>
+            <h3 id="idPoeng">Poeng: 0</h3>
+            <h2>1. Hva betyr CPU?</h2>
+            <img id="idImg1" src="media/CPU.jpg" alt="Bilde av CPU" height="150" width="200"> 
+            <p> 
+                <button id="id1a">Central Proccesing Unit</button>
+                <button id="id1b">Circle Parameter Use</button>
+                <button>Centimeter Picture Utility</button>
+            </p>
+            
+            <h2>2. Hvor kan vi finne arbeidsminne?</h2>
+            <img id="idImg2" src="media/Ram_brikke.jpg" alt="Bilde av Ram_brikke" height="150" width="200">
+            <p> 
+                <button>Memory card</button>
+                <button>Trm brikke</button>
+                <button id="id2c">Ram brikke</button>
+            </p>
+           
+            <h2>3. Hva er ROM?</h2>
+            <img id="idImg3" src="media/ROM.jpg" alt="bilde av ROM" height="150" width="200">
+            <p>
+                <button>Datamaskinens hovedkomponent</button>
+                <button>Lagringsmediumet</button>
+                <button id="id3c">Read-only memory</button>
+            </p>
+         
+            <h2>4. Hva  er oppgaven til prossesoren?</h2>
+            <img id="idImg4"src="media/Prosessor.jpg" alt="bilde av hovekortet" height="150" width="200">
+            <p>
+                <button>Behandler informasjon før den vises på skjermen.</button>
+                <button id="id4b">Dataprogrammer utfører sine beregninger og beslutninger her.</button>
+                <button>Avskjøler datamaskinen</button>
+            </p>
+
+
+    
+        <script>
+            let poeng= 0;
+            let knapp1aEl = document.getElementById("id1a");
+            let Img1El = document.getElementById("idImg1");
+            let poengEl = document.getElementById("idPoeng");
+            let navnEl = document.getElementById("idnavn");
+            knapp1aEl.addEventListener("click",riktig);
+
+
+            if (localStorage.getItem("lagretNavnForQuiz1") !==null) {
+                navnEl.innerHTML=" " + localStorage.getItem("lagretNavnForQuiz1");
+        }
+
+            function riktig() {
+                console.log("Hei"); //denne skriver ut til console.
+                knapp1aEl.innerHTML = "Riktig";
+                poeng ++;
+                poengEl.innerHTML= "Poeng: " + poeng;
+                knapp1aEl.style.backgroundColor ="green"; 
+                Img1El.style.display = "inline-block";
+                knapp1aEl.removeEventListener("click",riktig);
+                //knapp1aEl.disabled=true; 
+            }
+            
+           let knapp2cEl = document.getElementById("id2c");
+           let Img2El = document.getElementById("idImg2");
+            knapp2cEl.addEventListener("click",riktig2)
+            
+            function riktig2() {
+                knapp2cEl.innerHTML= "Riktig2";
+                poeng++;
+                poengEl.innerHTML="Poeng: "+ poeng;
+                knapp2cEl.style.backgroundColor= "green";
+                Img2El.style.display= "inline-block";
+                knapp2cEl.removeEventListener("click", riktig2)
+
+            }
+
+            let knapp3cEl=document.getElementById("id3c");
+            let Img3El=document.getElementById("idImg3");
+            knapp3cEl.addEventListener("click",riktig3);
+            
+            function riktig3() {
+                knapp3cEl.innerHTML= "Riktig3"
+                poeng++;
+                poengEl.innerHTML="poeng: "+ poeng;
+                knapp3cEl.style.backgroundColor= "green";
+                Img3El.style.display = "inline-block";
+                knapp1aEl.removeEventListener("click",riktig3)
+            }
+
+            let knapp4bEl=document.getElementById("id4b");
+            let Img4El=document.getElementById("idImg4");
+            knapp4bEl.addEventListener("click",riktig4); 
+
+            function riktig4 () {
+                knapp4bEl.innerHTML="Riktig4"
+                poeng++;
+                poengEl.innerHTML="poeng:"+ poeng;
+                knapp4bEl.style.backgroundColor="green";
+                Img4El.style.display="inline-block";
+                knapp4bEl.removeEventListener("click",riktig4)
+            }
+
+        </script>
+        </body>
+        
+</html>

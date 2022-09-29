@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head> 
+        <title>Quiz om datamaskiner</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+        <div class="banner">
+            <div class="navbar">
+                <img src="./bilder/logo.png" class="logo" width="100" height="100">
+                <ul id="idQuiz1" hidden>
+                    <li><a href="Index 2.html">START QUIZ</a></li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <h1>VELKOMMEN</h1>
+            <div id="idCookies" class="clDiv">
+                <p>Ta en quiz for å teste kunnskapen din om datamaskiner!</p>
+                <p>Dette nettstedet vil lagre informasjon på datamskinen din, og hente den frem igjen.
+                <p>Informasjonen som lagres er valgene du tar her.</p>
+                <p>Er det ok?</p>
+                <p><button id=idOk>OK</button><span id="idLock">&#128274</span></p>
+            </div>
+            <div id="idQuiz" class="clDiv" hidden>
+                <h2> Velkommen inn! Vennligst skriv navnet ditt før du begynner.</h2>
+                <p><input id="idNavn" type="text" placeholder="Skriv navnet ditt her"></p>
+                <h3 id="idHei"><span id="idHei">Trykk på "START QUIZ".</span></h3>
+            </div>
+
+            </div>
+        </div>
+    <script>
+        let cookieEl = document.getElementById("idCookies");
+        let okEl = document.getElementById("idOk");
+        let lockEl = document.getElementById("idLock");
+        let quizEl = document.getElementById("idQuiz");
+        let quiz1El = document.getElementById("idQuiz1");
+        let navnEl = document.getElementById("idNavn");
+        let linkEl = document.getElementById("idLink");
+        let heiEl = document.getElementById("idHei");
+        let avsluttCookiesEl = document.getElementById("idAvsluttCookies")
+
+        okEl.addEventListener("click",okfunk);
+        navnEl.addEventListener("keydown",lagrefunk);
+        avsluttCookiesEl.addEventListener("click",avsluttfunk)
+
+        if (localStorage.getItem("cookiesGodjektForIndex") === "Ja"){
+            cookieEl.style.display ="none";
+            quizEl.style.display ="block";
+        }
+        function okfunk(){
+            quizEl.style.display ="block";
+            quiz1El.style.display = "block";
+            lockEl.innerHTML ="&#128274";
+            localStorage.setItem("cookiesGodjektForIndex","Ja");
+        }
+        function lagrefunk(event) {
+            //console.log(event.keyCode);
+            //console.log(navnEl.value);
+            if (event.keyCode === 13) {
+                localStorage.setItem("lagreNavnForQuiz", navnEl.value);
+                heiEl.innerHTML ="Hei" + navnEl.value + "!<br>";
+                navnEl.value = "";
+                linkEl.style.display ="inline";
+            }
+        }
+        function avsluttfunk() {
+            localStorage.removeItem("cookiesGodkjentForIndex");
+            localStorage.removeItem("largetNavnForQuiz");
+            cookieEl.style.display ="block";
+            quizEl.style.display = "none";
+            linkEl.style.display = "none";
+            heiEl.innerHTML = "";
+            lockEl.innerHTML = "&#128274";
+        }
+        
+    </script>
+    </body>    
+</html>

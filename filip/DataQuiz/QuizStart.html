@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<title>Quiz Start</title>
+</head>
+
+<body>
+	<p>
+		<a href="../index.html">Tilbake til Filip sin nettside</a>
+		<a href="../../index.html">Til IT1 Nettsiden</a>
+	</p>
+	<div id="hoved">
+		<h1>QUIZ</h1>
+	</div>
+	<div id="DetteEr">
+		<p>Dette er en quiz</p>
+		<h2>Trykk på riktig svar for å gå videre</h2>
+		<p>Trykk på start!</p>
+	</div>
+	<br>
+	<br>
+	<br>
+	<div id="bilde">
+		<a href="Spørsmål1.html"> <img src="bilder/start1.PNG" width="180"></a>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div id="varsel">
+		<h3>Denne nettsiden vil lagre informasjon på datamaskinen din, er det ok?</h3><button>OK</button>
+	</div>
+	<script>
+		let bildeEl = document.getElementById("bilde")
+		let varselEl = document.getElementById("varsel")
+		varselEl.addEventListener("click", første)
+		function første() {
+			varselEl.style.visibility = "hidden"
+			bildeEl.style.visibility = "visible"
+		}
+	</script>
+
+</html>
