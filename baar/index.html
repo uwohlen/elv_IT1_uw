@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="no">
+<meta charset="UTF-8">
+<title>Min nettside</title>
+<link rel="stylesheet" href="Css/Css.css"> 
+
+<body class="body">
+
+    <!-- Importerer fonter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Caudex&family=Parisienne&display=swap');
+    </style>
+
+    <!-- Heading -->
+    <div class="Heading">
+        <h1 class="Overskrift">Velkommen til min nettside!</h1>
+        <p id="Hjem" class="HjemKnapp"> Hjem </p><p class="OmMegKnapp" id="OmMeg"> Om meg </p><p class="QuizKnapp" id="Quiz"> Quiz </p>
+    </div>
+
+    <!-- Teksten på nettsiden -->
+    <h1 class="TilbakeTilIT1"> <a href="../index.html">Tilbake til IT 1 </a></h1>
+    <h2 class="Standard">  Under finner du en oversikt over prosjektene mine i år </h2>
+    <h3 class="Standard">  Prosjekt 1 </h3>
+    <p  class="Standard">  Her finner du en <a href="Quiz/Quiz.html">Quiz </a></p>
+    <h3 class="Standard">  Prosjekt 2 </h3>
+
+    <script>
+            
+        //Definerer elementer
+        let HjemEl=document.getElementById("Hjem");
+        let OmMegEl=document.getElementById("OmMeg");
+        let QuizEl=document.getElementById("Quiz");
+
+        //Definerer oppgave
+        HjemEl.addEventListener("click", ÅpneHovedside);
+        OmMegEl.addEventListener("click", ÅpneOmMeg);
+        QuizEl.addEventListener("click", ÅpneQuiz);
+
+        //Definerer funksjoner
+        function ÅpneHovedside(){
+            location.href = "index.html";
+        }
+        function ÅpneOmMeg(){
+            location.href = "OmMeg/OmMeg.html";
+        }
+        function ÅpneQuiz(){
+            location.href = "Quiz/Quiz.html";
+        }
+
+        </script>
+    </body>
+</html>
