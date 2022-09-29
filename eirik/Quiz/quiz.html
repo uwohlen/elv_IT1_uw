@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="black" lang="no">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>
+        The Hard PC Quiz
+      </title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <h1 class="headline-easy">
+        <span style="color: white">Welcome to the</span> <span style="color: red">HARD</span> <span style="color: white">Quiz!</span>
+      </h1>
+      <h2 class="go-easy" style="color: white">
+        <span style="color: red">3</span>, <span style="color: yellow">2</span>, <span style="color: green">1</span> Let's <span style="color: blue">P</span> <span style="color: yellow">L</span> <span style="color: red">A</span> <span style="color: green">Y</span>!
+      </h2>
+      <a class="backhome-easy" onclick="location.href='index.html';">&#60; Home</a>
+    </body>
+    <div class="q1">
+      <p class="question" style="color: white">
+       1.Hvilke sifre/tall brukes i binærkode?
+      </p>
+      <button class="answer" id=answer5_1 style="background-color: rgba(0, 128, 0, 0.800)">
+        Sifre 5
+      </button>
+      <script>
+        let knapp5_1 = document.getElementById("answer5_1");
+        knapp5_1.addEventListener("click", feil13)
+
+        function feil13() {
+          knapp5_1.innerHTML = "Beklager, feil svar!"
+          knapp5_3.innerHTML += " - var det riktige svaret!"
+          document.getElementById("answer5_1").disabled = true;
+          document.getElementById("answer5_2").disabled = true;
+          document.getElementById("answer5_3").disabled = true;
+          document.getElementById("answer5_4").disabled = true;
+        }
+      </script>
+      <button class="answer" id="answer5_2" style="background-color: rgba(255, 0, 0, 0.800)">
+        Tallene 10-12
+      </button>
+      <script>
+        let knapp5_2 = document.getElementById("answer5_2");
+        knapp5_2.addEventListener("click", feil14)
+
+        function feil14() {
+          knapp5_2.innerHTML = "Beklager, feil svar!"
+          knapp5_3.innerHTML += " - var det riktige svaret!"
+          document.getElementById("answer5_1").disabled = true;
+          document.getElementById("answer5_2").disabled = true;
+          document.getElementById("answer5_3").disabled = true;
+          document.getElementById("answer5_4").disabled = true;
+        }
+      </script>
+      <button class="answer" id="answer5_3" style="background-color: rgba(255, 255, 0, 0.800)" onclick="scorecountHard">
+        Sifrene 0-1
+      </button>
+      <script>
+        let knapp5_3 = document.getElementById("answer5_3");
+        knapp5_3.addEventListener("click", riktig5)
+
+        function riktig5() {
+          knapp5_3.innerHTML = "Korrekt!"
+          document.getElementById("answer5_1").disabled = true;
+          document.getElementById("answer5_2").disabled = true;
+          document.getElementById("answer5_3").disabled = true;
+          document.getElementById("answer5_4").disabled = true;
+        }
+      </script>
+      <button class="answer" id="answer5_4" style="background-color: rgba(0, 0, 255, 0.800)">
+        Sifrene 1-9
+      </button>
+      <script>
+        let knapp5_4 = document.getElementById("answer5_4");
+        knapp5_4.addEventListener("click", feil15)
+
+        function feil15() {
+          knapp5_4.innerHTML = "Beklager, feil svar!"
+          knapp5_3.innerHTML += " - var det riktige svaret!"
+          document.getElementById("answer5_1").disabled = true;
+          document.getElementById("answer5_2").disabled = true;
+          document.getElementById("answer5_3").disabled = true;
+          document.getElementById("answer5_4").disabled = true;
+        }
+      </script>
+    </div>
+
+    <div class="hardq2">
+      <img class="imgHard" src="img/img-004.jpg" alt="img004">
+      <p class="question" style="color: white;">
+        2.Hva er dette bilde av?
+      </p>
+
+      <button class="answer" id="answer6_1" style="background-color: rgba(0, 128, 0, 0.800)">
+        SSD
+      </button>
+      <script>
+        let knapp6_1 = document.getElementById("answer6_1");
+        knapp6_1.addEventListener("click", feil16)
+
+        function feil16() {
+          knapp6_1.innerHTML = "Beklager, feil svar!"
+          knapp6_4.innerHTML += " - var det riktige svaret!"
+          document.getElementById("answer6_1").disabled = true;
+          document.getElementById("answer6_2").disabled = true;
+          document.getElementById("answer6_3").disabled = true;
+          document.getElementById("answer6_4").disabled = true;
+        }
+      </script>
+
+      <button class="answer" id="answer6_2" style="background-color: rgba(255, 0, 0, 0.800)">
+        RAM
+      </button>
+      <script>
+        let knapp6_2 = document.getElementById("answer6_2");
+        knapp6_2.addEventListener("click", feil17)
+
+        function feil17() {
+          knapp6_2.innerHTML = "Beklager, feil svar!"
+          knapp6_4.innerHTML += " - var det riktige svaret!"
+          document.getElementById("answer6_1").disabled = true;
+          document.getElementById("answer6_2").disabled = true;
+          document.getElementById("answer6_3").disabled = true;
+          document.getElementById("answer6_4").disabled = true;
+        }
+      </script>
+
+      <button class="answer" id="answer6_3" style="background-color: rgba(255, 255, 0, 0.800)">
+        Hovedkort
+      </button>
+      <script>
+        let knapp6_3 = document.getElementById("answer6_3");
+        knapp6_3.addEventListener("click", feil18)
+
+        function feil18() {
+          knapp6_3.innerHTML = "Beklager, feil svar!"
+          knapp6_4.innerHTML += " - var det riktige svaret!"
+          document.getElementById("answer6_1").disabled = true;
+          document.getElementById("answer6_2").disabled = true;
+          document.getElementById("answer6_3").disabled = true;
+          document.getElementById("answer6_4").disabled = true;
+        }
+      </script>
+
+      <button class="answer" id="answer6_4" style="background-color: rgba(0, 0, 255, 0.800)" onclick="scorecountHard()">
+        Harddisk
+      </button>
+      <script>
+        let knapp6_4 = document.getElementById("answer6_4");
+        knapp6_4.addEventListener("click", riktig6)
+
+        function riktig6() {
+          knapp6_4.innerHTML = "Korrekt!"
+          document.getElementById("answer6_1").disabled = true;
+          document.getElementById("answer6_2").disabled = true;
+          document.getElementById("answer6_3").disabled = true;
+          document.getElementById("answer6_4").disabled = true;
+        }
+      </script>
+    </div>
+
+    <div class="hardq3">
+      <img class="imgHard" src="img/img-005.jpg" alt="img005">
+      <p class="question" style="color: white;">
+        3.Hva er dette bilde av?
+      </p>
+
+      <button class="answer" id="answer7_1" style="background-color: rgba(0, 128, 0, 0.800)" onclick="scorecountHard()">
+        RAM
+      </button>
+      <script>
+        let knapp7_1 = document.getElementById("answer7_1");
+        knapp7_1.addEventListener("click", riktig7)
+
+        function riktig7() {
+          knapp7_1.innerHTML = "Korrekt!"
+          document.getElementById("answer7_1").disabled = true;
+          document.getElementById("answer7_2").disabled = true;
+          document.getElementById("answer7_3").disabled = true;
+          document.getElementById("answer7_4").disabled = true;
+        }
+      </script>
+
+      <button class="answer" id="answer7_2" style="background-color: rgba(255, 0, 0, 0.800)">
+        Prosessor
+      </button>
+      <script>
+        let knapp7_2 = document.getElementById("answer7_2");
+        knapp7_2.addEventListener("click", feil19)
+
+        function feil19() {
+          knapp7_2.innerHTML = "Beklager, feil svar!"
+          knapp7_1.innerHTML += " - var det riktige svaret!"
+          document.getElementById("answer7_1").disabled = true;
+          document.getElementById("answer7_2").disabled = true;
+          document.getElementById("answer7_3").disabled = true;
+          document.getElementById("answer7_4").disabled = true;
+        }
+      </script>
+
+      <button class="answer" id="answer7_3" style="background-color: rgba(255, 255, 0, 0.800)">
+        SSD
+      </button>
+      <script>
+        let knapp7_3 = document.getElementById("answer7_3");
+        knapp7_3.addEventListener("click", feil20)
+
+        function feil20() {
+          knapp7_3.innerHTML = "Beklager, feil svar!"
+          knapp7_1.innerHTML += " - var det riktige svaret!"
+          document.getElementById("answer7_1").disabled = true;
+          document.getElementById("answer7_2").disabled = true;
+          document.getElementById("answer7_3").disabled = true;
+          document.getElementById("answer7_4").disabled = true;
+        }
+      </script>
+
+      <button class="answer" id="answer7_4" style="background-color: rgba(0, 0, 255, 0.800)">
+        SIM-Kort
+      </button>
+      <script>
+        let knapp7_4 = document.getElementById("answer7_4");
+        knapp7_4.addEventListener("click", feil21)
+
+        function feil21() {
+          knapp7_4.innerHTML = "Beklager, feil svar!"
+          knapp7_1.innerHTML += " - var det riktige svaret!"
+          document.getElementById("answer7_1").disabled = true;
+          document.getElementById("answer7_2").disabled = true;
+          document.getElementById("answer7_3").disabled = true;
+          document.getElementById("answer7_4").disabled = true;
+        }
+      </script>
+    </div>
+
+    <div class="hardq4">
+      <img class="imgHard" src="img/img-006.jpg" alt="img006">
+      <p class="question" style="color: white;">
+        4.Hva er dette bilde av?
+      </p>
+
+      <button class="answer" id="answer8_1" style="background-color: rgba(0, 128, 0, 0.800)">
+        Skjermkort
+      </button>
+      <script>
+        let knapp8_1 = document.getElementById("answer8_1");
+        knapp8_1.addEventListener("click", feil22)
+
+        function feil22() {
+          knapp8_1.innerHTML = "Beklager, feil svar!"
+          knapp8_4.innerHTML += " - var det riktige svaret!"
+          document.getElementById("answer8_1").disabled = true;
+          document.getElementById("answer8_2").disabled = true;
+          document.getElementById("answer8_3").disabled = true;
+          document.getElementById("answer8_4").disabled = true;
+        }
+      </script>
+
+      <button class="answer" id="answer8_2" style="background-color: rgba(255, 0, 0, 0.800)">
+        CPU
+      </button>
+      <script>
+        let knapp8_2 = document.getElementById("answer8_2");
+        knapp8_2.addEventListener("click", feil23)
+
+        function feil23() {
+          knapp8_2.innerHTML = "Beklager, feil svar!"
+          knapp8_4.innerHTML += " - var det riktige svaret!"
+          document.getElementById("answer8_1").disabled = true;
+          document.getElementById("answer8_2").disabled = true;
+          document.getElementById("answer8_3").disabled = true;
+          document.getElementById("answer8_4").disabled = true;
+        }
+      </script>
+
+      <button class="answer" id="answer8_3" style="background-color: rgba(255, 255, 0, 0.800)">
+        SSD
+      </button>
+      <script>
+        let knapp8_3 = document.getElementById("answer8_3");
+        knapp8_3.addEventListener("click", feil24)
+
+        function feil24() {
+          knapp8_3.innerHTML = "Beklager, feil svar!"
+          knapp8_4.innerHTML += " - var det riktige svaret!"
+          document.getElementById("answer8_1").disabled = true;
+          document.getElementById("answer8_2").disabled = true;
+          document.getElementById("answer8_3").disabled = true;
+          document.getElementById("answer8_4").disabled = true;
+        }
+      </script>
+
+      <button class="answer" id="answer8_4" style="background-color: rgba(0, 0, 255, 0.800)" onclick="scorecountHard()">
+        Kjøle enhet
+      </button>
+      <script>
+        let knapp8_4 = document.getElementById("answer8_4");
+        knapp8_4.addEventListener("click", riktig8)
+
+        function riktig8() {
+          knapp8_4.innerHTML = "Korrekt!"
+          document.getElementById("answer8_1").disabled = true;
+          document.getElementById("answer8_2").disabled = true;
+          document.getElementById("answer8_3").disabled = true;
+          document.getElementById("answer8_4").disabled = true;
+        }
+      </script>
+        <div id="divBottomBackhomeEasy">
+          <a class="backhome-easy" id="bottom-backhome" onclick="location.href='index.html';">&#60; Home</a>
+        </div>
+        <div id="divScore">
+        <p class="score">
+          SCORE:
+        </p>
+        <script>
+          let score = 0;
+          function scorecountHard() {
+            score++;
+            document.getElementById("scorecountHard").innerHTML = score;
+          }
+        </script>
+        </div>
+        <div id="divScoreCountEasy">
+        <p class="scoreCountEasy" id="scorecountHard">0</p>
+        </div>
+        <div id="divAnotherOneEasy">
+          <a class="backhome-easy" id="bottom-anotherOne" style="color: white" onclick="location.href='quizeasy.html';">
+            The Easy Quiz &#62; 
+          </a>
+          </div>
+        <p class="bottomline-main" id="bottomline-quiz">
+          Made as a school project!
+          </p>
+</html>
