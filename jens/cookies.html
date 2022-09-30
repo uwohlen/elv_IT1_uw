@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz om datamaskiner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body style="background-color:burlywood;">
+    <center>
+    <h1 class="text-6xl w-fit font-bold">Quiz om datamaskiner</h1>
+    <h2>Denne nettsiden vil lagre cookies</h2>
+    <button id="button">OK</button>
+    </center>
+    <div id="main" class="hidden">
+        <center>
+        <p><input id="idNavn" type="text" placeholder="Skriv navnet ditt her">Avslutt med Enter-tasten</p>
+        <h3 class="text-blue-600 underline"><a href="quiz.html">Ta quizzen</a></h3>
+        </center>
+    </div>
+    <script>
+        let navnEl = document.getElementById("idNavn");
+        let main = document.getElementById("main");
+        let button=document.getElementById("button")
+        button.addEventListener("mousedown", showmain)
+        function showmain()
+        {
+            main.className=""
+        }
+        navnEl.addEventListener("keydown",lagrefunk);
+        function lagrefunk(event) {
+            console.log(event.keyCode);
+            console.log(navnEl.value);
+        window.localStorage.setItem("navn", navnEl.value)
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+body{
+    background-color: lightskyblue ;
+}
+h1 {
+    border: solid black 1px;
+    border-radius: 3px;
+    background-color: rgb(185, 0, 247);
+}
