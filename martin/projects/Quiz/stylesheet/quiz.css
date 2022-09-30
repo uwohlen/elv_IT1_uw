@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+}
+
+#poengId{
+    font-size: 2vw;
+    padding: 2vh;
+    position: fixed;
+}
+
+.content{
+    width: 75%;
+    margin: auto;
+    padding: 3vh;
+}
+
+.content h1{
+    margin: auto;
+    text-align: center;
+    font-size: 3vw;
+    padding: 3vh;
+}
+
+.question{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    background-color: #e2e2e28a;
+    border-radius: 2vh;
+    border: 0.5vh;
+    border-style: solid;
+    border-color: #262626;
+    padding: 2vh;
+
+
+
+}
+
+.question h2{
+    margin: auto;
+    padding: 3vh;
+}
+.question img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 25%;
+}
+
+.question button{
+    cursor:pointer;
+    width: 32%;
+    height: 5vh;
+    font-size: 0.9vw;
+    border-radius: 1vh;
+    
+}

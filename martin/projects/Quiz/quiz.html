@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+
+        <link rel="stylesheet" href="./stylesheet/quiz.css">
+
+
+        <title> Quiz om Datamaskiner </title>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+
+            <h3 id="poengId">Poeng: 0</h3>
+
+            <div class="content">
+
+                <h1>Velkommen til quizen,<span id="savedNavnId"></span>!</h1>
+
+                <div class="question">
+                    <h2>Hva står GPU for?</h2>
+                    <img src="./media/gpu.png">
+                    <button id="b1q1" onclick="Riktig('b1q1')">Graphical Processing Unit</button>
+                    <button id="b2q1" onclick="Feil('b2q1')">Glued Power Unit</button>
+                    <button id="b3q1" onclick="Feil('b3q1')">Glowing Power User</button>
+                </div>
+                
+                <br><br>
+
+                <div class="question">
+                    <h2>Hva betyr PC?</h2>
+                    <img src="./media/mac.png">
+                    <button id="b1q2" onclick="Feil('b1q2')">People Calculator</button>
+                    <button id="b2q2" onclick="Riktig('b2q2')">Personal Computer</button>
+                    <button id="b3q2" onclick="Feil('b3q2')">Pupil Counter</button>
+                </div>
+
+
+                <br><br>
+
+                <div class="question">
+                    <h2>Hva står SSD for?</h2>
+                    <img src="./media/ssd.png">
+                    <button id="b1q3" onclick="Feil('b1q3')">Secret Service Detector</button>
+                    <button id="b2q3" onclick="Riktig('b2q3')">Solid State Drive</button>
+                    <button id="b3q3" onclick="Feil('b3q3')">Something Something Driver</button>
+                </div>
+
+                <br><br>
+
+                <div class="question">
+                    <h2>Hvilken komponent er dette?</h2>
+                    <img src="./media/psu.png">
+                    <button id="b1q4" onclick="Feil('b1q4')">CPU</button>
+                    <button id="b2q4" onclick="Feil('b2q4')">RAM</button>
+                    <button id="b3q4" onclick="Riktig('b3q4')">PSU</button>
+                </div>
+
+
+            </div>
+
+        <script>
+
+            let poengEl = document.getElementById('poengId');
+            let poeng = 0;
+
+            navnEl = document.getElementById("savedNavnId")
+
+            if (localStorage.getItem("lagretNavn") != null) { 
+
+             navnEl.innerHTML = " " + localStorage.getItem("lagretNavn"); 
+
+            } 
+
+            function Riktig(id){
+                let element = document.getElementById(id)
+                poeng++;
+                element.innerHTML = "Riktig!";
+                element.style.backgroundColor = "#2EE971";
+                poengEl.innerHTML = "Poeng: " + poeng;
+                element.removeAttribute("onclick");
+
+            }
+
+            function Feil(id){
+                let element = document.getElementById(id)
+                element.innerHTML = "Feil!";
+                element.style.backgroundColor = "#C41E3A";
+            }
+            </script>
+
+    </body>
+</html>

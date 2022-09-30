@@ -1,0 +1,9 @@
+.idpoeng{
+    position: fixed;
+    border: black 2.5px solid;
+    border-radius: 100px;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100px;
+}
