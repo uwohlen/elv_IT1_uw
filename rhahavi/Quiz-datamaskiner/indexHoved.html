@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <link rel="stylesheet" href="css/allltid.css"> 
+            <title>Rhahavis nettside</title>
+            <style>
+                #idQuiz, #idLink {
+                    display: none;
+                }
+                #idAvsluttCookies {
+                    position: fixed;
+                    right:0;
+                    bottom: 0;
+
+                }
+                body {
+
+                    background-color: lightblue;
+                   
+                
+                }  
+                
+                
+                h2 {
+                    text-align: center;
+                }
+                h3 {
+                    text-align: center;
+                }
+                p {
+                    text-align: center;
+                }
+                button {
+                    text-align: center;
+                }
+   
+
+
+            </style>
+            
+        </head>
+        <body>
+            <ul>
+                <li><a href="indexHoved.html">Hjem</a></li>
+                <li><a href="quiz om datamaskin.html">Quiz</a></li>
+                <li><a href="index.html">Prosjekter</a></li>
+            </ul>
+            <br>
+            <h1>Velkommen til min nettside!</h1>
+            <h2>Cookies</h2>
+            <p>Denne nettsiden vil lagre informasjon på datamaskininen din, for å så hente denne fra igjen.<br>informasjonen so lagres er valgene du tar her og det du selv skriver inn.
+            <br> Er Dette OK?
+                <br><p><button id="idOK">OK</button><span id="idLock">&#128274</span></p>    
+            </div>
+            <div id="idQuiz" class="clDiv">
+                <h2>Velkommen inn!</h2>
+                <p><input id="idNavn" type="text" placeholder="Skriv navnet ditt her: "> Avslutt med Enter-tasten</p>
+                <h3 id="idLink"><span id="idHei"></span><a href="quiz om datamaskin.html">Her er det en quiz om datamaskiner</a></h3>
+            </div>
+            <div id="idAvsluttCookies">
+                <button>Avslutt alle cookies!</button>
+            </div>
+            
+            
+            <script>
+                let cookieEl = document.getElementById("idCookies");
+                let okEl = document.getElementById("idOK");
+                let lockEl = document.getElementById("idLock");
+                let quizEl = document.getElementById("idQuiz");
+                let navnEl = document.getElementById("idNavn");
+                let linkEl = document.getElementById("idLink");
+                let heiEl = document.getElementById("idHei");
+                let avsluttCookiesEl = document.getElementById("idAvsluttCookies")
+
+                okEl.addEventListener("click",okfunk);
+                navnEl.addEventListener("keydown",lagrefunk);
+                avsluttCookiesEl.addEventListener("click",avsluttfunk)
+
+                if (localStorage.getItem("cookiesGodkjentForIndex1") === "Ja") {
+                cookieEl.style.display = "none";
+                quizEl.style.display = "block";
+                }
+
+                    function okfunk() {
+                        quizEl.style.display = "block";
+                        lockEl.innerHTML = "&#128275";
+                        localStorage.setItem("cookiesGodkjentForIndex1","Ja");
+            }
+
+                    function lagrefunk(event) {
+                        if (event.keyCode === 13) {
+                        localStorage.setItem("lagretNavnForQuiz1",navnEl.value);
+                        heiEl.innerHTML = "Hei " + navnEl.value  +  "&#129306!<br>";
+                        navnEl.value = "";
+                        linkEl.style.display = "inline";
+                     }
+                }  
+
+                    function avsluttfunk() {
+                    localStorage.removeItem("cookiesGodkjentForIndex1");
+                    localStorage.removeItem("lagretNavnForQuiz1");
+                    cookieEl.style.display = "block";
+                    quizEl.style.display = "none";
+                    linkEl.style.display = "none";
+                    heiEl.innerHTML = "";
+                    lockEl.innerHTML = "&#128274";
+             }
+
+            </script>
+        </body>
+    </html>
+
+
+    
