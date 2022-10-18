@@ -1,0 +1,22 @@
+body{
+    color: rgb(0, 0, 0);
+    background-color:rgb(194, 188, 189);
+}
+.text{
+    margin-left: 5%
+}
+.text2{
+    margin-left: 5%;
+}
+#idImg1{
+    display: none;
+}
+#idImg2{
+    display: none;
+}
+#idImg3{
+    display: none;
+}
+#idImg4{
+    display: none;
+}
