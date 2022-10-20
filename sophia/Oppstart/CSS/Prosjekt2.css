@@ -1,0 +1,62 @@
+body {
+    background-color: #f2f2f2;
+}
+body, html {
+    height: 100%;
+    overflow: hidden;
+  	padding-top: 44px;
+  	padding-bottom: 25px;
+}
+
+ul {
+    display: block;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #a6a6a6;
+}
+li {
+    float: left;
+}
+li a {
+    display: block; 
+    color: #f2f2f2;
+    text-align: center; 
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color:#737373;
+    color: #f2f2f2;
+}
+.active {
+    /*background-color: #a5dfb1;/* /*farge?*/
+    background-color: #e6a98b;
+}
+
+#hoved {
+    width: 600px;
+    height: 400px;
+    display: grid;
+    gap: 5px;
+    background-color: #e6a98b;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "t t t t t" "v . h h h" "v . h h h";
+}
+
+#hoved > div {
+    background-color: rgb(141, 141, 207);
+    border: 1px solid black;
+}
+
+.topp    { grid-area : t; }
+.venstre  { grid-area : v; }
+.hoyre   { grid-area : h; }
