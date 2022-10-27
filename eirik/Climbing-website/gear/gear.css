@@ -1,0 +1,158 @@
+@media screen and (min-width: 2000px) {
+
+  #mainHeader-gear {
+    margin-top: 75px;
+    text-underline-offset: 40px;
+    text-decoration: underline;
+    text-decoration-color: #f7cf57;
+  }
+
+  .gear {
+    grid-column: 1;
+    grid-row: 4;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #d5eaea;
+    padding: 0 20px 20px 20px;
+    color: unset;
+    transition: all 0.1s linear;
+    text-decoration: none;
+    z-index: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+
+  .gear-toptext-header {
+    font-family: "NeutrafaceText",Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    color: rgb(87,87,87);
+    text-align: center;
+    word-break: break-word;
+    font-weight: 600;
+
+  }
+
+  .gear-toptext-p {
+    font-family: "NeutrafaceText",Helvetica,Arial,sans-serif;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: rgb(87,87,87);
+  }
+
+  .btn-gear-more {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid #f77777;
+    background-color: transparent;
+    color: #000;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-left: 170px;
+  }
+
+  .btn-gear-more::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #f77777;
+    top: 0;
+    z-index: -1;
+    left: 0;
+    transition: all 0.5s;
+  }
+  .btn-gear-more:hover::before {
+    width: 100%;
+  }
+  .btn-gear-more:hover {
+    color: #fff;
+  }
+
+  .bouldering {
+    grid-column: 1;
+    grid-row: 2;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #d5eaea;
+    padding: 0 20px 20px 20px;
+    color: unset;
+    transition: all 0.1s linear;
+    text-decoration: none;
+    z-index: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+
+  .bouldering-header {
+    font-family: "NeutrafaceText",Helvetica,Arial,sans-serif;
+    font-size: 32px;
+    margin-top: -20px;
+    color: rgb(87,87,87);
+    text-align: center;
+    word-break: break-word;
+    font-weight: 600;
+  }
+
+  .bouldering-toptext {
+    font-family: "NeutrafaceText",Helvetica,Arial,sans-serif;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: rgb(87,87,87);
+  }
+
+  .bouldering-clickable {
+    color: black;
+    text-decoration: underline 2px rgba(0,0,0,1);
+    text-underline-offset: 5px;
+    transition: text-decoration-color 300ms, text-underline-offset 300ms;
+  }
+
+  .bouldering-clickable:hover {
+    text-decoration-color: #f7cf57;
+    text-underline-offset: 10px;
+    cursor: pointer;
+  }
+
+  .bouldering-info {
+    display: none;
+    box-sizing: border-box;
+    width: 800px;
+    height: 400px;
+    background: #d5eaea;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+
+  .bouldering-info-header {
+    font-family: "NeutrafaceText",Helvetica,Arial,sans-serif;
+    font-size: 32px;
+    margin-top: 5px;
+    color: rgb(87,87,87);
+    text-align: center;
+    word-break: break-word;
+    font-weight: 600;
+  }
+
+  .bouldering-additonalInfo {
+    font-family: "NeutrafaceText",Helvetica,Arial,sans-serif;
+    margin-top: 80px;
+    margin-right: 15px;
+    margin-left: 15px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: rgb(87,87,87);
+  }
+
+  #icon-bouldering {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+}
+
