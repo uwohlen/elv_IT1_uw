@@ -4,19 +4,19 @@ let nameanimation = [
     { t: "{_}", ms: 250 },
     { t: "{ }", ms: 250 },
     { t: "{_}", ms: 250 },
-    { t: "{C_}", ms: 200 },
-    { t: "{CO_}", ms: 200 },
-    { t: "{COL_}", ms: 200 },
-    { t: "{COLD_}", ms: 200 },
-    { t: "{COLD }", ms: 200 },
-    { t: "{COLD_}", ms: 200 },
-    { t: "{COLD }", ms: 200 },
-    { t: "{COLD}", ms: 300 },
-    { t: "{COLD}", ms: 300 }
+    { t: "{E_}", ms: 200 },
+    { t: "{EI_}", ms: 200 },
+    { t: "{EIR_}", ms: 200 },
+    { t: "{EIRI_}", ms: 200 },
+    { t: "{EIRIK }", ms: 200 },
+    { t: "{EIRIK_}", ms: 200 },
+    { t: "{EIRIK }", ms: 200 },
+    { t: "{EIRIK}", ms: 300 },
+    { t: "{EIRIK}", ms: 300 }
 ];
 let stepD = 1;
-if (window.localStorage.stepD)
-    stepD = window.localStorage.stepD;
+/*if (window.localStorage.stepD)
+    stepD = window.localStorage.stepD;*/
 let x = 0;
 
 let updateName = () => {
