@@ -1,0 +1,18 @@
+.button1{
+    background-color: rgb(176, 15, 15);
+    margin-top: 10px;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 12px;
+    font-size: 18px;
+}
+body {
+    background-image: url("media/f1bakgrunn.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.text2{
+    color: rgb(255, 255, 255);
+
+}
