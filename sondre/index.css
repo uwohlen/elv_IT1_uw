@@ -1,0 +1,22 @@
+body{
+    width: 70%;
+    margin: 0% 15%;
+    background-image: url(media/jorden.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-width: 300px;
+    align-self: center;
+  }
+
+#hovdtekst{
+    background-color: rgba(128, 128, 128, 0.635);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#cred_bg{
+    bottom: -25vh;
+    right: -14vw;
+}
