@@ -1,0 +1,86 @@
+* {
+box-sizing: border-box;
+}
+
+
+body {
+margin: 0;
+}
+
+h1{
+font-family: "Ink Free";
+font-size: 300%;
+}
+
+h2 {
+text-align: center;
+font-size: 200%;
+}
+
+#idTEKST{
+font-size: 130%;
+}
+
+
+
+.header {
+padding: 20px;
+text-align: center;
+font-family: 'Segoe UI', sans-serif;
+font-size: 100%;
+background: #14316b;
+color: white;
+}
+
+
+.row {  
+display: flex;
+flex-wrap: wrap;
+padding: 1px;
+}
+
+.column {
+padding: 1px;
+}
+
+
+.grid-container {
+display: grid;
+grid-template-columns: auto auto auto auto auto;
+background-color: hsl(214, 33%, 85%);
+padding: 1px;
+}
+
+.grid-container a {
+color: black;
+padding: 10px 50px;
+font-family:Courier New;
+font-size: 100%;
+text-decoration: none;
+text-align: center;
+
+}
+
+.grid-container > div {
+padding: 10px 0;
+font-size: 20px;
+}
+
+/* endre farge når du har pilen på grid container */
+.grid-container a:hover {
+background-color: hsl(213, 63%, 15%);
+color: white;          
+}
+
+#stickymeny {
+position: sticky;
+top: 0;
+}
+
+.footer {
+padding: 20px;
+width: 1350px;
+text-align: center;
+background:#14316b;
+color: white;
+}
