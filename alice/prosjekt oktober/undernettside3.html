@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <title>Utvekslingsåret-mitt</title>
+        <p><a href="utveksling3.html">Tilbake til hovedsiden</a></p>
+        <style>
+            .flex-container {
+                display: flex;
+                justify-content: space-around;
+                position: sticky;
+                top: 0;
+            }
+
+            .flex-container > div {
+                width: 40%;
+            }
+
+            h1 {
+                background-color: whitesmoke;
+                border: whitesmoke 7px solid;
+                color: black;
+
+            }
+
+            * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            background-color: black;
+            }
+
+            body {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            }
+
+            .header {
+            text-align: center;
+            padding: 32px;
+            }
+
+            .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;
+            }
+
+            .column {
+            flex: 25%;
+            max-width: 25%;
+            padding: 0 4px;
+            }
+
+            .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            }
+
+            @media (max-width: 800px) {
+            .column {
+                flex: 50%;
+                max-width: 50%;
+            }
+            }
+            
+            @media (max-width: 600px) {
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class="flex-container">
+            <h1>BILDEGALLERI</h1>
+        </div>
+        
+        <div class="row">
+            <div class="column">
+                <img src="media/foggy.jpg" style="width: 100%;">
+                <img src="media/tåkevann.jpg" style="width: 100%;">
+                <img src="media/trær2.jpg" style="width: 100%;">
+                <img src="media/view.jpg" style="width: 100%;">
+                <img src="media/bye.jpg" style="width: 100%;">
+            </div>
+
+            <div class="column">
+                <img src="media/whistler10.jpg" style="width: 100%;">
+                <img src="media/kufen.jpg" style="width: 100%;">
+                <img src="media/bear.jpg" style="width: 100%;">
+                <img src="media/brennahouse.JPG" style="width: 100%;">
+                <img src="media/ignaciaabbey.jpg" style="width: 100%;">
+                <img src="media/brunost.jpg" style="width: 100%;">
+            </div>
+
+            <div class="column">
+                <img src="media/whistler11.JPG" style="width: 100%;">
+                <img src="media/ferry.jpg" style="width: 100%;">
+                <img src="media/promposal.jpg" style="width: 100%;">
+                <img src="media/gradcamping2.jpg" style="width: 100%;">
+                <img src="media/richie.jpg" style="width: 100%;">
+                <img src="media/zhiggysmeadow.jpg" style="width: 100%;">
+            </div>
+
+            <div class="column">
+                <img src="media/hannahbday.jpg" style="width: 100%;">
+                <img src="media/julieogyale.jpg" style="width: 100%;">
+                <img src="media/kufeniboks.jpg" style="width: 100%;">
+                <img src="media/ignacialucy.jpg" style="width: 100%;">
+                <img src="media/beachhouse.jpg" style="width: 100%;">
+            </div>
+        </div>
+
+    </body>
+</html>
