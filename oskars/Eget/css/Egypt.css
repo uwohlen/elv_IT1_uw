@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url(../media/hill.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 3%;
+    padding-right: 4%;
+}
+.navbar{
+    height: 12%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    text-decoration: none;
+    width: 130px;
+    cursor: pointer;
+    padding-top: 50px;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 60px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 450;
+}
+.row{
+    display: flex;
+    height: 88%;    
+    align-items: center;
+    padding-left: 50px;
+    padding-bottom: 30px;
+    padding-right: 40px;
+}
+.col{
+    flex-basis: 50%;
+}
+.col1{
+    padding-top: 30px;
+    padding-right: 80px ;
+}
+.row h1{
+    color: #fff;
+    font-size: 100px;
+}
+.row p{
+    color: #fff;
+    font-size: 12px;
+    line-height: 15px;
+    padding-top: 10px;
+}
+.exp{
+    width: 180px;
+    color: #000;
+    font-size: 12px;
+    padding: 12px 0;
+    background: #fff;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 30px;
+    transition: 0.4s;
+}
+.exp:hover{
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+}
+.card{
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.3s;
+}
+.card1{
+    background-image: url(../media/fer.jpg);
+}
+.card2{
+    background-image: url(../media/amg.jpg);
+}
+.card3{
+    background-image: url(../media/porschefront.jpg);
+}
+.card4{
+    background-image: url(../media/mcc.jpg);
+}
+.card:hover{
+    transform: translateY(-10px);
+}
+.row h5{
+    color: #fff;
+}
+.card p{
+    color: #fff;
+    font-size: 10px;
+}
+.about{
+    width: 100%;
+    padding: 78px 0;
+    background-color: #fff;
+}
+.about img{
+    height: auto;
+    width: 370px;
+}
+.about-text{
+    width: 450px;
+}
+.main{
+    width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.about-text h1{
+    color: #000;
+    font-size: 80px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.about-text h5{
+    color: #000;
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+span{
+    color: aqua;
+}
+.about-text p{
+    color:#000;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+.let{
+    background-color: aqua;
+    color: #000;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.let:hover{
+    background: transparent;
+    border: 2px solid aqua;
+}
+.undpc{
+    top: 212%;
+    left: 27.4%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    text-align: center;
+    font-size: 7px;
+}
