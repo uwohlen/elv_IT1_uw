@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200&display=swap');
 
 .navbar_2{
-
+    height: 20vh;
     position: sticky;
     display: flex;
     width: 100%;

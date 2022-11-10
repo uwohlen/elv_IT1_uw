@@ -15,17 +15,34 @@ body{
     background-image: linear-gradient(rgba(0,0,0, 0.5), #262626), url(../media/pexels-foteros-352505.jpg);
     background-size: cover;
     height: 100vh;
+
+
+    animation-name: load_in;
+    animation-duration: 1s;
+}
+
+
+@keyframes load_in{
+    from {opacity: 0%;}
+    to {opacity: 100%;}
 }
 
 .banner h1{
+    opacity: 0%;
     font-size: 7vw;
 
     position: relative;
     width: 100%;
     text-align: center;
-    top: 35%;
+    top: 25%;
     color:antiquewhite;
     mix-blend-mode: difference;
+
+    animation-name: load_in;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+
 }
 
 .content_box_left{
@@ -44,6 +61,13 @@ body{
 
     background-color: #dddddd;
 
+    transition-duration: 0.4s;
+
+}
+
+.content_box_left:hover{
+    cursor: pointer;
+    background-color: #ffffff;
 }
 
 .content_box_right{
@@ -63,6 +87,14 @@ body{
     border-style:solid;
 
     background-color: #dddddd;
+
+    transition-duration: 0.4s;
+
+}
+
+.content_box_right:hover{
+    cursor: pointer;
+    background-color: #ffffff;
 
 }
 

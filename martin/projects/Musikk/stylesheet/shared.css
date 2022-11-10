@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+
+*{
+    font-family: 'Sanchez', serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+@keyframes load_in{
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+
+.content{
+    height: 100vh;
+    width: 100%;
+
+    
+    animation-name: load_in;
+    animation-duration: 1s;
+
+
+    justify-content: center;
+    align-items: center;
+}
+
+.content h2{
+
+    color: #dddddd;
+
+    font-size: 5vw;
+
+    padding: 7vh;
+
+
+    margin: auto;
+    text-align: center;
+}
+
+.info{
+
+
+    margin: auto;
+
+    width: 70vw;
+    height: 45vh;
+
+    display: flex;
+    background-color: #dddddd;
+
+    border-radius: 1vh;
+    border: 2.5px;
+    border-color: #dddddd;
+    border-style:solid;
+    
+
+    text-align: center;
+
+}
+
+.info p{
+    padding: 5vh;
+    font-size: 3vh;
+}
