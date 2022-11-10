@@ -1,0 +1,239 @@
+body{
+  margin:0;
+  font-family: Lucida Handwriting;
+  flex: 3;
+}
+
+a{
+  color: #000;     
+}
+
+.header{
+  font-family: Lucida Handwriting;
+  justify-content: center;
+  /*box-shadow: 1px 1px 1px 0 rgba(221, 233, 221, 0.679);*/
+  position:relative;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+  left: 0px;
+  width: 200px;
+  z-index:3;
+  border-right: #000;
+}
+
+.header ul{
+margin: 0;
+padding:0;
+list-style:none;
+overflow:hidden;
+background-color:rgba(221, 233, 221, 0.679);
+}
+
+.header ul a{
+  display:block;
+  outline:1px solid black;
+  padding:20px;
+  border-right:"";
+  border-left:"";
+  text-decoration:none;
+}
+
+.header ul a:hover{
+  background-color:rgb(213, 39, 39);
+}
+
+.header .logo{
+  float:left;
+  display:block;
+  font-size:2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.header .menu{
+  clear:both;
+  max-height:0;
+  transition:max-height .2s ease-out;
+}
+ 
+.header .menu-icon{
+  padding: 28px 20px;
+  position:relative;
+  float:left;
+  cursor:pointer;
+}
+
+.header .menu-icon .nav-icon{
+  background:#333;
+  display:block;
+  height:2px;
+  width:18px;
+  position:relative;
+  transition:background all .2s ease-out;
+}
+
+.header .menu-icon .nav-icon:before{
+  background:#333;
+  content:"";
+  display:block;
+  height:100%;
+  width:100%;
+  position:absolute;
+  transition:all .2 ease-out;
+  top:5px;
+}
+
+.header .menu-icon .nav-icon:after{
+  background:#333;
+  content:"";
+  display:block;
+  height:100%;
+  width:100%;
+  position:absolute;
+  transition:all .2 ease-out;
+  top:-5px;
+}
+
+.header .menu-btn{
+    display:none;
+}
+
+.header .menu-btn:checked ~.menu{
+  display:block;
+  max-height:240px;
+}
+
+/* HER KOMMER CONTAINERS */ 
+
+body{
+      background-image:url(""); 
+      background-size: 100%;
+      background-repeat: no-repeat;
+      margin: 0%;
+      }
+
+.hovedmeny {
+  border: rgba(255, 255, 255, 0.661) 5px solid;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(221, 233, 221, 0.679);
+  font-family: Lucida Handwriting;
+  }
+.titel { 
+  font-family: Lucida Handwriting;
+  flex: 3;
+       }
+
+.midtstill{
+  text-align: center;
+  }
+
+  
+/*
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+  width: 40%;
+  height: auto;
+  margin:auto;
+  border: rgba(221, 233, 221, 0.679) solid 20px;
+}
+
+#plante{
+  
+}
+
+
+/* Hide the images by default */
+.mySlides {
+  height: 20%;
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
