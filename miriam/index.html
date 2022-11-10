@@ -1,27 +1,168 @@
 <!DOCTYPE html>
-    <html>
-    <link rel="stylesheet" href="../Html og css/alltid.css">
-        <head>
-            <h1>Her er en oversikt over alle mine swag nettsider &#128123</h1>
-            <style>
-                h1{
-                    border: rgb(102, 255,102) solid;
-                    border-radius: 50%;
-                    padding: 10px;
-                    text-align: center;
-                }
-            </style>
-        </head>
-        <body>
-            <div class="meny">
-                <a href="../index.html">Tilbake til It1-klassen!</a>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Interrail i Europa</title>
+        <style>
+            #MenyId {
+                position:sticky;
+                display: flex;
+                height:50px;
+                border: rgb(231, 28, 28) 5px solid;
+                top: 0%;
+                background-color: rgb(255, 200, 127);
+            }
+            *{
+                box-sizing: border-box;
+            }
+            
+            #Budsjettid{
+                background-color:#FAFAD2 ;
+                color: black;
+                border:none;    
+                padding:10px;
+            }
+            #idUendelig{
+                background-color:#FAFAD2 ;
+                color: black;
+                border:none;    
+                padding:10px;
+            }
+
+            #Tipsid{
+                background-color: #FAFAD2;
+                color: black;
+                border:none;
+                padding:10px;
+            }
+            #Bilder{
+                background-color: #FAFAD2;
+                color: black;
+                border:none;
+                padding:10px; 
+            }
+            .dropbtn {
+                background-color: #FAFAD2;
+                color: black;
+                border: none;
+                padding:12px;
+            }
+            
+            .dropbtn:hover, .dropbtn:focus{
+                background-color: #FAFAD2;
+            }
+
+            .dropdown{
+                position: relative;
+                display: inline-block;
+                background-color: #FAFAD2;
+            }
+
+            .dropdown-content {
+                display: none;
+                position:absolute;
+                background-color: #FAFAD2;
+                min-width: 160px;
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px black(0,0,0,0,2);
+            }
+
+            .dropdown-content a{
+                display: block;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+            }
+
+            #destinasjondown a {
+                display: block;
+                background-color: aliceblue;
+                padding:12px;
+            }
+            .dropdown-content a :hover
+            .show {
+                display: block;
+                position:absolute;}
+            
+            .row {
+                display: flex;
+            }
+            .side {
+                flex:30%;
+                padding: 20px;
+                background-color: #808000;
+            }
+
+            .main {
+                flex: 70%;
+                padding:20px;
+            }
+            
+            body{
+                background-color:#FAFAD2;
+                font-family:'Trebuchet MS', sans-serif ;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Interrail i Europa!</h1>
+            <div class="flex-container" id="MenyId">
+                <div class=" dropdown">
+                    <button id="Destinasjoner" class="dropbtn"> Destinasjoner</button>
+                    <div id="destinasjondown" class="dropdown-content">
+                        <a id="København">København</a>
+                        <a id="Berlin">Berlin</a>
+                        <a id="Amsterdam">Amsterdam</a>
+                        <a id="Paris">Paris</a>
+                        <a id="Nice">Nice</a>
+                        <a id="Milano">Milano</a>
+                        <a id="Roma">Roma</a>
+                    </div>
+                </div>
+                <button id="Budsjettid"><a href="Budsjett.html">Budsjett</a></button>
+                <button id="Tipsid"> <a href="Tips.html">Tips</a></button>
+                <button id="Bilder"> <a href="Bilder.html">Bilder</a></button>
+                <button id="idUendelig"><a href="../index.html">Oversikt</a></button>
             </div>
-            <a href="Oppstart/indexslay.html">Index til min første quiz</a><br>
-            <a href="Oppstart/quiz_datamasring.html">Min første quiz</a>
-          <style>
-              body {
-                  text-align: center;
-              }
-          </style
-        </body>
-    </html>
+        <div class="row">
+            <div class="side">
+                <img src="" id="image">
+            </div>
+            <div class="main">
+                <h2>Reisen vår</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae lacus a erat malesuada pulvinar ac in augue. In eu iaculis eros, quis eleifend urna. Aliquam interdum tincidunt faucibus. Vestibulum in justo at turpis pharetra ullamcorper. Mauris semper sapien eu sapien tristique, tristique maximus orci feugiat. Morbi lectus nisl, volutpat non aliquam a, consequat ac enim. Integer in felis id odio vestibulum mollis id sed tortor. Aliquam volutpat, ipsum commodo tristique hendrerit, arcu nulla volutpat justo, vel elementum sem elit ac nulla.
+
+                    In non scelerisque libero. Pellentesque lorem nisl, vulputate vitae ante at, congue dignissim eros. Sed eget sem enim. Vestibulum fermentum velit et accumsan viverra. Aliquam ut enim accumsan eros vehicula facilisis. Suspendisse in consectetur turpis. Morbi leo orci, condimentum ac pharetra ac, fermentum quis sem. Proin sit amet eros a augue vestibulum sodales. Nullam pretium diam eget vulputate elementum. Vestibulum molestie sollicitudin placerat. Pellentesque sit amet nulla non metus maximus malesuada. Suspendisse porttitor libero facilisis aliquet scelerisque. Morbi vitae cursus nisi.
+
+                    Mauris vitae augue augue. In vel orci magna. Integer ullamcorper mauris purus, id aliquet velit fermentum in. In fringilla auctor nisl, in efficitur massa blandit et. Vestibulum interdum et nisl ut ultrices. Nullam nec ante ligula. Sed justo sapien, fringilla a aliquet eget, aliquet sit amet nibh. Nulla quis finibus nunc, sit amet condimentum magna. Sed enim elit, blandit ac metus id, ornare tincidunt enim. Phasellus at felis quis diam iaculis faucibus vel nec metus. Nam accumsan nisl metus, ac egestas sem auctor non.
+
+                    Cras volutpat orci tristique nulla euismod, non vehicula ipsum pellentesque. Praesent vitae arcu volutpat, posuere odio auctor, porta mauris. Cras in pharetra sapien, ut finibus mi. Nam pulvinar velit a lorem egestas hendrerit. Morbi ultricies non sapien consectetur vestibulum. Nulla fringilla pellentesque felis eu tincidunt. Aliquam fermentum libero vel felis pharetra condimentum. Phasellus tincidunt velit neque, sed vestibulum quam faucibus eu. Quisque dignissim nibh leo, a mollis lacus luctus a.
+                </p>
+            </div>
+        </div>
+            </div>
+        
+        <script>
+            let visfram = true;
+            document.getElementById("Destinasjoner").onclick=function() {myFunction()};
+            function myFunction(){
+                if (visfram) {
+                    document.getElementById("destinasjondown").className = "show";
+                    visfram = false;
+                }
+                else {
+                    document.getElementById("destinasjondown").className = "dropdown-content";
+                    visfram = true;
+                }
+            }
+
+            let image= document.getElementById('image');
+            let images= [src="media/IMG1.jpg",src="media/IMG2.jpg" ,src="media/IMG4.jpg",src="media/IMG5.jpg",src="media/IMG6.jpg"]
+            setInterval(function() {
+                let random=Math.floor(Math.random()*5);
+                image.src=images[random];
+            },800);
+        </script>
+    </body>
+</html>
