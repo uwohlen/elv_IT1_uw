@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8">
+    <title>Gjøremål</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="gjoremal.css">
+    <script src="../funksjoner.js" defer></script>
+    <script src="gjoremal.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <a href="../index.html">
+                <li>Tilbake</li>
+            </a>
+            <a href="batch/index.html">
+                <li>Batch</li>
+            </a>
+            <a href="et-bilde/index.html">
+                <li>Bilde</li>
+            </a>
+            <a href="gjoremal/index.html">
+                <li>Gjøremål</li>
+            </a>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Gjøremål!</h1>
+        </header>
+        <div class="flex">
+            <div>
+                <h2>Her finner du diverse html-ting</h2>
+                <p><span id="navn-todo"></span></p>
+                <table>
+                    <tr>
+                        <th colspan="2"><span id="navn-tabell-overskift"></span>Gjøremål</th>
+                    </tr>
+                    <tbody id="table-innhold">
+
+                    </tbody>
+                    <tr>
+                        <td><input type="text" id="tekst_0"></td>
+                        <td><input type="checkbox" id="sjekkboks_0"></td>
+                    </tr>
+                </table>
+                <p>For å fjerne et gjøremal trenger du bare å fjerne teksten.<br>
+                    Når du refresher siden vil gjøremålet være borte.</p>
+            </div>
+            <div class="hoyre">
+                <h3>Hvis du har godtatt informasjonskapsler, vil gjøremålene lagres.</h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

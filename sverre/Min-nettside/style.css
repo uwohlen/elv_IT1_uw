@@ -1,0 +1,230 @@
+:root {
+    --bakgrunn: #96e0bc;
+    --bakgrunn2: #70a88d;
+    --bakgrunn-hover: #4f7a65;
+    --nav-bredde: 6rem;
+    --margin-rundt-bokser: 1.5vw;
+    --border-radius: 0.2rem;
+    --code-farge: rgb(242, 242, 242);
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: var(--bakgrunn);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-left: calc(var(--nav-bredde) + var(--margin-rundt-bokser));
+    margin-right: var(--margin-rundt-bokser);
+    margin-bottom: var(--margin-rundt-bokser);
+}
+
+.hoyre {
+    position: sticky;
+    height: 75vh;
+    top: 12.5vh;
+
+    flex-basis: 20vw;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    margin-left: calc(var(--margin-rundt-bokser) * 2);
+    padding-left: 0.5rem;
+    border-left: 0.2rem solid var(--bakgrunn2);
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    gap: 1vw;
+}
+
+.grid>div {
+    background-color: var(--bakgrunn2);
+}
+
+.grid a {
+    color: black;
+    font-size: 1.1rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.grid p {
+    margin: 0.1rem;
+    margin-bottom: 0.4rem;
+    text-align: center;
+}
+
+.grid>div:hover {
+    background-color: var(--bakgrunn-hover);
+}
+
+.skjul {
+    display: none;
+}
+
+#bunn {
+    position: absolute;
+    bottom: var(--margin-rundt-bokser);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+hr {
+    border: none;
+    border-top: 0.2rem solid var(--bakgrunn2);
+    margin: 1rem 0;
+}
+
+samp {
+    font-family: monospace;
+}
+
+code {
+    display: block;
+    width: 50%;
+    min-width: max-content;
+    padding: 0.2rem;
+    border-radius: var(--border-radius);
+
+    white-space: pre-line;
+    font-family: Consolas, Menlo, Monaco, Lucida Console, monospace, serif;
+    background-color: rgb(12, 12, 12);
+    color: var(--code-farge);
+}
+
+button {
+    background-color: var(--bakgrunn2);
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+    margin: 0.1rem;
+    border: none;
+}
+
+button:hover {
+    background-color: var(--bakgrunn-hover);
+}
+
+button:active {
+    background-color: var(--bakgrunn2);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: normal;
+}
+
+nav {
+    z-index: 100;
+    width: var(--nav-bredde);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    padding: 0.8rem;
+    background-color: var(--bakgrunn2);
+    flex-grow: 1;
+
+    color: black;
+    font-size: 1.1rem;
+
+    /* Senterer teksten vertikalt */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav a li {
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: var(--bakgrunn-hover);
+}
+
+@media only screen and (max-width: 640px) {
+    nav {
+        width: 100%;
+        height: unset;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    nav a {
+        padding: 0.8rem 0.1rem;
+    }
+
+    .container {
+        margin: 0 0.5rem;
+        margin-top: 4.55rem;
+        margin-bottom: 1rem;
+    }
+
+    .hoyre {
+        margin: 0;
+        padding: 0;
+        border: none;
+
+        position: static;
+        height: unset;
+        top: unset;
+    }
+
+    h2 {
+        margin-top: 1rem;
+    }
+
+    code {
+        width: unset;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .flex>div {
+        flex: content;
+    }
+
+    #bunn {
+        position: static;
+        float: right;
+    }
+}

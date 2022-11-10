@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8">
+    <title>Et bilde</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="et-bilde.css">
+    <script src="../funksjoner.js" defer></script>
+    <script src="generer-bilde.js" defer></script>
+    <script src="et-bilde.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <a href="../index.html">
+                <li>Tilbake</li>
+            </a>
+            <a href="batch/index.html">
+                <li>Batch</li>
+            </a>
+            <a href="et-bilde/index.html">
+                <li>Bilde</li>
+            </a>
+            <a href="gjoremal/index.html">
+                <li>Gjøremål</li>
+            </a>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Få et personlig bilde!</h1>
+        </header>
+        <div class="flex">
+            <div>
+                <div id="ingen-lagring" class="skjul">
+                    <h2>For å gjøre dette må du godta lagring av informasjonskapsler</h2>
+                    <p>Se forrige side</p>
+                </div>
+                <div id="sporsmal-boks" class="skjul">
+                    <h2>Svar på disse spørsmålene:</h2>
+                    <h3 id="sporsmal-tekst"></h3>
+                    <div id="svar-alternativer"></div>
+                </div>
+                <div id="bilde"></div>
+            </div>
+            <div class="hoyre">
+                <h3>Bildet vil dukke opp på høyresiden av hovedsiden</h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
