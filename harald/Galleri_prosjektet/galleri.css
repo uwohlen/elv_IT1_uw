@@ -1,0 +1,99 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color:#d6d6d6;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.header_a{
+    position: relative;
+    font-size: 90px ;
+    text-align: center;
+    color: white;
+    top: -50px;
+}
+.header_a:hover {filter: brightness(0.4);}
+
+.header_b{
+    position: relative;
+    top: -100px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+.header_c{
+    position: relative;
+    top: 50px;
+    text-align: center;
+    color: #5e5e5e;
+
+}
+
+.header_d{
+    position: relative;
+    font-size: 90px;
+    text-align: center;
+    color: white;
+    top: -50px;
+}
+.header_d:hover {filter: brightness(0.4);}
+.menu{
+    z-index: 1;
+    top: 0px;
+    position: sticky;
+    display:flex;
+    flex-direction: row;
+    background-color:#949494;
+    padding: 20px;
+    text-align: center;
+    padding-left:0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.footer{
+    position: relative;
+    bottom: 0px;
+    background-color: #949494;
+    text-align: center;
+    display:flex;
+    flex-direction: row;
+    padding: 20px;
+    width: auto;
+}
+    
+
+a{
+ 
+    flex-grow: 1;
+    text-align: center;
+    color: antiquewhite;
+    font-size: 30px;
+}
+
+
+
+.kompetansemål{
+    position: relative;
+    top: 50px;
+    font-size:20px ;
+    bottom: 50px;
+    line-height: 40px;
+}
+
+.hoved{
+    display: grid;
+    gap: 5px;
+    background-color: #d6d6d6;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    align-items: center;
+    padding-left: 50px;
+}
+.hoved > div {
+    width: 400px;
+    height: 400px;
+    background-color: #aac9c6;
+    border: 1px solid black;
+  }
