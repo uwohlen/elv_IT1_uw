@@ -1,0 +1,62 @@
+body{
+    text-align: center;
+    background-image:linear-gradient(#0b5494, #000408);
+    margin: 0px;
+    overflow:hidden;
+}
+#toppen{
+    background-color: turquoise;
+    height: 200px;
+    text-align: center;
+}
+#StrandImg{
+    position: absolute;
+    right: 35.2%;
+    top: 72px;
+}
+#trykkpaaspace{
+    margin: 0px;
+    color: blanchedalmond;
+    font-family: "arial black";
+    font-size: 43.5px;
+}
+#vannet {
+    height:200vh;
+}
+#underwater{
+    text-align: center;
+}
+#fisker{
+    size: 100%;
+}
+#fisk1{
+    position: relative;
+    left: 150px;
+    bottom: 100px;
+    cursor: pointer;
+}
+#fisk2{
+    position: relative;
+    bottom: 300px;
+    left: 600px;
+    cursor: pointer;
+}
+#fisk3{
+    position: relative;
+    right: 200px;
+    bottom: 450px;
+    cursor: pointer;
+}
+#fisk4{
+    position: relative;
+    bottom: 50px;
+    left: 400px;
+    cursor: pointer;
+}
+#tang{
+    position: relative;
+    right: 400px;
+}
+.hovertext{
+    size: 100%;
+}
