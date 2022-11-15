@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+body {
+    color: white;
+    font-family: 'Kanit', sans-serif;
+}
+
+*{
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    display:none;
+}
+
+.option {
+    text-align: center;
+    margin-right: 50px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#landing-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#navbar {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 40px 60px;
+}
+
+#navbar-logo {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    margin-right: 48px;
+    margin-left: 32px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#logo-text {
+    font-size: 30px;
+    margin-left: 16px;
+    font-weight: 450;
+}
+
+#dashboard-button {
+    border: none;
+    color: #fff;
+    border-radius: 33px;
+    width: 120px;
+    background: #3f7ecf;
+    font-size: 16px;
+    text-align: center;
+    padding: 6px 0;
+    text-decoration: none;
+}
+
+#dashboard-button:hover {
+    background-color: #3468ac;
+}
+
+#introduction-main {
+    width: 70%;
+    margin-left: 15%;
+    min-height: 80vh;
+}
+
+#logo-image-introduction {
+    max-width: 60%;
+    height: auto;
+}
+
+#introduction-title {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#introduction-description {
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#introduction-page {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 40%;
+    margin-top: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+#sneaker-image {
+    position: absolute;
+    height: 35%;
+    top: 30%;
+    right: 15%;
+}
+
+#bg {
+    filter: brightness(50%);
+    background: url("../assets/bg_image.jpg") no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+  
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #067ab4;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#about-us-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#about-main {
+    width: 70%;
+    margin-left: 20%;
+    min-height: 80vh;
+}
+
+#about-page {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 40%;
+    margin-top: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-title {
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#about-description {
+    margin-top: 8px;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#discord-image {
+    position: absolute;
+    height: 50%;
+    top: 25%;
+    right: 12%;
+}
+
+#services-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#services-title {
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#services-description {
+    margin-bottom: 50px;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#services-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 10%;
+    row-gap: 10%;
+    width: 70%;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0px 50px;
+    background: #246bbd;
+    box-shadow: 0px 0px 10px #3468ac;
+}
+
+.service-icon {
+    margin-bottom: 20px;
+    padding: 10px;
+    height: 100px;
+}
+
+.service-title {    
+    margin-top: 10px;
+    margin-bottom: 18px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.service-description {
+    margin-bottom: 50px;
+    font-size: 17px;
+    text-align: center;
+    color: #ffffff;
+}

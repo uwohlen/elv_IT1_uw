@@ -1,0 +1,102 @@
+* {
+box-sizing: border-box;
+}
+
+/*body */
+body {
+font-family: 'Segoe UI', sans-serif;
+margin: 0;
+}
+
+h1{
+font-family: "NSimSun";
+font-size: 300%;
+}
+
+h2, h3{
+font-family: "NSimSun";
+}
+
+p {
+font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+.header {
+padding: 20px;
+text-align: center;
+background: #85586F;
+color: white;
+}
+
+
+.row {  
+display: flex;
+flex-wrap: wrap;
+}
+
+
+.side {
+flex: 20%;
+background-color: #faf2e1; 
+padding: 30px;
+}
+
+
+.main {
+flex: 80%;
+background-color: #f7e5e0; 
+padding: 20px;
+}
+
+
+
+
+.footer {
+padding: 20px;
+text-align: center;
+background: #85586F;;
+color: white;
+}
+
+
+@media screen and (max-width: 700px) {
+.row, .navbar {   
+flex-direction: column;
+}
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: auto auto auto auto auto;
+font-family:Courier New;
+background-color: #dabbb2;
+padding: 1px;
+}
+
+.grid-container a {
+color: black;
+padding: 10px 50px;
+font-family:Courier New;
+font-size: 100%;
+text-decoration: none;
+text-align: center;
+}
+
+.grid-container > div {
+padding: 10px 0;
+font-size: 20px;
+}
+
+/* endre farge når du har pilen på grid container */
+.grid-container a:hover {
+background-color: #664455;
+color: white;          
+}
+
+#stickymeny {
+position: sticky;
+top: 0;
+}
+

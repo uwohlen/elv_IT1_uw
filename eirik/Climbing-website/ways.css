@@ -1,0 +1,80 @@
+@media screen and (min-width: 2000px) {
+  
+  .waysOfClimbing {
+    grid-column: 3;
+    grid-row: 4;
+    margin-right: 50px;
+    display: flex;
+    height: 800px;
+    flex-direction: column;
+    background-color: #d5eaea;
+    padding: 0 20px 20px 20px;
+    color: unset;
+    transition: all 0.1s linear;
+    text-decoration: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+
+  .ways-toptext-header {
+    font-family: "NeutrafaceText",Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    color: rgb(87,87,87);
+    text-align: left;
+    word-break: break-word;
+    font-weight: 600;
+  }
+
+  .ways-toptext-p {
+    font-family: "NeutrafaceText",Helvetica,Arial,sans-serif;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    color: rgb(87,87,87);
+  }
+
+  .ways-bottomtext {
+    box-sizing: border-box;
+    color: rgb(87,87,87);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: "NeutrafaceText",Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    line-height: 24px;
+    margin-left: -20px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .ways-bottomtext-p {
+    box-sizing: border-box;
+    flex-basis: 50%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-weight: 600;
+  }
+
+  .ways-links {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #text {
+    text-decoration: none;
+    color: rgb(87,87,87);
+    margin-left: 10px;
+    padding-right: 15px;
+    border-right: 1px solid;
+  }
+
+  #text:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+

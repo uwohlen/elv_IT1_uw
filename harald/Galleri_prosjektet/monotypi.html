@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Foto og Grafikk - monotypi</title>
+    <link rel="stylesheet" href="galleri.css">
+</head>
+<body>
+    
+    <div class="header_d">
+        <h1 id="headScrollId" >MONOTYPI</h1>
+    </div>
+    <div class="hoved">
+        <div>bilde</div>
+        <div> navn og beskrivelse<br></div>
+        <div>bilde</div>
+        <div>navn og beskrivelse</div>
+        <div> trykk </div>
+        <div> navn og beskrivelse </div>
+        <div> trykk </div>
+        <div> navn og beskrivelse </div>
+    </div>
+
+    <div class="footer">
+        <a href="galleri.html">hjemmeside</a>
+    </div> 
+<script>
+   let animasjon
+    let headScrollEl = document.getElementById("headScrollId");
+        headScrollEl.addEventListener("click",scrollFunction);
+        this,addEventListener("mousemove", scrollStopp)
+        function scrollFunction(){
+            animasjon=setInterval(rull,10)
+        }
+        function rull(){
+            scrollBy(0,10); 
+        }
+        function scrollStopp(){
+            clearInterval(animasjon)
+        }
+</script>
+</body>
+</html>

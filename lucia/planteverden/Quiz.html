@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="no">
+<head> 
+  <title> Planteverden </title>
+  <!-- utf-8 gjør at vi kan bruke æ, ø og å -->
+  <meta charset="utf-8">  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css.css">
+  <style>
+
+    </style>
+</head>
+<body>
+
+  <div>
+     <h2 style="text-align:center">Få innspirasjon</h2>
+    
+    <div class="container">
+      <div class="mySlides">
+        <div class="numbertext">1 / 6</div>
+        <img src="../planteverden/Plante-bilder/rom_klipp.png" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">2 / 6</div>
+        <img src="../planteverden/Plante-bilder/collection_klipp.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">3 / 6</div>
+        <img src="../planteverden/Plante-bilder/blomst_klipp.png" style="width:100%">
+      </div>
+        
+      <div class="mySlides">
+        <div class="numbertext">4 / 6</div>
+        <img src="../planteverden/Plante-bilder/plants_klipp.png" style="width:100%">
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">5 / 6</div>
+        <img src="../planteverden/Plante-bilder/blomster_klipp.png" style="width:100%">
+      </div>
+        
+      <div class="mySlides">
+        <div class="numbertext">6 / 6</div>
+        <img src="../planteverden/Plante-bilder/solsikke_klipp.png" style="width:100%">
+      </div>
+        
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+    
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="../planteverden/Plante-bilder/rom.png" style="width:100%" onclick="currentSlide(1)" alt="rommet mitt">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../planteverden/Plante-bilder/collection2.png" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../planteverden/Plante-bilder/blomst.png" style="width:100%" onclick="currentSlide(3)" alt="blomst">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../planteverden/Plante-bilder/plants.png" style="width:100%" onclick="currentSlide(4)" alt="rommet mitt">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../planteverden/Plante-bilder/blomster.png" style="width:100%" onclick="currentSlide(5)" alt="orkide">
+        </div>    
+        <div class="column">
+          <img class="demo cursor" src="../planteverden/Plante-bilder/solsikke.png" style="width:100%" onclick="currentSlide(6)" alt="solsike">
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("demo");
+      let captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+        
+    </body>
+    </html>
+    

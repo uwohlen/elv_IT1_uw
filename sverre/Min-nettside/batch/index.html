@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8">
+    <title>Batch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="batch.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <a href="../index.html">
+                <li>Tilbake</li>
+            </a>
+            <a href="../batch/index.html">
+                <li>Batch</li>
+            </a>
+            <a href="../et-bilde/index.html">
+                <li>Bilde</li>
+            </a>
+            <a href="../gjoremal/index.html">
+                <li>Gjøremål</li>
+            </a>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Batch</h1>
+        </header>
+        <div class="flex">
+            <div>
+                <h2>Programmering på Windows 7</h2>
+                <p>For å få den riktige tidsånden anbefaler jeg å høre denne lyden:</p>
+                <div class="flex">
+                    <audio controls>
+                        <source src="media/windows7.mp3">
+                    </audio>
+                    <p style="flex:1; margin-left:1rem;">Lyden er hentet fra <a
+                            href="https://www.winhistory.de/more/winstart/winstart_en.htm"
+                            target="_blank">https://www.winhistory.de/more/winstart/winstart_en.htm</a>
+                    </p>
+                </div>
+                <p>Noe av den første programmeringen jeg lekte med var i Batch-filer. Du er helt sikkert
+                    kjent med CMD, også kjent som Command Prompt. Dette er en etterkommer
+                    av MSDOS, men i dag vil nok mange tenke på det som Windows sin knock-off-versjon av Bash. I CMD kan
+                    man skrive kommandoer som <samp>mkdir</samp> og <samp>echo</samp> men det ikke finnes noen
+                    <samp>ls</samp> eller <samp>rm</samp>. Man kan samle en liste med slike koder i en fil for å lage et
+                    script. Det er dette man kaller Batch-filer. Alt du trenger å gjøre på Windows er å lage en fil med
+                    filetternavnet <samp>.bat</samp> eller <samp>.cmd</samp> og skrive kode rett inn med f.eks. Notepad.
+                </p>
+                <p>Her er en kode jeg likte spesielt godt. Den var særlig kul å skrive på skoledatamaskiner for å vise
+                    alle at du er en ekte hacker.</p>
+                <code>@echo off
+                    color 0a
+                    :start
+                    echo %random%
+                    goto start
+                </code>
+                <p>Dette vil skrive ut noe sånt:</p>
+                <code id="echo-random">19329<br>5164<br>16549<br>18748<br>24862<br>12661<br>12715</code>
+                <p>Vent, jeg glemte en ting! Trykk på knappen til høyre for å få de riktige fargene.</p>
+                <p>Det er ikke uten grunn at det at kommandoen <samp>color 0a</samp> gir grønn tekst på svart bakgrunn
+                    er noe
+                    jeg fortsatt husker utenat.</p>
+            </div>
+            <div class="hoyre">
+                <button id="bunn">Skru på hax</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

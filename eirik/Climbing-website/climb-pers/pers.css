@@ -1,0 +1,154 @@
+@media screen and (min-width: 2560px) {
+
+    .grid-container-pers {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+
+    .mag-header {
+        letter-spacing: 8px;
+        margin-top: 50px;
+        grid-column: 2;
+        grid-row: 1;
+        text-align: center;
+    }
+
+    .plug {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 50px;
+        letter-spacing: 3px;
+    }
+
+    .plug-yt {
+        display: inline-flex;
+        margin-left: 100px;
+    }
+
+    .plug-insta {
+        display: inline-flex;
+        margin-left: 160px;
+    }
+
+    .intro {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .intro-p {
+        text-align: center;
+    }
+
+    .plug-link {
+        color: black;
+        text-decoration: underline 2px rgba(0,0,0,1);
+        text-underline-offset: 5px;
+        transition: text-decoration-color 300ms, text-underline-offset 300ms;
+    }
+
+    .plug-link:hover {
+        text-decoration-color: #f7cf57;
+        text-underline-offset: 10px;
+    }
+
+    .first-divider {
+        grid-row: 3;
+        grid-column: 2;
+        text-align: center;
+    }
+
+    .divider-line {
+        box-sizing: border-box;
+        align-items: center;
+        position: relative;
+        width: 1200px;
+        border-bottom: 2px solid #f7cf57;
+    }
+
+    .early-career {
+        grid-column: 1;
+        grid-row: 3;
+        text-align: center;
+        margin-left: 40px;
+        margin-top: 60px;
+    }
+
+    .early-career-header {
+        letter-spacing: 4px;
+    }
+
+    .early-career-p {
+        line-height: 26px;
+    }
+
+    .mid-career {
+        grid-column: 2;
+        grid-row: 3;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .mid-career-header {
+        letter-spacing: 4px;
+    }
+
+    .mid-career-p {
+        line-height: 26px;
+    }
+
+    .later-career {
+        grid-column: 3;
+        grid-row: 3;
+        text-align: center;
+        margin-top: 60px;
+        margin-right: 40px;
+    }
+
+    .later-career-header {
+        letter-spacing: 4px;
+    }
+
+    .later-career-p {
+        line-height: 26px;
+    }
+    
+    .mag-picture-left {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .mag-picture-mid {
+        grid-column: 2;
+        grid-row: 4;
+    }
+
+    .mag-picture-right {
+        grid-column: 3;
+        grid-row: 4;
+        height: 500px
+    }
+
+    #mag-picture {
+        width: 100%;
+        position: relative;
+        height: 950px;
+    }
+
+    .second-divider {
+        grid-column: 2;
+        grid-row: 5;
+        margin-top: 100px;
+    }
+
+    .mag-achievements {
+        grid-column: 2;
+        grid-row: 6;
+        text-align: center;
+    }
+
+    .mag-achievements-header {
+        letter-spacing: 8px;
+    }
+}

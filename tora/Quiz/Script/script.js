@@ -96,4 +96,3 @@ idol.innerHTML += htmltext;
 
 
 
-

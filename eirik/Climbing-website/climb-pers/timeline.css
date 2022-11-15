@@ -1,0 +1,63 @@
+
+@media screen and (min-width: 2560px) {
+    
+    .process-wrapper {
+        margin: auto;
+        max-width: 1440px;
+        grid-row: 7;
+        grid-column: 2;
+    }
+
+    #progress-bar-container {
+        position: relative;
+        width: 90%;
+        margin: auto;
+        height: 100px;
+        margin-top: 59px;
+    }
+
+    #progress-bar-container ul {
+        padding: 0;
+        margin: 0;
+        padding-top: 15px;
+        z-index: 9999;
+        position: absolute;
+        width: 100%;
+        margin-top: -40px;
+    }
+
+    #progress-bar-container li::before {
+        content: "";
+        display: block;
+        margin: auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: solid 2px #aaa;
+        transition: all ease 0.3s;
+    }
+
+    #progress-bar-container li.active::before,
+    #progress-bar-container li:hover::before {
+        background: #f7cf57;
+    }
+
+    #progress-bar-container li {
+        list-style: none;
+        float: left;
+        width: 20%;
+        text-align: center;
+        color: #aaa;
+        text-transform: uppercase;
+        font-size: 11px;
+        cursor: pointer;
+        font-weight: 700;
+        transition: all ease 0.2s;
+        vertical-align: bottom;
+        height: 59px;
+        position: relative;
+    }
+
+    
+    
+}

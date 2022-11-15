@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8">
+    <title>Min nettside</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="et-bilde/et-bilde.css">
+    <script src="funksjoner.js" defer></script>
+    <script src="et-bilde/generer-bilde.js" defer></script>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <a href="../index.html">
+                <li>Tilbake</li>
+            </a>
+            <a href="batch/index.html">
+                <li>Batch</li>
+            </a>
+            <a href="et-bilde/index.html">
+                <li>Bilde</li>
+            </a>
+            <a href="gjoremal/index.html">
+                <li>Gjøremål</li>
+            </a>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Min nettside</h1>
+        </header>
+        <div class="flex">
+            <div style="flex-grow: 1;">
+                <h2>Småprosjekter:</h2>
+                <div class="grid">
+                    <div>
+                        <a href="batch/index.html">
+                            <img src="bilder/batch.png" width="108" height="108">
+                            <p>Batch</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="et-bilde/index.html">
+                            <img id="et-bilde" src="bilder/et-bilde.png" width="220" height="220">
+                            <p>Få et bilde</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="gjoremal/index.html">
+                            <img src="bilder/gjoremal.png" width="780" height="780">
+                            <p>Gjøremål</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="utforskning/index.html">
+                            <img src="bilder/utforskning.jpg" width="500" height="500">
+                            <p>Utforskning</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hoyre">
+                <div id="lagring-sporsmal" class="skjul">
+                    <h3>Denne nettsiden vil lagre informasjon på datamaskinen din. Er det greit?</h3>
+                    <button id="lagring-greit">Ja da</button>
+                </div>
+                <div id="om-deg" class="skjul">
+                    <h3>Svar gjerne på dette spørsmålet:</h3>
+                    <p>Hva heter du?</p>
+                    <input id="navn-inn" placeholder="Ditt navn">
+                </div>
+                <div id="velkommen" class="skjul">
+                    <h3>Velkommen<span id="navn-ut"></span></h3>
+                </div>
+                <div id="bilde"></div>
+                <div id="bunn">
+                    <button id="slett-cookies">Slett cookies</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

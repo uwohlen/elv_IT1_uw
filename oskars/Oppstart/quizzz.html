@@ -1,0 +1,116 @@
+<!doctype html>
+    <html lang="no">
+    <head>
+        <meta charset ="utf-8">
+        <link rel="stylesheet" href="css/qui.css">
+        <title>Quiz om datamaskiner</title>
+    </head>
+    <body>
+    <div class="navbar">
+        <ul>
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="cookies.html">Tilbake</a></li>
+        </ul>
+    </div>
+        <h1><u style="text-decoration-color:black">Velkommen til quizen<span id="idNavn"></span>!</u></h1>
+    <div class="fogp">
+        <h3 id="idPoeng">Poeng: 0</h3>
+        <h3 id="idForsøk">Forsøk: 0</h3>
+    </div>
+
+    <div class="spm">
+        <br><br><br><br><br><br>
+            <h2>Hva er en SSD?</h2>
+            <img src="./media/ssd2.jpg" width="400" height="150"> <br><br>
+            <button id="id1a"><span class="arg"></span>Solid State Drive</button> 
+            <button id="id1b" onclick="Feil('id1b')"><span class="arg"></span>Self Serviced Disc</button> 
+            <button id="id1c" onclick="Feil('id1c')"><span class="arg"></span>Super Server Data</button> 
+            <br><br>
+            <h2>Hva er en HHD?</h2>
+            <img src="./media/hdd.jpg" width="350" height="200"> <br><br>
+            <button id="id2a" onclick="Feil('id2a')"><span class="arg"></span>Honduras Hospital Design</button> 
+            <button id="id2b"><span class="arg"></span>Hard Disc Drive</button> 
+            <button id="id2c" onclick="Feil('id2c')"><span class="arg"></span>Happy Disco Dogs</button> 
+            <br><br>
+            <h2>Hva er en CPU?</h2>
+            <img src="./media/core.png" width="300" height="250"> <br><br>
+            <button id="id3a"><span class="arg"></span>Central Processing Unit</button> 
+            <button id="id3b" onclick="Feil('id3b')"><span class="arg"></span>Circle Product User</button>
+            <button id="id3c" onclick="Feil('id3c')"><span class="arg"></span>Citrus People united</button> 
+            <br><br>
+            <h2>Hva er en GPU?</h2>
+            <img src="./media/gpu.jpg" width="350" height="180"> <br><br>
+            <button id="id4a" onclick="Feil('id4a')"><span class="arg"></span>Grand Point Utah</button>
+            <button id="id4b" onclick="Feil('id4b')"><span class="arg"></span>Goofy Pro Ultra</button> 
+            <button id="id4c"><span class="arg"></span>Graphics Processing Unit</button> 
+    </div>
+    <script>
+        let Poeng = 0
+        let PoengEl=document.getElementById('idPoeng');
+
+        let Forsøk = 0
+        let ForsøkEl=document.getElementById('idForsøk');
+
+        let navnEl=document.getElementById("idNavn");
+        if (localStorage.getItem("lagretNavnForQuiz1") !== null) {
+        navnEl.innerHTML = " " + localStorage.getItem("lagretNavnForQuiz1");
+        }
+
+        function Feil(id){
+           document.getElementById(id).innerHTML="Feil";
+           document.getElementById(id).style.backgroundColor = "red";
+           Forsøk ++;
+            ForsøkEl.innerHTML="Forsøk: " + Forsøk;
+        }
+
+        let knapp1aEl = document.getElementById("id1a");
+        knapp1aEl.addEventListener("click",riktig1)
+        function riktig1() {
+            knapp1aEl.innerHTML ="Riktig";
+            knapp1aEl.style.backgroundColor = "green";
+            Poeng ++;
+            PoengEl.innerHTML="Poeng: " + Poeng;
+            knapp1aEl.removeEventListener("click",riktig1);
+            Forsøk ++;
+            ForsøkEl.innerHTML="Forsøk: " + Forsøk;
+        }
+
+        let knapp2bEl = document.getElementById("id2b");
+             knapp2bEl.addEventListener("click",riktig2)
+        function riktig2() {
+            knapp2bEl.innerHTML = "Riktig";
+            knapp2bEl.style.backgroundColor = "green";
+            Poeng ++;
+            PoengEl.innerHTML="Poeng: " + Poeng;
+            knapp2bEl.removeEventListener("click",riktig2)
+            Forsøk ++;
+            ForsøkEl.innerHTML="Forsøk: " + Forsøk;
+        }
+        let knapp3aEl = document.getElementById("id3a");
+        knapp3aEl.addEventListener("click",riktig3)
+        function riktig3() {
+            knapp3aEl.innerHTML = "Riktig";
+            knapp3aEl.style.backgroundColor = "green";
+            Poeng ++;
+            PoengEl.innerHTML="Poeng: " + Poeng;
+            knapp3aEl.removeEventListener("click",riktig3)
+            Forsøk ++;
+            ForsøkEl.innerHTML="Forsøk: " + Forsøk;
+        }
+        let knapp4cEl = document.getElementById("id4c");
+        knapp4cEl.addEventListener("click",riktig4)
+        function riktig4() {
+            knapp4cEl.innerHTML ="Riktig";
+            knapp4cEl.style.backgroundColor ="green";
+            Poeng ++;
+            PoengEl.innerHTML="Poeng: " + Poeng;
+            knapp4cEl.removeEventListener("click",riktig4)
+            Forsøk ++;
+            ForsøkEl.innerHTML="Forsøk: " + Forsøk;
+        }
+
+    </script>
+
+    </body>
+    </html>
+ 

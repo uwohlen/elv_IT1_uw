@@ -1,0 +1,118 @@
+* {
+box-sizing: border-box;
+}
+
+
+body {
+font-family: "Garamond", Times, serif;
+margin: 0;
+}
+
+h1{
+font-family: "NSimSun";
+font-size: 300%;
+}
+
+h2 {
+text-align: center;
+font-family: "NSimSun";
+font-size: 200%;
+}
+
+#idTEKST{
+font-size: 130%;
+}
+
+
+#idJuanlespins{
+background-color: rgb(245, 243, 220);
+padding: 15px;
+}
+
+#idBade{
+background-color: rgb(219, 205, 193);
+padding: 15px;
+}
+
+#idGamlebyen{
+background-color: #6d3b46;
+color: white;
+padding: 15px;
+}
+
+.header {
+padding: 20px;
+text-align: center;
+font-family: 'Segoe UI', sans-serif;
+font-size: 100%;
+background: #6b1125;
+color: white;
+}
+
+
+.row {  
+display: flex;
+flex-wrap: wrap;
+}
+
+
+.main {
+flex: 50%; 
+padding: 20px;
+}
+
+.side {
+flex: 50%;
+padding: 20px;
+}
+
+
+
+
+.footer {
+padding: 20px;
+text-align: center;
+background: #160105;
+color: white;
+}
+
+
+@media screen and (max-width: 700px) {
+.row, .navbar {   
+flex-direction: column;
+}
+}
+
+
+.grid-container {
+display: grid;
+grid-template-columns: auto auto auto auto auto;
+background-color: hsl(345, 75%, 13%);
+padding: 1px;
+}
+
+.grid-container a {
+color: white;
+padding: 10px 50px;
+font-family:Courier New;
+font-size: 100%;
+text-decoration: none;
+text-align: center;
+
+}
+
+.grid-container > div {
+padding: 10px 0;
+font-size: 20px;
+}
+
+/* endre farge når du har pilen på grid container */
+.grid-container a:hover {
+background-color: hsl(347, 100%, 3%);
+color: white;          
+}
+
+#stickymeny {
+position: sticky;
+top: 0;
+}

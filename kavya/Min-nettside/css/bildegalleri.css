@@ -1,0 +1,91 @@
+
+* {
+box-sizing: border-box;
+} 
+
+body {
+margin: 0;
+font-family: "Garamond", Times, serif;
+background-color: #d5f3ed;
+}
+
+h1{
+font-family: "NSimSun";
+font-size: 300%;
+}
+
+.header {
+padding: 20px;
+text-align: center;
+font-family: 'Segoe UI', sans-serif;
+font-size: 100%;
+background: #085243;
+color: white;
+
+} 
+
+.row {
+display: flex;
+flex-wrap: wrap;
+padding: 0 4px;
+}
+
+
+.column {
+flex: 25%;
+max-width: 25%;
+padding: 0 4px;
+}
+
+.column img {
+margin-top: 8px;
+vertical-align: middle;
+}
+
+
+@media (max-width: 800px) {
+.column {
+flex: 50%;
+max-width: 50%;
+}
+}
+
+@media (max-width: 600px) {
+.column {
+flex: 100%;
+max-width: 100%;
+}
+}
+.grid-container {
+display: grid;
+grid-template-columns: auto auto auto auto auto;
+font-family:Courier New;
+background-color:#033128;
+padding: 1px;
+}
+
+.grid-container a {
+color: white;
+padding: 10px 50px;
+font-family:Courier New;
+font-size: 100%;
+text-decoration: none;
+text-align: center;
+
+}
+
+.grid-container > div {
+padding: 10px 0;
+font-size: 20px;
+}
+
+/* endre farge når du har pilen på grid container */
+.grid-container a:hover {
+background-color: hsla(164, 44%, 92%, 0.973);
+color: rgb(10, 0, 0);          
+}
+
+#stickymeny {
+position: sticky;
+top: 0;
+}

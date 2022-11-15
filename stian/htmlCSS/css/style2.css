@@ -1,0 +1,56 @@
+#main {
+    border: 1px solid #c3c3c3;
+    display: flex;
+    flex-direction: row;
+}
+body {
+    margin: auto;
+}
+.header {
+    padding: 50px;
+    text-align: center;
+    background: blue;
+    color: beige;
+    margin: 0;
+    font-style: italic;
+    font-size: xx-large;
+}
+div.sticky{
+    position: sticky;
+    top: 0;
+}
+.navbar {
+    display: flex;
+    background-color: #333;
+}
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+.navbar a:hover {
+    background-color: beige;
+    color: black;
+}
+.side {
+    flex: 25%;
+    background-color: beige;
+    padding: 20px;
+}
+.hoved {
+    flex: 75%;
+    background-color: white;
+    padding: 20px;
+}
+footer {
+    color: white;
+    background-color: #333;
+    padding: 10px;
+    bottom: 0;
+    text-align: center;
+}
+.tekst {
+    font-weight: bold;
+    font-size: large;
+}

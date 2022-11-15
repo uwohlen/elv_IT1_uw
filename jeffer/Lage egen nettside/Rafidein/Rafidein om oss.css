@@ -1,0 +1,121 @@
+
+
+ body{
+    background-image:url(./Bilder/Graybg.jpeg);
+    margin:0px;
+    padding: auto;
+ }
+
+ #login{
+  font-family:sans-serif;
+  width: 100%;
+  height: 50px;
+  padding: 3px;
+  position: relative;
+  top:0px;
+  margin: auto;
+  background-color: #5a5a58;
+  color: white;
+}
+#loginn{
+  position: relative;
+  Right: 50px;
+}
+
+#navbar{
+  text-decoration: none;
+  display: flex;
+  flex-grow: 1px;
+  padding:px;
+  top:5px;
+  float:right;
+}
+
+#hoved {
+    font-family: sans-serif;
+    width: 80%;                  
+    margin:0px auto;          
+    padding: 30px;	             
+    background-color: #f8f9fa; 	 
+   }
+
+
+#title{
+    position: relative;
+    left: 10px;
+    text-decoration: none;
+    color: black;
+   }
+   
+   
+#nav{
+    display: flex;
+    background-color: white;
+    margin:0px;
+   }
+  
+
+.highlight{
+    text-decoration: none;
+    flex-grow: 1;
+    margin: 10px;
+    padding: 15px;
+    color: black;
+  }
+    
+  
+.highlight:hover{
+    background-color: lightgray;
+  }
+
+#Om {
+    background-image: url(./Bilder/Background\ omoss.png);
+    font-family: sans-serif;
+    width: 80%;                  
+    margin:0px auto;          
+    padding: 30px;	             
+   }
+  
+h2{
+    line-height: 60px;
+}
+
+
+p {
+    line-height: 30px;
+}
+
+li {
+    line-height: 30px;
+}
+
+
+#facebook {
+    width: 100%;
+    background-color: #152935;
+    height: 400px;
+    bottom: 10 px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  
+  }
+  
+  #face {
+    position: relative;
+  
+  }
+  
+  
+  .KONTAKT{
+    color: white;
+    margin-top: 50px;
+    font-size: 20px;
+  }
+  
+  #kart{
+    color: white;
+  }

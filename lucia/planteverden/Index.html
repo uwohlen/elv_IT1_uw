@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="no">
+<head> 
+  <title> Planteverden </title>
+  <!-- utf-8 gjør at vi kan bruke æ, ø og å -->
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css.css">
+  
+
+    <style>
+        body{
+            background-image:url("../planteverden/Plante-bilder/collection.jpg"); 
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 0%;
+        }
+        
+       .container-1{
+          display:flex;
+          border: 5px solid black;
+          margin-top: 10px;
+          padding-top: 5px;
+          padding-left:5px;
+          padding-right: 5px;
+          padding-bottom: 5px;
+         
+        }
+
+        .container-1 div{
+          background-color: rgba(221, 233, 221, 0.679);
+          padding: 10px; /*luft inne*/  
+
+        }
+
+        .box-1{
+          flex: 1;
+          background-color: rgba(240, 255, 255, 0.786);
+          border: 3px solid black;
+          border-radius: 10px;
+          margin-right:10px;
+        }
+
+        .box-2{
+          flex:1;
+          background-color: rgba(240, 255, 255, 0.786);
+          border: 3px solid black;
+          border-radius: 10px;
+        }
+
+        .box-3{
+          flex:1;
+          background-color: rgba(240, 255, 255, 0.786);
+          border: 3px solid black;
+          margin-left:10px; 
+          border-radius: 10px;
+        }
+       
+
+
+
+       
+    </style>
+
+</head>
+
+
+
+<body>
+<div class="hovedmeny">
+    <header class="header">
+      <a href="index.html" class="logo">Meny</a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+          <ul class="menu">
+              <li><a href="../index.html">Mine prosjekter</a></li>
+              <li><a href="bildegalleri.html">Bildegalleri</a></li>
+              <li><a href="Plante.html"> Plante</a></li>
+              <li><a href="Quiz.html"> Quiz </a></li>
+          </ul>
+    </header>
+ 
+  <div class="titel midtstill">
+    <marquee><h1> Velkommen til Plante Guiden min! </h1> </marquee>
+    <p>bla deg ned for å se alt det spennende du kan lære</p>
+    <p> Og her er et lengre avsnitt, med tekst fra</p>  
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="container-1">
+  <div class="box-1">
+    <h3 class="midtstill">trykk på bildegalleriet</h3>
+    <p class="midtstill">Hva godt gjør egentlig planter?</p>
+      <ol>
+        <li>De gir deg selskap</li>
+        <li>De er enkle å passe på</li>
+        <li>De er veldig fin dekor</li>
+      </ol>
+      <a id="plante" href="bildegalleri.html"><img src="../planteverden/Plante-bilder/Black_velvet_liten.png" style="width:50%;"></a>
+   
+  </div>
+  <div class="box-2">
+    <h3>Her kan du finne hvilken plante du er</h3>
+    <p></p>
+    <a id="plante" href="Plante.html"><img src="../planteverden/Plante-bilder/collection 4.jpg" style="width:60%;"></a>
+  </div>
+  <div class="box-3">
+    <h3>ta en quiz og test dine kunnskaper</h3>
+    <p></p>
+    <a id="plante" href="Quiz.html"><img src="../planteverden/Plante-bilder/Black_velvet_liten.png" style="width:50%;"></a>
+  </div>
+</div>
+
+<div>
+  <h2 style="text-align:center">Få innspirasjon</h2>
+ 
+ <div class="container">
+   <div class="mySlides">
+     <div class="numbertext">1 / 6</div>
+     <img src="../planteverden/Plante-bilder/rom_klipp.png" style="width:100%">
+   </div>
+ 
+   <div class="mySlides">
+     <div class="numbertext">2 / 6</div>
+     <img src="../planteverden/Plante-bilder/collection_klipp.jpg" style="width:100%">
+   </div>
+ 
+   <div class="mySlides">
+     <div class="numbertext">3 / 6</div>
+     <img src="../planteverden/Plante-bilder/blomst_klipp.png" style="width:100%">
+   </div>
+     
+   <div class="mySlides">
+     <div class="numbertext">4 / 6</div>
+     <img src="../planteverden/Plante-bilder/plants_klipp.png" style="width:100%">
+   </div>
+ 
+   <div class="mySlides">
+     <div class="numbertext">5 / 6</div>
+     <img src="../planteverden/Plante-bilder/blomster_klipp.png" style="width:100%">
+   </div>
+     
+   <div class="mySlides">
+     <div class="numbertext">6 / 6</div>
+     <img src="../planteverden/Plante-bilder/solsikke_klipp.png" style="width:100%">
+   </div>
+     
+   <a class="prev" onclick="plusSlides(-1)">❮</a>
+   <a class="next" onclick="plusSlides(1)">❯</a>
+ 
+   <div class="caption-container">
+     <p id="caption"></p>
+   </div>
+ 
+   <div class="row">
+     <div class="column">
+       <img class="demo cursor" src="../planteverden/Plante-bilder/rom.png" style="width:100%" onclick="currentSlide(1)" alt="rommet mitt">
+     </div>
+     <div class="column">
+       <img class="demo cursor" src="../planteverden/Plante-bilder/collection2.png" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+     </div>
+     <div class="column">
+       <img class="demo cursor" src="../planteverden/Plante-bilder/blomst.png" style="width:100%" onclick="currentSlide(3)" alt="blomst">
+     </div>
+     <div class="column">
+       <img class="demo cursor" src="../planteverden/Plante-bilder/plants.png" style="width:100%" onclick="currentSlide(4)" alt="rommet mitt">
+     </div>
+     <div class="column">
+       <img class="demo cursor" src="../planteverden/Plante-bilder/blomster.png" style="width:100%" onclick="currentSlide(5)" alt="orkide">
+     </div>    
+     <div class="column">
+       <img class="demo cursor" src="../planteverden/Plante-bilder/solsikke.png" style="width:100%" onclick="currentSlide(6)" alt="solsike">
+     </div>
+   </div>
+ </div>
+</div>
+ 
+ <script>
+ let slideIndex = 1;
+ showSlides(slideIndex);
+ 
+ function plusSlides(n) {
+   showSlides(slideIndex += n);
+ }
+ 
+ function currentSlide(n) {
+   showSlides(slideIndex = n);
+ }
+ 
+ function showSlides(n) {
+   let i;
+   let slides = document.getElementsByClassName("mySlides");
+   let dots = document.getElementsByClassName("demo");
+   let captionText = document.getElementById("caption");
+   if (n > slides.length) {slideIndex = 1}
+   if (n < 1) {slideIndex = slides.length}
+   for (i = 0; i < slides.length; i++) {
+     slides[i].style.display = "none";
+   }
+   for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" active", "");
+   }
+   slides[slideIndex-1].style.display = "block";
+   dots[slideIndex-1].className += " active";
+   captionText.innerHTML = dots[slideIndex-1].alt;
+ }
+ </script>
+     
+ 
+
+</body>
+</html>

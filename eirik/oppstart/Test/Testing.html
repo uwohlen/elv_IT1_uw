@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unnis nettside</title>
+</head>
+<body>
+    <h1>Superoptikjempefantafenomenalistisk nettside!</h1>
+    <h2>Underoverskrift</h2>
+    <p>Et vanlig avsnitt med tekst. Her kommer teksten.</p>
+    <p>Et avsnitt til.</p>
+    <h2>Denne nettsiden vil lagre informasjon på datamaskinen din, er det ok?</h2>
+    <button>OK</button>
+    <div>
+        <p><input id="idNavn" type="text" placeholder="Skriv navnet ditt her">Avslutt med Enter-tasten</p>
+        <h3><a href="quiz_datamaskin.html">Ta denne quizzzen om datamaskiner</a></h3>
+    </div>
+    <script>
+        let navnEl = document.getElementById("idNavn");
+        navnEl.addEventListener("keydown",lagrefunk);
+        function lagrefunk(event) {
+            //console.log(event.keyCode);
+            //console.log(navnEl.value);
+            
+            if (event.keyCode === 13) {
+                localStorage.setItem("lagretNavnForQuiz1",navnEl.value);
+            }
+        }
+    </script>
+</body>
+</html>

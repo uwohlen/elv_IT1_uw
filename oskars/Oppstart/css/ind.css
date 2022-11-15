@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+button{
+    cursor: pointer;
+}
+.okknapp{
+    cursor: pointer;
+    width:150px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 0px 0px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.yuh{
+    background: #009688;
+    width: 0;
+    height: 100%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+.okknapp:hover .yuh{
+    width: 100%;
+}
+.okknapp:hover{
+    border-style: hidden;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.82)),url(../media/data.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 140px;
+    cursor: pointer;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    transform: translateY(0%);
+    text-align: center;
+    color: #fff;
+}
+.content h1{
+    font-size: 100px;
+    margin-top: 40px;
+}
+.content p{
+    margin: 25px auto;
+    font-weight: 100;
+    line-height: 20px; 
+}
+.firkant{
+    width: 100%;
+    position: absolute;
+    transform: translateY(230%);
+    text-align: center;
+    color: #fff;
+}

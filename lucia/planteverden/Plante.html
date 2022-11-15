@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="no">
+<head> 
+  <title> Planteverden </title>
+  <!-- utf-8 gjør at vi kan bruke æ, ø og å -->
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css.finn_plant.css">
+<!--her kommer masse rart nå-->
+<style>
+
+  .hovedmeny{
+    background-image:url("../planteverden/Plante-bilder/bakgrunn.PNG");
+    background-repeat: repeat-x;
+  }
+
+
+  #brøktekst{
+    background-color: rgba(221, 233, 221, 0.679);
+  }
+    
+</style>
+
+</head>
+<body>
+
+  <div class="hovedmeny">
+    <header class="header">
+      <a href="Index.html" class="logo">Meny</a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+          <ul class="menu">
+              <li><a href="../index.html">Mine prosjekter</a></li>
+              <li><a href="bildegalleri.html">Bildegalleri</a></li>
+              <li><a href="Plante.html"> Plante</a></li>
+              <li><a href="Quiz.html"> Quiz </a></li>
+          </ul>
+    </header>
+ 
+  <div class="titel midtstill">
+    <marquee><h1> Hvilken plante er du! </h1> </marquee>
+    <p id="brøktekst">bla deg ned for å se alt det spennende du kan lære</p>
+    <p id="brøktekst"> Og her er et lengre avsnitt, med tekst fra</p>  
+    
+  </div>
+  </div>
+    
+
+  <h1 class="midtstill">Finn ut hvilken plante som passer deg best ved å svare på disse spørsmålene:</h1>
+  <p> </p>
+
+  <div id="quiz">
+    <div class="spm">
+      <h2>Hva er favoritt årstiden din?</h2> 
+      <button onclick="knappTrykket(this)">Sommer</button>
+      <button onclick="knappTrykket(this)">Vinter</button>
+      <button onclick="knappTrykket(this)">Vår</button>
+      <button onclick="knappTrykket(this)">Høst</button>
+    </div>
+    <div class="spm">
+      <h2>Hva liker du å gjøre på fritiden?</h2>
+      <button onclick="knappTrykket(this)">Sove</button>
+      <button onclick="knappTrykket(this)">Spise</button>
+      <button onclick="knappTrykket(this)">Gå ut med venner</button>
+      <button onclick="knappTrykket(this)">Trene</button>
+    </div>
+    <div class="spm">
+      <h2>Hvordan hadde du beskrevet deg selv med ett ord?</h2>
+      <button onclick="knappTrykket(this)">Rolig</button>
+      <button onclick="knappTrykket(this)">Stressa</button>
+      <button onclick="knappTrykket(this)">Smexy</button>
+      <button onclick="knappTrykket(this)">Morsom</button>
+    </div>
+    <div class="spm">
+      <h2>Hva er din største styrke?</h2>
+      <button onclick="knappTrykket(this)">Holde hodet kaldt</button>
+      <button onclick="knappTrykket(this)">Lytte til andre</button>
+      <button onclick="knappTrykket(this)">Modig og lidenskaplig</button>
+      <button onclick="knappTrykket(this)">Tilgivende og lojal</button>
+    </div>
+    <div class="spm">
+      <h2>Hvor hadde du reist?</h2>
+      <button onclick="knappTrykket(this)">Amazonas</button>
+      <button onclick="knappTrykket(this)">Mexico</button>
+      <button onclick="knappTrykket(this)">Thailand</button>
+      <button onclick="knappTrykket(this)">Australia</button>
+    </div>
+    <button onclick="lastPlante()">Finn din egen plante!</button>
+    <button onclick="nyQuiz()">Last Quizen på nytt</button>
+  </div>
+
+
+
+  <div id="output"></div>
+ 
+  <script>
+    let tags = [] //her kommer svarene våre inn
+
+    class plante {
+        constructor(navn, tags, bilde,beskrivelse, link) {
+            this.navn = navn;
+            this.tags = tags;
+            this.bilde = bilde;
+            this.link = link;
+            this.beskrivelse=beskrivelse;
+        }
+    }
+
+    let planter = [new plante("Alocacia",["Vinter", "Spise", "Morsom","Modig og lidenskaplig","Australia"],"Plante-bilder/Silver_dragon.png","Du er en planta som tilpasser seg ulike miljøer", "Alocasia.no"),
+                  new plante("Pathos",["Vår", "Gå ut med venner", "Smexy","Tilgivende og lojal","Thailand"],"Plante-bilder/gullranke_ampel.jpg", "Du bare vibber konstant , og stresser litt for lite. Du er i alle fall morsom.", "Pathos.no"),
+                  new plante("Monstera",["Høst", "Sove", "Rolig","Holde hodet kaldt","Amazonas"],"Plante-bilder/monstera.png", "Alle vil være vennen din , og du liker god mat, minner og folk", "Monstera.no"),
+                  new plante("Calathea",["Sommer", "Trene", "Stressa","Lytte til andre","Mexico"],"Plante-bilder/marantha.jpg", "Du er litt people pleaser , og gir alltid max på alt du gjør", "Marantha.no")]
+
+    function knappTrykket(knapp) {
+      knapp.style.backgroundColor = "Green"
+      alle_knapper = knapp.parentElement.getElementsByTagName("button")
+      for (let i = 0; i < alle_knapper.length; i++) {
+        alle_knapper[i].disabled = true; //dette er løken som gjør at alle knappen i samme spm blir grået ut(disabled)
+      }
+      tags.push(knapp.innerHTML)
+      console.log(tags) //da kan jeg se på inspiser
+    }
+
+    function finnPlante() {
+        if (tags==[]) {
+            return "Legg til noen tags"
+        }
+        let beste
+        let høyeste = 0
+        let beste_lik_liste
+        for (let i = 0; i < planter.length; i++) {
+            let liste = planter[i].tags
+            let lik_liste = []
+            for (let j = 0; j < tags.length; j++) {
+                if (liste.indexOf(tags[j]) != -1) {
+                    lik_liste.push(tags[j])
+                }
+            }
+            if (lik_liste.length>høyeste) {
+                console.log(planter[i])
+                høyeste = lik_liste.length
+                beste = planter[i]
+                beste_lik_liste = lik_liste
+            }
+        }
+        if (beste == undefined) {
+            return "Legg til noen tags"
+        }
+        txt = "<div id='resultat'><img class=\"bilde\" src=" + beste.bilde + "><h1>" + beste.navn + "</h1><p><h5>Fordi du valgte: " + beste_lik_liste + "</p></h5><p><h3>" + beste.beskrivelse + "</h3></p><a href='" + beste.link + "'>Trykk her for mer info</a></div>"
+        return txt
+    }      
+    function lastPlante() {
+        document.getElementById("output").innerHTML = finnPlante()
+    }
+    
+    function nyQuiz() {
+      tags = [] //tømmer tagsa
+      quiz_spm = document.getElementById("quiz").getElementsByClassName("spm")
+      for (let i = 0; i < quiz_spm.length; i++) {
+        quiz_svar = quiz_spm[i].getElementsByTagName("button")
+        for (let j = 0; j < quiz_svar.length; j++) {
+          quiz_svar[j].disabled = false
+          quiz_svar[j].style.backgroundColor = "rgb(240,240,240)"
+        }
+        
+      }
+
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+
+html, body, div,h1,h2,h3,h4,p,a, img,image {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	text-decoration: none;
+	color: black;
+}
+button {
+	cursor: pointer;
+}
+
+.center{    
+    text-align: center;
+}

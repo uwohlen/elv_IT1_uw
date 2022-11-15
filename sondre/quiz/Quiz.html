@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="no">
+    <meta charset="utf-8">
+    <head>
+        <title>IT quiz</title>
+        <link rel="icon" href="media/spør.jpeg">
+            <link rel="stylesheet" href="Quiz.css">
+            <link rel="stylesheet" href="../Standard_utsene.css">
+    </head>
+    <body>
+        <div class="menu">
+            <span><a id="home" href="../index.html"><button class="btn"></i> Home<span>&#127968</span></button></a></span>
+
+            <span><a href="../makerspace/makerspace.html"><button class="btn"></i> Makerspace<span>&#128424</span></button></a></span>
+
+            </span><button class="btn" id="btnslett"></i> Slett cookies<span>&#128465 &#127850</span></button>
+        </div>
+
+        <h1>4 spørsmål om datamaskiner og it</h1>
+        <h1>Velkommen<span id="idNavn0"></span>! Test hva du kan om datamaskiner:</h1>
+
+        <h3 id="idPoeng">Poeng: 0</h3>
+
+        <div class="flex-container">
+            <div class="sporsmål">
+                <h2>Hva står USB for?</h2>
+                <img src="media/usb.jpeg" alt="Bilde av en usb-kobling" height="140vw" width="80vw">
+                <br>
+                <button id="idw1">Universal system book</button>
+                <button id="idw2">Unit service bus</button>
+                <button id="idr1">Universal serial bus</button>
+                <button id="idw3">Unit system book</button>
+            </div>
+            
+            <div class="sporsmål">
+                <h2>Hvor mange bits i en byte?</h2>
+                <img src="media/harddisk.jpeg" alt="Bilde aav en harddisk" height="200em" width="100em">
+                <br>
+                <button id="idr2">8</button>
+                <button id="idw4">16</button>
+                <button id="idw5">1</button>
+                <button id="idw6">4</button>
+            </div>
+
+            <div class="sporsmål">
+                <h2>Hva kalles det vanligste tastatur layouten?</h2>
+                <img src="media/tastatur.jpeg" alt="Bilde av et tastatur" height="84vw" width="150vw">
+                <br>
+                <button id="idw7">Norsk</button>
+                <button id="idr3">qwerty</button>
+                <button id="idw8">Abcef</button>
+                <button id="idw9">Fdjkl</button>
+            </div>
+
+            <div class="sporsmål">
+                <h2>Netverkskort, grafikkort m.m kobles til hovedkortet gjennom hvilken tilkobling?</h2>
+                <br>
+                <button id="idw10">Usb</button>
+                <button id="idw11">AM4</button>
+                <button id="idw12">Sata</button>
+                <button id="idr4">PCIe</button>
+            </div>
+        </div>
+
+        <button id="ferdig1">Ferdig</button>
+
+        <div id="cookies">
+            <h3>Denne siden bruker cookies. Trykk ok hvis du godtar dette. </h3>
+            <button id="ok">ok</button>
+        </div>
+        <div id="navnditt">
+            <p><input id="navnskriv" type="text" placeholder="Skriv navnet ditt her"> Avslutt med Enter-tasten</p>
+        </div>
+            <h1 id="score">Gratulerer <span id="idNavn1"></span>, du fikk<span id="poeng1"></span> av 4 poeng.</h1>
+        <ol id="idol">
+    
+        </ol>        
+        <script src="../standard_javascript.js"></script>
+        <script src="Quiz.js"></script>
+    </body>
+</html>

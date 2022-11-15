@@ -1,7 +1,7 @@
 body {
 
     background-color: lightblue;
-    text-align: center;  
+    text-align: center; 
    
 
 }
@@ -21,7 +21,7 @@ li a {
         text-align: center;
         width: 60px;
         padding: 8px; 
-        /*background-color:#dddddd*/ 
+        /*background-color:#dddddd*/
         
       }
 
@@ -56,8 +56,10 @@ h1 {
     border:rgb(5, 8, 10);
     border-radius: 7px;
     padding: 2px;
+   
+   
 }
-
+/*hadde under cursor pointer og over style*/
 
 body {
     border:white 1px solid;
@@ -68,3 +70,5 @@ body {
 h2 {
     color: rgb(67, 126, 145);
 }
+
+

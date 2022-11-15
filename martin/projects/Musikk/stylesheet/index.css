@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+
+*{
+    font-family: 'Sanchez', serif;
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    background-color:#262626;
+}
+
+
+.banner{
+    background-image: linear-gradient(rgba(0,0,0, 0.5), #262626), url(../media/pexels-foteros-352505.jpg);
+    background-size: cover;
+    height: 100vh;
+
+
+    animation-name: load_in;
+    animation-duration: 1s;
+}
+
+
+@keyframes load_in{
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+
+.banner h1{
+    opacity: 0%;
+    font-size: 7vw;
+
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: 25%;
+    color:antiquewhite;
+    mix-blend-mode: difference;
+
+    animation-name: load_in;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+
+}
+
+.content_box_left{
+
+    position: relative;
+
+    width: 35%;
+    padding: 2vh;
+
+    margin-left: 2vw;
+
+    border-radius: 1vh;
+    border: 2.5px;
+    border-color: #262626;
+    border-style:solid;
+
+    background-color: #dddddd;
+
+    transition-duration: 0.4s;
+
+}
+
+.content_box_left:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.content_box_right{
+    
+
+    position: relative;
+    margin-left: auto;
+
+    right: 5vw;
+
+    width: 35%;
+    padding: 2vh;
+
+    border-radius: 1vh;
+    border: 2.5px;
+    border-color: #262626;
+    border-style:solid;
+
+    background-color: #dddddd;
+
+    transition-duration: 0.4s;
+
+}
+
+.content_box_right:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+
+}
+
+.title{
+    padding: 4vh;
+}
+
+.paragraph{
+    padding: 5vh;
+}

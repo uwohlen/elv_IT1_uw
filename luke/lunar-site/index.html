@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styles/style.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <title>Lunar Cooks</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    </head>
+    <body>
+        <div id="bg"></div>
+        <div id="landing-page">
+            <div id="navbar">
+                <a id="navbar-logo" href="#">
+                    <img src="assets/logo_transparent4.png" alt="Lunar Cooks" height="40">
+                    <span id="logo-text">Lunar</span>
+                </a>
+				<a href="../index.html" class="option hover-underline-animation">Tilbake</a>
+                <a href="#about-us-page" class="option hover-underline-animation">About us</a>
+                <a href="#services-page" class="option hover-underline-animation">Services</a>
+                <a href="https://dashboard.lunarcooks.no/" id="dashboard-button">Dashboard</a>
+            </div>
+            <div id="introduction-main">
+                <div id="introduction-page" data-aos="fade-up">
+                    <img id="logo-image-introduction" src="assets/logo_transparent5.png" alt="Lunar Cooks">
+                    <span id="introduction-title">Norway's leading streetwear community</span>
+                    <span id="introduction-description">Lunar is a reserved community that utilizes the power of modern software and community to help our members secure the latest releases at retail prices.</span>
+                </div>
+                <img id="sneaker-image" data-aos="fade-left" src="assets/sneaker.png" alt="Sneaker">
+            </div>
+        </div>
+        <div id="about-us-page">
+            <div id="about-main">
+                <div id="about-page" data-aos="fade-right">
+                    <span id="about-title">About Us</span>
+                    <span id="about-description">Lunar Cooks is a so called “cookgroup” based in Norway. The sole purpose of our server is to assist our users in copping limited apparel for retail prices. By joining our servers and actively using our tools and monitors your chances of copping limited apparel will increase exponentially. With a handful of talented staff members and vide variety of knowledge we will guide you on your path to success.</span>
+                </div>
+                <img id="discord-image" data-aos="fade-up-left" src="assets/showcase_discord.png" alt="Discord">
+            </div>
+        </div>
+        <div id="services-page">
+            <span id="services-title" data-aos="fade-left">Our Services</span>
+            <span id="services-description" data-aos="fade-right">Here are some of the services we offer</span>
+            <div id="services-grid" data-aos="zoom-out">
+                <div class="service-card">
+                    <span class="service-title">Shopify</span>
+                    <img src="assets/shopping-cart.svg" class="service-icon">
+                    <span class="service-description">Never miss a drop or restock with our blazing fast monitors.</span>
+                </div>
+                <div class="service-card">
+                    <span class="service-title">Supreme</span>
+                    <img src="assets/shopping-bag.svg" class="service-icon">
+                    <span class="service-description">Our monitors are constantly scanning supreme for restocks.</span>
+                </div>
+                <div class="service-card">
+                    <span class="service-title">Site/Raffle Lists</span>
+                    <img src="assets/clipboard.svg" class="service-icon">
+                    <span class="service-description">Tired of spending hours on sourcing raffles and sites that will drop the products you are seeking?</span>
+                </div>
+                <div class="service-card">
+                    <span class="service-title">Ealy Links</span>
+                    <img src="assets/clock.svg" class="service-icon">
+                    <span class="service-description">With the help of some talented individuals we are able to source tons of early links, including variants for limited drops.</span>
+                </div>
+                <div class="service-card">
+                    <span class="service-title">1-1 Help</span>
+                    <img src="assets/help-circle.svg" class="service-icon">
+                    <span class="service-description">With our in house team we will be able to give you 1-1 assistance and guide you through the process of becoming a successful reseller.</span>
+                </div>
+                <div class="service-card">
+                    <span class="service-title">Giveaways</span>
+                    <img src="assets/gift.svg" class="service-icon">
+                    <span class="service-description">Taking care of our community is our main priority. With polls and suggestions we will host giveaways on the item’s our members find most attractive.</span>
+                </div>
+            </div>
+        </div>
+        <script>
+            AOS.init({duration: 800});
+        </script>
+    </body>
+</html>

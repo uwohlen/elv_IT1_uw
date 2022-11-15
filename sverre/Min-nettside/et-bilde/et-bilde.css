@@ -1,0 +1,14 @@
+#svar-alternativer>button {
+    font-size: 2rem;
+}
+
+#bilde {
+    display: none;
+    font-size: 5rem;
+    position: relative;
+    margin-bottom: 10rem;
+}
+
+#bilde>* {
+    position: absolute;
+}

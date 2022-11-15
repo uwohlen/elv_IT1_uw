@@ -1,0 +1,33 @@
+
+div {
+  width: 80%;
+  margin: 5px;
+  padding: 15px;  
+  font-family: Arial, sans-serif;
+}
+.gronn {
+  border: 1px dashed #cccccc;
+  background-color: green;
+  
+}
+.rod {
+  background-color: red;
+  border: 1px dashed blue;
+}
+
+
+table {
+  border-collapse: collapse;
+  border-bottom: 2px solid #3f4259;
+}
+th, td {
+  border: 1px solid #f6f5f4;
+  padding: 8px;
+}
+thead > tr {
+  background-color: #3f4259;
+  color: #f6f7fa;
+}
+tbody > tr:nth-child(odd) {
+  background-color: #f6f7fa;
+} 
