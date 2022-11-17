@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <title>kalkulator </title>        
+    </head>
+
+    <body>
+        <h2>Kalkulator</h2>
+        <h3>Skriv inn regnestykket ditt her og avslutt med enter-tasten:</h3>
+        <p>
+            <input id="regnestykkeId" type="text" placeholder="skriv inn her">
+        </p>
+
+        <p>
+            "Svaret ditt er: "
+            <span id="svarId"></span>
+        </p>
+
+        <script>
+            let textEl = document.getElementById("regnestykkeId");
+            let svarEl = document.getElementById("svarId");
+           
+
+            textEl.addEventListener("keydown", textfunc);
+
+            function textfunc(event) {
+                if(event.keyCode === 13) {
+                    let text = textEl.value;
+                    let pluss = text.indexOf("+");
+                    let minus = text.indexOf("-");
+                    let multiplikasjon = text.indexOf("*")
+                    let divisjon = text.indexOf("/")
+
+                    if (pluss >= 1) {
+                        let a = text.substring(0, pluss);
+                        let b = text.substring(pluss+1);
+
+                        svarEl.innerHTML = Number(a) + Number(b);
+                    }
+
+                    else if (minus >= 1) {
+                        let a = text.substring(0, minus);
+                        let b = text.substring(minus+1);
+
+                        svarEl.innerHTML = Number(a) - Number(b);
+                    }
+
+                    else if (multiplikasjon >= 1) {
+                        let a = text.substring(0, multiplikasjon);
+                        let b = text.substring(multiplikasjon+1);
+
+                        svarEl.innerHTML = Number(a) * Number(b);
+                    }
+
+                    else {
+                        let a = text.substring(0, divisjon);
+                        let b = text.substring(divisjon+1);
+
+                        svarEl.innerHTML = Number(a) / Number(b);
+                    }
+                }
+
+                
+
+
+            }
+
+            
+
+        </script>
+
+    </body>
+
+</html>
