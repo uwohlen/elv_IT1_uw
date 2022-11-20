@@ -1,0 +1,246 @@
+.child1 {
+  display: flex;
+  justify-content: center;
+}
+
+.child2 {
+  display: flex;
+  justify-content: center;
+}
+
+#hoved {
+  width: 100%;
+  height: auto;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: ". k k k ."
+    ". b b b ."
+    ". b b b ."
+    ". b b b ."
+    ". t v h .";
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+}
+
+#hoved>div {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+button {
+  border-radius: 10px;
+  height: 50%;
+  width: 100%;
+}
+
+.tekst {
+  grid-area: k;
+}
+
+.bilde {
+  grid-area: b;
+}
+
+.topp {
+  grid-area: t;
+}
+
+.venstre {
+  grid-area: v;
+}
+
+.hoyre {
+  grid-area: h;
+}
+
+@media (max-width: 900px) {
+  .child1 {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .child2 {
+    flex-direction: column;
+    width: 100%;
+  }
+
+}
+
+/*Banner*/
+.banner {
+  padding: 10px;
+  text-align: center;
+  background: #a8a8a8;
+  color: rgb(255, 255, 255);
+  border-bottom: 0;
+}
+
+.navbar {
+  display: flex;
+  background-color: #7f7f7f;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 10px 5px rgba(18, 19, 19, 0.384);
+  z-index: 999;
+}
+
+.navbar>a {
+  font-family: Helvetica, Arial, Sans-Serif;
+  color: #F3F3F3;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.navbar>a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.Knapp {
+  margin-bottom: 25%;
+  align-items: center;
+  appearance: none;
+  background-color: #fcfdfc;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s, transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+
+.Knapp:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.Knapp:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.Knapp:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+input {
+  font-family: "JetBrains Mono", monospace;
+  position: relative;
+  cursor: text;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 16px;
+  height: 48px;
+  background-color: #fff;
+  border: 1px solid #d6d6e7;
+  border-radius: 3px;
+  color: rgb(35, 38, 59);
+  box-shadow: inset 0 1px 4px 0 rgb(119 122 175 / 30%);
+  overflow: hidden;
+  transition: all 100ms ease-in-out;
+}
+
+input:focus {
+  border-color: #3c4fe0;
+  box-shadow: 0 1px 0 0 rgb(35 38 59 / 5%);
+}
+
+#cookies {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: "JetBrains Mono", monospace;
+  text-align: center;
+}
+
+.Borte {
+  display: none;
+}
+
+#fixed {
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  background-color: #a8a8a8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+
+#cookies2 {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: "JetBrains Mono", monospace;
+  text-align: center;
+}
+
+input {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+#Overskrift {
+  font-family: Arial Black, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 40px;
+  color: #fefefe;
+}
+
+.tekst {
+  font-family: Arial Black, Helvetica, sans-serif;
+}
+
+.bilde {
+  border: rgb(61, 61, 61) 5px solid;
+}
+
+body {
+  background-color: #cacaca;
+}
+
+#Poeng {
+  border-radius: 8px;
+  z-index: 999;
+  padding: 10px;
+  background-color: rgb(238, 238, 238);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
