@@ -1,11 +1,13 @@
-.child1{
+.child1 {
   display: flex;
   justify-content: center;
 }
-.child2{
+
+.child2 {
   display: flex;
   justify-content: center;
 }
+
 #hoved {
   width: 100%;
   height: auto;
@@ -13,38 +15,57 @@
   gap: 5px;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: ". k k k ." 
-                       ". b b b ." 
-                       ". b b b ."
-                       ". b b b ."
-                       ". t v h .";
+  grid-template-areas: ". k k k ."
+    ". b b b ."
+    ". b b b ."
+    ". b b b ."
+    ". t v h .";
 }
-img{
+
+img {
   object-fit: cover;
   width: 100%;
 }
-#hoved > div {
+
+#hoved>div {
   display: grid;
   align-items: center;
   justify-items: center;
 }
-button{
+
+button {
   border-radius: 10px;
   height: 50%;
   width: 100%;
 }
-.tekst   { grid-area : k; }
-.bilde   { grid-area : b; }
-.topp    { grid-area : t; }
-.venstre { grid-area : v; }
-.hoyre   { grid-area : h; }
+
+.tekst {
+  grid-area: k;
+}
+
+.bilde {
+  grid-area: b;
+}
+
+.topp {
+  grid-area: t;
+}
+
+.venstre {
+  grid-area: v;
+}
+
+.hoyre {
+  grid-area: h;
+}
 
 @media (max-width: 900px) {
-  .child1{
+  .child1 {
     flex-direction: column;
     width: 100%;
   }
-  .child2{
+
+  .child2 {
     flex-direction: column;
     width: 100%;
   }
@@ -83,19 +104,19 @@ button{
   color: black;
 }
 
-.Knapp{
+.Knapp {
   margin-bottom: 25%;
   align-items: center;
   appearance: none;
   background-color: #fcfdfc;
   border-radius: 4px;
   border-width: 0;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
   box-sizing: border-box;
   color: #36395A;
   cursor: pointer;
   display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
+  font-family: "JetBrains Mono", monospace;
   height: 48px;
   justify-content: center;
   line-height: 1;
@@ -106,14 +127,15 @@ button{
   position: relative;
   text-align: left;
   text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
+  transition: box-shadow .15s, transform .15s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
-  will-change: box-shadow,transform;
+  will-change: box-shadow, transform;
   font-size: 18px;
 }
+
 .Knapp:focus {
   box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
@@ -128,8 +150,8 @@ button{
   transform: translateY(2px);
 }
 
-input{
-  font-family: "JetBrains Mono",monospace;
+input {
+  font-family: "JetBrains Mono", monospace;
   position: relative;
   cursor: text;
   font-size: 14px;
@@ -144,28 +166,32 @@ input{
   overflow: hidden;
   transition: all 100ms ease-in-out;
 }
+
 input:focus {
   border-color: #3c4fe0;
   box-shadow: 0 1px 0 0 rgb(35 38 59 / 5%);
 }
-#cookies{
+
+#cookies {
   margin-left: 5%;
   margin-right: 5%;
-  font-family: "JetBrains Mono",monospace;
+  font-family: "JetBrains Mono", monospace;
   text-align: center;
 }
-.Borte{
+
+.Borte {
   display: none;
 }
 
-#fixed{
+#fixed {
   z-index: 999;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.center{
+
+.center {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   background-color: #a8a8a8;
   display: flex;
@@ -176,33 +202,39 @@ input:focus {
 }
 
 
-#cookies2{
+#cookies2 {
   margin-left: 5%;
   margin-right: 5%;
-  font-family: "JetBrains Mono",monospace;
+  font-family: "JetBrains Mono", monospace;
   text-align: center;
 }
-input{
+
+input {
   margin-right: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
 }
+
 #Overskrift {
   font-family: Arial Black, Helvetica, sans-serif;
   font-weight: bolder;
   font-size: 40px;
   color: #fefefe;
 }
-.tekst{
+
+.tekst {
   font-family: Arial Black, Helvetica, sans-serif;
 }
-.bilde{
+
+.bilde {
   border: rgb(61, 61, 61) 5px solid;
 }
-body{
+
+body {
   background-color: #cacaca;
 }
-#Poeng{
+
+#Poeng {
   border-radius: 8px;
   z-index: 999;
   padding: 10px;

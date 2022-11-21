@@ -21,13 +21,6 @@ var foodY;
 
 var gameOver = false
 
-//test
-var w = window.innerWidth;
-
-
-
-
-
 window.onload = function () {
     board = document.getElementById("board");
     board.height = rows * blockSize;
@@ -37,43 +30,43 @@ window.onload = function () {
     placeFood()
     document.addEventListener("keyup", changeDirection);
     //update();
-    setInterval(update, 1000/10); //100 millisekunder
+    setInterval(update, 1000 / 10); //100 millisekunder
 }
 
-function update(){
+function update() {
     if (gameOver) {
         return;
     }
 
 
-    context.fillStyle="black";
+    context.fillStyle = "black";
     context.fillRect(0, 0, board.width, board.height);
 
-    context.fillStyle="red";
+    context.fillStyle = "red";
     context.fillRect(foodX, foodY, blockSize, blockSize);
 
-    if (snakeX == foodX && snakeY == foodY){
+    if (snakeX == foodX && snakeY == foodY) {
         snakeBody.push([foodX, foodY])
         placeFood()
     }
 
-    for (let i = snakeBody.length-1; i > 0; i--) {
-        snakeBody[i] = snakeBody [i-1]
+    for (let i = snakeBody.length - 1; i > 0; i--) {
+        snakeBody[i] = snakeBody[i - 1]
     }
     if (snakeBody.length) {
         snakeBody[0] = [snakeX, snakeY]
     }
 
-    context.fillStyle="lime";
+    context.fillStyle = "lime";
     snakeX += velocityX * blockSize;
     snakeY += velocityY * blockSize;
     context.fillRect(snakeX, snakeY, blockSize, blockSize);
     for (let i = 0; i < snakeBody.length; i++) {
-        context.fillRect(snakeBody[i][0], snakeBody [i][1], blockSize, blockSize)
+        context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize, blockSize)
     }
 
     //game over conditions
-    if (snakeX < 0 || snakeX > cols*blockSize || snakeY < 0 || snakeY > rows*blockSize) {
+    if (snakeX < 0 || snakeX > cols * blockSize || snakeY < 0 || snakeY > rows * blockSize) {
         gameOver = true;
         alert("Game over")
     }

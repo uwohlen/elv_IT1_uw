@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+</head>
+
+<body>
+    <input id="idKalk" placeholder="Skriv inn regnestykket ditt">
+    <p id="idSvar">= </p>
+    <script>
+        let KalkEl = document.getElementById("idKalk");
+        let SvarEl = document.getElementById("idSvar")
+        let InPluss = KalkEl.value.includes("+");
+        let InMinus = KalkEl.value.includes("-");
+        let Tegn;
+        let tall1;
+        let tall2;
+        let sum;
+        KalkEl.addEventListener("keydown", KalkSum);
+
+
+
+        function KalkSum(event) {
+            console.log(KalkEl.value);
+            if (event.keyCode === 13 && KalkEl.value !== null){
+                if(KalkEl.value.includes("+")){
+                    Tegn = KalkEl.value.indexOf("+");
+                    tall()
+                    sum = tall1 + tall2
+                }
+                if(KalkEl.value.includes("-", 1)){
+                    Tegn = KalkEl.value.indexOf("-", 1);
+                    tall()
+                    sum = tall1 - tall2
+                }
+                if(KalkEl.value.includes("*")){
+                    Tegn = KalkEl.value.indexOf("*");
+                    tall()
+                    sum = tall1 * tall2
+                }
+                if(KalkEl.value.includes("/")){
+                    Tegn = KalkEl.value.indexOf("/");
+                    tall()
+                    sum = tall1 / tall2
+                }
+
+                function tall(){
+                    tall1 = Number(KalkEl.value.slice(0, Tegn));
+                    tall2 = Number(KalkEl.value.slice(Tegn + 1, KalkEl.value.length));
+                }
+                SvarEl.innerHTML = "= " + sum
+                tall1 = 0
+                tall2 = 0
+            }
+        }
+    </script>
+</body>
+
+</html>

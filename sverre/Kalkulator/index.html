@@ -11,10 +11,14 @@
 
 <body>
     <a href="../index.html">Gå tilbake</a>
-    <p>Skriv inn regnestykke:</p>
+    <p>Enkel kalkulator som kun tar to tall:</p>
+    <input id="enkel" value="5 * 2">
+    <p>Kalkulator som tar flere tall:</p>
     <input id="regnestykke" value="12 / 3 + 1">
-    <p id="resultat"></p>
-    <p>Vanlig regnerekkefølge gjelder. Dessverre er det ingen paranteser (enda).</p>
+    <p>Resultat: <span id="resultat"></span></p>
+    <p>Vanlig regnerekkefølge gjelder. Du kan bruke <span id="operatorer"></span>.
+        Dessverre er det ingen paranteser (enda).
+    </p>
     <p>Trykk enter når du er ferdig</p>
 </body>
 

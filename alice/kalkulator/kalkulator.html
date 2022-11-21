@@ -54,20 +54,16 @@
                     }
 
                     else {
-                        let a = text.substring(0, divisjon);
-                        let b = text.substring(divisjon+1);
+                        let a = Number (text.substring(0, divisjon));
+                        let b = Number (text.substring(divisjon+1));
 
-                        svarEl.innerHTML = Number(a) / Number(b);
+                        if (b === 0) {
+                            svarEl.innerHTML = ("Å dele på null er tull");
+                        }
+                        svarEl.innerHTML = (a) / (b);
                     }
                 }
-
-                
-
-
             }
-
-            
-
         </script>
 
     </body>

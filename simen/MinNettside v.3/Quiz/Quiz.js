@@ -5,8 +5,8 @@ let cookies = document.getElementById("KnappTopp")
 let navnEl = document.getElementById("idNavn");
 let NavnOsk = document.getElementById("NavnValue")
 
-var cookiesEl = document.getElementsByClassName("Borte2")
-var Navn = document.getElementsByClassName("Borte")
+let cookiesEl = document.getElementsByClassName("Borte2")
+let Navn = document.getElementsByClassName("Borte")
 
 cookies.addEventListener("click", cookiesF)
 navnEl.addEventListener("keydown", lagrefunk);
@@ -15,10 +15,10 @@ navnEl.addEventListener("keydown", lagrefunk);
 //Skjuler Cookies
 function cookiesF() {
     console.log("hello")
-    for (var i = 0; i < Navn.length; i++) {
+    for (let i = 0; i < Navn.length; i++) {
         Navn[i].style.display = "inline-block";
     }
-    for (var i = 0; i < cookiesEl.length; i++) {
+    for (let i = 0; i < cookiesEl.length; i++) {
         cookiesEl[i].style.display = "none";
     }
 }
