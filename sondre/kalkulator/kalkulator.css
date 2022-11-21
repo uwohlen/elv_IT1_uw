@@ -1,0 +1,18 @@
+body{
+    background-color: black;
+    color: white;  
+}
+
+#id_kalkulator_input{
+    width: 80%;
+    margin: 2.5% 10% 5% 10%;
+}
+
+#id_svar_box{
+    width: 40%;
+    padding: 2em;
+    margin: 0% 0% 30% 30%;
+    outline: 1vw;
+    outline-style:double;
+    text-align: center;
+}
