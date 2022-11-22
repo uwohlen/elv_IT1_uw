@@ -1,0 +1,57 @@
+
+
+h3{
+    padding: 10px;
+}
+
+button{
+    padding: 10px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: rgb(232, 228, 235);
+}
+.game{
+    width: 700px;
+    height: 200px;
+    border: 1px solid black;
+    margin: auto;
+    background-color: rgb(238, 213, 209);
+}
+#karakter{
+    width: 20px;
+    height: 50px;
+    background-color: rgb(87, 15, 37);
+    position:relative;
+    top: 150px;
+}
+.animate{
+    animation: jump 0.3s linear;
+}
+@keyframes jump{
+    0%{top: 150px;}
+    30%{top: 100px;}
+    70%{top: 100px;}
+    100%{top: 150px;}
+}
+
+#hinder{
+    background-color: rgb(255, 0, 98);
+    width: 10px;
+    height: 20px;
+    border-radius: 3px;
+    position: relative;
+    top: 130px;
+    left: 500px;
+    animation: hinder 1s infinite linear;
+}
+@keyframes hinder{
+    0%{left: 500px}
+    100%{left: -40px}
+}
+p{
+    text-align: center;
+}
