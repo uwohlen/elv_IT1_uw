@@ -1,13 +1,27 @@
+@@ -1,26 +1,13 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Hjemmeside</title>
-            <link rel="stylesheet" href="Oppstart/CSS/Quiz kapittel 1.css">
-        </head>
-        <body>
-            <h1>Velkommen til mine nettsider</h1>
-            <a href="../index.html">Tilbake</a><br>
-            <a href="Oppstart/index1.html">Quiz</a><br>
-            <a href="Oppstart/Prosjekt2.html">Prosjekt2</a><br>
-        </body>
-    </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./alleBrukDenne.css">
+    <link rel="stylesheet" href="./E5/e5.css">
+    <title>Arkaden</title>
+</head>
+<body>
+    <h1 id="name">{ }</h1>
+    <div class="grid-container" id="main-page">
+        <div class="introduction">
+            <p>
+                Velkommen til Arkaden <span><input style="color: black;" id="idNavn" type="text" placeholder="Navn (Bekreft med ENTER)"></span>. Denne arkaden er en av de eneste arkadene vi har igjen i Norge. Vi har en haug med ulike spill til alle aldre og kjønn. Ønsker du å gå inn?
+            </p>
+            <button style="color: black" class="videre" onclick="location.href='../E1/';">Ja</button>
+        </div>
+        <button id="idLevel" style="display: none" >Forrige lagringspunkt</button>
+        <p class="poeng">Poeng: <span id="idPoeng">0</span></p>
+    </div>
+    <script src="./E5/intro.js"></script>
+    <script src="./E5/e5.js"></script>
+</body>
+</html>
