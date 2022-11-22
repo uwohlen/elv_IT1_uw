@@ -1,0 +1,1 @@
+let poeng = 0;

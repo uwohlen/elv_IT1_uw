@@ -1,0 +1,30 @@
+* {
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+h1 {
+    color: white;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%) scale(2, 2);
+    transition: 0.5s ease-in-out;
+}
+  
+.top {
+    top: 0;
+    transform: translateX(-50%);
+}
+  
+#main-page {
+    opacity: 0;
+    transition: 0.5s;
+    color: white;
+    margin-top: 60px;
+}
