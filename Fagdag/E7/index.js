@@ -2,10 +2,19 @@ const COL_WIDTH = 160;
 const SLOT_SIZE = 150;
 const COL_AMOUNT = 5;
 
+
+let confetti = new Confetti("celebration");
+
+confetti.setCount(750);
+confetti.setSize(3);
+confetti.setPower(100);
+confetti.setFade(true);
+
 // Create a new pixijs application that fills the screen
 const app = new PIXI.Application({
   height: window.innerHeight,
   backgroundColor: "#1099bb",
+  borderRadius: 10,
   resolution: window.devicePixelRatio || 1,
 });
 
@@ -34,7 +43,6 @@ function main() {
   ];
 
   const columns = [];
-  const textureColumns = [];
   const columnsContainer = new PIXI.Container();
 
   // Create the columns
@@ -81,43 +89,59 @@ function main() {
     column.slots.forEach((slot) => {
       temp.push(slot.texture.textureCacheIds[0]);
     });
-
-    textureColumns.push(temp);
   }
 
   app.stage.addChild(columnsContainer);
-
   const margin = (app.screen.height - SLOT_SIZE * 3) / 2;
-
   columnsContainer.y = margin;
-  columnsContainer.x = Math.round(app.screen.width - COL_WIDTH * COL_AMOUNT);
-
+  columnsContainer.x = Math.round(app.screen.width - COL_WIDTH * 5);
   const top = new PIXI.Graphics();
   top.beginFill(0, 1);
   top.drawRect(0, 0, app.screen.width, margin);
-
   const bottom = new PIXI.Graphics();
   bottom.beginFill(0, 1);
   bottom.drawRect(0, SLOT_SIZE * 3 + margin, app.screen.width, margin);
 
+  // Add play text
   const style = new PIXI.TextStyle({
     fontFamily: "Arial",
-    fontSize: 56,
+    fontSize: 30,
     fontWeight: "bold",
-    fill: ["#D83400"],
+    fill: ["#ffffff"], // gradient
+    stroke: "#4a1850",
+
   });
 
-  const text = new PIXI.Text("Klikk for å spille ", style);
-  text.x = Math.round((bottom.width - text.width) / 2);
+  const playStyle = new PIXI.TextStyle({
+    fontFamily: "Arial",
+    fontSize: 20,
+    fontWeight: "bold",
+    fill: ["#ffffff"], 
+    stroke: "#4a1850",
+    dropShadow: true,
+    dropShadowColor: "#000000",
+    
+  });
 
-  top.addChild(text);
+  const playText = new PIXI.Text("Spin!", playStyle);
+  playText.x = Math.round((bottom.width - playText.width) / 2);
+  playText.y =
+    app.screen.height - margin + Math.round((margin - playText.height) / 2);
+  bottom.addChild(playText);
+
+  // Add header text
+  const headerText = new PIXI.Text("Få 3 under hverandre eller 4 på rad for å gå videre!", style);
+  headerText.x = Math.round((top.width - headerText.width) / 2);
+  headerText.y = Math.round((margin - headerText.height) / 2);
+  top.addChild(headerText);
 
   app.stage.addChild(top);
   app.stage.addChild(bottom);
 
-  top.interactive = true;
-  top.cursor = "pointer";
-  top.on("pointerdown", () => {
+  // Set the interactivity.
+  bottom.interactive = true;
+  bottom.cursor = "pointer";
+  bottom.addListener("pointerdown", () => {
     startPlay();
   });
 
@@ -128,14 +152,13 @@ function main() {
 
     for (let i = 0; i < columns.length; i++) {
       const c = columns[i];
-      
-      let random = Math.random()
+
+      let random = Math.random();
       const extra = Math.floor(random * slots.length);
       const target = c.position + 10 + i * COL_AMOUNT + extra;
       const time = 2500 + i * 600;
-console.log(random*slots.length, extra)
 
-      console.log(
+      console.debug(
         "🎰 Column " +
           i +
           " will stop at position " +
@@ -159,15 +182,70 @@ console.log(random*slots.length, extra)
 
   function complete(t) {
     console.debug("✅ Game completed ", t);
-    window.setTimeout(() => {
-        // navigate to ../e8/index.html
-        window.location.href = "../E8/index.html";
-    isPlaying = false;
 
-  }, 1000);
+    let rows = [[], [], []];
+
+    // for each column
+    for (let i = 0; i < columns.length; i++) {
+      const c = columns[i];
+
+      let topSlot = c.slots[0];
+      let middleSlot = c.slots[0];
+      let bottomSlot = c.slots[0];
+
+      for (let j = 0; j < c.slots.length; j++) {
+        const s = c.slots[j];
+        if (Math.abs(s.y) < Math.abs(topSlot.y)) topSlot = s;
+
+        if (Math.abs(s.y - 150) < Math.abs(middleSlot.y - 150)) middleSlot = s;
+
+        if (Math.abs(s.y - 300) < Math.abs(bottomSlot.y - 300)) bottomSlot = s;
+      }
+      rows[0].push(assetNameToColorname(topSlot.texture.textureCacheIds[0]));
+      rows[1].push(assetNameToColorname(middleSlot.texture.textureCacheIds[0]));
+      rows[2].push(assetNameToColorname(bottomSlot.texture.textureCacheIds[0]));
+    }
+
+
+    let score = 0;
+
+    // check for 3, 4 or 5 of the same color
+    for (let i = 0; i < rows.length; i++) {
+      const r = rows[i];
+
+
+      if (r[0] === r[1] && r[1] === r[2] && r[2] === r[3]) {
+        score += 4;
+        console.debug("🎰 4 in a row", r);
+      }
+
+      if (r[0] === r[1] && r[1] === r[2] && r[2] === r[3] && r[3] === r[4]) {
+        score += 5;
+        console.debug("🎰 5 in a row", r);
+      }
+    }
+
+    // check for 3 in a column
+    for (let i = 0; i < rows[0].length; i++) {
+      const c = [rows[0][i], rows[1][i], rows[2][i]];
+      if (c[0] === c[1] && c[1] === c[2]) {
+        score += 3;
+        console.debug("🥳 3 in a column ", c);
+      }
+    }
+
+    console.debug("🎰 Score: " + score);
+
+    if (score > 0 ) {
+      document.getElementById("celebration").click();
+
+      setTimeout(() => {
+        // navigate to next page
+        window.location.href = "../E8/index.html"
+      }, 1000);
+    }
     isPlaying = false;
   }
-  let thing = [];
   app.ticker.add((delta) => {
     for (let i = 0; i < columns.length; i++) {
       const c = columns[i];
@@ -189,6 +267,29 @@ console.log(random*slots.length, extra)
       }
     }
   });
+}
+
+function assetNameToColorname(name) {
+  switch (name) {
+    case "assets/1.png":
+      name = "red";
+      break;
+    case "assets/2.png":
+      name = "green";
+      break;
+    case "assets/3.png":
+      name = "blue";
+
+      break;
+    case "assets/4.png":
+      name = "pink";
+      break;
+
+    default:
+      break;
+  }
+
+  return name;
 }
 
 // Very simple tweening utility function. This should be replaced with a proper tweening library in a real product.
