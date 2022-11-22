@@ -8,11 +8,12 @@ let nameanimation = [
     { t: "{AR_}", ms: 200 },
     { t: "{ARK_}", ms: 200 },
     { t: "{ARKA_}", ms: 200 },
-    { t: "{ARKAD_ }", ms: 200 },
+    { t: "{ARKAD_}", ms: 200 },
     { t: "{ARKADE_}", ms: 200 },
     { t: "{ARKADEN_}", ms: 200 },
     { t: "{ARKADEN }", ms: 200 },
     { t: "{ARKADEN_}", ms: 200 },
+    { t: "{ARKADEN_}", ms: 300 },
     { t: "{ARKADEN}", ms: 300 },
     { t: "{ARKADEN}", ms: 300 }
 ];
