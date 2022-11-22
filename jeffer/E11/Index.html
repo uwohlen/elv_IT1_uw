@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spill E11</title>
+
+   <link rel="stylesheet" href="FIx felix.css">
+
+</head>
+ 
+
+<body>
+<div id="text">
+    <h1> Jump game!!</h1>
+    <h3>Du går rundt og finner Jump game. Det er veldig gøy ut</h3>
+
+</div>
+
+<div id="game">
+    <div id="picture"><img src="./Bilder/Jumpgame.png"></div><br>
+    <ul id="nav">
+        <a class="option" href="Index.html">Spill</a>
+        <a class="option" onclick="godkjenning()">Ikke spill</a>
+    </ul>
+    <a id="skjul">Gå videre</a>
+    
+
+
+</div>
+
+
+</body>
+<script>
+   function godkjenning(){
+    let skjulEl= document.getElementById("skjul")
+    skjulEl.style.display = "block"
+}
+ 
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+
+
+
+body {
+    background-image: url(./Bilder/Arcade\ background.webp);
+}
+
+#text {
+    width: 60%;                /* bredde: 60 % av vinduet */
+    margin: 1px auto;        /* 100 px over elementet, auto midtstiller det */
+    padding: 40px;             /* luft mellom kantlinjene og innholdet */
+    background-color: white;   /* hvit bakgrunnsfarge */
+    border: 2px solid  black; 
+    text-align: center;/* grå kantlinje */
+    }
+
+
+#game {
+    width: 70%;
+    margin: 1px auto;
+    padding: 20px;             /* luft mellom kantlinjene og innholdet */
+   /* hvit bakgrunnsfarge */
+    text-align:center;
+}
+
+
+
+#nav{
+    width: 50%;
+    display: flex;
+    margin:0px auto;
+    position: relative;
+   }
+
+.option{
+    text-decoration: none;
+    flex-grow: 1;
+    margin: 10px;
+    padding: 15px;
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+  }
+
+.option:hover{
+    background-color: azure;
+}
+
+
+#skjul{
+    background-color: white;
+    width: 10%;
+    padding: 10px;
+    display: none;
+    margin: auto;
+}
+
