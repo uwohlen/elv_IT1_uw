@@ -1,0 +1,68 @@
+/*
+* {
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+body {
+    background-color: #121931;
+}
+*/
+* {
+    padding: 0px;
+    margin: 0px
+}
+
+.tekst {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    height: 145px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    border: 3px solid black ;
+    border-radius: 10px;
+}
+
+.poeng {
+    margin-top: 10px;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    max-width: 100%;
+    gap: 1rem;
+    margin: auto;
+    padding: 20px;
+}
+
+.kort div {
+    height: 130px;
+    border-radius: 10px;
+}
+
+.kort {
+    position: relative;
+    cursor:pointer;
+}
+
+.front {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    /*transform: rotateY(90deg);*/
+}
+
+.back {
+    background-color: rgba(0, 0, 0, 0.233);
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
