@@ -41,3 +41,12 @@ body {
 .E3diver{
     cursor: pointer;
 }
+
+.SCORE{
+    color:rgb(7, 7, 7);
+    position:fixed;
+    left:5px; top: 55%;
+    transform: translateY(-50%); 
+    white-space: nowrap; 
+    left: 7vw;
+}
