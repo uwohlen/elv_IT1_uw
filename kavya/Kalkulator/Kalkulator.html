@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <title>
+        Kalkulator
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {box-sizing: border-box;}
+        body {font-family: Verdana, sans-serif;}
+        .MineSlides1 {display: none;}
+        img {vertical-align: middle;}
+
+        body {
+        font-family: "Garamond", Times, serif;
+        margin: 0;
+        background-color: #f7f2ec;
+        }
+        h1{
+        font-family: "NSimSun";
+        font-size: 300%;
+        }
+
+        p{
+        font-family: "NSimSun";
+        font-size: 100%;
+        }
+
+        h2 {
+        text-align: center;
+        font-family: "NSimSun";
+        font-size: 200%;
+        }
+
+        #idTEKST{
+        font-size: 130%;
+        }
+
+        .header {
+        padding: 20px;
+        text-align: center;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 100%;
+        background: #9c8669;
+        color: black;
+        }
+        .row {  
+        display: flex;
+        flex-wrap: wrap;
+        }
+
+        .main {
+        flex: 50%; 
+        padding: 20px;
+       
+        }
+
+        .side {
+        flex: 50%;
+        padding: 20px;
+        }
+
+        .footer {
+        padding: 20px;
+        text-align: center;
+        background: #402e18;
+        color: white;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Overskrift -->
+    <div class="header">
+        <h1>Kalkulator</h1> 
+        </div>
+
+    <div id="idMiddag" class="flexbox">
+    <h2> wiii </h2>
+        <div class="row"> 
+                <div id="idTEKST" class="side">
+                    <p> Test min kalkulator! Skriv inn tall og bruk +, -, * eller /. -> </p>
+                </div>   
+                
+                <div id="idTEKST"class="main">
+                    <div>
+                        <p><input id="idRegnestykke" type="text" placeholder="Srkiv regnestykket"> Avslutt med Enter-tasten &#10083 </p>
+                    </div>
+                
+                    <p>Svar: <span id="idTilbake"></span></p>
+                    
+                </div>  
+        </div> 
+    </div>
+        
+    <div class="footer">
+        <h2></h2>
+        </div>
+
+</body>
+<script>
+
+    let regnestykkeEl = document.getElementById("idRegnestykke");
+        let tilbakeEl = document.getElementById("idTilbake")
+        regnestykkeEl.focus();
+        regnestykkeEl.addEventListener("keydown",regnestykkefunk);
+
+
+
+        
+        function regnestykkefunk (event){
+            if(event.keyCode === 13) { 
+                let tekst = regnestykkeEl.value  
+                let ipluss = tekst.indexOf("+"); 
+                let iminus = tekst.indexOf("-");
+                let igange = tekst.indexOf("*");
+                let idele = tekst.indexOf("/");
+
+                if (ipluss>=1) {     
+                    let tall1 = Number(tekst.substr(0,ipluss));
+                    let tall2 = Number(tekst.substr(ipluss+1));
+                    console.log(ipluss,tall1,tall2);
+                    tilbakeEl.innerHTML = tall1 + tall2;
+                
+                }
+                else if (iminus>=1) { 
+                                  
+                    let tall1 = Number(tekst.substr(0,iminus));
+                    let tall2 = Number(tekst.substr(iminus+1));                                                                 
+                    console.log(iminus,tall1,tall2);
+                    tilbakeEl.innerHTML = tall1 - tall2;
+
+                }
+                else if (igange>=1) {
+                                   
+                    let tall1 = Number(tekst.substr(0,igange));
+                    let tall2 = Number(tekst.substr(igange+1));
+                    console.log(igange,tall1,tall2);
+                    tilbakeEl.innerHTML = tall1 * tall2;
+
+                }
+                else if (idele>=1) { 
+                                 
+                    let tall1 = Number(tekst.substr(0,idele));
+                    let tall2 = Number(tekst.substr(idele+1));
+                    console.log(idele,tall1,tall2);
+                    tilbakeEl.innerHTML = (tall1 / tall2);
+                }
+
+            }
+        }
+
+  
+</script>
+
+</html>
