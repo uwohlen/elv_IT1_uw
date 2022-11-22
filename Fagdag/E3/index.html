@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="no">
+<meta charset="UTF-8">
+<title>Memory</title>
+<link rel="stylesheet" href="Style.css"> 
+
+
+<body id="Body">
+
+    <!-- Heading -->
+    <div id="Heading" class="E3Heading">
+        <h1 class="Overskrift">Velkommen til memory <span id="Navn"></span></h1>
+        <div id="StartSpillKnapp">
+            <button id="start" style="text-align: center;">Start</button>
+        </div>
+    </div>
+
+    <p>Poeng:<button id="SCORE" class="SCORE">     0     </button></p>
+
+    <div id="Kort" class="E3grid-container">
+        <div onclick="ClickDiv('div1')" class="diver"id="div1">  </div>
+        <div onclick="ClickDiv('div2')" class="diver"id="div2">  </div>
+        <div onclick="ClickDiv('div3')" class="diver"id="div3">  </div>
+        <div onclick="ClickDiv('div4')" class="diver"id="div4">  </div>
+        <div onclick="ClickDiv('div5')" class="diver"id="div5">  </div>
+        <div onclick="ClickDiv('div6')" class="diver"id="div6">  </div>
+        <div onclick="ClickDiv('div7')" class="diver"id="div7">  </div>
+        <div onclick="ClickDiv('div8')" class="diver"id="div8">  </div>
+        <div onclick="ClickDiv('div9')" class="diver"id="div9">  </div>
+        <div onclick="ClickDiv('div10')" class="diver"id="div10">  </div>
+        <div onclick="ClickDiv('div11')" class="diver"id="div11">  </div>
+        <div onclick="ClickDiv('div12')" class="diver"id="div12">  </div>
+        <div onclick="ClickDiv('div13')" class="diver"id="div13">  </div>
+        <div onclick="ClickDiv('div14')" class="diver"id="div14">  </div>
+        <div onclick="ClickDiv('div15')" class="diver"id="div15">  </div>
+        <div onclick="ClickDiv('div16')" class="diver"id="div16">  </div>
+        <div onclick="ClickDiv('div17')" class="diver"id="div17">  </div>
+        <div onclick="ClickDiv('div18')" class="diver"id="div18">  </div>
+        <div onclick="ClickDiv('div19')" class="diver"id="div19">  </div>
+        <div onclick="ClickDiv('div20')" class="diver"id="div20">  </div>
+    </div>
+    
+    
+    <script>
+
+        let StartKnappEl = document.getElementById("StartSpillKnapp");
+        let headingEl = document.getElementById("Heading");
+        let StartEl = document.getElementById("start");
+        
+        StartEl.addEventListener("click", StartSpill);
+
+        document.getElementById("Navn").innerHTML=localStorage.getItem("navnIT1fagdag");
+
+        Poeng=number(localStorage.getItem("poengIT1fagdag"));
+
+        document.getElementById("SCORE").innerHTML=Poeng;
+        
+        function StartSpill(){
+            l=0;
+            dict={};
+            document.getElementById("Kort").style.visibility="visible";
+            headingEl.style.visibility="hidden";
+            StartKnappEl.style.visibility="hidden";
+            g=0;
+            while (g<10){
+                RK=RandomKort();
+                RD=RandomDiv();
+                console.log(RD)
+                dict[RD] = RK;
+                document.getElementById(RD).innerHTML += '<img src="Bilder/' + RK + '.png" style="position: absolute; top: 10px; left: 80px;" width="100" height="125"/>';
+                document.getElementById(RD).innerHTML += '<img id="Back' + RD + '" src="Bilder/Back.png" style="position: absolute; top: 10px; left: 80px;" width="100" height="125"/>'
+                RD=RandomDiv();
+                console.log(RD)
+                dict[RD] = RK;
+                document.getElementById(RD).innerHTML += '<img src="Bilder/' + RK + '.png" style="position: absolute; top: 10px; left: 80px;" width="100" height="125"/>';
+                document.getElementById(RD).innerHTML += '<img id="Back' + RD + '" src="Bilder/Back.png" style="position: absolute; top: 10px; left: 80px;" width="100" height="125"/>'
+                g++;
+            }
+        }
+
+        m=0;
+        SnuddeKort=[];
+        function ClickDiv(x){
+            y="Back" + x;
+            document.getElementById(y).style.visibility="hidden";
+            l++
+            m++;
+            if (l==20){
+                Avslutt();
+            }
+            if (m>2){
+                console.log(dict[SnuddeKort[0]]);
+                console.log(dict[SnuddeKort[1]]);
+                if (dict[SnuddeKort[0]] == dict[SnuddeKort[1]]){
+                    console.log("kjørt1")
+                    SnuddeKort=[];
+                    m=1;
+                    Poeng++;
+                    document.getElementById("SCORE").innerHTML=Poeng;
+                }
+                else{
+                    console.log("kjørt")
+                    y="Back" + SnuddeKort[0];
+                    console.log(y)
+                    document.getElementById(y).style.visibility="visible";
+                    y="Back" + SnuddeKort[1];
+                    console.log(y)
+                    document.getElementById(y).style.visibility="visible";
+                    SnuddeKort=[]
+                    l=l-2
+                    m=1;
+                    poeng--;
+                    document.getElementById("SCORE").innerHTML=Poeng;
+                }
+            if(Poeng<0){
+                href="../index.html";
+            }
+            }
+            SnuddeKort.push(x);
+        }   
+
+        function Avslutt(){
+            document.getElementById("Kort").style.visibility="hidden";
+            headingEl.innerHTML='<p><a href=../E4/index.html>Gratulerer du vant!</a></p>'
+            Poeng++;
+            document.getElementById("SCORE").innerHTML=Poeng;
+            localStorage.poengIT1fagdag=Poeng;
+        }
+
+        BrukteDiv=[""]
+        function RandomDiv(){
+            x=""
+            while (BrukteDiv.includes(x)){
+                diver=["div1","div2","div3","div4","div5","div6","div7","div8","div9","div10","div11","div12","div13","div14","div15","div16","div17","div18","div19","div20"];
+                randomNum = Math.floor(Math.random() * diver.length);
+                x=diver[randomNum];
+            }
+            BrukteDiv.push(diver[randomNum]);
+            return x;
+        }   
+
+        BrukteKort=[""]
+        function RandomKort(){
+            z=""
+            while (BrukteKort.includes(z)){
+                korter=["1H","2H","3H","4H","5H","6H","7H","8H","9H","10H","11H","12H","13H","1C","2C","3C","4C","5C","6C","7C","8C","9C","10C","11C","12C","13C","1S","2S","3S","4S","5S","6S","7S","8S","9S","10S","11S","12S","13S","1D","2D","3D","4D","5D","6D","7D","8D","9D","10D","11D","12D","13D"];
+                randomNum = Math.floor(Math.random() * korter.length);
+                z=korter[randomNum];
+            }
+            BrukteKort.push(korter[randomNum]);
+            return z;
+        }
+
+        
+    </script>
+</body>

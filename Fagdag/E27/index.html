@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <link rel="stylesheet" href="styleindex.css">
+    </head>
+    <body>
+        <div class="banner">
+            <div class="navbar">
+                <ul>
+                    <li> <a href="spill.html">START SPILL</a></li>
+                    <h2>Gratulerer <span id="navn"></span>, du har kommet videre!</h2>
+                </ul>
+            </div>
+        </div>
+    <script>
+        let navnEl=document.getElementById("navn");
+        //localStorage.navnIT1fagdag = "Simon";
+        let navn = localStorage.navnIT1fagdag;
+        navnEl.innerHTML = navn; 
+    </script>
+</html>

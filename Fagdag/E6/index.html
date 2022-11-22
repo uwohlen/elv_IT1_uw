@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <title>Kan du finne den?</title>
+    <link rel="stylesheet" href="../alleBrukDenne.css">
+    <link rel="stylesheet" href="styleE6.css">
+</head>
+
+<body>
+    <div id="header">
+        <h3 id="tilbakeTil"><a href="../index.html">Tilbake til hovedside</a></h3>
+        <h1>Finn knappen<span id="spillerNavn"></span>.</h1>
+        <h2>Det er knapper gjemt i skjermen, men ikke alle knapper er like gavemilde.</h2>
+        <h2>En knapp om et <span title="arbeid i minne?" id="hint1">sinn i jobb</span> vil føre deg videre, men resten
+            vil <span title="...i poeng" id="hint2">dra deg ned</span>.</h2>
+    </div>
+    <div id="spilleSkjerm">
+        <button id="knapp1">Sinn i jobb</button>
+        <button id="knapp2">Mobil</button>
+        <button id="knapp3Riktig">RAM</button>
+        <button id="knapp4">CPU</button>
+        <button id="knapp5">Hjerne</button>
+        <button id="knapp6">Riktig Svar!</button>
+    </div>
+
+    <h2 id="videreLink1">
+        <a href="../E7/index.html">VIDERE</a>
+    </h2>
+    <h2 id="videreLink2">
+        <a href="slutt.html">VIDERE?</a>
+    </h2>
+
+    <h3 id="muligPoeng">Mulig poeng gevinst: <span id="poengGain"></span></h3>
+    <h3 id="poengPos">Poeng:<span id=poengSum></span></h3>
+
+
+    <script>
+        localStorage.getItem("levelIT1fagdag")
+        localStorage.levelIT1fagdag = "E6"
+
+        let navnEl = document.getElementById("spillerNavn");
+        navnEl.addEventListener("keydown", navnLagre);
+        function navnLagre(event) {
+
+            if (event.keyCode === 13) {
+                console.log(event.keyCode)
+                localStorage.setItem("navnIT1fagdag", navnEl.value)
+            }
+        }
+
+        if (localStorage.getItem("navnIT1fagdag") !== null) {
+            navnEl.innerHTML = " " + localStorage.getItem("navnIT1fagdag");
+        }
+
+        let videreE1 = document.getElementById("videreLink1")
+        let videreE2 = document.getElementById("videreLink2")
+
+        let knappE1 = document.getElementById("knapp1")
+        let knappE2 = document.getElementById("knapp2")
+        let knappE3 = document.getElementById("knapp3Riktig")
+        let knappE4 = document.getElementById("knapp4")
+        let knappE5 = document.getElementById("knapp5")
+        let knappE6 = document.getElementById("knapp6")
+
+        let poengEl = document.getElementById("poengSum")
+        let poengGain = document.getElementById("poengGain")
+        let muligPoeng = 5;
+        let poeng = 0;
+
+        if (localStorage.poengIT1fagdag !== undefined) {
+            poeng = Number(localStorage.poengIT1fagdag);
+        }
+        poengEl.innerHTML = poeng;
+        poengGain.innerHTML = muligPoeng;
+
+        knappE3.addEventListener("click", riktigKlikk)
+        knappE1.addEventListener("click", feilKlikk)
+        knappE2.addEventListener("click", feilKlikk)
+        knappE4.addEventListener("click", feilKlikk)
+        knappE5.addEventListener("click", feilKlikk)
+        knappE6.addEventListener("click", feilKlikk)
+        function feilKlikk() {
+            if (muligPoeng > -5) {
+                muligPoeng -= 1;
+                poengGain.innerHTML = muligPoeng;
+            }
+
+            else {
+                poengGain.innerHTML = muligPoeng;
+            }
+        }
+        function riktigKlikk() {
+            knappE1.style.visibility = "hidden"
+            knappE2.style.visibility = "hidden"
+            knappE3.style.visibility = "hidden"
+            knappE4.style.visibility = "hidden"
+            knappE5.style.visibility = "hidden"
+            knappE6.style.visibility = "hidden"
+
+            if (poeng + muligPoeng > 0) {
+                videreE1.style.visibility = "visible";
+                poeng += muligPoeng;
+                poengEl.innerHTML = poeng;
+                poengGain.innerHTML = 0;
+                localStorage.poengIT1fagdag = poeng;
+            }
+            else {
+                videreE2.style.visibility = "visible";
+                poeng = 0;
+                localStorage.poengIT1fagdag = poeng;
+                localStorage.removeItem("levelIT1fagdag");
+            }
+        }
+    </script>
+</body>
+
+</html>

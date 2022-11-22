@@ -1,0 +1,59 @@
+body {
+    color: white;
+}
+
+#hoyre {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+}
+
+#bunn {
+    position: absolute;
+    bottom: 0;
+    font-size: 1.3rem;
+}
+
+#spillet {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+}
+
+#spillet>button,
+#spillet>span {
+    flex: 1;
+    border: none;
+
+    text-align: center;
+    width: 100%;
+    font-size: 3.5rem;
+    height: 5rem;
+    margin: 0;
+    padding: 0;
+}
+
+
+#binaer>button {
+    width: 3rem;
+}
+
+button {
+    font-size: 2rem;
+}
+
+button {
+    background-color: grey;
+}
+
+button:hover:not(:disabled) {
+    background-color: rgb(105, 105, 105)
+}
+
+button:active:not(:disabled) {
+    background-color: rgb(90, 90, 90);
+}
+
+#ferdig {
+    display: none;
+}

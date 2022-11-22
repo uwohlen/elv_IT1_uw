@@ -1,0 +1,53 @@
+ *{
+    padding: 0;
+    margin: 0;
+ }
+
+ #game{
+    background-color: white;
+    width: 1000px;
+    height: 400px;
+    margin: 0px auto;
+    border:1px solid black;
+
+}
+
+#karakter{
+    width: 40px;
+    height: 100px;
+    background-color: green;
+    position: relative;
+    top: 300px;
+    margin: 0px;
+}
+.animate{
+    animation: jump 350ms;
+}
+
+@keyframes jump{
+    0%{top: 300px;}
+    30%{top: 200px;}
+    70%{top: 200px;}
+    100%{top: 300px;}
+} 
+
+ 
+
+
+#blokk{
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    position: relative;
+    top: 260px;
+    left: 800px;
+    animation: blokk 0.8s infinite linear;
+    margin: 0px;
+}
+
+
+
+@keyframes blokk{
+    0%{left: 960px;}
+    100%{left: -80px;}
+}
