@@ -3,6 +3,14 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let minePoeng = 0;
+let nesteEl = document.getElementById("neste");
+let poeng = 0;
+if (localStorage.poengIT1fagdag !== undefined) {
+    poeng = Number(localStorage.poengIT1fagdag);
+}
+let poengEl = document.getElementById("idPoeng");
+poengEl.innerHTML = '<h2>Poeng: ' + poeng + '</h2>';
 
 function flipCard() {
     if (lockBoard) return;
@@ -27,7 +35,21 @@ function flipCard() {
 function checkForMatch() {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
-    isMatch ? disableCards() : unflipCards();
+    //isMatch ? disableCards() : unflipCards();
+    if (isMatch) {
+        disableCards();
+        minePoeng ++;
+        if (minePoeng === 6) {
+            neste.style.display = "inline-block";
+
+            poeng += 5; //får mer poeng hvis man klarer oppgaven
+            localStorage.poengIT1fagdag = String(poeng); //lagre poeng til neste side
+            poengEl.innerHTML = '<h2>Poeng: ' + poeng + '</h2>';
+        }
+    }
+    else {
+        unflipCards();
+    }
 }
 
 function disableCards() {
@@ -39,7 +61,7 @@ function disableCards() {
 
 function unflipCards() {
     lockBoard = true;
-    
+
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');

@@ -13,6 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     background: rgb(224, 207, 240);/*background fra en annen css*/
+    overflow: hidden;
 }
 
 .memory-game {
@@ -57,4 +58,33 @@ body {
 
 .front-face {
     transform: rotateY(180deg);
+}
+
+#neste {
+    border: solid black 1px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 6%;
+    padding: 5px;
+    background-color: #fff0f8;
+    /*display: none;*/
+}
+
+#neste:hover {
+    background: red;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#idPoeng {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    padding: 10px;
 }
