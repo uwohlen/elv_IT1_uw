@@ -37,27 +37,45 @@
         <h1>Lagre navn:<input id="idNavn"></h1>
         <p>Vil du bytte navn uten å bruke startsiden? Her kan du bytte navn uten å miste opptjente poeng.</p>
         <h2 id="idNavnLagret">&nbsp;</h2>
+        <button id="idSlettNavn">Slett navn</button>
     </div>
     <div class="clPart">
         <h1>Poengverdi</h1>
         <p>Disse poengene har du tilgjengelig på det nåværende tidspunkt:</p>
-        <h2 id="idPoeng">&nbsp;</h2>
-        <p>Gi deg selv mer poeng, så du kommer deg gjennom vanskelige deler av spillet:</p>
-        <button id="idPoengKnapp"> + 1000 poeng! &#128526;</button>
+        <h2 id="idPoengLagret">&nbsp;</h2>
+        <p>Gi deg selv mer poeng, så du kommer deg gjennom vanskelige deler av spillet, eller test hva som skjer om du kommer inn med minuspoeng eller null poeng:</p>
+        <p><button id="idPoengKnapp"> + 1000 poeng! &#128526;</button> eller bytt ut med et valgfritt poengtall: <input id="idPoeng" type="number"></p>
+        <button id="idSlettPoeng">Slett poeng</button>
     </div>
     <div class="clPart">
         <h1>Lagre level (1-33): <input id="idLevel" type="number"></h1>
         <p>På startsiden kan man gå direkte til et spill basert på levelIT1fagdag, her kan du bytte lagret verdi</p>
         <h2 id="idLevelLagret">&nbsp;</h2>
+        <button id="idSlettLevel">Slett level</button>
     </div>
 <script>
     let spillEl = document.getElementById("idSpill");
     let navnEl = document.getElementById("idNavn");
     let navnLagretEl = document.getElementById("idNavnLagret");
-    let poengEl = document.getElementById("idPoeng");
+    let poengLagretEl = document.getElementById("idPoengLagret");
     let poengKnappEl = document.getElementById("idPoengKnapp");
+    let poengEl = document.getElementById("idPoeng");
     let levelEl = document.getElementById("idLevel");
     let levelLagretEl = document.getElementById("idLevelLagret");
+    
+    let slettNavnEl = document.getElementById("idSlettNavn");
+    let slettPoengEl = document.getElementById("idSlettPoeng");
+    let slettLevelEl = document.getElementById("idSlettLevel");
+
+    navnEl.addEventListener("keydown",navnFunk);
+    poengEl.addEventListener("keydown",poengFunk);
+    poengKnappEl.addEventListener("click",poengKnappFunk);
+    levelEl.addEventListener("keydown",levelFunk);
+
+    slettNavnEl.addEventListener("click",slettFunk);
+    slettPoengEl.addEventListener("click",slettFunk);
+    slettLevelEl.addEventListener("click",slettFunk);
+
 
     let htmltekst = "<p>Krav: at det finnes en mappe med E nr, som inneholder en index.html-fil<p>";
 
@@ -65,6 +83,87 @@
         htmltekst += '<div class="clLinker"><a href="E'+ i +'/index.html">E' + i + '</a><br></div>';
     }
     spillEl.innerHTML = htmltekst;
+
+    let navn = "";
+    if (localStorage.navnIT1fagdag !== undefined) {
+        console.log(localStorage.navnIT1fagdag);
+        navn = localStorage.navnIT1fagdag;
+        navnLagretEl.innerHTML = "Du har registrert: " + navn;
+    }
+    else {
+        navnLagretEl.innerHTML = "Du har ikke lagret navn, localStorage.navnIT1fagdag er " + String(localStorage.navnIT1fagdag);
+    }
+
+    function navnFunk(event) {
+        if (event.keyCode === 13) {
+            navn = navnEl.value;
+            navnLagretEl.innerHTML = "Du har registrert: " + navn;
+            localStorage.navnIT1fagdag = navn;
+        }
+    }
+
+    let poeng = 0;
+    if (localStorage.poengIT1fagdag !== undefined) {
+        console.log(localStorage.poengIT1fagdag);
+        poeng = Number(localStorage.poengIT1fagdag);
+        poengLagretEl.innerHTML = "Du har registrert: " + poeng + " poeng nå.";
+    }
+    else {
+        poengLagretEl.innerHTML = "Du har ikke lagret poeng, localStorage.poengIT1fagdag er " + String(localStorage.poengIT1fagdag);
+    }
+
+    function poengFunk(event) {
+        if (event.keyCode === 13) {
+            poeng = Number(poengEl.value);
+            poengLagretEl.innerHTML = "Du har registrert: " + poeng + " poeng nå.";
+            localStorage.poengIT1fagdag = String(poeng);
+        }
+    }
+    function poengKnappFunk() {
+        poeng += 1000;
+        poengLagretEl.innerHTML = "Du har registrert: " + poeng + " poeng nå.";
+        localStorage.poengIT1fagdag = String(poeng);
+    }
+
+    let level = "";
+    if (localStorage.levelIT1fagdag !== undefined) {
+        console.log(localStorage.levelIT1fagdag);
+        level = localStorage.levelIT1fagdag;
+        levelLagretEl.innerHTML = "Du har registrert: " + level;
+    }
+    else {
+        levelLagretEl.innerHTML = "Du har ikke lagret level, localStorage.levelIT1fagdag er " + String(localStorage.levelIT1fagdag);
+    }
+
+    function levelFunk(event) {
+        if (event.keyCode === 13) {
+            let levelNr = Number(levelEl.value);
+            if (levelNr < 1 || levelNr > 33) {
+                levelLagretEl.innerHTML = "Ugyldig verdi for level, skriv inn et tall i området 1-33!";
+            }
+            else {
+                level = "E" + String(levelNr);
+                levelLagretEl.innerHTML = "Du har lagret level: " + level;
+                localStorage.levelIT1fagdag = level;
+            }
+
+        }
+    }
+
+    function slettFunk(event) {
+        if (event.target.id === "idSlettNavn") {
+            localStorage.removeItem("navnIT1fagdag");
+            navnLagretEl.innerHTML = "Du har ikke lagret navn, localStorage.navnIT1fagdag er " + String(localStorage.navnIT1fagdag);
+        }
+        else if (event.target.id === "idSlettPoeng") {
+            localStorage.removeItem("poengIT1fagdag");
+            poengLagretEl.innerHTML = "Du har ikke lagret poeng, localStorage.poengIT1fagdag er " + String(localStorage.poengIT1fagdag);
+        }
+        else {
+            localStorage.removeItem("levelIT1fagdag");
+            levelLagretEl.innerHTML = "Du har ikke lagret level, localStorage.levelIT1fagdag er " + String(localStorage.levelIT1fagdag);
+        }
+    }
 
 </script>
 </body>
