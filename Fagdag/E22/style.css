@@ -1,0 +1,119 @@
+body{
+    background-image: url(../E22/Media/hills.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: inherit;
+}
+
+h1{
+    font-family: cursive;
+    text-align: center;
+    font-size: 82px;
+    font-weight: bold;
+    color: orangered;
+    margin-top: 0%;
+}
+
+#mole{
+    position: absolute;
+    left: 39%;
+    top: 24%;
+    z-index: 1;
+
+}
+#mud{
+    position: absolute;
+    left: 25%;
+    width: 500px;
+    bottom: 35%;
+}
+#start{
+    height: 70px;
+    width: 180px;
+    background-color: darkgreen;
+    color: floralwhite;
+    font-weight: x-large;
+    font-size: bold;
+    border: floralwhite solid 4px;
+    border-radius: 32px;
+    position: absolute;
+    top: 85%;
+    left: 43%;
+    cursor: pointer;
+}
+
+.dirt{
+    width: 170px;
+    position: absolute;
+
+    visibility: hidden;
+}
+
+#dirt1{
+    top: 65%;
+    left: 20%;
+}
+#dirt2{
+    top: 88%;
+    left: 20%;
+}
+#dirt3{
+    top: 70%;
+    left: 40%;
+}
+#dirt4{
+    top: 90%;
+    left: 45%;
+}
+#dirt5{
+    top: 65%;
+    left: 65%;
+}
+#dirt6{
+    top: 90%;
+    left: 70%;
+}
+.points{
+    font-size: x-large;
+    font-weight: bolder;
+    padding-left: 20px;
+    visibility: hidden;
+}
+.mole{
+    position: absolute;
+    height: 80px;
+    width: 70px;
+    visibility: hidden;
+}
+#mole1{
+    top: 68%;
+    left: 25%;
+    z-index: 1;
+}
+#mole3{
+    top: 72%;
+    left: 43%;
+    z-index: 1;
+}
+#mole5{
+    top: 70%;
+    left: 67%;
+    z-index: 1;
+}
+#mole2{
+    top: 90%;
+    left: 24%;
+    z-index: 1;
+}
+#mole4{
+    top: 95%;
+    left: 47%;
+    z-index: 1;
+}
+#mole6{
+    top: 92%;
+    left: 73%;
+    z-index: 1;
+}
+
+
