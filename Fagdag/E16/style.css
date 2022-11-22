@@ -1,0 +1,54 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+body {
+    background-color: #171717;
+}
+
+.header {
+    text-align: center;
+    margin-top: 5%;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.tile {
+    border:1px solid white;
+    min-height: 100px;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.show {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.hide {
+    display: none;
+}
+
+.playerX {
+    color: blue;
+}
+
+.playerO {
+    color: blueviolet;
+}
