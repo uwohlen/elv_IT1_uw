@@ -1,0 +1,123 @@
+body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    text-align: center;
+    background-color: #28282B;
+}
+
+#tilbakeTil {
+    margin-top: 0px;
+}
+#header {
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#spilleSkjerm {
+    border: 3px solid red;
+    border-radius: 6px;
+    margin: 30px;
+    margin-bottom: 100px;
+    margin-left: 135px;
+    margin-right: 135px;
+    height: 480px;
+    background-color: black;
+}
+
+#hint1 {
+    color: red;
+}
+
+#hint2 {
+    color: red;
+}
+
+button {
+    background-color: black;
+    border: 0px;
+    font-size: 23px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+button:hover {
+    color: crimson;
+}
+
+#knapp1 {
+    position: absolute;
+    left: 230px;
+    bottom: 280px;
+    transform: rotate(30deg);
+    visibility: visible;
+}
+
+#knapp2 {
+    position: absolute;
+    right: 570px;
+    bottom: 0px;
+    transform: rotate(80deg);
+    visibility: visible;
+}
+
+#knapp3Riktig {
+    position: absolute;
+    right: 280px;
+    bottom: 300px;
+    transform: rotate(-120deg);
+    visibility: visible;
+}
+
+#knapp4 {
+    position: absolute;
+    left: 370px;
+    bottom: 80px;
+    transform: rotate(180deg);
+    visibility: visible;
+}
+
+#knapp5 {
+    position: absolute;
+    right: 640px;
+    bottom: 260px;
+    transform: rotate(-30deg);
+    visibility: visible;
+}
+
+#knapp6 {
+    position: absolute;
+    right: 200px;
+    bottom: 80px;
+    visibility: visible;
+}
+
+#poengPos {
+    position: absolute;
+    left: 40px;
+    bottom: -160px;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#muligPoeng {
+    position: absolute;
+    right: 40px;
+    bottom: -160px;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#videreLink1 {
+    visibility: hidden;
+    position: absolute;
+    right: 45%;
+    bottom: -180px;
+}
+
+#videreLink2 {
+    visibility: hidden;
+    position: absolute;
+    right: 45%;
+    bottom: -205px;
+}
