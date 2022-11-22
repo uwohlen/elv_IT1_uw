@@ -1,0 +1,44 @@
+@keyframes poeng_animasjon {
+    from {
+        font-size: 0.5rem;
+    }
+
+    to {
+        font-size: 5rem;
+    }
+}
+
+body {
+    text-align: center;
+    margin: 0;
+}
+
+
+#container {
+    position: relative;
+}
+
+#container>* {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+#container>div>* {
+    position: static;
+}
+
+#poeng {
+    font-size: 5rem;
+    animation-name: poeng_animasjon;
+    animation-duration: 1s;
+}
+
+#poeng_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+}
