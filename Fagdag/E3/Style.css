@@ -1,0 +1,51 @@
+
+.body{
+    background-color: #28282B;
+    color: white;
+}
+
+.E3Heading{
+    margin:auto;
+    width: 780px;
+    border: 2px;
+    border-color: rgb(7, 4, 4);
+    background-color: rgb(48, 65, 65);
+    border-radius: 15px;
+    border-style: solid;
+    text-align: center;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+.E3grid-container {
+    visibility: hidden;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    background-color: #141112;
+
+}
+
+.E3grid-container > div{
+    background-color: #f4f4f8;
+    position: relative;
+    height: 150px;
+
+}
+
+.E3grid-container >div:nth-child(odd){
+    background-color: rgb(1, 1, 7);
+}
+
+.E3diver{
+    cursor: pointer;
+}
+
+.SCORE{
+    color:rgb(7, 7, 7);
+    position: relative;
+    left:5px; 
+    top: 90px;
+    transform: translateY(-50%); 
+    white-space: nowrap; 
+    left: 7vw;
+}
