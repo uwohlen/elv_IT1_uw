@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
+    <link rel="stylesheet" href="../alleBrukDenne.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
         <h1> Hangman</h1>
         <div id="start">
-            <p class="knapp" id="startknapp">Start spillet</p>
+            <p>Velkommen til hangman. Her skal du gjette et ord, men du må være varsom for å ikke bli hengt. Hvis du gjetter feil bokstav 7 ganger taper du. Hvis du klarer det på første forsøk får du 5 poeng, på andre får du 0 poeng og på tredje eller dårligere får du -5 poeng</p>
+            <div class="center">
+                <p class="knapp" id="startknapp">Start spillet</p>
+            </div>
         </div>
         <div id="hoved">
             <p id="sjanser">Antall sjanser igjen: 7</p>
@@ -30,15 +34,28 @@
                 <p class="knapp" id="test">Test bokstav</p>
             </div>
         </div>
+        
 
     </main>
+    <div class="skygge" id="neste">
+        <div class="slide">
+            <H1>Du klarte det, bravo</H1><br>
+            <div class="center">
+                <a href="../E33/index.html"><p class="knapp">Neste spill</p></a>
+            </div>
+        </div>
 
-    
+    </div>
+    <div class="skygge" id="igjen">
+        <div class="slide">
+            <H1>Ånei du tapte!</H1><br>
+            <p id="riktig_ord"></p>
+            <div class="center">
+                <a href="index.html"><p class="knapp">Prøv igjen</p></a>
+            </div>
+        </div>
 
-
-
-
-
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

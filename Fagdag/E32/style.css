@@ -7,6 +7,7 @@ body{
 #hoved{
     display: none;
 }
+
 .knapp {
     border-radius: 3px;
     padding: 5px;
@@ -20,10 +21,7 @@ body{
     transition: all 200ms ease-out;
 
 }
-#start {
-    display: flex;
-    justify-content: center;
-}
+
 .center {
     display: flex;
     justify-content: center;
@@ -34,4 +32,29 @@ body{
     background-color:rgb(210, 244, 255);
     color: rgb(0, 0, 0);
     box-shadow: 0 0 6px rgba(35, 173, 278, 1);
+}
+.skygge{
+    color: black;
+    display: none;
+    z-index: 1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.315)  ;
+}
+.slide{
+    background-color: white;
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+    border: 1px black solid;
+    border-radius: 10px;
+
+}
+a{
+    text-decoration: none;
 }

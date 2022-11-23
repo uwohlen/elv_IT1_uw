@@ -30,6 +30,7 @@ let løsningsord = [
     "html"
 ]
 
+
 startknappEl = document.getElementById("startknapp");
 sjanserEl=document.getElementById("sjanser")
 bokstavEl = document.getElementById("bokstav");
@@ -47,7 +48,7 @@ let sjanser=7
 sjanserEl.innerHTML= "Antall sjanser igjen: "+ sjanser;
 let løsningbeta=løsningsord[Math.floor(Math.random()*løsningsord.length)]
 let løsning=løsningbeta.toUpperCase();
-
+document.getElementById("riktig_ord").innerHTML="riktig ord var "+løsning
 let riktigeBokstaver= []
 let brukteBokstaver = []
 
@@ -122,10 +123,10 @@ function mottaBokstav(){
     }
     else if(sjanser===0){
         tegnVenstreBen();
-        alert("du tapte")
+        document.getElementById("igjen").style.display="block";
     }
     if(riktigeBokstaver.indexOf("_")===-1){
-        alert("du vant")
+        document.getElementById("neste").style.display="block"
     }
 
     
