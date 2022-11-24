@@ -6,7 +6,8 @@ let FireEl = document.getElementById("idNb4");
 let FemEl = document.getElementById("idNb5");
 let SeksEl = document.getElementById("idNb6");
 let SpmEl = document.getElementById("idSpm");
-let LivEl = document.getElementById("idPoeng");
+let LivEl=document.getElementById("idLiv");
+let PoengEl = document.getElemtByid("idPoeng");
 
 StartEl.addEventListener("click",startfunk);
 
@@ -14,12 +15,9 @@ function startfunk() {
     EnEl.style.display = "inline-block";
     StartEl.style.display ="none";
     SpmEl.style.display ="inline-block";
-    LivEl.innerHTML =  localStorage.poengIT1fagdag.value;
+    PoengEl.innerHTML =  localStorage.poengIT1fagdag.value;
         localStorage.poengIT1fagdag.value = "";
 }
-
-let Liv = 0;
-let LivEl=document.getElementById('idLiv');
 
 function Feil(id){
     document.getElementById(id).innerHTML="Feil";
