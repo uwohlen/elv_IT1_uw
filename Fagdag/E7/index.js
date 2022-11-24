@@ -112,7 +112,7 @@ function main() {
 
   app.stage.addChild(columnsContainer);
   const margin = ((app.screen.height - SLOT_SIZE) / 25) * 0;
-  columnsContainer.y = margin;
+  columnsContainer.y = margin-50
   columnsContainer.x = Math.round(app.screen.width - COL_WIDTH * 5);
   const top = new PIXI.Graphics();
   top.beginFill(0, 1);
@@ -235,11 +235,10 @@ function main() {
 
     console.debug("🎰 Score: " + score);
 
-    if (score > 0) {
-      setTimeout(() => {
-        // update the score
-      }, 10);
-    }
+    if (score < 3) {
+        document.getElementById("playbtn").className += " btn-disabled";
+        document.getElementById("tooltip").className = "tooltip w-full";
+      }
 
     document.getElementById("score").innerText = score;
 

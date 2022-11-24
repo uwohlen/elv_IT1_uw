@@ -19,7 +19,8 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="">
+
     <div
       class="absolute h-screen w-screen bg-black flex justify-center items-center text-white font-bold"
       id="loader"
@@ -28,21 +29,21 @@
     </div>
     <div class="flex h-screen w-screen justify-between">
       <div class="animate-pulse w-full h-full flex flex-col justify-center items-center">
-        <div class="text-6xl">
+        <div class="text-5xl">
           Hei <span id="playerName"></span>
         </div>
-        <div class="text-4xl italic">
+        <div class="text-3xl italic">
         Du har <span id="score" class="mx-1"> 0 </span>poeng
 
         </div>
       </div>
-      <div class="flex flex-col justify-between w-full h-full">
+      <div class="flex flex-col justify-between w-6/12 h-full" style="zoom: 50%;">
         <div>
-          <h1 class="text-6xl text-center font-bold m-10">Spin rulletet!</h1>
+          <h1 class="text-5xl text-center font-bold m-10">Spin rulletet!</h1>
         </div>
         <div
           id="game"
-          class="bg-red-500 border border-red-600 rounded-xl overflow-hidden h-[45vh]"
+          class="bg-red-500 border border-red-600 rounded-xl overflow-hidden h-[600px]"
         ></div>
         <div class="flex flex-col w-full justify-evenly pb-10">
          <div data-tip="Du må ha 3 poeng å spille med!" id="tooltip" class="w-full">
