@@ -33,7 +33,7 @@ window.onload = function () {
   console.debug("🤳 Found player score: " + playerScore);
 
   document.getElementById("playerName").innerText = playerName + "!";
-  document.getAnimations("score").innerText = score;
+  document.getAnimations("score").innerText = playerScore;
 
   if (score < 3) {
     document.getElementById("playbtn").className += " btn-disabled";
