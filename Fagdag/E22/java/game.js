@@ -15,9 +15,10 @@ function startfunk() {
     EnEl.style.display = "inline-block";
     StartEl.style.display ="none";
     SpmEl.style.display ="inline-block";
-    PoengEl.innerHTML =  localStorage.poengIT1fagdag.value;
-        localStorage.poengIT1fagdag.value = "";
 }
+
+let Liv = 5;
+let LivEl=document.getElementById('idLiv');
 
 function Feil(id){
     document.getElementById(id).innerHTML="Feil";
