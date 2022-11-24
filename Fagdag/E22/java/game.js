@@ -6,7 +6,7 @@ let FireEl = document.getElementById("idNb4");
 let FemEl = document.getElementById("idNb5");
 let SeksEl = document.getElementById("idNb6");
 let SpmEl = document.getElementById("idSpm");
-let PoengEl = document.getElementById("idPoeng");
+let LivEl = document.getElementById("idPoeng");
 
 StartEl.addEventListener("click",startfunk);
 
@@ -14,7 +14,7 @@ function startfunk() {
     EnEl.style.display = "inline-block";
     StartEl.style.display ="none";
     SpmEl.style.display ="inline-block";
-    PoengEl.innerHTML =  localStorage.poengIT1fagdag.value;
+    LivEl.innerHTML =  localStorage.poengIT1fagdag.value;
                 localStorage.poengIT1fagdag.value = "";
 }
 let Liv = 0;
