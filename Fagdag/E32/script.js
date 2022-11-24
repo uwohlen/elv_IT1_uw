@@ -170,7 +170,7 @@ function mottaBokstav(){
 
         }
         else{
-            poeng=mulige_poeng
+            poeng+=mulige_poeng
             document.getElementById("taper").style.display="block"
             document.getElementById("taper").innerHTML="Du tapte 3 ganger og kan derfor velge å gå til neste spill. Du fikk -5 poeng i hangman og har derfor totalt "+poeng+" poeng"
             document.getElementById("neste2").style.display="block"
