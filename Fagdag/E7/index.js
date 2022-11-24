@@ -19,13 +19,13 @@ window.onload = function () {
     window.localStorage.setItem("levelIT1fagdag", "E7");
 
   // Update the name of the player
-  let playerName = document.getElementById("navnIT1fagdag");
-  let playerScore = document.getElementById("poengIT1fagdag");
+  let playerName = window.localStorage.getItem("navnIT1fagdag");
+  let playerScore = window.localStorage.getItem("poengIT1fagdag");
 
   if (playerName === "" || playerName === null || playerName === undefined)
-    playerName = "Spelar";
+  {  playerName = "Spelar";}
   if (playerScore === "" || playerScore === null || playerScore === undefined)
-    playerScore = "0";
+{    playerScore = "0";}
 
   score = parseInt(playerScore);
 
