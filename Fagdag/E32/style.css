@@ -1,18 +1,26 @@
 body{
     text-align: center;
 }
+#neste2, #taper{
+    display: none;
+}
 #mittCanvas{
     border: 1px black solid;
 }
 #hoved{
     display: none;
 }
+.poenghjørne{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
 
-.knapp {
+.knapp, #poeng, #mulige_poeng {
     border-radius: 3px;
     padding: 5px;
     width: 200px;
-    font-size: 20px;
+    font-size: medium;
     text-align: center;
     background-color: white;
     margin-bottom: 10px;
