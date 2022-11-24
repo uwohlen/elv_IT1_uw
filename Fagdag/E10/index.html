@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stein saks papir</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="w-screen flex justify-center absolute p-10 outline outline-1">
+      <div class="flex justify-between gap-10">
+        <div id="liv_display" class="">Liv: 0</div>
+        <div id="mynter_her">Mynter: 0</div>
+        <div id="poeng">poeng her: 0</div>
+      </div>
+    </div>
+    <div
+      id="blur"
+      class="h-screen flex justify-evenly items-center w-screen pb-32 absolute"
+    >
+      <div
+        class="flex w-32 h-12 justify-center items-center outline outline-1 hover:cursor-pointer hover:scale-110 ease-in-out duration-200"
+        onclick="valg(1)"
+      >
+        Stein
+      </div>
+      <div
+        class="flex w-32 h-12 justify-center items-center outline outline-1 hover:cursor-pointer hover:scale-110 ease-in-out duration-200"
+        onclick="valg(2)"
+      >
+        Saks
+      </div>
+      <div
+        class="flex w-32 h-12 justify-center items-center outline outline-1 hover:cursor-pointer hover:scale-110 ease-in-out duration-200"
+        onclick="valg(3)"
+      >
+        Papir
+      </div>
+    </div>
+    <div id="etterRunde" class="hidden">
+      <div
+        class="h-72 absolute w-96 bg-white rounded-xl outline outline-1 flex flex-col justify-evenly items-center"
+      >
+        <div id="eR" class="text-2xl justify-center"></div>
+        <div id="mynterV">du vant så mange poeng</div>
+        <div onclick="spilleigjen()">trykk her for å spille igjen</div>
+      </div>
+    </div>
+    <div
+      class="w-screen h-screen absolute flex justify-center items-end pb-20 pointer-events-none"
+    >
+      <div id="vedd_mynter">mynter veddet: 0</div>
+    </div>
+    <div
+      class="w-screen h-screen absolute flex justify-center items-end pb-5 pointer-events-none gap-6"
+    >
+      <div
+        class="w-12 h-12 hover:bg-slate-400 pointer-events-auto"
+        onclick="Mynter(0)"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-12 h-12"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 4.5v15m7.5-7.5h-15"
+            onclick=""
+          />
+        </svg>
+      </div>
+      <div
+        class="w-12 h-12 hover:bg-slate-400 pointer-events-auto"
+        onclick="Mynter(1)"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-12 h-12"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19.5 12h-15"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <div id="gameOver" class="h-screen w-screen absolute bg-[#ED4337] flex justify-center items-center hidden">
+        <div class="h-56 w-96 flex-col justify-center bg-amber-50 rounded-lg text-center outline outline-1">
+            <div class="font-medium ">Du tapte hele spillet(du er dårlig), og mister derfor 5 poeng</div>
+            <div class="font-medium"> Fortvil ikke. Dette var ikke den siste oppgaven, og du kan fortsatt få flere poeng.</div>
+            <br>
+            <br>
+            <div class="hover:shadow-lg h-12 flex items-center justify-center">
+                <a href="/E11.html" class="font-medium" onclick="videre()">Trykk her for å gå videre i spillet</a>
+            </div>
+        </div>
+    </div>
+    <script src="/ssp.js"></script>
+    <script src="/index.js"></script>
+  </body>
+</html>
