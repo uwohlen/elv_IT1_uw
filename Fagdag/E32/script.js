@@ -57,6 +57,12 @@ document.getElementById("riktig_ord").innerHTML="riktig ord var "+løsning
 let riktigeBokstaver= []
 let brukteBokstaver = []
 
+document.getElementById("lagre_progresjon").addEventListener("click",lagre)
+function lagre(){
+    localStorage.levelIT1fagdag="E32"
+    alert("din progresjon er lagret")
+}
+
 let i=0
 while(i <løsning.length){
     riktigeBokstaver.push("_");

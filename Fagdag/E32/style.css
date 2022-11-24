@@ -15,6 +15,11 @@ body{
     top: 20px;
     right: 20px;
 }
+#lagre_progresjon{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
 
 .knapp, #poeng, #mulige_poeng {
     border-radius: 3px;
