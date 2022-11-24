@@ -7,7 +7,6 @@ let FemEl = document.getElementById("idNb5");
 let SeksEl = document.getElementById("idNb6");
 let SpmEl = document.getElementById("idSpm");
 let LivEl = document.getElementById("idPoeng");
-let NavnEl = document.getElementByID("idNavn");
 
 StartEl.addEventListener("click",startfunk);
 
