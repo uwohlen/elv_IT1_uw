@@ -59,7 +59,7 @@ function start() {
         text.offsetHeight; /* trigger reflow */
         text.style.animation = null;
         if (animasjons_i < fruits.length) {
-            setTimeout(reset_animation, 50)
+            setTimeout(reset_animation, 3700)
         }
         else {
             setTimeout(valg, 4200)
