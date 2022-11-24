@@ -1,0 +1,40 @@
+body{
+    margin: 5%;
+}
+
+#id_simon{
+    margin: auto;
+    height: 30%;
+    width: 30%;
+}
+
+#id_tapt, #id_next_levelbtn{
+    display: none;
+    margin: auto;
+}
+
+.cl_grid-container {
+    display: grid;
+    grid-template-columns: 47.5% 47.5%;
+    grid-template-rows: 47.5% 47.75%;
+    column-gap: 5%;
+    row-gap: 5%;
+}
+
+.cl_grid-item {
+    text-align: center;
+}
+
+img{
+    width: 90%;
+    height: 90%;
+    opacity: 85%;
+}
+
+h1{
+    text-align: center;
+}
+
+#id_vann{
+    display: none;
+}
