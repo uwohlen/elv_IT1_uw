@@ -1,3 +1,13 @@
+localStorage.levelIT1fagdag = "E29";
+let navnEl = document.getElementById("idNavn");
+navnEl.addEventListener("keydown",navnLagre);
+function navnLagre(event) {
+    if (event.keyCode === 13) {
+        console.log(event.keyCode)
+        localStorage.setItem("navnIT1fagdag",navnEl.value);
+    }
+}
+
 const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
