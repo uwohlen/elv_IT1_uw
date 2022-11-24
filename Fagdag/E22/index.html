@@ -4,7 +4,7 @@
     <title>Dataspill</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        #idSpm, #idNb1, #idNb2, #idNb3, #idNb4, #idNb5, #idNb6{
+        #idSpm, #idNb1, #idNb2, #idNb3, #idNb4, #idNb5, #idNb6, #idNb7{
             display: none;
         }
     </style>
@@ -57,7 +57,7 @@
         </div>
         <div id="idNb5">
             <div id="idSpm5" class="hvilketspm">5.</div>
-            <h2>Let etter svaret!</h2>
+            <h2 class="sistespm">Let etter svaret!</h2>
                 <div class="knapper">
                     <p id="idKnapp17" class="hidden a1">RIKTIG!</p>
                     <p id="idKnapp18" onclick="Feil2('idKnapp18')" class="hidden a2">NAH</p>
@@ -69,10 +69,16 @@
         <div id="idNb6">
                 <div class="videre">
                     <h3>BRA JOBBA! DU GREIDE DET!</h3>
-                    <a href="./E23/index.html"><h4>Trykk her for å gå til neste spill!</h4></a>
+                    <a href="../E23/index.html"><h4>Trykk her for å gå til neste spill!</h4></a>
                 </div>
         </div>
-        <div id="idLiv" class="liv">Liv: <span id="localStorage.poengIT1fagdag"></span></div>
+        <div id="idNb7">
+            <div class="videre">
+                <h3>DU TAPTE! VIL DU RESTARTE?</h3>
+                <a href="index.html"><h4>JA!</h4></a>
+            </div>
+    </div>
+        <div id="idLiv" class="liv">Liv: 5</div>
     </div>
     <script src="./java/game.js"></script>
 </body>

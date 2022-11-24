@@ -1,7 +1,5 @@
 body {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
     text-align: center;
-    background-color: #28282B;
 }
 
 #tilbakeTil {
@@ -41,6 +39,10 @@ button {
 
 button:hover {
     color: crimson;
+}
+
+button:active {
+    color: navy;
 }
 
 #knapp1 {

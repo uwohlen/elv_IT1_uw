@@ -1,3 +1,9 @@
+
+.body{
+    background-color: #28282B;
+    color: white;
+}
+
 .E3Heading{
     margin:auto;
     width: 780px;
@@ -7,7 +13,7 @@
     border-radius: 15px;
     border-style: solid;
     text-align: center;
-    font-family: 'Black Ops One', cursive;
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 .E3grid-container {
@@ -36,8 +42,9 @@
 
 .SCORE{
     color:rgb(7, 7, 7);
-    position:fixed;
-    left:5px; top: 55%;
+    position: relative;
+    left:5px; 
+    top: 90px;
     transform: translateY(-50%); 
     white-space: nowrap; 
     left: 7vw;

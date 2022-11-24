@@ -1,19 +1,73 @@
 body{
-    background-image: url(../E22/Media/hills.jpg);
+    background-image: url(../E21/Media/hills.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: inherit;
+    font-family: 'Comic Sans MS', sans-serif
 }
-
+#knapper{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    border: solid black 1px;
+    border-radius: 30px;
+    width: 10%;
+    height: 18%;
+    margin: auto;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    background-color:#28282B;
+}
+#knapper2{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    border: solid black 1px;
+    border-radius: 30px;
+    width: 10%;
+    height: 18%;
+    margin: auto;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    background-color:#28282B;
+}
+.next{
+    position: relative;
+    background: #393d3a;
+    color: #fff;
+    border:none;
+    outline:none;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    width: 180px;
+    height: 50px;
+    margin: pointer;
+}
+.before{
+    position: relative;
+    background: #393d3a;
+    color: #fff;
+    border:none;
+    outline:none;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    width: 180px;
+    height: 50px;
+    margin: pointer;
+}
 h1{
-    font-family: cursive;
     text-align: center;
     font-size: 82px;
     font-weight: bold;
     color: orangered;
     margin-top: 0%;
 }
-
 #mole{
     position: absolute;
     left: 39%;
@@ -28,6 +82,7 @@ h1{
     bottom: 35%;
 }
 #start{
+    font-family: 'Comic Sans MS', sans-serif;
     height: 70px;
     width: 180px;
     background-color: darkgreen;
@@ -41,7 +96,6 @@ h1{
     left: 43%;
     cursor: pointer;
 }
-
 .dirt{
     width: 170px;
     position: absolute;

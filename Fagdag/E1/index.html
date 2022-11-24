@@ -36,7 +36,9 @@
 </head>
 
 <body>
+    <h1>Hei <span id="navnId"></span> ...</h1>
     <h1>Spill stein, saks, papir mot datamaskinen!</h1>
+    <p>Poeng: <span id="poengId"></span></p>
     <p id="dataId" ></p>
     <div class="poengliste">
         <h3 id="brukerPoengId">Dine poeng: </h3>
@@ -69,6 +71,12 @@
         let saksEl = document.getElementById("saks");
         let papirEl = document.getElementById("papir");
         let dataEl = document.getElementById("dataId");
+        let poengEl = document.getElementById("poengId");
+        let navnEl = document.getElementById("navnId");
+
+        navnEl.innerHTML = localStorage.getItem("navnIT1fagdag");
+        let poeng = Number(localStorage.getItem("poengIT1fagdag"));
+        poengEl.innerHTML = poeng;
 
         steinEl.addEventListener("click", result);
         saksEl.addEventListener("click", result);
@@ -132,10 +140,16 @@
             papirEl.style.cursor = "auto"
 
             if (brukerPoeng === maksSum) {
-                infoEl.innerHTML = "Gralla!!! Du vant over en datamaskin. Gå til neste spill."
+                infoEl.innerHTML = "Gralla!!! Du vant over en datamaskin og vant 1 poeng. Gå til neste spill."
+                poeng ++;
+                localStorage.setItem("poengIT1fagdag",poeng);
+                poengEl.innerHTML = poeng;
             }
             else if (dataPoeng === maksSum) {
-                infoEl.innerHTML = "Opsi! Du tapte mot en datamaskin... Gå til neste spill."
+                infoEl.innerHTML = "Opsi! Du tapte mot en datamaskin... og tapte 1 poeng. Gå til neste spill."
+                poeng --;
+                localStorage.setItem("poengIT1fagdag",poeng);
+                poengEl.innerHTML = poeng;
             }
             
         }

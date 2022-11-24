@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <title>E33</title>
+        <link rel="Stylesheet" href="../alleBrukDenne.css">
+        <link rel="Stylesheet" href="E33.css">
+    </head>
+    <body>
+        <div><h1>Minesweeper</h1>
+        <h2>Velkommen, <span id="idNavn"></span>. For å bestå dette spillet må du lokalisere 10 bomber. Høyreklikk der du tror det er bomber, og venstreklikk der du tror det ikke er bomber. Tallene i de rutene som ikke har bomber i seg tilsvarer antall bomber som grenser til tallet (skrå gjelder også). -1 poeng hver gang du taper og +5 poeng hvis du lokaliserer alle bombene.</h2></div>
+        <div id="idPoeng">Poeng:0 </div>
+        <div id="idNsts" onclick="document.location='../ferdig/index.html'">Til siste side</div>
+        <div id="mine-wrap"></div>
+
+
+        <script> 
+            let ElNsts = document.getElementById("idNsts")
+            let ElPoeng = document.getElementById("idPoeng");
+            let poeng = 0;
+
+            ElPoeng.innerHTML=poeng;
+            if (localStorage.poengIt1fagdag !== undefined){
+                poeng=Number(localStorage.poengIt1fagdag);
+            }
+            localStorage.poengIt1fagdag = String(poeng)
+
+            let ElNavn = document.getElementById("idNavn");
+            if (localStorage.getItem("navnIt1fagdag") !== null) {
+                ElNavn.innerHTML = " " + localStorage.getItem("navnIt1fagdag");
+            }
+            const maxpoeng = poeng + 5
+            const minpoeng = poeng -5
+
+            let mine = {
+            
+            total : 10, 
+            hoeyde : 10, 
+            bredde : 8, 
+
+            
+            brett : [], 
+            gjenvaerendeCeller : 0, 
+
+            
+            reset : () => {
+                
+                mine.brett = [];
+                mine.gjenvaerendeCeller = mine.hoeyde * mine.bredde;
+
+                
+                let wrap = document.getElementById("mine-wrap"),
+                    cssWidth = 100 / mine.bredde;
+                    wrap.innerHTML = "";
+
+                
+                for (let rad=0; rad<mine.hoeyde; rad++) {
+                mine.brett.push([]);
+                for (let kol=0; kol<mine.bredde; kol++) {
+                    
+                    mine.brett[rad].push({
+                    r : false, 
+                    x : false, 
+                    m : false, 
+                    a : 0, 
+                    c : document.createElement("div") 
+                    });
+
+                    
+                    let cell = mine.brett[rad][kol].c;
+                    cell.classList.add("cell");
+                    cell.id = "mine-" + rad + "-" + kol;
+                    cell.dataset.rad = rad;
+                    cell.dataset.kol = kol;
+                    cell.onclick = () => { mine.open(cell); };
+                    cell.oncontextmenu = (e) => {
+                    e.preventDefault();
+                    mine.merk(cell);
+                    };
+                    cell.style.width = cssWidth + "%";
+                    cell.innerHTML = "&nbsp;";
+                    wrap.appendChild(cell);
+                }
+                }
+
+                
+                let mRad = mine.hoeyde - 1,
+                    mKol = mine.bredde - 1,
+                    mAaLegge = mine.total;
+                while (mAaLegge > 0) {
+                let rad = Math.floor(Math.random() * mRad);
+                let kol = Math.floor(Math.random() * mKol);
+                if (!mine.brett[rad][kol].m) {
+                    mine.brett[rad][kol].m = true;
+                    mAaLegge--;
+                }
+                }
+
+                for (let rad=0; rad<mine.hoeyde; rad++) {
+                let frgRad = rad - 1,
+                    nstRad = rad + 1;
+                if (nstRad == mine.hoeyde) { nstRad = -1; }
+
+                for (let kol=0; kol<mine.bredde; kol++) {
+                    let frgKol = kol - 1,
+                        nstKol = kol + 1;
+                    if (nstKol == mine.bredde) { nstKol = -1; }
+
+                    if (!mine.brett[rad][kol].m) {
+                    
+                    if (frgRad != -1) {
+                        if (frgKol != -1) { if (mine.brett[frgRad][frgKol].m) { mine.brett[rad][kol].a++; } }
+                        if (mine.brett[frgRad][kol].m) { mine.brett[rad][kol].a++; }
+                        if (nstKol != -1) { if (mine.brett[frgRad][nstKol].m) { mine.brett[rad][kol].a++; } }
+                    }
+
+                    if (frgKol != -1) { if (mine.brett[rad][frgKol].m) { mine.brett[rad][kol].a++; } }
+                    if (nstKol != -1) { if (mine.brett[rad][nstKol].m) { mine.brett[rad][kol].a++; } }
+
+                    if (nstRad != -1) {
+                        if (frgKol != -1) { if (mine.brett[nstRad][frgKol].m) { mine.brett[rad][kol].a++; } }
+                        if (mine.brett[nstRad][kol].m) { mine.brett[rad][kol].a++; }
+                        if (nstKol != -1) { if (mine.brett[nstRad][nstKol].m) { mine.brett[rad][kol].a++; } }
+                    }
+                    }
+                }
+                }
+            },
+
+            merk : (cell) => {
+                let rad = cell.dataset.rad,
+                    kol = cell.dataset.kol;
+
+                if (!mine.brett[rad][kol].r) {
+                cell.classList.toggle("merk");
+                mine.brett[rad][kol].x = !mine.brett[rad][kol].x;
+                }
+            },
+
+            open : (cell) => {
+                let rad = cell.dataset.rad,
+                    kol = cell.dataset.kol;
+
+                if (!mine.brett[rad][kol].x && mine.brett[rad][kol].m) {
+                cell.classList.add("boom");
+                setTimeout(() => {
+                    alert("Opps. Du tapte. -1 poeng");
+                    mine.reset();
+                    poeng--
+                    if (poeng< minpoeng) {
+                        poeng = minpoeng
+                    }
+                    ElPoeng.innerHTML = "Poeng: "+ poeng;
+                }, 1);
+                }
+
+                else {
+                let aaVise = [], 
+                    aaSjekke = [], 
+                    skjekket = []; 
+                for (let i=0; i<mine.hoeyde; i++) { skjekket.push({}); }
+                aaSjekke.push([rad, kol]);
+
+                while (aaSjekke.length>0) {
+                    let denneRad = parseInt(aaSjekke[0][0]),
+                        denneKol = parseInt(aaSjekke[0][1]);
+
+                    if (mine.brett[denneRad][denneKol].m || mine.brett[denneRad][denneKol].r || mine.brett[denneRad][denneKol].x) {}
+                    else {
+                    if (!skjekket[denneRad][denneKol]) { aaVise.push([denneRad, denneKol]); }
+
+                    if (mine.brett[denneRad][denneKol].a == 0) {
+                        let frgRad = denneRad - 1,
+                            nstRad = denneRad + 1,
+                            frgKol = denneKol - 1,
+                            nstKol = denneKol + 1;
+                        if (nstRad == mine.hoeyde) { nstRad = -1; }
+                        if (nstKol == mine.bredde) { nstKol = -1; }
+
+                        if (frgRad != -1) {
+                        if (frgKol != -1 && !skjekket[frgRad][frgKol]) { aaSjekke.push([frgRad, frgKol]); }
+                        if (!skjekket[frgRad][denneKol]) { aaSjekke.push([frgRad, denneKol]); }
+                        if (nstKol != -1 && !skjekket[frgRad][nstKol]) { aaSjekke.push([frgRad, nstKol]); }
+                        }
+
+                        if (frgKol != -1 && !skjekket[denneRad][frgKol]) { aaSjekke.push([denneRad, frgKol]); }
+                        if (nstKol != -1 && !skjekket[denneRad][nstKol]) { aaSjekke.push([denneRad, nstKol]); }
+
+                        if (nstRad != -1) {
+                        if (frgKol != -1 && !skjekket[nstRad][frgKol]) { aaSjekke.push([nstRad, frgKol]); }
+                        if (!skjekket[nstRad][denneKol]) { aaSjekke.push([nstRad, denneKol]); }
+                        if (nstKol != -1 && !skjekket[nstRad][nstKol]) { aaSjekke.push([nstRad, nstKol]); }
+                        }
+                    }
+                    }
+
+                    skjekket[denneRad][denneKol] = true;
+                    aaSjekke.shift();
+                }
+
+                if (aaVise.length > 0) {
+                    for (let cell of aaVise) {
+                    let denneRad = parseInt(cell[0]);
+                    let denneKol = parseInt(cell[1]);
+                    mine.brett[denneRad][denneKol].r = true;
+                    if (mine.brett[denneRad][denneKol].a != 0) {
+                        mine.brett[denneRad][denneKol].c.innerHTML = mine.brett[denneRad][denneKol].a;
+                    }
+                    mine.brett[denneRad][denneKol].c.classList.add("vis");
+                    mine.gjenvaerendeCeller = mine.gjenvaerendeCeller - 1;
+                    }
+                }
+
+
+                if (mine.gjenvaerendeCeller == mine.total) {
+                    alert("Du vant!");
+                    poeng = poeng + 5
+                    if (poeng>maxpoeng) {
+                        poeng=maxpoeng
+                    }
+                    ElPoeng.innerHTML = "Poeng: "+ poeng
+                    ElNsts.style.display = "inline-block"
+                }
+                }
+            }
+            };
+            window.addEventListener("DOMContentLoaded", mine.reset);
+
+        </script>
+    </body>
+</html>

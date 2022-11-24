@@ -5,15 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
+    <link rel="stylesheet" href="../alleBrukDenne.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
         <h1> Hangman</h1>
         <div id="start">
-            <p class="knapp" id="startknapp">Start spillet</p>
+            <p id="velkommen"></p>
+            <div class="center">
+                <p class="knapp" id="startknapp">Start spillet</p>
+            </div>
         </div>
         <div id="hoved">
+        
             <p id="sjanser">Antall sjanser igjen: 7</p>
         
         
@@ -29,16 +34,45 @@
             <div class="center">
                 <p class="knapp" id="test">Test bokstav</p>
             </div>
+            <div class="poenghjørne">
+                <div>
+                    <p id="poeng">Totalpoeng: 5</p>
+                </div>
+                <div>
+                    <p id="mulige_poeng">Mulige poeng: 5</p>
+                </div>
+
+            </div>
         </div>
+        <p id="lagre_progresjon" class="knapp">Lagre progresjon</p>
+
+        
+        
 
     </main>
+    <div class="skygge" id="neste">
+        <div class="slide">
+            <H1>Du klarte det, bravo</H1><br>
+            <p id="vinner"></p>
+            <div class="center">
+                <a href="../E33/index.html"><p class="knapp">Neste spill</p></a>
+            </div>
+        </div>
 
-    
+    </div>
+    <div class="skygge" id="igjenblokk">
+        <div class="slide">
+            <H1>Ånei du tapte!</H1><br>
+            <p id="riktig_ord"></p>
+            <p id="taper"> </p>
+            <div class="center">
+                <p id="igjen" class="knapp">Prøv igjen</p>
+                <a href="../E33/index.html"><p id="neste2" class="knapp">Neste spill</p></a>
+                
+            </div>
+        </div>
 
-
-
-
-
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="Style.css"> 
 
 
-<body id="Body">
+<body id="Body" class="body">
 
     <!-- Heading -->
     <div id="Heading" class="E3Heading">
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <p>Poeng:<button id="SCORE" class="SCORE">     0     </button></p>
+    <p>Poeng:  <button id="SCORE">     0     </button></p>
 
     <div id="Kort" class="E3grid-container">
         <div onclick="ClickDiv('div1')" class="diver"id="div1">  </div>
@@ -49,9 +49,10 @@
         
         StartEl.addEventListener("click", StartSpill);
 
-        document.getElementById("Navn").innerHTML=localStorage.getItem("navnIT1fagdag");
-
-        Poeng=number(localStorage.getItem("poengIT1fagdag"));
+        Poeng=Number(localStorage.getItem("poengIT1fagdag"));
+        MinPoeng=Poeng-5;
+        MaxPoeng=Poeng+5;
+        console.log(MinPoeng)
 
         document.getElementById("SCORE").innerHTML=Poeng;
         
@@ -65,12 +66,10 @@
             while (g<10){
                 RK=RandomKort();
                 RD=RandomDiv();
-                console.log(RD)
                 dict[RD] = RK;
                 document.getElementById(RD).innerHTML += '<img src="Bilder/' + RK + '.png" style="position: absolute; top: 10px; left: 80px;" width="100" height="125"/>';
                 document.getElementById(RD).innerHTML += '<img id="Back' + RD + '" src="Bilder/Back.png" style="position: absolute; top: 10px; left: 80px;" width="100" height="125"/>'
                 RD=RandomDiv();
-                console.log(RD)
                 dict[RD] = RK;
                 document.getElementById(RD).innerHTML += '<img src="Bilder/' + RK + '.png" style="position: absolute; top: 10px; left: 80px;" width="100" height="125"/>';
                 document.getElementById(RD).innerHTML += '<img id="Back' + RD + '" src="Bilder/Back.png" style="position: absolute; top: 10px; left: 80px;" width="100" height="125"/>'
@@ -89,28 +88,26 @@
                 Avslutt();
             }
             if (m>2){
-                console.log(dict[SnuddeKort[0]]);
-                console.log(dict[SnuddeKort[1]]);
                 if (dict[SnuddeKort[0]] == dict[SnuddeKort[1]]){
-                    console.log("kjørt1")
                     SnuddeKort=[];
                     m=1;
-                    Poeng++;
-                    document.getElementById("SCORE").innerHTML=Poeng;
+                    if (MinPoeng<=Poeng && Poeng<MaxPoeng){
+                        Poeng=Poeng+1;
+                        document.getElementById("SCORE").innerHTML=Poeng;
+                    }
                 }
                 else{
-                    console.log("kjørt")
                     y="Back" + SnuddeKort[0];
-                    console.log(y)
                     document.getElementById(y).style.visibility="visible";
                     y="Back" + SnuddeKort[1];
-                    console.log(y)
                     document.getElementById(y).style.visibility="visible";
                     SnuddeKort=[]
                     l=l-2
                     m=1;
-                    poeng--;
-                    document.getElementById("SCORE").innerHTML=Poeng;
+                    if (MinPoeng<Poeng && Poeng<=MaxPoeng){
+                        Poeng=Poeng-1;
+                        document.getElementById("SCORE").innerHTML=Poeng;
+                    }
                 }
             if(Poeng<0){
                 href="../index.html";
@@ -121,9 +118,12 @@
 
         function Avslutt(){
             document.getElementById("Kort").style.visibility="hidden";
-            headingEl.innerHTML='<p><a href=../E4/index.html>Gratulerer du vant!</a></p>'
-            Poeng++;
-            document.getElementById("SCORE").innerHTML=Poeng;
+            headingEl.style.visibility="visible";
+            headingEl.innerHTML='<p><a href=../E4/index.html> Gratulerer du vant!</a></p>'
+            if (MinPoeng<=Poeng && Poeng<MaxPoeng){
+                Poeng=Poeng+1;
+                document.getElementById("SCORE").innerHTML=Poeng;
+            }
             localStorage.poengIT1fagdag=Poeng;
         }
 

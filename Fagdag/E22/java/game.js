@@ -5,7 +5,8 @@ let TreEl = document.getElementById("idNb3");
 let FireEl = document.getElementById("idNb4");
 let FemEl = document.getElementById("idNb5");
 let SeksEl = document.getElementById("idNb6");
-let SpmEl = document.getElementById("idSpm")
+let SjuEl = document.getElementById("idNb7");
+let SpmEl = document.getElementById("idSpm");
 
 StartEl.addEventListener("click",startfunk);
 
@@ -14,13 +15,28 @@ function startfunk() {
     StartEl.style.display ="none";
     SpmEl.style.display ="inline-block";
 }
-let Liv = 0;
+
+let Liv = 5;
 let LivEl=document.getElementById('idLiv');
+
+
+function gameover(){
+    EnEl.style.display = "none";
+    ToEl.style.display = "none";
+    TreEl.style.display = "none";
+    FireEl.style.display = "none";
+    FemEl.style.display = "none";
+    SeksEl.style.display = "none";
+    SjuEl.style.display = "inline-block";
+}
 
 function Feil(id){
     document.getElementById(id).innerHTML="Feil";
     document.getElementById(id).style.backgroundColor = "red";
         Liv--;
+        if (Liv === -1){
+            gameover();
+        }
         LivEl.innerHTML="Liv: " + Liv;
         
 }
@@ -70,6 +86,9 @@ let knapp18El = document.getElementById("idKnapp18");
             knapp18El.innerHTML ="Feil";
             knapp18El.style.color = "red";
             Liv--;
+            if (Liv === -1){
+                gameover();
+            }
             LivEl.innerHTML="Liv: " + Liv;
 } 
 let knapp19El = document.getElementById("idKnapp19");
@@ -78,6 +97,9 @@ let knapp19El = document.getElementById("idKnapp19");
             knapp19El.innerHTML ="Feil";
             knapp19El.style.color = "red";
             Liv--;
+            if (Liv === -1){
+                gameover();
+            }
             LivEl.innerHTML="Liv: " + Liv;
 } 
 let knapp20El = document.getElementById("idKnapp20");
@@ -86,6 +108,9 @@ let knapp20El = document.getElementById("idKnapp20");
             knapp20El.innerHTML ="Feil";
             knapp20El.style.color = "red";
             Liv--;
+            if (Liv === -1){
+                gameover();
+            }
             LivEl.innerHTML="Liv: " + Liv;
 } 
 let knapp21El = document.getElementById("idKnapp21");
@@ -94,5 +119,8 @@ let knapp21El = document.getElementById("idKnapp21");
             knapp21El.innerHTML ="Feil";
             knapp21El.style.color = "red";
             Liv--;
+            if (Liv === -1){
+                gameover();
+            }
             LivEl.innerHTML="Liv: " + Liv;
 } 

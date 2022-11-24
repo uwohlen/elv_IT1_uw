@@ -18,13 +18,11 @@ function Start(){
             for(var i=0;i<6;i++){
                 document.getElementsByClassName("mole")[i].style.visibility="hidden";
             }
-        }, 900);
-    }, 1000);
+        }, 800);
+    }, 900);
 }
 
 function clicked(){
     document.getElementById("currentPoint").innerHTML=currentPoint++;
-
-    console.log("Clicked");
 }
 
