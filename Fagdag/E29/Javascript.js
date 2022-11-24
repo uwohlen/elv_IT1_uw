@@ -1,12 +1,12 @@
 localStorage.levelIT1fagdag = "E29";
 let navnEl = document.getElementById("idNavn");
-navnEl.addEventListener("keydown",navnLagre);
-function navnLagre(event) {
-    if (event.keyCode === 13) {
-        console.log(event.keyCode)
-        localStorage.setItem("navnIT1fagdag",navnEl.value);
-    }
-}
+// navnEl.addEventListener("keydown",navnLagre);
+// function navnLagre(event) {
+//     if (event.keyCode === 13) {
+//         console.log(event.keyCode)
+//         localStorage.setItem("navnIT1fagdag",navnEl.value);
+//     }
+navnEl.innerHTML=localStorage.getItem("navnIT1fagdag");
 
 const cards = document.querySelectorAll('.memory-card');
 
