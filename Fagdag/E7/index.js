@@ -206,6 +206,11 @@ function main() {
     for (let i = 0; i < rows.length; i++) {
       const r = rows[i];
 
+      // 3 of the same color in a row
+        if (r[0] === r[1] && r[1] === r[2]) {
+            score += 3;
+        }
+
       if (r[0] === r[1] && r[1] === r[2] && r[2] === r[3]) {
         score += 4;
         console.debug("🎰 4 in a row", r);
@@ -225,6 +230,8 @@ function main() {
         console.debug("🥳 3 in a column ", c);
       }
     }
+
+
 
     console.debug("🎰 Score: " + score);
 
