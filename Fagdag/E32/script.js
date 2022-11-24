@@ -93,6 +93,7 @@ function igjenFunk(){
     sjanserEl.innerHTML="Antall sjanser igjen: " + sjanser
     igjenblokkEl.style.display="none"
     document.getElementById("riktig_ord").innerHTML="riktig ord var "+løsning
+    tegnGalge();
     
 }
 
