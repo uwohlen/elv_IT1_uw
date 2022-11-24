@@ -19,9 +19,6 @@ function startfunk() {
         localStorage.poengIT1fagdag.value = "";
 }
 
-NavnEl.innerHTML = localStorage.navnIT1fagdag.value;
-    localstorage.navnIT1fagdag.value = "";
-
 let Liv = 0;
 let LivEl=document.getElementById('idLiv');
 
