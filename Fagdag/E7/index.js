@@ -26,8 +26,11 @@ window.onload = function () {
 
   score = parseInt(playerScore);
 
+  console.debug("🥙 Found player name: " + playerName);
+  console.debug("🤳 Found player score: " + playerScore);
+
   document.getElementById("playerName").innerText = playerName + "!";
-  document.getAnimations("score").innerText = playerScore;
+  document.getAnimations("score").innerText = score;
 
   if (score < 3) {
     document.getElementById("playbtn").className += " btn-disabled";
@@ -112,7 +115,7 @@ function main() {
 
   app.stage.addChild(columnsContainer);
   const margin = ((app.screen.height - SLOT_SIZE) / 25) * 0;
-  columnsContainer.y = margin-50
+  columnsContainer.y = margin - 50;
   columnsContainer.x = Math.round(app.screen.width - COL_WIDTH * 5);
   const top = new PIXI.Graphics();
   top.beginFill(0, 1);
@@ -207,9 +210,9 @@ function main() {
       const r = rows[i];
 
       // 3 of the same color in a row
-        if (r[0] === r[1] && r[1] === r[2]) {
-            score += 3;
-        }
+      if (r[0] === r[1] && r[1] === r[2]) {
+        score += 3;
+      }
 
       if (r[0] === r[1] && r[1] === r[2] && r[2] === r[3]) {
         score += 4;
@@ -231,14 +234,12 @@ function main() {
       }
     }
 
-
-
     console.debug("🎰 Score: " + score);
 
     if (score < 3) {
-        document.getElementById("playbtn").className += " btn-disabled";
-        document.getElementById("tooltip").className = "tooltip w-full";
-      }
+      document.getElementById("playbtn").className += " btn-disabled";
+      document.getElementById("tooltip").className = "tooltip w-full";
+    }
 
     document.getElementById("score").innerText = score;
 
