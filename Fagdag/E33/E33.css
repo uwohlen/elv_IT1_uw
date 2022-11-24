@@ -1,0 +1,32 @@
+#mine-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+#mine-wrap .cell {
+    box-sizing: border-box;
+    background:#ddd;
+    border: 1px solid #ccc;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+}
+#mine-wrap .cell.merk{ background: #fea; z-index: 2;}
+#mine-wrap .cell.vis {background: #f7f7f7; z-index: 2;}
+#mine-wrap .cell.boom {background: #f00; z-index: 2;}
+#idPoeng {
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+#idNsts {
+    display: none;
+    cursor: pointer;
+    position: relative;
+    height: 30vh;
+    width: 100vw;
+    text-align: center;
+    z-index: 1;
+    font-size: 400%;
+}
