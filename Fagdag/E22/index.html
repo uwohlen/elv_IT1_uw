@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Dataspill</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #idSpm, #idNb1, #idNb2, #idNb3, #idNb4, #idNb5, #idNb6, #idNb7{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="start">
+        <button id="idStart" class="exp">START QUIZEN</button>
+    </div>
+
+    <div class="banner">
+        <div id="idNb1">
+            <div id="idSpm" class="hvilketspm">1.</div>
+            <h2>Hvor mange hull er det i en T-skjorte?</h2>
+                <div class="knapper">
+                    <button id="idKnapp1" onclick="Feil('idKnapp1')" class="qBt">En</button>
+                    <button id="idKnapp2" onclick="Feil('idKnapp2')" class="qBt">To</button>
+                    <button id="idKnapp3" onclick="Feil('idKnapp3')" class="qBt">Tre</button>
+                    <button id="idKnapp4" class="qBt">Fire</button>
+                </div>
+        </div>
+        <div id="idNb2">
+            <div id="idSpm2" class="hvilketspm">2.</div>
+            <h2>.sgnelkab telåmsrøps etted åp ravS?</h2>
+                <div class="knapper">
+                    <button id="idKnapp5" onclick="Feil('idKnapp5')" class="qBt">Hæ?</button>
+                    <button id="idKnapp6" class="qBt">K.O</button>
+                    <button id="idKnapp7" onclick="Feil('idKnapp7')" class="qBt">Elefant</button>
+                    <button id="idKnapp8" onclick="Feil('idKnapp8')" class="qBt">Nei</button>
+                </div>
+        </div>
+        <div id="idNb3">
+            <div id="idSpm3" class="hvilketspm">3.</div>
+            <h2>Hva er papir laget av?</h2>
+                <div class="knapper">
+                    <button id="idKnapp9" onclick="Feil('idKnapp9')" class="qBt">Aluminium</button>
+                    <button id="idKnapp10" onclick="Feil('idKnapp10')" class="qBt">Stål</button>
+                    <button id="idKnapp11" onclick="Feil('idKnapp11')" class="qBt">Stein</button>
+                    <button id="idKnapp12" onclick="Feil('idKnapp12')" class="qBt">Plast</button>
+                </div>
+        </div>
+        <div id="idNb4">
+            <div id="idSpm4" class="hvilketspm">4.</div>
+            <h2>Svaret er veldig stort</h2>
+                <div class="knapper">
+                    <button id="idKnapp13" class="qBt">Moren din</button>
+                    <button id="idKnapp14" onclick="Feil('idKnapp14')" class="qBt">Veldig stort</button>
+                    <button id="idKnapp15" onclick="Feil('idKnapp15')" class="qBt">SVARET</button>
+                    <button id="idKnapp16" onclick="Feil('idKnapp16')" class="qBt">En million</button>
+                </div>
+        </div>
+        <div id="idNb5">
+            <div id="idSpm5" class="hvilketspm">5.</div>
+            <h2 class="sistespm">Let etter svaret!</h2>
+                <div class="knapper">
+                    <p id="idKnapp17" class="hidden a1">RIKTIG!</p>
+                    <p id="idKnapp18" onclick="Feil2('idKnapp18')" class="hidden a2">NAH</p>
+                    <p id="idKnapp19" onclick="Feil3('idKnapp19')" class="hidden a3">NIKS</p>
+                    <p id="idKnapp20" onclick="Feil4('idKnapp20')" class="hidden a4">KANSKJE DENNE</p>
+                    <p id="idKnapp21" onclick="Feil5('idKnapp21')" class="hidden a5">IKKE TRYKK</p>
+                </div>
+        </div>
+        <div id="idNb6">
+                <div class="videre">
+                    <h3>BRA JOBBA! DU GREIDE DET!</h3>
+                    <a href="../E23/index.html"><h4>Trykk her for å gå til neste spill!</h4></a>
+                </div>
+        </div>
+        <div id="idNb7">
+            <div class="videre">
+                <h3>DU TAPTE! VIL DU RESTARTE?</h3>
+                <a href="index.html"><h4>JA!</h4></a>
+            </div>
+    </div>
+        <div id="idLiv" class="liv">Liv: 5</div>
+    </div>
+    <script src="./java/game.js"></script>
+</body>
