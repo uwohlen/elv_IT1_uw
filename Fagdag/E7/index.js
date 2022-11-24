@@ -15,6 +15,9 @@ const app = new PIXI.Application({
 document.getElementById("game").appendChild(app.view);
 
 window.onload = function () {
+    // update levelIT1fagdag
+    window.localStorage.setItem("levelIT1fagdag", "E7");
+
   // Update the name of the player
   let playerName = document.getElementById("navnIT1fagdag");
   let playerScore = document.getElementById("poengIT1fagdag");
