@@ -1,0 +1,68 @@
+body{
+    margin: 5%;
+}
+
+#id_text{
+    padding-top: none;
+    padding-bottom: none;
+    padding: 1%;
+    border:7px solid;
+    border-image: url("media/border.png")50;
+}
+
+#id_simon{
+    margin: auto;
+    height: 30%;
+    width: 30%;
+    background-image: url("media/bg.png");
+    background-size: 95%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#id_tapt, #id_next_level{
+    display: none;
+    margin: auto;
+    text-align: center;
+}
+
+#id_fyrverki{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    
+}
+
+.cl_grid-container {
+    padding: 10%;
+    display: grid;
+    grid-template-columns: 47.5% 47.5%;
+    grid-template-rows: 47.5% 47.75%;
+    column-gap: 5%;
+    row-gap: 5%;
+}
+
+img{
+    width: 95%;
+    height: 96%;
+    opacity: 85%;
+}
+
+h1{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-bottom:3px solid;
+    border-top:3px solid;
+    border-image: url(media/border.png) 50;
+}
+
+#id_vann{
+    display: none;
+}
+
+#id_level_txt{
+    text-align: center;
+}
