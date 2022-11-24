@@ -2,24 +2,38 @@ const COL_WIDTH = 160;
 const SLOT_SIZE = 150;
 const COL_AMOUNT = 5;
 
-
-let confetti = new Confetti("celebration");
-
-confetti.setCount(750);
-confetti.setSize(3);
-confetti.setPower(100);
-confetti.setFade(true);
+let score = 0;
 
 // Create a new pixijs application that fills the screen
 const app = new PIXI.Application({
-  height: window.innerHeight,
-  backgroundColor: "#1099bb",
+  backgroundColor: ["#ffffff"],
   borderRadius: 10,
   resolution: window.devicePixelRatio || 1,
 });
 
 // Add the canvas to the HTML document
-document.body.appendChild(app.view);
+document.getElementById("game").appendChild(app.view);
+
+window.onload = function () {
+  // Update the name of the player
+  let playerName = document.getElementById("navnIT1fagdag");
+  let playerScore = document.getElementById("poengIT1fagdag");
+
+  if (playerName === "" || playerName === null || playerName === undefined)
+    playerName = "Spelar";
+  if (playerScore === "" || playerScore === null || playerScore === undefined)
+    playerScore = "0";
+
+  score = parseInt(playerScore);
+
+  document.getElementById("playerName").innerText = playerName + "!";
+  document.getAnimations("score").innerText = playerScore;
+
+  if (score < 3) {
+    document.getElementById("playbtn").className += " btn-disabled";
+    document.getElementById("tooltip").className = "tooltip w-full";
+  }
+};
 
 // Load the texture we need
 PIXI.Assets.load([
@@ -33,7 +47,12 @@ PIXI.Assets.load([
 
 // The main game loop function that's called ones the assets are loaded
 function main() {
+  main.start = startPlay;
+
   console.debug("✅ Assets loaded successfully");
+
+  // Remove the html element with the loading message
+  document.getElementById("loader").remove();
 
   const slots = [
     PIXI.Texture.from("assets/1.png"),
@@ -92,7 +111,7 @@ function main() {
   }
 
   app.stage.addChild(columnsContainer);
-  const margin = (app.screen.height - SLOT_SIZE * 3) / 2;
+  const margin = ((app.screen.height - SLOT_SIZE) / 25) * 0;
   columnsContainer.y = margin;
   columnsContainer.x = Math.round(app.screen.width - COL_WIDTH * 5);
   const top = new PIXI.Graphics();
@@ -101,39 +120,6 @@ function main() {
   const bottom = new PIXI.Graphics();
   bottom.beginFill(0, 1);
   bottom.drawRect(0, SLOT_SIZE * 3 + margin, app.screen.width, margin);
-
-  // Add play text
-  const style = new PIXI.TextStyle({
-    fontFamily: "Arial",
-    fontSize: 30,
-    fontWeight: "bold",
-    fill: ["#ffffff"], // gradient
-    stroke: "#4a1850",
-
-  });
-
-  const playStyle = new PIXI.TextStyle({
-    fontFamily: "Arial",
-    fontSize: 20,
-    fontWeight: "bold",
-    fill: ["#ffffff"], 
-    stroke: "#4a1850",
-    dropShadow: true,
-    dropShadowColor: "#000000",
-    
-  });
-
-  const playText = new PIXI.Text("Spin!", playStyle);
-  playText.x = Math.round((bottom.width - playText.width) / 2);
-  playText.y =
-    app.screen.height - margin + Math.round((margin - playText.height) / 2);
-  bottom.addChild(playText);
-
-  // Add header text
-  const headerText = new PIXI.Text("Få 3 under hverandre eller 4 på rad for å gå videre!", style);
-  headerText.x = Math.round((top.width - headerText.width) / 2);
-  headerText.y = Math.round((margin - headerText.height) / 2);
-  top.addChild(headerText);
 
   app.stage.addChild(top);
   app.stage.addChild(bottom);
@@ -149,6 +135,15 @@ function main() {
   function startPlay() {
     if (isPlaying) return;
     else isPlaying = true;
+
+    // if the player dosent have enough points, dont let them play
+    if (score < 3) {
+      alert("Du har ikkje nok poeng til å spela!");
+      return;
+    }
+    // deduct 3 points for each spin
+    score -= 3;
+    document.getElementById("score").innerText = score;
 
     for (let i = 0; i < columns.length; i++) {
       const c = columns[i];
@@ -206,13 +201,10 @@ function main() {
       rows[2].push(assetNameToColorname(bottomSlot.texture.textureCacheIds[0]));
     }
 
-
-    let score = 0;
-
+    score += 1;
     // check for 3, 4 or 5 of the same color
     for (let i = 0; i < rows.length; i++) {
       const r = rows[i];
-
 
       if (r[0] === r[1] && r[1] === r[2] && r[2] === r[3]) {
         score += 4;
@@ -236,14 +228,17 @@ function main() {
 
     console.debug("🎰 Score: " + score);
 
-    if (score > 0 ) {
-      document.getElementById("celebration").click();
-
+    if (score > 0) {
       setTimeout(() => {
-        // navigate to next page
-        window.location.href = "../E8/index.html"
-      }, 1000);
+        // update the score
+      }, 10);
     }
+
+    document.getElementById("score").innerText = score;
+
+    // update the local storage
+    localStorage.setItem("poengIT1fagdag", score);
+
     isPlaying = false;
   }
   app.ticker.add((delta) => {

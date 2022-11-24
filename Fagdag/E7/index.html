@@ -12,16 +12,53 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="https://pixijs.download/release/pixi.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.42.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-black flex justify-center h-screen w-screen" >
+  <body>
+    <div
+      class="absolute h-screen w-screen bg-black flex justify-center items-center text-white font-bold"
+      id="loader"
+    >
+      Laster inn...
+    </div>
+    <div class="flex h-screen w-screen justify-between">
+      <div class="animate-pulse w-full h-full flex flex-col justify-center items-center">
+        <div class="text-6xl">
+          Hei <span id="playerName"></span>
+        </div>
+        <div class="text-4xl italic">
+        Du har <span id="score" class="mx-1"> 0 </span>poeng
 
-    <div id="celebration" class="absolute"/>
+        </div>
+      </div>
+      <div class="flex flex-col justify-between w-full h-full">
+        <div>
+          <h1 class="text-6xl text-center font-bold m-10">Spin rulletet!</h1>
+        </div>
+        <div
+          id="game"
+          class="bg-red-500 border border-red-600 rounded-xl overflow-hidden h-[45vh]"
+        ></div>
+        <div class="flex flex-col w-full justify-evenly pb-10">
+         <div data-tip="Du må ha 3 poeng å spille med!" id="tooltip" class="w-full">
+          <button class="btn btn-primary btn-lg w-full" id="playbtn" onclick="main.start()">
+            Start å spinne (3 poeng)
+          </button>
+         </div>
 
-    <script src="confetti.min.js"></script>
-
-    <script src="./index.js"></script>
-
+          <a class="btn btn-secondary mt-5 btn-md" href="../E8/index.html">
+            Gå til neste spill ->
+          </a>
+        </div>
+      </div>
+      <div class="h-full w-full"></div>
+      <script src="confetti.min.js"></script>
+      <script src="./index.js"></script>
     </div>
   </body>
 </html>
