@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanders</title>
+</head>
+
+<body>
+<button id="BTN">Trill terning</button>
+<p id="tallet"></p>
+<p id="svar"></p>
+<a id="linkTilNySide" href=""><button id="nesteSpill" >Neste spill - </button></a>
+</body>
+<script>
+let BTN = document.querySelector("#BTN")
+let trillet = document.querySelector("#tallet")
+let svar = document.querySelector("#svar")
+let tall=0
+let nesteSpill = document.querySelector("#nesteSpill")
+ 
+function trillTerning(){
+BTN.remove()
+tall=Math.floor(Math.random() * 6) + 1;
+if(tall>=4){
+trillet.innerHTML=tall
+svar.innerHTML="Du har vunnet"
+nesteSpill.innerHTML+=" Du går videre"
+nesteSpill.href="https://nydalen.vgs.no/"
+document.getElementById("linkTilNySide").href = "#" //Legg til vinnerlink
+}
+else{
+trillet.innerHTML=tall
+svar.innerHTML="Du har tapt."
+nesteSpill.innerHTML+=" Du må starte på nytt"
+document.getElementById("linkTilNySide").href = "#" //Legg til taperlink
+}
+}
+function nyttSpill(){
+}
+BTN.addEventListener("click", trillTerning)
+</script>
+</html>
