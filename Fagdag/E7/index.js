@@ -35,7 +35,7 @@ window.onload = function () {
   document.getElementById("playerName").innerText = playerName + "!";
   document.getAnimations("score").innerText = playerScore;
 
-  if (score < 3) {
+  if (score < 5) {
     document.getElementById("playbtn").className += " btn-disabled";
     document.getElementById("tooltip").className = "tooltip w-full";
   }
@@ -143,12 +143,12 @@ function main() {
     else isPlaying = true;
 
     // if the player dosent have enough points, dont let them play
-    if (score < 3) {
+    if (score < 5) {
       alert("Du har ikkje nok poeng til å spela!");
       return;
     }
     // deduct 3 points for each spin
-    score -= 3;
+    score -= 5;
     document.getElementById("score").innerText = score;
 
     for (let i = 0; i < columns.length; i++) {
@@ -239,7 +239,7 @@ function main() {
 
     console.debug("🎰 Score: " + score);
 
-    if (score < 3) {
+    if (score < 5) {
       document.getElementById("playbtn").className += " btn-disabled";
       document.getElementById("tooltip").className = "tooltip w-full";
     }
