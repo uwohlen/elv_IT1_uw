@@ -13,7 +13,7 @@
     z-index: 2;
 }
 #mine-wrap .cell.merk{ background: #fea; z-index: 2;}
-#mine-wrap .cell.vis {background: #black; z-index: 2;}
+#mine-wrap .cell.vis {background: #000; z-index: 2;}
 #mine-wrap .cell.boom {background: #f00; z-index: 2;}
 #idPoeng {
     position: fixed;
