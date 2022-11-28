@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+}
+#shoottxt{
+    font-size: 120px;
+    color: aliceblue;
+}
+#pistolImg{
+    position: absolute;
+    left: 500px;
+    bottom: 0px;
+}
+#pistolDiv{
+    display: none;
+}
+#StartBtn{
+    font-size: 80px;
+    background-image: linear-gradient(to right, black , brown, grey, brown, black);
+    cursor: pointer;
+}
+.Knapp1{
+    border: solid 3px;
+}
+#idPoeng{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 40px;
+    color: white;
+}
+#nestespill{
+    display: none;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
