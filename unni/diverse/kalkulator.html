@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Kalkulator</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h1>Skriv inn et pluss-regnestykke</h1>
+    <input id="idInn" type="text">
+    <p>Summen er: <span id="idTilbake"></span></p>
+<script>
+    let innEl = document.getElementById("idInn");
+    let tilbakeEl = document.getElementById("idTilbake")
+    innEl.focus();
+    innEl.addEventListener("keydown",innfunk);
+    
+    function innfunk (event){
+        if(event.keyCode === 13) {
+            //Kalkulator med type=text
+            let tekst = innEl.value
+            let ipluss = tekst.indexOf("+");
+            let tall1 = Number(tekst.substr(0,ipluss));
+            let tall2 = Number(tekst.substr(ipluss+1)); //når lengden mangler tas hele resten
+            console.log(ipluss,tall1,tall2);
+            tilbakeEl.innerHTML = tall1 + tall2;
+        }
+    }
+</script>
+</body>
+</html>

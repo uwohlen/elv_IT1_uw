@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Kommer du inn?</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Velkommen! Skriv koden for å åpne neste side!</h1>
+    
+<script>
+    let kode = "";
+    
+    addEventListener("keydown",kodefunk);
+    
+
+    function kodefunk(event) {
+        kode += String.fromCharCode(event.keyCode);
+        console.log(kode);
+        if (kode === "SESAM" || kode === "KODEN") {
+            window.open("theidiotgame.html",name="_self");
+        }
+    }
+
+
+</script>
+</body>
+</html>

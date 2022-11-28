@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>The Idiot Game</title>
+    <style>
+        body {
+            user-select: none;
+        }
+        .clKule {
+            border: 1px solid black;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>The idiot game!</h1>
+    <h2>Klikk 10 ganger på den røde sirkelen. Kjapp deg!</h2>
+    <h2>Antall klikk: <span id="idAntall"></span></h2>
+    <div id="idKule1" class="clKule"></div>
+    <div id="idKule2" class="clKule"></div>
+    <script>
+        let kule1El = document.getElementById("idKule1");
+        let kule2El = document.getElementById("idKule2");
+        let antallEl = document.getElementById("idAntall");
+        let trykk = 0;
+        antallEl.innerHTML = trykk;
+        kule1El.style.backgroundColor = "yellow";
+        kule2El.style.backgroundColor = "red";
+    
+    
+        addEventListener("click",kulefunk);
+        
+
+        function kulefunk(event) {
+            console.log(event.target.id);
+            if (event.target.id === "idKule2" && trykk < 6) {
+                trykk ++;
+                antallEl.innerHTML = trykk;
+                if (trykk === 6) {
+                    kule1El.style.backgroundColor = "red";
+                    kule2El.style.backgroundColor = "yellow";
+                }
+            }
+            else if (event.target.id === "idKule1" && trykk >= 6 && trykk < 10) {
+                trykk ++;
+                antallEl.innerHTML = trykk;
+                if (trykk === 10) {
+                    antallEl.innerHTML += " Gratulerer! Du er en god idiot!"
+                    removeEventListener("click",kulefunk);
+                }
+            }
+            else {
+                antallEl.innerHTML += " Du bomma! Loooser!!!"
+                removeEventListener("click",kulefunk);
+            }
+        }
+    </script>
+</body>
+</html>
