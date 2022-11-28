@@ -9,8 +9,11 @@
         </head>
         <body>
             <h1>Simon spill</h1>
-            <p id="id_hei_txt">Hei, navnIkkeDefinert. Dette er simon spill, målet med spillet er å trykke på knappene i den rekkefølgen de vises. Klarer du ikke dette mister du poeng. </p>
-            <p id="id_poeng_txt">Du har poengUkjent poeng</p>
+            <div id="id_text">
+                <p id="id_hei_txt">Hei, navnIkkeDefinert. Gratulerer, du er på nivå 28. Dette er simon spill, målet med spillet er å trykke på knappene i den rekkefølgen de vises. Klarer du ikke dette mister du poeng. </p>
+                <p id="id_poeng_txt">Du har poengUkjent poeng</p>
+            </div>
+            <button id="id_start_btn">Start</button>
             <h3 id="id_level_txt">Level 1</h3>
             <div id="id_simon">
                 <div class="cl_grid-container">
@@ -29,6 +32,11 @@
 
             </div>
             <a href="../E29/index.html" id="id_vann"><button>Beklager, jeg tok meg vann over hodet</button></a>
-            <a href="../E29/index.html" id="id_next_levelbtn"><button>Gå til neste nivå</button></a>
-            <script src="index.js"></script>
+            <div id="id_next_level">
+                <img src="media/fireworks.gif" alt="Fyrverkeri" id="id_fyrverki">
+                <p id="id_fyrverkeri_cred">Fyrverkeriet har opphavsrett.Hentet fra <span><a href="https://commons.wikimedia.org/wiki/File:Porto_%2844737027960%29.gif" target="_blank">wikimedia</a></span>, men laget av <span><a href="https://www.flickr.com/people/133200397@N03" target="_blank">Sergei Gussev</a></span>, gif-en har <span><a href="https://creativecommons.org/licenses/by/2.0/deed.en" target="_blank">creative commons</a></span> lisens. Endringer: bakgrunn er fjernet. </p>
+                <h2>Du har godt minne, som premie får du 5 poeng.</h2>
+                <a href="../E29/index.html"><button>Gå til neste nivå</button></a>
+            </div>
+                <script src="index.js"></script>
         </body>

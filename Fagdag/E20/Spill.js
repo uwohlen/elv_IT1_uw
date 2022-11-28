@@ -10,8 +10,8 @@ function kill() {
     console.log("Hei")
     poeng++;
     poengEl.innerHTML = "Poeng: " + poeng;
-}
-if (poeng = 20) {
-    console.log("morraknuller")
-    document.getElementById("nestespill").style.display="block";
+    if (poeng == 20) {
+        console.log("morraknuller")
+        document.getElementById("nestespill").style.display="block";
+    }
 }
