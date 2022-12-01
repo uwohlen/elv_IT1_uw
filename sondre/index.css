@@ -1,6 +1,4 @@
 body{
-    width: 70%;
-    margin: 0% 15%;
     background-image: url(media/jorden.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -10,13 +8,19 @@ body{
     align-self: center;
   }
 
-#hovdtekst{
+#id_hovdtekst{
     background-color: rgba(128, 128, 128, 0.635);
     border-radius: 20px;
     padding: 20px;
 }
 
 #cred_bg{
-    bottom: -25vh;
-    right: -14vw;
+    position: fixed;
+    bottom: 0;
+    margin: 10px;
+}
+
+.cl_menu_button_flex , #id_hovdtekst{
+    margin: auto;
+    width: 90%;
 }

@@ -2,11 +2,11 @@ let poeng =0 ;
 let antsvar = 0;
 let i =0
 
-let skrivnavn = document.getElementById("navnditt");
+let skrivnavn = document.getElementById("id_navnditt");
 let navnwrite = document.getElementById("navnskriv");
 let navn0 = document.getElementById("idNavn0");
 let navn1 = document.getElementById("idNavn1");
-let cookies = document.getElementById("cookies");
+let cookies = document.getElementById("id_cookies");
 let poengEl = document.getElementById("idPoeng");
 let poeng1El = document.getElementById("poeng1")
 let finalscore= document.getElementById("score");
@@ -36,8 +36,8 @@ let knappr3El = document.getElementById("idr3");
 let knappr4El = document.getElementById("idr4");
 
 navnwrite.addEventListener("keydown",lagrefunk)
-knappokEl.addEventListener("click", cookies_ok)
-knappslett.addEventListener("click",slett)
+knapp_ok_btnEl.addEventListener("click", cookies_ok_funk)
+slett_cookies_btnEl.addEventListener("click",slett_funk)
 
 if (localStorage.getItem("cookiesGodkjentForIndex1")=== "Ja"){
     knappw1El.addEventListener("click",feil)
@@ -69,11 +69,11 @@ if (localStorage.getItem("cookiesGodkjentForIndex1")=== "Ja"){
     }
 }
 else {
-    knappslett.style.display = "none";
+    slett_cookies_btnEl.style.display = "none";
     cookies.style.display ="block";
 }
 
-function cookies_ok(){
+function cookies_ok_funk(){
     knappw1El.addEventListener("click",feil)
     knappw2El.addEventListener("click",feil1)
     knappw3El.addEventListener("click",feil2)
@@ -105,7 +105,7 @@ function lagrefunk(event) {
     }
 }
 
-function slett() {
+function slett_funk() {
     skrivnavn.style.display ="none";
     knappw1El.removeEventListener("click",feil)
     knappw2El.removeEventListener("click",feil1)

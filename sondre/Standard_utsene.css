@@ -26,19 +26,7 @@ button:hover{
     cursor: not-allowed;
 }
 
-#cookies {
-    background-color: gray;
-    position: fixed;
-    bottom: 0;
-    left: 10%;
-    right: 10%;
-    margin: 10px;
-    border: 4px solid darkgray;
-    display: block;
-    text-align: center;
-}
-
-#navnditt{
+#id_navnditt{
     background-color: gray;
     position: sticky;
     bottom: 0;
@@ -57,7 +45,8 @@ button:hover{
     text-transform: uppercase; 
 }
 
-.cl_menu{
+.cl_menu_button_flex{
+    display: flex;
     background-image: url("media/Sondre.jpeg");
     background-size: cover;
     background-position: center;
@@ -65,16 +54,22 @@ button:hover{
     padding-left: 1em;
     padding-top: 80px;
     padding-bottom: 80px;
+
+    position: relative;
+    text-align: center;
+    color: white;
 }
 
-.cl_menu>span:last-child{
-    width: 20px;
-    color: white;
-    font-size: 9px;
-    position: relative;
-    bottom: -87px;
-    right: 1vw;
-    text-align: end;
+.cl_menu_button_flex>span{
+    margin: 5px;
+}
+
+.cl_menu_button_flex>span:last-child{
+    display: inline-block;
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: smaller;
 }
 
 br{
@@ -91,3 +86,5 @@ br{
     text-align: end;
     text-shadow: -1px -1px 0 #000
 }
+
+

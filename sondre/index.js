@@ -1,5 +1,5 @@
 let knapp_ok_btnEl = document.getElementById("id_ok_btn");
-let skrivnavn = document.getElementById("navnditt");
+let skrivnavn = document.getElementById("id_navnditt");
 let navnwrite = document.getElementById("navnskriv");
 let navn = document.getElementById("idNavn");
 let slett_cookies_btnEl =document.getElementById("id_slett_cookies_btn");
