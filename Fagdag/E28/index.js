@@ -1,3 +1,5 @@
+localStorage.setItem("levelIT1fagdag","E28")
+
 let level = 10;
 let trykkesekvens = [];
 let rngsekvens = [];
@@ -49,47 +51,7 @@ function startfunk(){
     blue_btnEl.addEventListener("click", blue_btnfunk);
 
 
-    rngsekvens.push(Math.floor(Math.random()*4)+1);
-    if(rngsekvens[0]===1){
-        green_btnEl.style.opacity = "30%";
-        lyd1.play();
-        setTimeout(() => {
-            green_btnEl.style.opacity = "85%";
-            red_btnEl.style.opacity = "85%";
-            yellow_btnEl.style.opacity = "85%";
-            blue_btnEl.style.opacity = "85%";
-        }, 1000)
-    }
-    if(rngsekvens[0]===2){
-        red_btnEl.style.opacity = "30%";
-        lyd2.play();
-        setTimeout(() => {
-            green_btnEl.style.opacity = "85%";
-            red_btnEl.style.opacity = "85%";
-            yellow_btnEl.style.opacity = "85%";
-            blue_btnEl.style.opacity = "85%";
-        }, 1000)
-    }
-    if(rngsekvens[0]===3){
-        yellow_btnEl.style.opacity = "30%";
-        lyd3.play();
-        setTimeout(() => {
-            green_btnEl.style.opacity = "85%";
-            red_btnEl.style.opacity = "85%";
-            yellow_btnEl.style.opacity = "85%";
-            blue_btnEl.style.opacity = "85%";
-        }, 1000)
-    }
-    if(rngsekvens[0]===4){
-        blue_btnEl.style.opacity = "30%";
-        lyd4.play();
-        setTimeout(() => {
-            green_btnEl.style.opacity = "85%";
-            red_btnEl.style.opacity = "85%";
-            yellow_btnEl.style.opacity = "85%";
-            blue_btnEl.style.opacity = "85%";
-        }, 1000)
-    }
+    level_overfunk();
 }
 
 function green_btnfunk(){
@@ -99,22 +61,10 @@ function green_btnfunk(){
 
     if(knapp!==rngsekvens[trykk]){
         if(poeng>0){
-            poeng--;
-            poeng_txtEl.innerHTML= "Du har "+poeng+" poeng.";
-            taptEl.style.display="block";
-            taptbtnEl.style.display="none";
-            setTimeout(() => {
-                location.reload();
-                localStorage.setItem("poengIT1fagdag",poeng);
-            }, 2000)
-            trykk=0;
-            rngsekvens=[];
-            i=0;
+            tapt_merfunk();
         }
         else{
-            simonEl.style.display= "none";
-            taptEl.style.display="block";
-            poeng=0;
+            taptfunk();
         }
     }
     else{
@@ -134,82 +84,13 @@ function green_btnfunk(){
         let i =0;
         if(k==rngsekvens.length){
             if(rngsekvens.length===level){
-                simonEl.style.display= "none";
-                level_txtEl.style.display="none";
-                setTimeout(() => {
-                    fyverkeri_imgEl.style.display="none";
-                }, 2100)
-                poeng+=5;
-                setTimeout(() => {
-                    lyd1.volume=0;
-                    lyd2.volume=0;
-                    lyd3.volume=0;
-                    lyd4.volume=0;
-                }, 1000)
-                poeng_txtEl.innerHTML= "Du har "+poeng+" poeng.";
-                next_levelEL.style.display="block";
-                localStorage.setItem("poengIT1fagdag",poeng);
+                vinnefunk();
             }
-            rngsekvens.push(Math.floor(Math.random()*4)+1);
-            trykk=0;
-            level_txtEl.innerHTML="Level"+rngsekvens.length;
-            j=0;
-            k=0;
-            trykkesekvens=[]
-            let stopp = setInterval(visfunk,1200);
-            function visfunk(){
-                if(rngsekvens.length<=j){
-                    clearInterval(stopp);
-                }
-                if(rngsekvens[j]===1){
-                    green_btnEl.style.opacity = "30%";
-                    lyd1.currentTime=0;
-                    lyd1.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                if(rngsekvens[j]===2){
-                    red_btnEl.style.opacity = "30%";
-                    lyd2.currentTime=0;
-                    lyd2.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                if(rngsekvens[j]===3){
-                    yellow_btnEl.style.opacity = "30%";
-                    lyd3.currentTime=0;
-                    lyd3.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                if(rngsekvens[j]===4){
-                    blue_btnEl.style.opacity = "30%";
-                    lyd4.currentTime=0;
-                    lyd4.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                j++;
-            }
+            level_overfunk();
         }
     }
 }
+
 function red_btnfunk(){
     let knapp = 2;
 
@@ -217,22 +98,10 @@ function red_btnfunk(){
 
     if(knapp!==rngsekvens[trykk]){
         if(poeng>0){
-            poeng--;
-            poeng_txtEl.innerHTML= "Du har "+poeng+" poeng.";
-            taptEl.style.display="block";
-            taptbtnEl.style.display="none";
-            setTimeout(() => {
-                location.reload();
-                localStorage.setItem("poengIT1fagdag",poeng);
-            }, 2000)
-            trykk=0;
-            rngsekvens=[];
-            i=0;
+            tapt_merfunk();
         }
         else{
-            simonEl.style.display= "none";
-            taptEl.style.display="block";
-            poeng=0;
+            taptfunk();
         }
     }
     else{
@@ -253,80 +122,9 @@ function red_btnfunk(){
 
         if(k==rngsekvens.length){
             if(rngsekvens.length===level){
-                simonEl.style.display= "none";
-                level_txtEl.style.display="none";
-                setTimeout(() => {
-                    fyverkeri_imgEl.style.display="none";
-                }, 2100)
-                poeng+=5;
-                setTimeout(() => {
-                    lyd1.volume=0;
-                    lyd2.volume=0;
-                    lyd3.volume=0;
-                    lyd4.volume=0;
-                }, 1000)
-                poeng_txtEl.innerHTML= "Du har "+poeng+" poeng.";
-                next_levelEL.style.display="block";
-                localStorage.setItem("poengIT1fagdag",poeng);
+                vinnefunk();
             }
-            rngsekvens.push(Math.floor(Math.random()*4)+1);
-            trykk=0;
-            level_txtEl.innerHTML="Level"+rngsekvens.length;
-            j=0;
-            k=0;
-            trykkesekvens=[];
-            let stopp = setInterval(visfunk,1200);
-            function visfunk(){
-                if(rngsekvens.length<=j){
-                    clearInterval(stopp);
-                }
-
-                if(rngsekvens[j]===1){
-                    green_btnEl.style.opacity = "30%";
-                    lyd1.currentTime=0;
-                    lyd1.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                if(rngsekvens[j]===2){
-                    red_btnEl.style.opacity = "30%";
-                    lyd2.currentTime=0;
-                    lyd2.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                if(rngsekvens[j]===3){
-                    yellow_btnEl.style.opacity = "30%";
-                    lyd3.currentTime=0;
-                    lyd3.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                if(rngsekvens[j]===4){
-                    blue_btnEl.style.opacity = "30%";
-                    lyd4.currentTime=0;
-                    lyd4.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                j++
-            }
+            level_overfunk();
         }
     }
 }
@@ -346,23 +144,10 @@ function yellow_btnfunk(){
 
     if(knapp!==rngsekvens[trykk]){
         if(poeng>0){
-            poeng--;
-            poeng_txtEl.innerHTML= "Du har "+poeng+" poeng.";
-            taptEl.style.display="block";
-            taptbtnEl.style.display="none";
-            setTimeout(() => {
-                location.reload();
-                localStorage.setItem("poengIT1fagdag",poeng);
-            }, 2000)
-            trykk=0;
-            rngsekvens=[];
-            trykk=0;
-            i=0;
+            tapt_merfunk();
         }
         else{
-            simonEl.style.display= "none";
-            taptEl.style.display="block";
-            poeng=0;
+            taptfunk();
         }
     }
     else{
@@ -375,79 +160,9 @@ function yellow_btnfunk(){
 
         if(k==rngsekvens.length){
             if(rngsekvens.length===level){
-                simonEl.style.display= "none";
-                level_txtEl.style.display="none";
-                setTimeout(() => {
-                    fyverkeri_imgEl.style.display="none";
-                }, 2100)
-                poeng+=5;
-                setTimeout(() => {
-                    lyd1.volume=0;
-                    lyd2.volume=0;
-                    lyd3.volume=0;
-                    lyd4.volume=0;
-                }, 1000)
-                poeng_txtEl.innerHTML= "Du har "+poeng+" poeng.";
-                next_levelEL.style.display="block";
-                localStorage.setItem("poengIT1fagdag",poeng);
+                vinnefunk();
             }
-            rngsekvens.push(Math.floor(Math.random()*4)+1);
-            trykk=0;
-            level_txtEl.innerHTML="Level"+rngsekvens.length;
-            j=0;
-            k=0;
-            trykkesekvens=[];
-            let stopp = setInterval(visfunk,1200);
-            function visfunk(){
-                if(rngsekvens.length<=j){
-                    clearInterval(stopp);
-                }
-                if(rngsekvens[j]===1){
-                    green_btnEl.style.opacity = "30%";
-                    lyd1.currentTime=0;
-                    lyd1.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                if(rngsekvens[j]===2){
-                    red_btnEl.style.opacity = "30%";
-                    lyd2.currentTime=0;
-                    lyd2.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                if(rngsekvens[j]===3){
-                    yellow_btnEl.style.opacity = "30%";
-                    lyd3.currentTime=0;
-                    lyd3.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                if(rngsekvens[j]===4){
-                    blue_btnEl.style.opacity = "30%";
-                    lyd4.currentTime=0;
-                    lyd4.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                j++;
-            }
+            level_overfunk();
         }
     }
 }
@@ -468,23 +183,10 @@ function blue_btnfunk(){
 
     if(knapp!==rngsekvens[trykk]){
         if(poeng>0){
-            poeng--;
-            poeng_txtEl.innerHTML= "Du har "+poeng+" poeng.";
-            taptEl.style.display="block";
-            taptbtnEl.style.display="none";
-            setTimeout(() => {
-                location.reload();
-                localStorage.setItem("poengIT1fagdag",poeng);
-            }, 2000)
-            trykk=0;
-            rngsekvens=[];
-            trykk=0;
-            i=0;
+            tapt_merfunk();
         }
         else{
-            simonEl.style.display= "none";
-            taptEl.style.display="block";
-            poeng=0;
+            taptfunk();
         }
     }
     else{
@@ -497,80 +199,119 @@ function blue_btnfunk(){
 
         if(k==rngsekvens.length){
             if(rngsekvens.length===level){
-                simonEl.style.display= "none";
-                level_txtEl.style.display="none";
-                setTimeout(() => {
-                    fyverkeri_imgEl.style.display="none";
-                }, 2100)
-                poeng+=5;
-                setTimeout(() => {
-                    lyd1.volume=0;
-                    lyd2.volume=0;
-                    lyd3.volume=0;
-                    lyd4.volume=0;
-                }, 1000)
-                poeng_txtEl.innerHTML= "Du har "+poeng+" poeng.";
-                next_levelEL.style.display="block";
-                localStorage.setItem("poengIT1fagdag",poeng);
+                vinnefunk();
             }
-            rngsekvens.push(Math.floor(Math.random()*4)+1);
-            trykk=0;
-            level_txtEl.innerHTML="Level"+rngsekvens.length;
-            j=0;
-            k=0;
-            trykkesekvens=[];
-            let stopp = setInterval(visfunk,1200);
-            function visfunk(){
-                if(rngsekvens.length<=j){
-                    clearInterval(stopp);
-                }
-                if(rngsekvens[j]===1){
-                    green_btnEl.style.opacity = "30%";
-                    lyd1.currentTime=0;
-                    lyd1.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                if(rngsekvens[j]===2){
-                    red_btnEl.style.opacity = "30%";
-                    lyd2.currentTime=0;
-                    lyd2.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                if(rngsekvens[j]===3){
-                    yellow_btnEl.style.opacity = "30%";
-                    lyd3.currentTime=0;
-                    lyd3.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                if(rngsekvens[j]===4){
-                    blue_btnEl.style.opacity = "30%";
-                    lyd4.currentTime=0;
-                    lyd4.play();
-                    setTimeout(() => {
-                        green_btnEl.style.opacity = "85%";
-                        red_btnEl.style.opacity = "85%";
-                        yellow_btnEl.style.opacity = "85%";
-                        blue_btnEl.style.opacity = "85%";
-                    }, 1000)
-                }
-                j++;
-            }
+            level_overfunk();
         }
     }
 }
-localStorage.setItem("levelIT1fagdag",E28)
+
+function vinnefunk(){
+    simonEl.style.display= "none";
+    level_txtEl.style.display="none";
+    setTimeout(() => {
+        fyverkeri_imgEl.style.display="none";
+    }, 2100)
+    poeng+=5;
+    setTimeout(() => {
+        lyd1.volume=0;
+        lyd2.volume=0;
+        lyd3.volume=0;
+        lyd4.volume=0;
+    }, 1000)
+    poeng_txtEl.innerHTML= "Du har "+poeng+" poeng.";
+    next_levelEL.style.display="block";
+    localStorage.setItem("poengIT1fagdag",poeng);
+}
+
+function taptfunk(){
+    simonEl.style.display= "none";
+    taptEl.style.display="block";
+    poeng=0;
+    setTimeout(() => {
+        lyd1.volume=0;
+        lyd2.volume=0;
+        lyd3.volume=0;
+        lyd4.volume=0;
+    }, 1000)
+}
+
+function tapt_merfunk(){
+    poeng--;
+    poeng_txtEl.innerHTML= "Du har "+poeng+" poeng.";
+    taptEl.style.display="block";
+    taptbtnEl.style.display="none";
+    setTimeout(() => {
+        location.reload();
+        localStorage.setItem("poengIT1fagdag",poeng);
+    }, 2000)
+    trykk=0;
+    rngsekvens=[];
+    i=0;
+    setTimeout(() => {
+        lyd1.volume=0;
+        lyd2.volume=0;
+        lyd3.volume=0;
+        lyd4.volume=0;
+    }, 1000)
+}
+
+function level_overfunk(){
+    rngsekvens.push(Math.floor(Math.random()*4)+1);
+    trykk=0;
+    level_txtEl.innerHTML="Level"+rngsekvens.length;
+    j=0;
+    k=0;
+    trykkesekvens=[];
+    let stopp = setInterval(visfunk,1200);
+    function visfunk(){
+        if(rngsekvens.length<=j){
+            clearInterval(stopp);
+        }
+        if(rngsekvens[j]===1){
+            green_btnEl.style.opacity = "30%";
+            lyd1.currentTime=0;
+            lyd1.play();
+            setTimeout(() => {
+                green_btnEl.style.opacity = "85%";
+                red_btnEl.style.opacity = "85%";
+                yellow_btnEl.style.opacity = "85%";
+                blue_btnEl.style.opacity = "85%";
+            }, 1000)
+        }
+        else if(rngsekvens[j]===2){
+            red_btnEl.style.opacity = "30%";
+            lyd2.currentTime=0;
+            lyd2.play();
+            setTimeout(() => {
+                green_btnEl.style.opacity = "85%";
+                red_btnEl.style.opacity = "85%";
+                yellow_btnEl.style.opacity = "85%";
+                blue_btnEl.style.opacity = "85%";
+            }, 1000)
+        }
+        else if(rngsekvens[j]===3){
+            yellow_btnEl.style.opacity = "30%";
+            lyd3.currentTime=0;
+            lyd3.play();
+            setTimeout(() => {
+                green_btnEl.style.opacity = "85%";
+                red_btnEl.style.opacity = "85%";
+                yellow_btnEl.style.opacity = "85%";
+                blue_btnEl.style.opacity = "85%";
+            }, 1000)
+        }
+        else if(rngsekvens[j]===4){
+            blue_btnEl.style.opacity = "30%";
+            lyd4.currentTime=0;
+            lyd4.play();
+            setTimeout(() => {
+                green_btnEl.style.opacity = "85%";
+                red_btnEl.style.opacity = "85%";
+                yellow_btnEl.style.opacity = "85%";
+                blue_btnEl.style.opacity = "85%";
+            }, 1000)
+        }
+        j++
+    }
+}
