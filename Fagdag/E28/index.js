@@ -56,6 +56,13 @@ function startfunk(){
 
 function green_btnfunk(){
     let knapp = 1;
+        
+    green_btnEl.style.opacity= "50%";
+    lyd1.currentTime=0;
+    lyd1.play();
+    setTimeout(() => {
+        green_btnEl.style.opacity = "85%";
+    }, 200);
 
     trykkesekvens.push(knapp);
 
@@ -72,14 +79,6 @@ function green_btnfunk(){
         k++
     }
 
-    
-    green_btnEl.style.opacity= "50%";
-    lyd1.currentTime=0;
-    lyd1.play();
-    setTimeout(() => {
-        green_btnEl.style.opacity = "85%";
-    }, 200);
-
     if(trykkesekvens.length===rngsekvens.length){
         let i =0;
         if(k==rngsekvens.length){
@@ -93,6 +92,13 @@ function green_btnfunk(){
 
 function red_btnfunk(){
     let knapp = 2;
+
+    red_btnEl.style.opacity= "50%";
+    lyd2.currentTime=0;
+    lyd2.play();
+    setTimeout(() => {
+        red_btnEl.style.opacity = "85%";
+    }, 200)
 
     trykkesekvens.push(knapp);
 
@@ -108,14 +114,6 @@ function red_btnfunk(){
         trykk++;
         k++;
     }
-
-
-    red_btnEl.style.opacity= "50%";
-    lyd2.currentTime=0;
-    lyd2.play();
-    setTimeout(() => {
-        red_btnEl.style.opacity = "85%";
-    }, 200)
     
     if(trykkesekvens.length===rngsekvens.length){
         let i =0;
@@ -130,8 +128,6 @@ function red_btnfunk(){
 }
 function yellow_btnfunk(){
     let knapp = 3;
-
-
 
     yellow_btnEl.style.opacity= "50%";
     lyd3.currentTime=0;
@@ -168,8 +164,6 @@ function yellow_btnfunk(){
 }
 function blue_btnfunk(){
     let knapp = 4;
-
-
 
     blue_btnEl.style.opacity= "50%";
     lyd4.currentTime=0;
@@ -234,6 +228,7 @@ function taptfunk(){
         lyd3.volume=0;
         lyd4.volume=0;
     }, 1000)
+    localStorage.setItem("levelIT1fagdag","E1")
 }
 
 function tapt_merfunk(){
