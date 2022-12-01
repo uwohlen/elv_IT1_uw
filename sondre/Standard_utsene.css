@@ -2,15 +2,17 @@ body{
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.btn{
+.cl_btn{
     background-color: DodgerBlue; 
     margin-top: 3px;
     border: none;
     color: white; 
-    padding: 12px 16px; 
+    padding: 0px 16px; 
     font-size: 16px; 
+    height: 45px;
 }
-.btn:hover {
+
+.cl_btn:hover {
     background-color: RoyalBlue;
 }
 
@@ -55,7 +57,7 @@ button:hover{
     text-transform: uppercase; 
 }
 
-.menu{
+.cl_menu{
     background-image: url("media/Sondre.jpeg");
     background-size: cover;
     background-position: center;
@@ -65,7 +67,7 @@ button:hover{
     padding-bottom: 80px;
 }
 
-.menu>span:last-child{
+.cl_menu>span:last-child{
     width: 20px;
     color: white;
     font-size: 9px;

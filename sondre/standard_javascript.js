@@ -1,30 +1,30 @@
-let knappokEl = document.getElementById("ok");
-let knappslett =document.getElementById("btnslett");
-let cookiesup =document.getElementById("cookies");
+let knapp_ok_btnEl = document.getElementById("id_ok_btn");
+let slett_cookies_btnEl =document.getElementById("id_slett_cookies_btn");
+let cookies_pop_upEl =document.getElementById("id_cookies");
 
-knappokEl.addEventListener("click", cookies_ok)
-knappslett.addEventListener("click",slett)
+knapp_ok_btnEl.addEventListener("click", cookies_ok_funk)
+slett_cookies_btnEl.addEventListener("click",slett_funk)
 
 if (localStorage.getItem("cookiesGodkjentForIndex1")=== "Ja"){
-    knappslett.style.display = "inline-block";
-    cookiesup.style.display ="none";
+    slett_cookies_btnEl.style.display = "inline-block";
+    cookies_pop_upEl.style.display ="none";
 }
 else {
-    knappslett.style.display = "none";
-    cookiesup.style.display ="block";
+    slett_cookies_btnEl.style.display = "none";
+    cookies_pop_upEl.style.display ="block";
 }
 
-function slett() {
+function slett_funk() {
     localStorage.clear();
-    cookiesup.style.display = "block"
-    knappslett.style.display ="none"
+    cookies_pop_upEl.style.display = "block"
+    slett_cookies_btnEl.style.display ="none"
     location.reload();
 }
 
-function cookies_ok(){
+function cookies_ok_funk(){
     console.log("ja")
-    cookiesup.style.display = "none";
-    knappslett.style.display ="inline-block";
+    cookies_pop_upEl.style.display = "none";
+    slett_cookies_btnEl.style.display ="inline-block";
     localStorage.setItem("cookiesGodkjentForIndex1", "Ja")
     location.reload();
 }
