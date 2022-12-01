@@ -137,6 +137,13 @@ body{
   display: block;
 }
 
+#id_antall_fungerende{
+  color: white;
+  font-size: 16px;
+  display: inline-block;
+  text-decoration: none;
+}
+
 #om{
   background-color: #000000;
   position: relative;
