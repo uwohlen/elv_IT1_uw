@@ -185,10 +185,11 @@ h4{
 
 .flex-item_kont{
   display: inline-block;
-  outline-width: 10px;
+  outline-width: 1px;
   outline-color: #000000;
   outline-style: solid;
   margin: 10px;
+  padding: 10px;
 }
 
 .flex-container :nth-child(3n)>p{
