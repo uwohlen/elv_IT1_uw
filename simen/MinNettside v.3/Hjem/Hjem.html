@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="widt=device-widht, initial-scale=1.0">
   <title>Hjem</title>
-  <link rel="stylesheet" href="Hjem copy.css">
+  <link rel="stylesheet" href="Hjem.css">
 </head>
 
 <body>
@@ -76,22 +76,24 @@
     </div>
     <div class="child2" style="flex: 7;">
       <div id="Ut">
-        <h1 class="Heading">Guitar</h1>
-        <p class="inn Nice">I 2018 fikk jeg en gitar av besteforeldrene mine. Det var en Japansk Suzuki guitar laget på
-          60-tallet som mormoren min hadde fått da hun var liten. I
-          2020 kjøpte jeg en elektrisk guitar. </p><audio controls>
-          <source src="../Media/Autumn leaves.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-        <hr>
-        <video width="400px" controls>
-          <source src="../Media/GitarVideo.mp4" type="video/mp4">
-          <source src="mov_bbb.ogg" type="video/ogg">
-          Your browser does not support HTML video.
-        </video>
-        <hr>
-        <p class="inn Nice">Her er den første videon jeg har av meg som spiller gitar. Jeg spiller blackbird av beatles.
-        </p>
+        <div id="height">
+          <h1 class="Heading">Guitar</h1>
+          <p class="inn Nice">I 2018 fikk jeg en gitar av besteforeldrene mine. Det var en Japansk Suzuki guitar laget på
+            60-tallet som mormoren min hadde fått da hun var liten. I
+            2020 kjøpte jeg en elektrisk guitar. </p><audio controls>
+            <source src="../Media/Autumn leaves.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <hr>
+          <video width="400px" controls>
+            <source src="../Media/GitarVideo.mp4" type="video/mp4">
+            <source src="mov_bbb.ogg" type="video/ogg">
+            Your browser does not support HTML video.
+          </video>
+          <hr>
+          <p class="inn Nice">Her er den første videon jeg har av meg som spiller gitar. Jeg spiller blackbird av beatles.
+          </p>
+        </div>
       </div>
 
       <div id="Flat">
@@ -125,10 +127,6 @@
             <td>2020</td>
           </tr>
           <tr>
-            <td>Fields of Gold</td>
-            <td>2020</td>
-          </tr>
-          <tr>
             <td>Dream on</td>
             <td>2021</td>
           </tr>
@@ -141,11 +139,7 @@
             <td>2021</td>
           </tr>
           <tr>
-            <td>Stop this train</td>
-            <td>2022</td>
-          </tr>
-          <tr>
-            <td>Fields of gold</td>
+            <td>Fields of Gold</td>
             <td>2022</td>
           </tr>
         </table>
@@ -154,7 +148,22 @@
     </div>
   </div>
   <script>
-    let navnV = localStorage.getItem("QuizNettsideLagretNavn")
+    //let navnV = localStorage.getItem("QuizNettsideLagretNavn")
+    let box = document.getElementById("height");
+    let tabell = document.getElementById("Flat");
+    setInterval(gjor, 100)
+
+    function gjor(){
+      let height = box.offsetHeight;
+      let MaxHeight = tabell.offsetHeight;
+      //console.log(height)
+      //console.warn(MaxHeight)
+      if(height>MaxHeight){
+      console.log("hello")
+      box.style="overflow-y:scroll;"
+      }
+    }
+    
   </script>
 </body>
 
