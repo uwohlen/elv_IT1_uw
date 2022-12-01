@@ -1,4 +1,3 @@
-/* GLOBAL STYLES */
 body {
     background: #333;
     padding-top: 5em;
@@ -31,21 +30,15 @@ body {
     flex-direction: column;
 }
 
-/* DEMO-SPECIFIC STYLES */
 .typewriter h1 {
     text-align: center;
     color: #fff;
     font-family: monospace;
     overflow: hidden;
-    /* Ensures the content is not revealed until the animation */
     border-right: .15em solid orange;
-    /* The typwriter cursor */
     white-space: nowrap;
-    /* Keeps the content on a single line */
     margin: 0 auto;
-    /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em;
-    /* Adjust as needed */
 }
 
 #text {
@@ -58,7 +51,6 @@ body {
     border: none;
 }
 
-/* The typing effect */
 @keyframes typing {
     from {
         width: 0
@@ -68,8 +60,6 @@ body {
         width: 100%
     }
 }
-
-/* The typewriter cursor effect */
 
 
 @keyframes blink-caret {
@@ -97,7 +87,7 @@ body {
     overflow: hidden;
 }
 
-/* CSS */
+
 .button {
     background-color: #FFFFFF;
     border: 1px solid #222222;
