@@ -4,18 +4,37 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
+    <style>
+        .bg-gradiant-animation {
+            animation: gradient 60s ease infinite;
+        }
+
+        @keyframes gradient {
+            /* invert colors */
+            0% {
+                background-color: #ffffff;
+                color: #6b46c1;
+            }
+            50% {
+                background-color: #6b46c1;
+                color: #d4c7c7;
+            }
+
+            100% {
+                background-color: #ffffff;
+                color: #6b46c1;
+            }
+        }
+    </style>
     <div
-      class="flex justify-evenly h-screen flex-col items-center bg-gradient-to-r text-9xl from-purple-500 to-white"
+      class="flex justify-evenly h-screen flex-col items-center bg-gradient-to-r text-6xl from-purple-500 to-white bg-gradiant-animation"
     >
       <a href="https://xzw.halvor.codes/lister" class="hover:text-white"> XZW (kinesisk glose side) </a>
        <a href="https://it-november.vercel.app" class="hover:text-white"> Ting med flexbox </a>
-        <a href="../kryptering" class="hover:text-white"> Rick Astley kryptering </a>
-        <a href="../pemdas-kalkulator" class="hover:text-white"> PEMDAS kalkulator </a>
+        <a href="./kryptering/index.html" class="hover:text-white"> Rick Astley kryptering </a>
+        <a href="./pemdas-kalkulator/index.html" class="hover:text-white"> PEMDAS kalkulator </a>
         <a href="../Fagdag/E7/index.html" class="hover:text-white"> Fagdag spill </a>
-            Fagdag spill
-        </a>
 
-       <a href="https://github.com/Hallis1221/Portfolio-new" class="hover:text-white"> ting med flexbox (kode) </a>
       <a href="../index.html" class="hover:text-white"> Tilbake </a>
     </div>
   </body>
