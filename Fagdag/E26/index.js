@@ -16,15 +16,25 @@ let poengEl = document.getElementById("poeng")
 let restartEl = document.getElementById("restart")
 
 let poeng = 0;
+let navn;
 
 if (localStorage.poengIT1fagdag !== undefined) {
     poeng = Number(localStorage.poengIT1fagdag);
 }
 
+if (localStorage.navnIt1fagdag !== undefined) {
+    navn = localStorage.navnIt1fagdag;
+}
+else {
+    navn = "Mr. Anonymous"
+}
+
+
 
 poengEl.innerHTML = poeng;
 
 start()
+console.log(navn)
 function start() {
     let ValgEL = document.getElementsByClassName("hidden")
     localStorage.levelIT1fagdag = "E26"
@@ -204,13 +214,6 @@ function scoreF() {
 
 //oppdaterer
 function ny() {
-    if (localStorage.navnIt1fagdag !== undefined) {
-        let navn = localStorage.navnIt1fagdag;
-    }
-    else {
-        navn = "Mr. Anonymous"
-    }
-
     if (score < MaxScore && mScore < MaxScore) {
         MonsterV = Math.floor(Math.random() * 3);
     }
@@ -252,4 +255,4 @@ function restart2() {
 }
 localStorage.poengIT1fagdag = String(poeng);
 localStorage.navnIt1fagdag = String(navn);
-localStorage.levelIT1fagdag = (26);
+localStorage.levelIT1fagdag = 26;

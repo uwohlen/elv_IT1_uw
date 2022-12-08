@@ -1,5 +1,4 @@
 let svar = 0;
-let i = 0
 regnestykke = ""
 let gange = []
 let dele = []
@@ -12,51 +11,48 @@ let kalkulator_output_El = document.getElementById("id_svar_utskrift");
 
 kalkulator_input_El.addEventListener("keydown",regnfunk);
 
+
+
 function regnfunk(event) {
     if (event.keyCode === 13) {
         regnestykke = kalkulator_input_El.value
-        kalkulator_output_El.innerHTML= regnestykke + "="
-        console.log(Number(regnestykke))
-        if(regnestykke.indexOf("+") !== -1){
-            pluss.push(regnestykke.indexOf("+"))
-            regnestykke= regnestykke.split("+")
-            svar = Number(Number(regnestykke[0])) + Number(regnestykke[1])
-            // regnestykke.splice([pluss.length],0,"+")
-            console.log(regnestykke + pluss.length)
-        }
-        if(regnestykke.indexOf("-") !== -1){
-            minus.push(regnestykke.indexOf("-"))
-            regnestykke= regnestykke.split("-")
-            svar = Number(regnestykke[0]) - Number(regnestykke[1])
-            // regnestykke.splice([minus.length],0,"-")
-            console.log(regnestykke + minus.length)
-        }
-        if(regnestykke.indexOf("*") !== -1){
-            gange.push(regnestykke.indexOf("*"))
-            regnestykke= regnestykke.split("*")
-            svar = Number(regnestykke[0]) * Number(regnestykke[1])
-            // regnestykke.splice([gange.length],0,"*")
-            console.log(regnestykke + gange.length)
-        }
-        if(regnestykke.indexOf("/") !== -1){
-            dele.push(regnestykke.indexOf("/"))
-            regnestykke= regnestykke.split("/")
-            svar = Number(regnestykke[0]) / Number(regnestykke[1])
-            // regnestykke.splice([dele.length],0,"/")
-            console.log(regnestykke + dele.length)
-        }
+        kalkulator_output_El.innerHTML= regnestykke + "=" + regnefunk2(regnestykke)
+    }
+}
 
-        while(regnestykke.length<=i){
-            i++
-            if(regnestykke[i]===" "){
-                // regnestykke.splice(i,0,"0")
-                console.log(regnestykke[i])
-            }
+function regnefunk2(regne) {
+    if (+regne) {
+        return parseInt(regne)
+    }
+
+    let i = regne.length-1
+
+    while (i > 0) {
+        if (regne[i] == "+") {
+            let a = regnefunk2(regne.slice(0, i))
+            let b = regnefunk2(regne.slice(i+1))
+            return a + b
         }
-
-        console.log(regnestykke[0])
-
-        kalkulator_output_El.innerHTML+= svar
-        kalkulator_input_El.value = '';
+        else if (regne[i] == "-") {
+            let a = regnefunk2(regne.slice(0, i))
+            let b = regnefunk2(regne.slice(i+1))
+            return a - b
+        }
+        i--
+    }
+    
+    i = regne.length-1
+    while (i > 0) {
+        if (regne[i] == "*") {
+            let a = regnefunk2(regne.slice(0, i))
+            let b = regnefunk2(regne.slice(i+1))
+            return a * b
+        }
+        else if (regne[i] == "/") {
+            let a = regnefunk2(regne.slice(0, i))
+            let b = regnefunk2(regne.slice(i+1))
+            return a / b
+        }
+        i--
     }
 }

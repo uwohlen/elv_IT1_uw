@@ -8,26 +8,30 @@
             <link rel="stylesheet" href="../../Standard_utsene.css">
         </head>
         <body>
-            <div class="menu">
-                <span><a id="home" href="../../index.html"><button class="btn"></i> Home<span>&#127968</span></button></a></span>
+            <div class="cl_menu_button_flex">
+                <span><a id="id_hjem" href="../../index.html"><button class="cl_btn"></i> Home<span>&#127968</span></button></a></span>
 
-                <span><a href="../../quiz/Quiz.html"><button class="btn"><span>&#10068</span>Quiz<span>&#10068</span></button></span></a>
+                <span><a href="../../quiz/index.html"><button class="cl_btn"><span>&#10068</span>Quiz<span>&#10068</span></button></a></span>
 
-                <span><a href="../makerspace.html"><button class="btn"></i> Makerspace<span>&#128424</span></button></a></span>
-                
-                </span><button class="btn" id="btnslett"></i> Slett cookies<span>&#128465 &#127850</span></button>
+                <span><a href="../index.html"><button class="cl_btn"></i> Makerspace<span>&#128424</span></button></a></span>
+
+                <span><a href="../../kalkulator/index.html"><button class="cl_btn" id="id_kalkulator">Kalkulator<span>&#177</span></button></span></a>
+
+                <span><a><button class="cl_btn" id="id_slett_cookies_btn"></i> Slett cookies<span>&#128465 &#127850</span></button></span></a>
+
+                <span><p>Laget med <span><a href="https://openai.com/dall-e-2/" target="_blank">DALL-E</a></span></p></span>
             </div>
             <div class="navbar">
-                <span><h3 id="idfung3d">Fungerende printere: 0</h3></span>
+                <span><h3 id="id_antall_fungerende">Fungerende printere: 0</h3></span>
 
-                <span><a id="fungbtn">Fungerer</a></span>
+                <span><a id="id_fungerer_btn">Fungerer</a></span>
                 
-                <span><a id="ødelagtbtn">Ødelagt</button></a></span>
+                <span><a id="id_ødelagt_btn">Ødelagt</button></a></span>
             </div>
 
             <div class="grid-container">
-              <div class="grid-item item1"><h1 id="grid_name" class="Zeus">Zeus</h1></div>
-              <div class="grid-item item2"><img id="grid_pic" src="../media/Zeus.jpeg">
+              <div class="grid-item item1"><h1 id="id_grid_name" class="Zeus">Zeus</h1></div>
+              <div class="grid-item item2"><img id="id_grid_pic" src="../media/Zeus.jpeg">
             
             <table>
                 <tr>
@@ -61,13 +65,13 @@
 
             <h1>Dette er printerne som funker:</h1>
 
-            <ol id="idprintlist">
+            <ol id="id_liste_fungerende_printere">
         
             </ol>
 
-            <div id="cookies">
+            <div id="id_cookies">
                 <h4>Denne siden bruker cookies. Trykk ok hvis du godtar dette. </h4>
-                <button id="ok">ok</button>
+                <button id="id_ok_btn">ok</button>
             </div>
             
             <script src="../javascript/utstyr.js"></script>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="no">
+<meta charset="UTF-8">
+<title>Min nettside</title>
+<link rel="stylesheet" href="../Css/Css.css"> 
+
+<body class="body">
+
+    <!-- Importerer fonter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Caudex&family=Parisienne&display=swap');
+    </style>
+
+    <!-- Heading -->
+    <div class="Heading">
+        <h1 class="Overskrift">Velkommen til min nettside!</h1>
+        <p id="Hjem" class="HjemKnapp"> Hjem </p><p class="OmMegKnapp" id="OmMeg"> Om meg </p><p class="QuizKnapp" id="Quiz"> Quiz </p>
+    </div>
+
+    <!-- Teksten på nettsiden -->
+    <h1 class="TilbakeTilIT1"> <a href="../index.html">Tilbake til IT 1 </a></h1>
+    <h2 class="Standard">  Her kan du teste 3 ord</h2>
+    <h2 id=Inputfelt class="Standard" style="font-size: 11px; color: rgb(25, 91, 150);"><input id="input" type="text" placeholder="Test krypteringen her..."> Ditt ord krypterer til: <h2 id="KryptText"></h2></h2>
+    <h2 class="Standard"> Prøv deretter å dekryptere dette: </h2>
+    <h3 class="Standard">  SVOOL DLIOW </h3>
+    <button id="hint">Få et hint</button>
+    <h3 id="Hinttext" style="visibility: hidden;">A=Å</h3>
+
+
+    <script>
+        let InputEl= document.getElementById("input");
+        InputEl.addEventListener("keydown", lagreInput);
+        let HintEl = document.getElementById("hint");
+        HintEl.addEventListener("click", vis);
+
+        function vis(){
+            document.getElementById("Hinttext").style.visibility="visible";
+        }
+
+        x=0;
+        let InputOrd=[];
+        //Lagrer brukernavn
+        function lagreInput(event){ 
+            console.log(event.keyCode);
+            if (event.keyCode===13){
+                x+=1;
+                krypter();
+                if (x>2){
+                    document.getElementById("Inputfelt").style.visibility="hidden";
+                }
+            }
+            if(event.keyCode===8){
+            }
+            else{
+                InputOrd.push(event.keyCode);
+            }
+        }
+        
+
+        function krypter(){
+            let p=0;
+            OutputOrd="";
+            while (p<(InputOrd.length)){
+                if (InputOrd[p]===32){
+                    OutputOrd+=String.fromCharCode(32);
+                }
+                else if (InputOrd[p]===13||InputOrd[p]===127){
+                }
+                else if (InputOrd[p]===221){
+                    OutputOrd+=String.fromCharCode(65);
+                }
+                else if (InputOrd[p]===192){
+                    OutputOrd+=String.fromCharCode(66);
+                }
+                else if (InputOrd[p]===222){
+                    OutputOrd+=String.fromCharCode(67);
+                }
+                else if (InputOrd[p]===65){
+                    OutputOrd+="Å";
+                }
+                else if (InputOrd[p]===66){
+                    OutputOrd+="Ø";
+                }
+                else if (InputOrd[p]===67){
+                    OutputOrd+="Æ";
+                }
+                else{
+                    Code=90-((InputOrd[p])-68);
+                    OutputOrd+=String.fromCharCode(Code);
+                    console.log((InputOrd[p])-68);
+                }
+                p++;
+            }            
+            document.getElementById("KryptText").innerHTML=OutputOrd;
+            InputOrd=[];
+        }
+
+        //Definerer elementer
+        let HjemEl=document.getElementById("Hjem");
+        let OmMegEl=document.getElementById("OmMeg");
+        let QuizEl=document.getElementById("Quiz");
+
+        //Definerer oppgave
+        HjemEl.addEventListener("click", ÅpneHovedside);
+        OmMegEl.addEventListener("click", ÅpneOmMeg);
+        QuizEl.addEventListener("click", ÅpneQuiz);
+
+        //Definerer funksjoner
+        function ÅpneHovedside(){
+            location.href = "index.html";
+        }
+        function ÅpneOmMeg(){
+            location.href = "OmMeg/OmMeg.html";
+        }
+        function ÅpneQuiz(){
+            location.href = "Quiz/Quiz.html";
+        }
+
+        </script>
+    </body>
+</html>

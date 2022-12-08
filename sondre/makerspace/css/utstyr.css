@@ -37,7 +37,7 @@ body{
   outline-color: black;
 }
 
-#grid_pic{
+#id_grid_pic{
   width: 9em;
   height:10em;
   object-fit:cover;
@@ -49,14 +49,14 @@ body{
   object-fit:cover;
 }
 
-#idfung3d{
+#id_antall_fungerende{
   color: white;
   display: inline-block;
   padding: 0px 20px 0px 20px;
   font-size: 16px;
 
 }
-#fungbtn, #ødelagtbtn {
+#id_fungerer_btn, #id_ødelagt_btn {
   display: inline-block;
   padding: 16px;
   background-color: rgb(0, 0, 0);
@@ -68,7 +68,7 @@ body{
   cursor: pointer;
 }
 
-#fungbtn:hover, #ødelagtbtn:hover {
+#id_fungerer_btn:hover, #id_ødelagt_btn:hover {
   display: inline-block;
   padding: 16px;
   background-color: rgb(80, 83, 153);
@@ -105,6 +105,7 @@ td {
   margin-right: 20px;
   margin-left: 20px;
   border: 2px solid black;
+  color: #000000;
 }
 
 .velg img{

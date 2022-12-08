@@ -26,8 +26,9 @@ body {
   display: none;
 }
 #ferdig1{
-  margin-left: 47.5%;
-  margin-right: 47.5%;
+  margin-left: 40%;
+  margin-right: 40%;
+  width: 20%;
   background-color: green; 
   border: none; 
   color: white; 

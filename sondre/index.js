@@ -1,18 +1,18 @@
-let knappokEl = document.getElementById("ok");
-let skrivnavn = document.getElementById("navnditt");
+let knapp_ok_btnEl = document.getElementById("id_ok_btn");
+let skrivnavn = document.getElementById("id_navnditt");
 let navnwrite = document.getElementById("navnskriv");
 let navn = document.getElementById("idNavn");
-let knappslett =document.getElementById("btnslett");
-let cookiesup =document.getElementById("cookies");
+let slett_cookies_btnEl =document.getElementById("id_slett_cookies_btn");
+let cookies_pop_upEl =document.getElementById("id_cookies");
 
 navnwrite.addEventListener("keydown",lagrefunk)
-knappokEl.addEventListener("click", cookies_ok)
-knappslett.addEventListener("click",slett)
+knapp_ok_btnEl.addEventListener("click", cookies_ok_funk)
+slett_cookies_btnEl.addEventListener("click",slett_funk)
 
-function cookies_ok(){
-    cookiesup.style.display = "none";
+function cookies_ok_funk(){
+    cookies_pop_upEl.style.display = "none";
     skrivnavn.style.display ="block";
-    knappslett.style.display ="inline-block";
+    slett_cookies_btnEl.style.display ="inline-block";
 }
 
 function lagrefunk(event) {
@@ -31,19 +31,19 @@ else{
 }
 
 if (localStorage.getItem("cookiesGodkjentForIndex1")=== "Ja"){
-    knappslett.style.display = "inline-block";
-    cookiesup.style.display ="none";
+    slett_cookies_btnEl.style.display = "inline-block";
+    cookies_pop_upEl.style.display ="none";
 }
 else {
-    knappslett.style.display = "none";
-    cookiesup.style.display ="block";
+    slett_cookies_btnEl.style.display = "none";
+    cookies_pop_upEl.style.display ="block";
 }
 
 
-function slett() {
+function slett_funk() {
     localStorage.removeItem("cookiesGodkjentForIndex1");
     localStorage.removeItem("lagretNavnForQuiz1");
-    cookiesup.style.display = "block"
-    knappslett.style.display ="none"
+    cookies_pop_upEl.style.display = "block"
+    slett_cookies_btnEl.style.display ="none"
     skrivnavn.style.display ="none";
 }

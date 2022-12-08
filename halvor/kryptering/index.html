@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Encrypter</h1>
+    <input type="text" id="input">
+    <button onclick="encrypt()">Encrypt</button>
+    <button onclick="decrypt()">Decrypt</button>
+    <div id="output"></div>
+    <script>
+        function encrypt() {
+            let input = document.getElementById("input").value;
+            let output = document.getElementById("output");
+            let encrypted = "";
+            // A encryption algorithm based on "Never gonna give you up" by Rick Astley.
+            // Each letter corresponds to a phrase in the song
+            // Use the norwegian alphabet (a-zæøå) and ignore case. Don't encrypt spaces or other characters
+            // Each letter is separated by a period
+            // The same encryption shouldent be used twice
+
+            function encryptLetter(letter) {
+                switch (letter) {
+                    case "a":
+                        return "never gonna ";
+                    case "b":
+                        return "give you up ";
+                    case "c":
+                        return "let you up ";
+                    case "d":
+                        return "let you down ";
+
+                    case "e":
+                        return "runnin' around";
+                    case "f":
+                        return "run around ";
+                    case "g":
+                        
+                        return "and desert you ";
+                    case "h":
+                        return "you cry ";
+                    case "i":
+                        return "make you cry ";
+                    case "j":
+                        return "say byebye ";
+                    case "k":
+                        return "say goodbye ";
+                    case "l":
+                        return "lie to you"
+                    case "m":
+                        return "tell a lie ";
+                    case "n":
+                        return "and hurt you ";
+                    case "o":
+                        return "never gonna give ";
+                    case "p":
+                        return "never gonna let ";
+                    case "q":
+                        return "never gonna run ";
+                    case "r":
+                        return "never gonna make ";
+                    case "s":
+                        return "never gonna say ";
+                    case "t":
+                        return "never gonna tell ";
+                    case "u":
+                        return "never gonna give you ";
+                    case "v":
+                        return "never gonna let you ";
+                    case "w":
+                        return "never gonna run around ";
+                    case "x":
+                        return "never gonna desert you ";
+                    case "y":
+                        return "never gonna make you ";
+                    case "z":
+                        return "never gonna say goodbye ";
+                    case "æ":
+                        return "never gonna tell a ";
+                    case "ø":
+                        return "never gonna hurt you ";
+                    case "å":
+                        return "never gonna give you up ";
+                    default:
+                        return letter;
+
+                }
+
+            }
+            for (let i = 0; i < input.length; i++) {
+                encrypted += encryptLetter(input[i]);
+
+                // add an extra space after each letter to make it easier to decrypt where each letter ends
+                encrypted += ".";
+            }
+
+            output.innerHTML = encrypted;
+
+        }
+
+        function decrypt() {
+            let input = document.getElementById("input").value;
+            let output = document.getElementById("output");
+            let decrypted = "";
+            // A decryption algorithm based on "Never gonna
+            // give you up" by Rick Astley. Each phrase in the
+            // song corresponds to a letter in the alphabet
+            // Each letter is separated by two spaces
+
+            function decryptLetter(phrase) {
+                switch (phrase) {
+                    case "never gonna ":
+                        return "a";
+                    case "give you up ":
+                        return "b";
+                    case "let you up ":
+                        return "c";
+                    case "let you down ":
+                        return "d";
+                    case "runnin' around":
+                        return "e";
+                    case "run around ":
+                        return "f";
+                    case "and desert you ":
+                        return "g";
+                    case "you cry ":
+                        return "h";
+                    case "make you cry ":
+                        return "i";
+                    case "say byebye ":
+                        return "j";
+                    case "say goodbye ":
+                        return "k";
+                    case "lie to you":
+                        return "l";
+                    case "tell a lie ":
+                        return "m";
+                    case "and hurt you ":
+                        return "n";
+                    case "never gonna give ":
+                        return "o";
+                    case "never gonna let ":
+                        return "p";
+                    case "never gonna run ":
+                        return "q";
+                    case "never gonna make ":
+                        return "r";
+                    case "never gonna say ":
+                        return "s";
+                    case "never gonna tell ":
+                        return "t";
+                    case "never gonna give you ":
+                        return "u";
+                    case "never gonna let you ":
+                        return "v";
+                    case "never gonna run around ":
+                        return "w";
+                    case "never gonna desert you ":
+                        return "x";
+                    case "never gonna make you ":
+                        return "y";
+                    case "never gonna say goodbye ":
+                        return "z";
+                    case "never gonna tell a ":
+                        return "æ";
+                    case "never gonna hurt you ":
+                        return "ø";
+                    case "never gonna give you up ":
+                        return "å";
+                    default:
+                        return phrase;
+                }
+            }
+
+            // Split the input into an array of phrases
+            let phrases = input.split(".");
+            console.log(phrases)
+            for (let i = 0; i < phrases.length; i++) {
+                decrypted += decryptLetter(phrases[i]);
+            }
+            output.innerHTML = decrypted;
+        }
+   
+
+
+    </script>
+</body>
+</html>
