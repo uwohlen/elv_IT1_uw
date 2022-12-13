@@ -46,7 +46,7 @@ if (localStorage.getItem("cookiesGodkjentForIndex1")=== "Ja"){
         j=0;
 
         while (j < array_fungerende_printer.length) {
-            htmltekst +='<a href="'+array_fungerende_printer[j]+'.html"><div class="velg"><img src="../media/'+array_fungerende_printer[j]+'.jpeg" alt="Bilde av utstyr kalt '+array_fungerende_printer[j]+'" height="256em" width="144em"><br><h4>'+array_fungerende_printer[j]+'</h4></div></a>';
+            htmltekst +='<a href="'+array_fungerende_printer[j]+'.html"><div class="cl_velg"><img src="../media/'+array_fungerende_printer[j]+'.jpeg" alt="Bilde av utstyr kalt '+array_fungerende_printer[j]+'" height="256em" width="144em"><br><h4>'+array_fungerende_printer[j]+'</h4></div></a>';
            j++;
         }
 
@@ -71,7 +71,7 @@ if (localStorage.getItem("cookiesGodkjentForIndex1")=== "Ja"){
 
 
         while (j < array_fungerende_printer.length) {
-            htmltekst += '<a href="'+array_fungerende_printer[j]+'.html"><div class="velg"><img src="../media/'+array_fungerende_printer[j]+'.jpeg" alt="Bilde av utstyr kalt '+array_fungerende_printer[j]+'" height="256em" width="144em"><br><h4>'+array_fungerende_printer[j]+'</h4></div></a>';
+            htmltekst += '<a href="'+array_fungerende_printer[j]+'.html"><div class="cl_velg"><img src="../media/'+array_fungerende_printer[j]+'.jpeg" alt="Bilde av utstyr kalt '+array_fungerende_printer[j]+'" height="256em" width="144em"><br><h4>'+array_fungerende_printer[j]+'</h4></div></a>';
 
             j++;
         }
@@ -182,7 +182,7 @@ function fungerer_funk(){
 
     
     while (j < array_fungerende_printer.length) {
-        htmltekst += '<a href="'+array_fungerende_printer[j]+'.html"><div class="velg"><img src="../media/'+array_fungerende_printer[j]+'.jpeg" alt="Bilde av utstyr kalt '+array_fungerende_printer[j]+'" height="256em" width="144em"><br><h4>'+array_fungerende_printer[j]+'</h4></div></a>';
+        htmltekst += '<a href="'+array_fungerende_printer[j]+'.html"><div class="cl_velg"><img src="../media/'+array_fungerende_printer[j]+'.jpeg" alt="Bilde av utstyr kalt '+array_fungerende_printer[j]+'" height="256em" width="144em"><br><h4>'+array_fungerende_printer[j]+'</h4></div></a>';
 
         j++;
     }
@@ -234,7 +234,7 @@ function ødelagt_funk(){
     
 
     while (j < array_fungerende_printer.length && j<array_fungerende_printer.length) {
-        htmltekst += '<a href="'+array_fungerende_printer[j]+'.html"><div class="velg"><img src="../media/'+array_fungerende_printer[j]+'.jpeg" alt="Bilde av utstyr kalt '+array_fungerende_printer[j]+'" height="256em" width="144em"><br><h4>'+array_fungerende_printer[j]+'</h4></div></a>';
+        htmltekst += '<a href="'+array_fungerende_printer[j]+'.html"><div class="cl_velg"><img src="../media/'+array_fungerende_printer[j]+'.jpeg" alt="Bilde av utstyr kalt '+array_fungerende_printer[j]+'" height="256em" width="144em"><br><h4>'+array_fungerende_printer[j]+'</h4></div></a>';
 
         j++;
     }

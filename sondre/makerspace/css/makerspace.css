@@ -1,7 +1,7 @@
 body{
   min-width: 400px;
 }
-.velg{
+.cl_velg{
   display: inline-block;
   text-align: center;
   width: auto;
@@ -13,11 +13,11 @@ body{
   border: 2px solid black;
 }
 
-.velg:hover{
+.cl_velg:hover{
   background-color: rgb(211, 211, 211);
 }
 
-.velg:hover h4{
+.cl_velg:hover h4{
   color: #ffffff;
   /* text-decoration: wavy; kursiv */
 }

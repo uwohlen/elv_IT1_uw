@@ -95,37 +95,11 @@ td {
   padding: 8px;
 }
 
-.velg{
-  display: inline-block;
-  text-align: center;
-  width: auto;
-  padding: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 20px;
-  margin-left: 20px;
-  border: 2px solid black;
-  color: #000000;
-}
-
-.velg img{
-  object-fit: cover;
-}
-
-.velg:hover{
-  background-color: rgb(211, 211, 211);
-}
-
 .navbar{
   background-color: #000000;
   top: 10px;
   position: sticky;
   display: block;
-}
-
-.velg:hover h4{
-  color: #ffffff;
-  /* text-decoration: wavy; kursiv */
 }
 
 #om{
