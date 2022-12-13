@@ -6,6 +6,7 @@ body{
     background-color: DodgerBlue; 
     margin-top: 3px;
     border: none;
+    border-radius: 5px;
     color: white; 
     padding: 0px 16px; 
     font-size: 16px; 
@@ -14,11 +15,13 @@ body{
 
 .cl_btn:hover {
     background-color: RoyalBlue;
+    margin-top: -2.5%;
+    margin:  -2.5% -2.5% -2.5% -2.5%; 
+    height: +110%;
 }
 
 button:hover{
     cursor: pointer;
-    border-radius: 5px;
 }
 
 .disabled {
@@ -26,17 +29,31 @@ button:hover{
     cursor: not-allowed;
 }
 
+#id_cookies{
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    text-align: center;
+    background-color: gray;
+    padding: 10px;
+    outline-width: 5px;
+    outline-color: black;
+    outline-style: solid;
+    width: 80%;
+    margin-left: 10%;
+}
+
 #id_navnditt{
     background-color: gray;
     position: sticky;
-    bottom: 0;
+    bottom: 20px;
     border: 4px solid darkgray;
     display: block;
     text-align: center;
     display: none;
 }
 
-#ok{
+#id_ok_btn{
     background-color: rgb(255, 255, 255); 
     padding: 10px 20px; 
     border: none;
@@ -60,6 +77,31 @@ button:hover{
     color: white;
 }
 
+.cl_velg{
+    text-align: center;
+    width: auto;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border: 2px solid black;
+    color: #000000;
+}
+
+.cl_velg img{
+    object-fit: cover;
+}
+
+.cl_velg:hover{
+    background-color: rgb(211, 211, 211);
+}
+
+.cl_velg:hover h4{
+    color: #ffffff;
+    /* text-decoration: wavy; kursiv */
+}
+
 .cl_menu_button_flex>span{
     margin: 5px;
 }
@@ -70,6 +112,12 @@ button:hover{
     bottom: 8px;
     right: 16px;
     font-size: smaller;
+}
+
+.cl_flex_menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 br{

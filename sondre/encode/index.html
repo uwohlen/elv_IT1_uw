@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="no">
+    <meta charset="utf-8">
+        <head>
+            <title>Encode</title>
+            <link rel="icon" href="lock.png">
+            <link rel="stylesheet" href="../Standard_utsene.css">
+            <link rel="stylesheet" href="encode.css">
+        </head>
+        <body>
+            <div class="cl_menu_button_flex">
+                <span><a id="id_hjem" href="../../index.html"><button class="cl_btn"></i> Home<span>&#127968</span></button></a></span>
+
+                <span><a href="../../quiz/index.html"><button class="cl_btn"><span>&#10068</span>Quiz<span>&#10068</span></button></a></span>
+
+                <span><a href="../makerspace/index.html"><button class="cl_btn"></i> Makerspace<span>&#128424</span></button></a></span>
+
+                <span><a href="../kalkulator/index.html"><button class="cl_btn" id="id_kalkulator">Kalkulator<span>&#177</span></button></span></a>
+
+                <span><p>Laget med <span><a href="https://openai.com/dall-e-2/" target="_blank">DALL-E</a></span></p></span>
+            </div>
+
+            <div>
+                <h3 class="cl_overskrift">Krypter med en forsyvning på 1(a=b...)</h3>
+                <input class="cl_input" id="id_kryptering1_input" type="text" placeholder="Hva vil du kryptere?">
+                <div class="cl_utskrift_box">
+                    <h4 class="cl_overskrift">Når det er kryptert blir det:</h4>
+                    <p class="cl_utskrift" id="id_utskrift1_text"></p>
+                </div>
+
+                <h3 class="cl_overskrift">Dekrypter med en forsyvning på 1(b=a...)</h3>
+                <input class="cl_input" id="id_dekryptering1_input" type="text" placeholder="Hva vil du dekryptere?">
+                <div class="cl_utskrift_box">
+                    <h4 class="cl_overskrift">Når det er dekryptert blir det:</h4>
+                    <p class="cl_utskrift" id="id_dekryptert_utskrift1_text"></p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="cl_overskrift">Krypter med en forsyvning på hva du vil</h3>
+
+                <input class="cl_input" id="id_kryptere_forskyve_input" type="text" placeholder="Hva vil du kryptere?">
+
+                <h5 class="cl_overskrift">Hvor mye skal det forskyves med:</h5>
+                <select class="cl_input" id = "id_forskyves_option"> 
+                    <option value="" disabled selected hidden>Velg forskyvning</option>
+                </select>
+
+                <button class="cl_input" id="id_krypter_btn">Krypter</button>
+                <div class="cl_utskrift_box">
+                    <h4 class="cl_overskrift">Når det er kryptert blir det:</h4>
+                    <p class="cl_utskrift" id="id_utskriftn_text"></p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="cl_overskrift">Dekrypter med en forsyvning på hva du vil</h3>
+
+                <input class="cl_input" id="id_dekryptere_forskyve_input" type="text" placeholder="Hva vil du dekryptere?">
+
+                <h5 class="cl_overskrift">Hvor mye har det blitt forskjøvet:</h5>
+                <select class="cl_input" id = "id_dekryptere_forskyves_option"> 
+                    <option value="" disabled selected hidden>Velg forskyvning</option>
+                </select>
+
+                <button class="cl_input" id="id_dekrypter_btn">Dekrypter</button>
+                <div class="cl_utskrift_box">
+                    <h4 class="cl_overskrift">Når det er dekryptert blir det:</h4>
+                    <p class="cl_utskrift" id="id_dekryptere_utskriftn_text"></p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="cl_overskrift">Krypter med nøkkel</h3>
+                <input class="cl_input" id="id_kryptere_nøkkel_input" type="text" placeholder="Hva vil du kryptere?">
+                
+                <input class="cl_input" id="id_krypteringsnøkkel_input" type="text" placeholder="Hva er krypteringsnøkkelen*?">
+                <p style="text-align: center; font-size: 1.3vw; color: white;">*krypteringsnøkkelen kan kun være bokstaver og nummere</p>
+
+                <div class="cl_utskrift_box">
+                    <h4 class="cl_overskrift">Når det er kryptert blir det:</h4>
+                    <p class="cl_utskrift" id="id_utskrift_nøkkel_text"></p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="cl_overskrift">Dekrypter med nøkkel</h3>
+                <input class="cl_input" id="id_dekryptere_nøkkel_input" type="text" placeholder="Hva vil du dekryptere?">
+                
+                <input class="cl_input" id="id_dekrypteringsnøkkel_input" type="text" placeholder="Hva er krypteringsnøkkelen*?">
+                <p style="text-align: center; font-size: 1.3vw; color: white;">*krypteringsnøkkelen kan kun være bokstaver og nummere</p>
+
+                <div class="cl_utskrift_box">
+                    <h4 class="cl_overskrift">Når det er kryptert blir det:</h4>
+                    <p class="cl_utskrift" id="id_dekryptering_utskrift_nøkkel_text"></p>
+                </div>
+            </div>
+
+            <script src="encode.js"></script>
+        </body>
+</html>

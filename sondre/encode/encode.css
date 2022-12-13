@@ -1,0 +1,45 @@
+body{
+    background-color: darkblue;
+}
+
+.cl_menu_button_flex{
+    margin-bottom: 10vw;
+}
+
+.cl_input{
+    display: block;
+    height: 5vw;
+    width: 32vw;
+    border-width: 1vw;
+    border-color: lightgreen;
+    font-size: 2vw;
+    margin: 0 auto;
+    margin-top: 5vw;
+}
+
+::placeholder {
+    text-align: center; 
+}
+
+.cl_overskrift{
+    font-size: 3vw;
+    text-align: center;
+    color: white;
+}
+
+.cl_utskrift_box{
+    display: inline-block;
+    font-size: 2vw;
+    padding: 1vw;
+    margin: 5% 33% 5% 33%;
+    width: 32%;  
+    outline: 1vw;
+    outline-style:solid;
+    outline-color: lightgreen;
+}
+
+.cl_utskrift{
+    text-align: center;
+    font-size: 2vw;
+    color: white;
+}
