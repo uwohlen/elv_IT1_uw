@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <h3>Avslutt med enter</h3>
     <input id="idKalk" placeholder="Skriv inn regnestykket ditt">
     <p id="idSvar">= </p>
     <script>
@@ -33,20 +34,21 @@
                     tall()
                     sum = tall1 + tall2
                 }
-                if(KalkEl.value.includes("-", 1)){
+                else if(KalkEl.value.includes("-", 1)){
                     Tegn = KalkEl.value.indexOf("-", 1);
                     tall()
                     sum = tall1 - tall2
                 }
-                if(KalkEl.value.includes("*")){
+                else if(KalkEl.value.includes("*")){
                     Tegn = KalkEl.value.indexOf("*");
                     tall()
                     sum = tall1 * tall2
                 }
-                if(KalkEl.value.includes("/")){
+                else if(KalkEl.value.includes("/")){
                     Tegn = KalkEl.value.indexOf("/");
                     tall()
-                    sum = tall1 / tall2
+                    if(tall2!=0)sum = tall1 / tall2
+                    else sum = "kan ikke dele på null"
                 }
 
                 function tall(){
