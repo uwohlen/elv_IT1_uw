@@ -204,6 +204,7 @@ function dekrypternøkkelfunk(){
                 j=0
             }
 
+            console.log(forskyv)
             if(error===false){
                 dekrypter(i, forskyv)
             }
@@ -215,34 +216,33 @@ function dekrypternøkkelfunk(){
 }
 
 function krypter(i,forskyv){
-    krypter_txt_kryptert=""
-    for (let i = 0; i<krypter_txt.length; i++){
-        console.log(alfabet_stor.indexOf(krypter_txt[i])+ forskyv)
-        if(alfabet.indexOf(krypter_txt[i]) + forskyv <29 && alfabet.indexOf(krypter_txt[i])!==-1 ){
-            krypter_txt_kryptert+= alfabet[alfabet.indexOf(krypter_txt[i])+forskyv]
-            console.log("2")
-        }
-        else if(28 < alfabet.indexOf(krypter_txt[i]) + forskyv && alfabet.indexOf(krypter_txt[i])!==-1 ){
-            krypter_txt_kryptert+= alfabet[(alfabet.indexOf(krypter_txt[i])+forskyv-29)]
-            console.log("1"+krypter_txt_kryptert)
-        }
-        else if(alfabet_stor.indexOf(krypter_txt[i])+ forskyv <29 && alfabet_stor.indexOf(krypter_txt[i])!==-1 ){
-            krypter_txt_kryptert+= alfabet_stor[alfabet_stor.indexOf(krypter_txt[i])+forskyv]
-            console.log("3"+krypter_txt_kryptert)
-        }
-        else if(28 < alfabet_stor.indexOf(krypter_txt[i]) + forskyv && alfabet_stor.indexOf(krypter_txt[i])!==-1){
-            krypter_txt_kryptert+= alfabet_stor[(alfabet_stor.indexOf(krypter_txt[i])+forskyv-29)]
-            console.log((27-alfabet_stor.indexOf(krypter_txt[i])))
-        }
-        else{
-            krypter_txt_kryptert+= krypter_txt[i]
-            console.log("5")
-        }
+    console.warn(forskyv)
+    console.log(alfabet_stor.indexOf(krypter_txt[i])+ forskyv)
+    if(alfabet.indexOf(krypter_txt[i]) + forskyv <29 && alfabet.indexOf(krypter_txt[i])!==-1 ){
+        krypter_txt_kryptert+= alfabet[alfabet.indexOf(krypter_txt[i])+forskyv]
+        console.log("2"+alfabet.indexOf(krypter_txt[i])+forskyv)
+    }
+    else if(28 < alfabet.indexOf(krypter_txt[i]) + forskyv && alfabet.indexOf(krypter_txt[i])!==-1 ){
+        krypter_txt_kryptert+= alfabet[(alfabet.indexOf(krypter_txt[i])+forskyv-29)]
+        console.log("1"+krypter_txt_kryptert)
+    }
+    else if(alfabet_stor.indexOf(krypter_txt[i])+ forskyv <29 && alfabet_stor.indexOf(krypter_txt[i])!==-1 ){
+        krypter_txt_kryptert+= alfabet_stor[alfabet_stor.indexOf(krypter_txt[i])+forskyv]
+        console.log("3"+krypter_txt_kryptert)
+    }
+    else if(28 < alfabet_stor.indexOf(krypter_txt[i]) + forskyv && alfabet_stor.indexOf(krypter_txt[i])!==-1){
+        krypter_txt_kryptert+= alfabet_stor[(alfabet_stor.indexOf(krypter_txt[i])+forskyv-29)]
+        console.log((27-alfabet_stor.indexOf(krypter_txt[i])))
+    }
+    else{
+        krypter_txt_kryptert+= krypter_txt[i]
+        console.log("5")
     }
 }
 
 function dekrypter(i,forskyv){
     console.log(alfabet_stor.indexOf(dekrypter_txt[i])+ forskyv)
+    
     if(0<=alfabet.indexOf(dekrypter_txt[i]) - forskyv && alfabet.indexOf(dekrypter_txt[i])!==-1 ){
         dekrypter_txt_dekryptert+= alfabet[alfabet.indexOf(dekrypter_txt[i])-forskyv]
         console.log("2"+dekrypter_txt_dekryptert)
