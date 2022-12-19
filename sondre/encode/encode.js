@@ -57,7 +57,9 @@ function krypter1funk(){
         krypter_txt = kryptering1_inputEl.value
         console.log(krypter_txt)
         forskyv = 1
-        krypter()
+        for (let i = 0; i<krypter_txt.length; i++){
+            krypter(i,forskyv)
+        }
         console.log(krypter_txt_kryptert)
         utskrift1_textEl.innerHTML= krypter_txt_kryptert
     }
@@ -69,7 +71,10 @@ function dekrypter1funk(){
         dekrypter_txt = dekryptering1_inputEl.value
         console.log(dekrypter_txt)
         forskyv = 1
-        dekrypter()
+        dekrypter_txt_dekryptert=""
+        for (let i = 0; i<dekrypter_txt.length; i++){
+            dekrypter(i, forskyv)
+        }
         console.log(dekrypter_txt_dekryptert)
         id_dekryptert_utskrift1_text.innerHTML= dekrypter_txt_dekryptert
     }
@@ -81,7 +86,9 @@ function forskyv_nfunk(){
     forskyv = Number(forskyves_optionEl.value)
     krypter_txt = kryptere_forskyve_inputEl.value
     console.log(forskyv)
-    krypter()
+    for (let i = 0; i<krypter_txt.length; i++){
+        krypter(i,forskyv)
+    }
     console.log(krypter_txt_kryptert)
     utskriftn_textEl.innerHTML= krypter_txt_kryptert
 }
@@ -92,63 +99,12 @@ function dekrypter_forskyv_nfunk(){
     forskyv = Number(dekryptere_forskyves_optionEl.value)
     dekrypter_txt = dekryptere_forskyve_inputEl.value
     console.log(forskyv)
-    dekrypter()
-    console.log(dekrypter_txt_dekryptert)
-    dekryptere_utskriftn_textEl.innerHTML= dekrypter_txt_dekryptert
-}
-
-function krypter(){
-    krypter_txt_kryptert=""
-    for (let i = 0; i<krypter_txt.length; i++){
-        console.log(alfabet_stor.indexOf(krypter_txt[i])+ forskyv)
-        if(alfabet.indexOf(krypter_txt[i]) + forskyv <29 && alfabet.indexOf(krypter_txt[i])!==-1 ){
-            krypter_txt_kryptert+= alfabet[alfabet.indexOf(krypter_txt[i])+forskyv]
-            console.log("2")
-        }
-        else if(28 < alfabet.indexOf(krypter_txt[i]) + forskyv && alfabet.indexOf(krypter_txt[i])!==-1 ){
-            krypter_txt_kryptert+= alfabet[(alfabet.indexOf(krypter_txt[i])+forskyv-29)]
-            console.log("1"+krypter_txt_kryptert)
-        }
-        else if(alfabet_stor.indexOf(krypter_txt[i])+ forskyv <29 && alfabet_stor.indexOf(krypter_txt[i])!==-1 ){
-            krypter_txt_kryptert+= alfabet_stor[alfabet_stor.indexOf(krypter_txt[i])+forskyv]
-            console.log("3"+krypter_txt_kryptert)
-        }
-        else if(28 < alfabet_stor.indexOf(krypter_txt[i]) + forskyv && alfabet_stor.indexOf(krypter_txt[i])!==-1){
-            krypter_txt_kryptert+= alfabet_stor[(alfabet_stor.indexOf(krypter_txt[i])+forskyv-29)]
-            console.log((27-alfabet_stor.indexOf(krypter_txt[i])))
-        }
-        else{
-            krypter_txt_kryptert+= krypter_txt[i]
-            console.log("5")
-        }
-    }
-}
-
-function dekrypter(){
     dekrypter_txt_dekryptert=""
     for (let i = 0; i<dekrypter_txt.length; i++){
-        console.log(alfabet_stor.indexOf(dekrypter_txt[i])+ forskyv)
-        if(0<=alfabet.indexOf(dekrypter_txt[i]) - forskyv && alfabet.indexOf(dekrypter_txt[i])!==-1 ){
-            dekrypter_txt_dekryptert+= alfabet[alfabet.indexOf(dekrypter_txt[i])-forskyv]
-            console.log("2"+dekrypter_txt_dekryptert)
-        }
-        else if(alfabet.indexOf(dekrypter_txt[i]) - forskyv<0 && alfabet.indexOf(dekrypter_txt[i])!==-1 ){
-            dekrypter_txt_dekryptert+= alfabet[(alfabet.indexOf(dekrypter_txt[i])-forskyv+29)]
-            console.log("1"+dekrypter_txt_dekryptert)
-        }
-        else if(0<=alfabet_stor.indexOf(krypter_txt[i])+ forskyv && alfabet_stor.indexOf(dekrypter_txt[i])!==-1 ){
-            dekrypter_txt_dekryptert+= alfabet_stor[alfabet_stor.indexOf(dekrypter_txt[i])+forskyv]
-            console.log("3"+dekrypter_txt_dekryptert)
-        }
-        else if(alfabet_stor.indexOf(dekrypter_txt[i]) - forskyv < 0 && alfabet_stor.indexOf(dekrypter_txt[i])!==-1){
-            dekrypter_txt_dekryptert+= alfabet_stor[(alfabet_stor.indexOf(dekrypter_txt[i])-forskyv+29)]
-            console.log("4"+dekrypter_txt_dekryptert)
-        }
-        else{
-            dekrypter_txt_dekryptert+= dekrypter_txt[i]
-            console.log("5")
-        }
+        dekrypter(i,forskyv)
     }
+    console.log(dekrypter_txt_dekryptert)
+    dekryptere_utskriftn_textEl.innerHTML= dekrypter_txt_dekryptert
 }
 
 function krypternøkkelfunk(){
@@ -194,30 +150,11 @@ function krypternøkkelfunk(){
                 j=0
             }
 
-            if(error!==true){
-                if(alfabet.indexOf(krypter_txt[i]) + forskyv <29 && alfabet.indexOf(krypter_txt[i])!==-1 ){
-                    krypter_txt_kryptert+= alfabet[alfabet.indexOf(krypter_txt[i])+forskyv]
-                    console.log("2"+krypter_txt_kryptert)
-                }
-                else if(28 < alfabet.indexOf(krypter_txt[i]) + forskyv && alfabet.indexOf(krypter_txt[i])!==-1 ){
-                    krypter_txt_kryptert+= alfabet[(alfabet.indexOf(krypter_txt[i])+forskyv-29)]
-                    console.log("1"+krypter_txt_kryptert)
-                }
-                else if(alfabet_stor.indexOf(krypter_txt[i])+ forskyv <29 && alfabet_stor.indexOf(krypter_txt[i])!==-1 ){
-                    krypter_txt_kryptert+= alfabet_stor[alfabet_stor.indexOf(krypter_txt[i])+forskyv]
-                    console.log("3"+krypter_txt_kryptert)
-                }
-                else if(28 < alfabet_stor.indexOf(krypter_txt[i]) + forskyv && alfabet_stor.indexOf(krypter_txt[i])!==-1){
-                    krypter_txt_kryptert+= alfabet_stor[(alfabet_stor.indexOf(krypter_txt[i])+forskyv-29)]
-                    console.log("4"+krypter_txt_kryptert)
-                }
-                else{
-                    dekrypter_txt_dekryptert+= krypter_txt[i]
-                    console.log("5"+krypter_txt_kryptert)
-                }
+            if(error===false){
+                krypter(i, forskyv)
             }
         }
-        if(error!==true){
+        if(error===false){
             id_utskrift_nøkkel_textEl.innerHTML=krypter_txt_kryptert
         }
     }
@@ -267,29 +204,63 @@ function dekrypternøkkelfunk(){
                 j=0
             }
 
-            if(0<=alfabet.indexOf(dekrypter_txt[i]) - forskyv && alfabet.indexOf(dekrypter_txt[i])!==-1 ){
-                dekrypter_txt_dekryptert+= alfabet[alfabet.indexOf(dekrypter_txt[i])-forskyv]
-                console.log("2"+dekrypter_txt_dekryptert)
-            }
-            else if(alfabet.indexOf(dekrypter_txt[i]) - forskyv<0 && alfabet.indexOf(dekrypter_txt[i])!==-1 ){
-                dekrypter_txt_dekryptert+= alfabet[(alfabet.indexOf(dekrypter_txt[i])-forskyv+29)]
-                console.log("1"+dekrypter_txt_dekryptert)
-            }
-            else if(0<=alfabet_stor.indexOf(krypter_txt[i])+ forskyv && alfabet_stor.indexOf(dekrypter_txt[i])!==-1 ){
-                dekrypter_txt_dekryptert+= alfabet_stor[alfabet_stor.indexOf(dekrypter_txt[i])+forskyv]
-                console.log("3"+dekrypter_txt_dekryptert)
-            }
-            else if(alfabet_stor.indexOf(dekrypter_txt[i]) - forskyv < 0 && alfabet_stor.indexOf(dekrypter_txt[i])!==-1){
-                dekrypter_txt_dekryptert+= alfabet_stor[(alfabet_stor.indexOf(dekrypter_txt[i])-forskyv+29)]
-                console.log("4"+dekrypter_txt_dekryptert)
-            }
-            else{
-                dekrypter_txt_dekryptert+= dekrypter_txt[i]
-                console.log("5")
+            if(error===false){
+                dekrypter(i, forskyv)
             }
     }
         if(error!==true){
             id_dekryptering_utskrift_nøkkel_textEl.innerHTML=dekrypter_txt_dekryptert
         }
+    }
+}
+
+function krypter(i,forskyv){
+    krypter_txt_kryptert=""
+    for (let i = 0; i<krypter_txt.length; i++){
+        console.log(alfabet_stor.indexOf(krypter_txt[i])+ forskyv)
+        if(alfabet.indexOf(krypter_txt[i]) + forskyv <29 && alfabet.indexOf(krypter_txt[i])!==-1 ){
+            krypter_txt_kryptert+= alfabet[alfabet.indexOf(krypter_txt[i])+forskyv]
+            console.log("2")
+        }
+        else if(28 < alfabet.indexOf(krypter_txt[i]) + forskyv && alfabet.indexOf(krypter_txt[i])!==-1 ){
+            krypter_txt_kryptert+= alfabet[(alfabet.indexOf(krypter_txt[i])+forskyv-29)]
+            console.log("1"+krypter_txt_kryptert)
+        }
+        else if(alfabet_stor.indexOf(krypter_txt[i])+ forskyv <29 && alfabet_stor.indexOf(krypter_txt[i])!==-1 ){
+            krypter_txt_kryptert+= alfabet_stor[alfabet_stor.indexOf(krypter_txt[i])+forskyv]
+            console.log("3"+krypter_txt_kryptert)
+        }
+        else if(28 < alfabet_stor.indexOf(krypter_txt[i]) + forskyv && alfabet_stor.indexOf(krypter_txt[i])!==-1){
+            krypter_txt_kryptert+= alfabet_stor[(alfabet_stor.indexOf(krypter_txt[i])+forskyv-29)]
+            console.log((27-alfabet_stor.indexOf(krypter_txt[i])))
+        }
+        else{
+            krypter_txt_kryptert+= krypter_txt[i]
+            console.log("5")
+        }
+    }
+}
+
+function dekrypter(i,forskyv){
+    console.log(alfabet_stor.indexOf(dekrypter_txt[i])+ forskyv)
+    if(0<=alfabet.indexOf(dekrypter_txt[i]) - forskyv && alfabet.indexOf(dekrypter_txt[i])!==-1 ){
+        dekrypter_txt_dekryptert+= alfabet[alfabet.indexOf(dekrypter_txt[i])-forskyv]
+        console.log("2"+dekrypter_txt_dekryptert)
+    }
+    else if(alfabet.indexOf(dekrypter_txt[i]) - forskyv<0 && alfabet.indexOf(dekrypter_txt[i])!==-1 ){
+        dekrypter_txt_dekryptert+= alfabet[(alfabet.indexOf(dekrypter_txt[i])-forskyv+29)]
+        console.log("1"+dekrypter_txt_dekryptert)
+    }
+    else if(0<=alfabet_stor.indexOf(krypter_txt[i])+ forskyv && alfabet_stor.indexOf(dekrypter_txt[i])!==-1 ){
+        dekrypter_txt_dekryptert+= alfabet_stor[alfabet_stor.indexOf(dekrypter_txt[i])+forskyv]
+        console.log("3"+dekrypter_txt_dekryptert)
+    }
+    else if(alfabet_stor.indexOf(dekrypter_txt[i]) - forskyv < 0 && alfabet_stor.indexOf(dekrypter_txt[i])!==-1){
+        dekrypter_txt_dekryptert+= alfabet_stor[(alfabet_stor.indexOf(dekrypter_txt[i])-forskyv+29)]
+        console.log("4"+dekrypter_txt_dekryptert)
+    }
+    else{
+        dekrypter_txt_dekryptert+= dekrypter_txt[i]
+        console.log("5")
     }
 }
