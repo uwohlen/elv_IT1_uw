@@ -20,14 +20,14 @@
             let poeng = 0;
 
             ElPoeng.innerHTML=poeng;
-            if (localStorage.poengIt1fagdag !== undefined){
-                poeng=Number(localStorage.poengIt1fagdag);
+            if (localStorage.poengIT1fagdag !== undefined){
+                poeng=Number(localStorage.poengIT1fagdag);
             }
             localStorage.poengIt1fagdag = String(poeng)
 
             let ElNavn = document.getElementById("idNavn");
-            if (localStorage.getItem("navnIt1fagdag") !== null) {
-                ElNavn.innerHTML = " " + localStorage.getItem("navnIt1fagdag");
+            if (localStorage.getItem("navnIT1fagdag") !== null) {
+                ElNavn.innerHTML = " " + localStorage.getItem("navnIT1fagdag");
             }
             const maxpoeng = poeng + 5
             const minpoeng = poeng -5
