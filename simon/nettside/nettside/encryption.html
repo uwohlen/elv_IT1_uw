@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption</title>
+    <link rel="stylesheet" href="encryption.css">
+    <script src="encryption.js"></script>
+</head>
+<body>
+    <div id="encrypt-out">
+        <div id="encrypt-in">
+          <div id="encrypt-head">
+            <label for="pass">Enter Password</label>
+            <input type="text" id="pass" />
+            <label>Enter Text</label>
+            <textarea style="height: 200px;" id="encrypt-text"></textarea>
+            <button id="encrypt-button" onclick="encode()">Encrypt</button>
+            <button id="encrypt-button" onclick="decode()">Decrypt</button
+            ><br /><br />
+            <label id="encrypted-label">Encrypted Text</label>
+            <textarea style="height: 200px;" id="encrypted-text"></textarea>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

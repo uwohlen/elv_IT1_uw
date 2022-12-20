@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#game{
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+}
+#character{
+    width: 20px;
+    height: 50px;
+    background-color: red;
+    position: relative;
+    top: 150px;
+}
+.animate{    
+    animation: jump 300ms;
+}
+@keyframes jump{
+    0%{top: 150px;}
+    30%{top: 100px;}
+    70%{top: 100px;}
+    100%{top: 150px;}
+}
+#block{
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    position: relative;
+    top: 130px;
+    left: 480px;
+    animation: block 1s infinite linear;
+}
+@keyframes block{
+    0%{left: 480px;}
+    100%{left:-40px;}
+}
+#idPoeng {
+    position:fixed;
+    border: black 2.5px solid;
+    border-radius: 100px; 
+    top: center;
+    left: 0;
+    flood-color: white;
+    width: 100px;
+}
+h1{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.hide {
+    display: none;
+}
+.button{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.button ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.button ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase ;
+}
+.button ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #ff0000;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.button ul li:hover::after{
+    width: 100%;
+}
+.text{
+    font-family: "Comic Sans MS", sans-serif;
+}
