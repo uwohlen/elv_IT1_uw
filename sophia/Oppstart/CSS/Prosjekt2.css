@@ -128,15 +128,28 @@ li.dropdown {
     background-color: #e6a98b;
 }
 
+.quotes {
+    font-style: italic;
+
+    justify-content: center;
+}
+
+#idYujaWangSitat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 #hoved {
-    width: 100%;
+    width: 90%;
     display: grid;
     gap: 10px;
+    margin: auto;
     /*background-color: #c6c6c6; husk å gjemme denne*/
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas: 
-    "y y y y . ."
+    "y y y y x x"
     ". . t t t t"
     "k k k k . .";
   }
@@ -145,5 +158,6 @@ li.dropdown {
     border: 1px solid black;
   }*/
   .Yuja_Wang    { grid-area : y; }
+  .yujaWang {grid-area: x;}
   .Daniil_Trifonov { grid-area : t; }
   .Evgeny_Kissin   { grid-area : k; }
