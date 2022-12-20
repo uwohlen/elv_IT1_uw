@@ -1,0 +1,14 @@
+.flexContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flexbox{
+    padding: 10px;
+    margin: 15px;
+    outline-width: 3px;
+    outline-style:auto;
+    background-color: #97DECE;
+    text-align: center;
+}

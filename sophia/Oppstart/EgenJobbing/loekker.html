@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../CSS/Kalkulator.css" >
+    </head>
+    <body>
+
+        <!--
+        <p><input id="idsporsmal" type="text" placeholder="Skriv inn spørsmål:"> Avslutt med Enter-tasten</p>
+        <p><span id="idSvar"></span></p>-->
+
+        <script>
+
+            //----------------Løkker-----------------
+            /*
+            let i = 0;
+            while (i <= 50) {
+                console.log(i);
+                i++;
+            }*/
+
+            /*Printer ut tallene i 3-gagern'n opp til 999
+            for (let i = 0; i <= 999; i = i+3) {
+                console.log(i);
+            }*/
+
+            /*Summerer de naturlige tallene fra 1 til 100
+            let i = 0;
+            let sum = 0;
+            while (i < 100) {
+                i++;
+                sum += i;
+            }
+            console.log(sum);*/
+
+            /*lager en løkke som printer ut
+            #
+            ##
+            ### i konsolen, fram til fire #
+
+            let a = "";
+            let i = 1;
+
+            while (i <= 4){
+                i++;
+                a += "#";
+                console.log(a);
+            }*/
+
+            /*
+            let a = " ";
+            let i = 1;
+
+            while (i <= 50) {
+                i++;
+                a += "#";
+                console.log(a);
+            }*/
+
+            /*
+            //skriver tallene -20 til 20 bortsett fra -13 og 13
+            let i = -20;
+            while (i <= 20) {
+                if (i === -13 || i === 13) {
+                    i++;
+                }
+                console.log(i);
+                i++;
+            }
+            */
+
+            /*
+            //Lag en løkke som skriver ut alle versene i sangen «fiskeboller lever i havet»
+            let intPosisjon = 1;
+            let intSlutt = 100;
+            let strVers = "";
+
+            while (intPosisjon<intSlutt+1){
+                strVers = "Fiskebollen lengter etter havet, havet er fiskebollens hjem! Dette var det " + intPosisjon + ". verset, nå er det bare " + (intSlutt-intPosisjon) + " vers igjen.";
+                if (intPosisjon === intSlutt){
+                    strVers = "Fiskebollen lengter etter havet, havet er fiskebollens hjem! Dette var det " + intPosisjon + ". verset, nå er det ingen vers igjen.";
+                }
+                intPosisjon++;
+                console.log(strVers);
+            }*/
+
+            /*
+            // Utfordring: Lag en løkke som skriver ut tallene fra 1 til 100. Hvis et tall er delelig på 3, 
+            //skal du i stedet for tallet skrive "Fizz" , og hvis et tall er delelig på 5, skal du i stedet for tallet skrive "Buzz" . 
+            //Hvis et tall er delelig på både 3 og 5, skal du skrive "FizzBuzz" . Husk at modulusoperatoren (% ) lar oss undersøke om 
+            //et tall er delelig på et annet.
+            let tall = 1;
+            let sluttTall = 100;
+            let rest = 0;
+            let fizz = "Fizz";
+            let buzz = "Buzz";
+            let fizzBuzz = "FizzBuzz";
+
+            while (tall<=sluttTall){
+                if ((tall % 3) === 0 && (tall % 5) === 0){
+                    console.log(fizzBuzz);
+                } else {
+                    if ((tall % 3) === 0){
+                    console.log(fizz);
+                    }
+                    if ((tall % 5) === 0){
+                    console.log(buzz);
+                    }
+                }
+                console.log(tall);
+                tall++;
+            }*/
+
+            //---------------Valg-----------------
+            /*Oppgave 1
+            let a = 3;
+            let b = 7;
+            let c = "7";
+            //a) True fordi det er samme tall
+            //b) False fordi det ikke er samme datatype
+            //c) True fordi a er mindre enn b
+            //d) True fordi a fortsatt er mindre enn b
+            //e) False fordi a er mindre enn b
+            //f) True fordi a ikke er lik b
+            //g) False fordi det er lik verdi
+            //h) True fordi den ikke har lik datatype selv om verdien er lik.
+            console.log(b !== c);*/
+
+            /*Oppgave 3
+            // Du kan bare kjøre i en berg-og-dal-bane i en 
+            // fornøyelsespark om du er over 100 cm høy. 
+            // Skriv en if -setning som tester om en person er 
+            // høy nok.
+            let hoyde = 150;
+            let riktigHoyde = 100;
+
+            if (hoyde >= riktigHoyde) {
+                console.log("Velkommen ombord!");
+            } else if (hoyde < riktigHoyde){
+                console.log("For lav..");
+            }*/
+
+            /*Oppgave 4
+            //I en annen berg-og-dal-bane kan du bare kjøre om høyden 
+            // din er over 100 cm og under 180 cm. Skriv en 
+            // if -setning som tester om en person kan kjøre med  
+            //denne berg-og-dal-banen.
+
+            let hoyde = 0;
+            let riktigHoydeMinst = 100;
+            let riktigHoydeMax = 180;
+
+            if (hoyde >= riktigHoydeMinst && hoyde <= riktigHoydeMax) {
+                console.log("Velkommen ombord!");
+            } else if (hoyde < riktigHoydeMinst) {
+                console.log("Du er dessverre for lav");
+            } else if (hoyde > riktigHoydeMax) {
+                console.log("Du er desscerre for høy");
+            }*/
+
+            /*Oppgave 5*/
+            /*
+            let a = 3;
+            let b = 7;*/
+
+            /*if ((a != 2) && (b < 10)) {//a)
+                console.log("True"); //true
+            } else {
+                console.log("False");
+            }
+            if ((a > 3) && (b === 7)) {//b)
+                console.log("True"); //false
+            } else {
+                console.log("False");
+            }
+            if ((a > 2) || (b === 8)) {//c)
+                console.log("True"); //true
+            } else {
+                console.log("False");
+            }
+            if ((a === 2) || (b > 8)) {//d)
+                console.log("True"); //false
+            } else {
+                console.log("False");
+            }
+            if (!(b === 10)) {//e)
+                console.log("True"); //true
+            } else {
+                console.log("False");
+            }
+            
+            if (!(b > a)) {//f)
+                console.log("True"); //false
+            } else {
+                console.log("False");
+            }*/
+
+            /*Oppgave 6
+            // I en berg-og-dal-bane kan du bare kjøre om høyden din 
+            // er over 100 cm og under 180 cm. Skriv en if -setning 
+            // med logiske operatorer som tester om en person kan 
+            // kjøre med denne berg-og-dal-banen.
+            let hoyde = 110;
+            if ((hoyde > 100) && (hoyde < 180)) {
+                console.log("Velkommen ombord!");
+            } else {
+                console.log("Du kan dessverre ikke komme ombord")
+            }*/
+
+            /*Oppgave 7
+            // Bruk figuren ovenfor og lag en vanlig «terning». 
+            // «Trill» terningen flere ganger og sjekk at den gir 
+            // resultater som forventet.
+
+            let tall = Math.floor(Math.random() * 7);
+
+            console.log(tall);*/
+
+            /*Oppgave 8
+            // Det finnes også terninger med 10 sider. 
+            // Lag en slik terning.
+            let terning = Math.floor(Math.random() * 11);
+            console.log("Du har fått terningkast", terning);*/
+
+            /*Oppgave 9
+            // Lag et program som skriver ut beskjeder basert på 
+            // verdien vi får ved ett kast med en 20-siders terning. 
+            // Beskjedene skal være...
+            let terning = Math.floor(Math.random() * 21);
+
+            if ((terning <= 6) && (terning > 1)) {
+                console.log("Du fikk 6 eller mindre."); // a)
+            } else if ((terning >= 6) && (terning <= 18)) {
+                console.log("Du fikk mellom 6 og 18."); // b)
+            } else if (terning >= 18) {
+                console.log("Du fikk 18 eller mer."); // c)
+            } else if (terning === 13) {
+                console.log("Du fikk 13!"); // d)
+            }*/
+
+            /*Utfordring:
+            let sporsmalEl = document.getElementById("idsporsmal");
+            let svarEl = document.getElementById("idSvar");
+            let resultat = "";
+
+            sporsmalEl.addEventListener("keydown",MagicBall);
+
+            function MagicBall (event) {
+                if (event.keyCode === 13) {
+                    let tall = Math.floor((Math.random() * 8) + 1);
+
+                    //console.log(event.keyCode);
+
+                    //console.log(tall);
+                    if (tall === 1) {
+                        resultat = "Ja, garantert";
+                        //console.log(resultat);
+                    } else if (tall === 2) {
+                        resultat = "Usikker...";
+                    } else if (tall === 3) {
+                        resultat = "Tviler på det";
+                    } else if (tall === 4) {
+                        resultat = "Absolutt ikke!";
+                    } else if (tall === 5) {
+                        resultat = "Spør meg senere";
+                    } else if (tall === 6) {
+                        resultat = "Nå, hva tror du?";
+                    } else if (tall === 7) {
+                        resultat = "Dette vet du jo svaret på!";
+                    } else if (tall === 8) {
+                        resultat = "La meg sove!";
+                    }
+                    svarEl.innerHTML = resultat;
+                } 
+            }*/
+            
+        </script>
+    </body>
+</html>

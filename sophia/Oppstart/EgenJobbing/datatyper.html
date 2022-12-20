@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <script>
+            /*//Oppgave 6
+            // Prøv å lage variabelen let tall = 2,71; 
+            // (med komma, ikke punktum). Legg merke til feilmeldingen 
+            // du får i konsollen.
+
+            let tall = 2,71;
+
+            Gir feilmelding fordi det ikke brukes punktum*/
+
+            /*Oppgave 7
+
+            // dette kan skrives direkte inn i consollen uten console.log()
+
+            let sitat = "I'm gonna make him an offer he can't refuse";
+
+            console.log(sitat[14]); // a) det gir ikke noe fordi det er et mellomrom
+            console.log(sitat.indexOf("h")); // b) gir kun indeksen til den første h-en som er 15
+            console.log(sitat.substring(15,18)); // c) gir "him"*/
+
+            /*Oppgave 8
+
+            let sitat = "I will express myself through music!"
+
+            console.log(sitat.length); // den gir 36*/
+
+            /*Oppgave 9*/
+            // Løses i konsollen
+            // a) 14 + 3 * 12 / 3 = 26
+            // b) 42 - 9 / 3 * 4 = 30
+            // c) (14 + 3) * 12 / 3 = 68
+            // d) (14 + 3) * (12 / 3) = 68
+            // e) 14 % 3 = 2
+            // f) 20 % 4 = 0
+
+            /*Oppgave 0
+            let poeng = 50;
+
+            //poeng += 10; //a) poeng blir 60
+            //poeng -= 10; //b) poeng blir 50
+            //poeng *= 2; //c) poeng blir 100
+            //poeng /= 2; //d) poeng blir 25
+            //poeng %= 7; //e) poeng får en rest på 1
+            //poeng %= 5; //f) poeng får ikke en rest
+            //poeng++; //g) poeng blir 51
+            //poeng--; //h) poeng blir 51
+            console.log(poeng); */ 
+
+            /*Oppgave 1
+
+            let java = "Java";
+            let script = "Script";
+            java += script;
+            console.log(java);*/
+
+            /*Oppgave 2*/
+
+            /*let navn; //undefined fordi den er tom
+            console.log(typeof(navn)); 
+
+            let alder = 2; //number
+            console.log(typeof(alder));
+
+            let alder = 2.718; //number
+            console.log(typeof(alder));
+
+            let navn = "Ola"; //string
+            console.log(typeof(navn));
+
+            let aarstall = "1984"; //string
+            console.log(typeof(aarstall));*/
+
+            /*Oppgave 3
+
+            let tekst1 = "17";
+            let tekst2 = "20 17";
+            let tekst3 = "4,7";
+
+            //a) de er alle string
+            //b) tekst1 vil bli number, men ikke 2 og 3 
+            // fordi tall ikke kan ha mellomrom eller "vanlig" komma
+            //c) kun den første er et helttall
+            /*console.log(Number.isInteger(Number(tekst1))); //ture
+            console.log(Number.isInteger(Number(tekst2))); //false
+            console.log(Number.isInteger(Number(tekst3))); //false
+
+            //d) parseInt gjør om et desimaltall til heltall
+            // Siden de siste to ikke er tall, står det Not a Number
+            console.log(parseInt(Number(tekst1))); //17
+            console.log(parseInt(Number(tekst2))); //NaN
+            console.log(parseInt(Number(tekst3))); //NaN */
+
+            //----------Blandede Oppgaver-------------
+
+            //Oppgave 1
+            /*let antallBoller = 12;
+            antallBoller -= 4;
+            antallBoller += 24;
+            let bollerPerPerson = antallBoller / 4;
+            //(8+24)/4=8
+            console.log(bollerPerPerson); //8*/
+
+            //Oppgave 2
+            /*console.log(8 + "4"); //84 //a)
+            console.log(8 * "4"); //32 //b)
+            console.log(8 / "4"); //2 //c)
+            console.log( 8 - "4"); //8 //d)*/
+
+            //Oppgave 3
+            /*let a = 3;
+            let b = 7;
+
+            a *= b;
+            console.log(a);
+
+            b--;
+            b *= a;
+            console.log(b);
+
+            a--;
+            b *= a;
+            console.log(b);
+
+            b++;
+            b *= a;
+            console.log(b);
+
+            a -= b;
+            console.log(a);*/
+
+            //Oppgave 4
+
+            /*let antallTimer = 4;
+            let antallMinutter = 27;
+            let antallSekunder = 33;
+
+            antallTimer *= 3600;
+            antallMinutter *= 60;
+            antallSekunder += antallMinutter + antallTimer
+
+            console.log(antallSekunder);*/
+
+            //Oppgave 5
+
+            /*let antallSekunder = 5790;
+            let antallMinutter = 1;
+            let antallTimer = 1;
+
+            antallMinutter = antallSekunder/60;
+            antallTimer = antallMinutter/60;
+
+            console.log("Antall timer: ", antallTimer);
+            console.log("Antall minutter: ", antallMinutter);
+            console.log("Antall sekunder: ", antallSekunder);*/
+
+            //Oppgave 6
+            let alfabet = "abcdefghijklmnopqrstvuwxyzøæå";
+            //7, 4, 11, 14
+            console.log(alfabet[7]+alfabet[4]+alfabet[11]+alfabet[11]+alfabet[14]);
+
+        </script>
+    </body>
+</html>

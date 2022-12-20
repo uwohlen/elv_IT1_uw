@@ -53,7 +53,7 @@ function krypterfunk(event) {
 function krypter() {
     let nyttOrd = "";
     let intPosisjon = 0;
-    let alfabet = "abcdefghijklmnopqrstuvwxyzæøåABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ1234567890";
+    let alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅabcdefghijklmnopqrstuvwxyzæøå1234567890";
     let strOrd = document.getElementById("idTekst").value;
     let intForskyvning = document.getElementById("idForskyvning").value;
     let nyttOrdEl = document.getElementById("idResultat");
