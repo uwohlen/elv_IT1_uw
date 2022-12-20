@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../CSS/css.css" >
+    </head>
+    <body>
+        <h1 class="background"><span>Magic 8-ball</span></h1>
+        <div class="sporsmal">
+            <h3>Skriv inn et ja/nei spørsmål</h3>
+            <p><input id="idsporsmal" type="text" placeholder="Avslutt med Enter-tasten"></p>
+            <p><span id="idSvar"></span></p>
+        </div>
+
+        <script>
+            let sporsmalEl = document.getElementById("idsporsmal");
+            let svarEl = document.getElementById("idSvar");
+            let resultat = "";
+
+            sporsmalEl.addEventListener("keydown",MagicBall);
+
+            function MagicBall (event) {
+                if (event.keyCode === 13) {
+                    let tall = Math.floor((Math.random() * 8) + 1);
+
+                    //console.log(event.keyCode);
+
+                    //console.log(tall);
+                    if (tall === 1) {
+                        resultat = "Ja, garantert";
+                        //console.log(resultat);
+                    } else if (tall === 2) {
+                        resultat = "Usikker...";
+                    } else if (tall === 3) {
+                        resultat = "Tviler på det";
+                    } else if (tall === 4) {
+                        resultat = "Absolutt ikke!";
+                    } else if (tall === 5) {
+                        resultat = "Spør meg senere";
+                    } else if (tall === 6) {
+                        resultat = "Nå, hva tror du?";
+                    } else if (tall === 7) {
+                        resultat = "Dette vet du jo svaret på!";
+                    } else if (tall === 8) {
+                        resultat = "La meg sove!";
+                    }
+                    svarEl.innerHTML = resultat;
+                }
+            }
+        </script>
+    </body>
+</html>
