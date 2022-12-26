@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="bg-[#f5f5f5] w-screen">
+    <div class="font-extralight text-3xl text-[#4a4a4a] flex justify-center h-16 outline outline-1 items-center">velkommen til krypteringsnettsiden</div>
+<div class="flex justify-between">
+    <div class="flex justify-start p-24">
+        <div class="h-[600px] w-[1px] bg-[#4a4a4a]"></div>
+        <div class="p-5 w-2/3 h-[600px] flex flex-col justify-center gap-y-5">
+            <div class="font-light ">Hva vil du kryptere/dekryptere? Skriv det i feltet under</div>
+            <input type="text" id="input" class="flex w-fit h-10 bg-[#f5f5f5] hover:bg-[#c3c3c3] p-3 font-extralight " value="skriv her">
+            <div class="font-light">vil du kryptere teksten din?</div>
+            <div  onclick="krypter()" class="w-40 h-10 items-center flex justify-center hover:bg-[#c3c3c3] font-extralight">Trykk her</div>
+            <div class="font-light">vil du dekryptere teksten din?</div>
+            <div onclick="dekrypter()" class="w-40 h-10 flex items-center justify-center  hover:bg-[#c3c3c3] font-extralight">Trykk her</div>
+        </div>
+    </div>
+    <div>
+        <div class="flex p-24">     
+            <div class="h-[600px] w-[1px] bg-[#4a4a4a]"></div>
+            <div id="output" class="text-m font-extralight  items-center w-fit h-[600px] flex p-5"> output kommer her</div>
+        </div>
+    </div>
+</div>
+    <script src="kryptering.js"></script>
+</body>
+</html>
