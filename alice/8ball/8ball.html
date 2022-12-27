@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Den magiske ballen</title>
+        
+
+        <style>
+            .dot {
+                height: 500px;
+                width: 500px;
+                background-color: black;
+                border-radius: 50%;
+                display: flex;
+                margin: auto;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+
+            .flex-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 600px;
+            }
+
+        </style>
+    </head>
+    
+    <body> // 
+        <div class="flex-container"> 
+            <div class="dot">
+                <h1>Den magiske ballen</h1>
+                <h1>Få svar på livets store spørsmål...</h1>
+                <button id="theball">Trykk på meg....;)</button>
+
+                <p id="svaret"></p> 
+            </div>
+        </div>
+
+        <script>
+            let svaretEl = document.getElementById("svaret"); 
+            let theballEl = document.getElementById("Theball");
+
+            theball.addEventListener("click", result);
+
+
+            function result (event) {
+                console.log("du klikket på en button");
+
+                let dMuligheter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t"];
+                let dataValg = dMuligheter[Math.floor(Math.random() * 20)]; // velger en variabel helt random 
+                console.log("Datamaskinen valgte: " + dataValg);
+                
+                
+                if (dataValg === "a") {
+                    svaretEl.innerHTML = ("Sannsynligvis ja")
+                }
+                else if (dataValg === "b") {
+                    svaretEl.innerHTML = ("Mitt svar er nei")
+                }
+                else if (dataValg === "c") {
+                    svaretEl.innerHTML = ("Konsentrer deg og spør igjen")
+                }
+                else if (dataValg === "d") {
+                    svaretEl.innerHTML = ("Ja definitivt")
+                }
+                else if (dataValg === "e") {
+                    svaretEl.innerHTML = ("Ikke regn med det")
+                }
+                else if (dataValg === "f") {
+                    svaretEl.innerHTML = ("Uten tvil")
+                }
+                else if (dataValg === "g") {
+                    svaretEl.innerHTML = ("Du kan regne med det")
+                }
+                else if (dataValg === "h") {
+                    svaretEl.innerHTML = ("Slik jeg ser det ja")
+                }
+                else if (dataValg === "i") {
+                    svaretEl.innerHTML = ("Det ser bra ut")
+                }
+                else if (dataValg === "j") {
+                    svaretEl.innerHTML = ("Ja")
+                }
+                else if (dataValg === "k") {
+                    svaretEl.innerHTML = ("Det ser ut som ja")
+                }
+                else if (dataValg === "l") {
+                    svaretEl.innerHTML = ("Jeg tenker ja")
+                }
+                else if (dataValg === "m") {
+                    svaretEl.innerHTML = ("ja brur")
+                }
+                else if (dataValg === "n") {
+                    svaretEl.innerHTML = ("Svaret er usikkert, prøv igjen")
+                }
+                else if (dataValg === "o") {
+                    svaretEl.innerHTML = ("spør igjen senere")
+                }
+                else if (dataValg === "p") {
+                    svaretEl.innerHTML = ("Kan ikke si det nå...")
+                }
+                else if (dataValg === "q") {
+                    svaretEl.innerHTML = ("Sannsynligheten er liten")
+                }
+                else if (dataValg === "r") {
+                    svaretEl.innerHTML = ("Kildene mine sier nei")
+                }
+                else if (dataValg === "s") {
+                    svaretEl.innerHTML = ("Det ser ikkje bra ut")
+                }
+                else if (dataValg === "t") {
+                    svaretEl.innerHTML = ("Nei brur")
+                }
+
+            }
+
+        </script>
+    </body>
+</html>
