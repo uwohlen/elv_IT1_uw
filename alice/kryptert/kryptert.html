@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>
+            Skriv inn din krypterte kode her:
+        </h1>
+        <p>
+            <input id="inputId" placeholder="skriv inn her">
+        </p>
+        <p id="outputId" >Her kommer den dekrypterte teksten</p>
+
+        <h1>
+            Skriv inn koden du vil at skal krypteres her:
+        </h1>
+        <p>
+            <input id="input2Id" placeholder="skriv inn her">
+        </p>
+        <p id="output2Id" >Her kommer den dekrypterte teksten</p>
+
+        <script>
+            
+            let inputEl = document.getElementById("inputId");
+            let outputEl = document.getElementById("outputId");
+            inputEl.addEventListener("keydown", inputfunc);
+
+            let input2El = document.getElementById("input2Id");
+            let output2El = document.getElementById("output2Id");
+            input2El.addEventListener("keydown", input2func);
+
+            
+            let abc = "abcdefghijklmnopqrstuvwxyzæøå"
+
+            //her dekrypteres det som ble skrevet i input feltet
+            function inputfunc(event) {
+                if(event.keyCode === 13) {
+                    let tekst = "";
+
+                    let i = 0;
+                    let sitat = inputEl.value; //bruker elementet jeg definerte tidligere
+
+                    if (abc.indexOf(sitat[i])!==-1) { // hvis det er mellomrom
+                        while (i < sitat.length) {                
+                        let bokstav = sitat[i];
+                        let nybokstav = abc.indexOf(bokstav);
+
+                        let nyindex = nybokstav - 1;
+                        if (nyindex === - 1) { // denne if setningen spesialbehandler a
+                            nyindex = abc.length - 1;
+                        }
+                        tekst+=abc[nyindex]; //gjør nummerene om til bokstaver 
+
+
+                        i++;
+                        }
+
+                    }
+
+                    outputEl.innerHTML = (tekst); // skriver ut den kyrpterte koden
+
+                    // lage ny funksjon og input felt og spesial behandle å 
+                }
+            }
+
+            function input2func(event) {
+                if(event.keyCode === 13) {
+                    let text = "";
+
+                    let j = 0;
+                    let sit = input2El.value; //bruker elementet jeg definerte tidligere
+
+                    while (j < sit.length) {                
+                        let bokstav2 = sit[j];
+                        let nybokstav2 = abc.indexOf(bokstav2);
+
+                        let nyindex2 = nybokstav2 + 1;
+                        if (nyindex2 === 29) {
+                            nyindex2 = 0;
+                        }
+                        text+=abc[nyindex2]; 
+
+
+                        j++;
+                    }
+
+                    output2El.innerHTML = (text);
+                }
+            }
+            
+            
+        </script>
+    </body>
+</html>
