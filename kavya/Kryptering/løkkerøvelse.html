@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Kryptering
+        </title>
+    </head>
+
+    <body>
+        <h3> 
+        Skriv inn en kryptert tekst der hver bokstav er forskjøvet med én  
+        (for eksempel "kfh ifufs lbwzb"):
+        </h3>
+
+        <div>
+            <input id="KryptertTekst" type="text" placeholder="Skriv den krypterte setningen"></input> 
+            <button id="minKnapp" type="button" onclick="dekrypterTekst(kryptertTekst)">Trykk her&#10083</button>
+            
+        </div>
+        <div>
+            <p>Dekryptert:</p>
+            <p id="tekstTilbake"></p>
+        </div>
+
+
+
+        <h3>
+            Skriv en setning og gjør den kryptert:
+        </h3>
+        <div>
+            <input id="DeKryptertTekst" type="text" placeholder="Skriv inn vanlig setning"></input>
+            <button id="Knapp2" type="button" onclick="krypterTekst(deKryptertTekst)">Trykk her&#10083</button>
+            
+        </div>
+        <div>
+            <p>Kryptert:</p>
+            <p id="tekstTilbake2"></p>
+        </div>
+   
+    </body>
+   
+
+    <script>
+    let kryptertTekst =""; //venter på setning (open input)
+
+    function dekrypterTekst(kryptertTekst){
+        kryptertTekst = document.getElementById("KryptertTekst").value; //registrerer det som blir skrevet inn i første inntastingsfelt
+        console.log(kryptertTekst)
+        let input = document.getElementById("KryptertTekst"); //input er det som tidligere er definert som kryptert tekst
+        input.addEventListener("keypress", function(event){ //når "trykk her" knappen har blitt trykket, 
+                event.preventDefault(); 
+                document.getElementById("minKnapp").click();
+    });
+
+    let outputEl= document.getElementById("tekstTilbake") 
+
+    let deKryptert=""; //venter på setning (open input)
+
+    for (i=0; i<kryptertTekst.length; i++){ //gjør for hver eneste bokstav. helt til setningen er ferdig. loopen fortsetter å gå.
+        let kode = kryptertTekst.charCodeAt(i);
+        kode -= 1; 
+        let char = String.fromCharCode(kode);
+        deKryptert += char;
+        }
+
+    console.log(deKryptert) //lagrer resultatet i console
+    outputEl.innerHTML=deKryptert // resultatet blir printet ut, gjør det mulig for HTML å bruke informasjonen fra javascript.
+    }
+
+
+
+
+
+
+    let deKryptertTekst =""; //venter på setning (open input)
+
+    function krypterTekst(deKryptertTekst){
+        deKryptertTekst = document.getElementById("DeKryptertTekst").value; //registrerer det som blir skrevet inn i første inntastingsfelt
+        console.log(deKryptertTekst) //lagrer resultatet i console
+        let input = document.getElementById("DeKryptertTekst"); //input er det som tidligere er definert som DekryptertTekst i console
+        input.addEventListener("keypress", function(event){ //når "trykk her" knappen har blitt trykket,
+                event.preventDefault();
+                document.getElementById("Knapp2").click();
+    });
+
+    let outputEl= document.getElementById("tekstTilbake2")
+
+    let Kryptert="";
+
+    for (i=0; i<deKryptertTekst.length; i++){
+        let kode = deKryptertTekst.charCodeAt(i);
+        kode += 1; 
+        let char = String.fromCharCode(kode);
+        Kryptert += char;
+        }
+
+    console.log(Kryptert)
+    outputEl.innerHTML=Kryptert
+    }
+
+
+    </script>
+    
+</html>
+
