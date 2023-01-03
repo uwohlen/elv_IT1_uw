@@ -18,32 +18,6 @@
         <a href="canvas prosjekt/index.html">slot-machine</a><br>
         <a href="../index.html">Tilbake til IT1-klassen</a>
     </div>
-    
-    <h1>Tid igjen til jul:</h1>
-    <p id="timer"></p>
-
-    <script>
-        let JulDato = new Date("Dec 24, 2022 00:00:00").getTime();
-
-        let x = setInterval(function () {
-            let now = new Date().getTime();
-
-            let distance = JulDato - now;
-
-            let dager = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let timer = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutter = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            let sekunder = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("timer").innerHTML = dager + "d " + timer + "t "
-                + minutter + "m " + sekunder + "s ";
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("timer").innerHTML = "Merry Christmas!";
-            }
-        }, 1000);
-    </script>
 </body>
 
 </html>
