@@ -1,57 +1,95 @@
 let buttonEl = document.getElementById("buttonId");
-let toggleEl = document.getElementById("toggleId");
+let krypterEl = document.getElementById("toggleId");
 let inputEl = document.getElementById("idInput")
+let kodeOrdEl = document.getElementById("IdKodeOrd")
 let svarEl = document.getElementById("svarId")
-buttonEl.addEventListener("click", dekrypter)
-toggleEl.addEventListener("click", krypter)
 
+let alfabet = "";
 
-const alphabet = 'abcdefghijklmnopqrstuvwxyzæøå';
-
-
-let bokstav;
-let letter;
-
-function dekrypter() {
-    let lost = ""
-    let tekst = inputEl.value
-    for (let x = 0; x < tekst.length; x++) {
-        let bokstav = tekst[x]
-
-        if (bokstav !== " " && bokstav !== "a") {
-
-            for (let i = 0; bokstav !== alphabet[i]; i++) {
-                letter = alphabet[i]
-            }
-            lost = lost.concat(letter);
-
-        }else if(bokstav === "a"){
-            lost = lost.concat("å");
-        }else lost = lost.concat(" ");
-
-
-    }
-    svarEl.innerHTML = lost
+for (let i = 97; i <= 122; i++) {
+    alfabet += String.fromCharCode(i);
 }
 
-function krypter() {
-    let lost = ""
+alfabet += "æøå";
+let lost;
+let solved = []
+let nummer;
+
+
+//når klikkes
+buttonEl.addEventListener("click", function() {
     let tekst = inputEl.value
-    for (let x = 0; x < tekst.length; x++) {
-        let bokstav = tekst[x]
+    let ord = kodeOrdEl.value
+    dekrypter(tekst, ord);
+});
+krypterEl.addEventListener("click", function() {
+    let tekst = inputEl.value
+    let ord = kodeOrdEl.value
+    krypter(tekst, ord);
+});
 
-        if (bokstav !== " " && bokstav !== "å") {
 
-            for (let i = -1; bokstav !== alphabet[i]; i++) {
-                letter = alphabet[i+2]
+
+function krypter(navn, forskyvning){
+    let x = 0; //for forskyvning
+    for(let i = 0; i < navn.length; i++){
+        if(x >= forskyvning.length) x = 0
+
+        if(navn[i] !== " "){//hopper over hvis det er mellomrom
+            if(!alfabet.includes(forskyvning[x])){//hvis det er et tall
+                if(alfabet.indexOf(navn[i]) + Number(forskyvning) < alfabet.length){
+                    solved.push(alfabet[alfabet.indexOf(navn[i]) + Number(forskyvning)])
+                }else{
+                    solved.push(alfabet[alfabet.indexOf(navn[i]) + Number(forskyvning) - alfabet.length])
+                }
             }
-            lost = lost.concat(letter);
 
-        }else if(bokstav === "å"){
-            lost = lost.concat("a");
-        }else lost = lost.concat(" ");
-
-
+            else{//hvis det er et ord
+                nummer = alfabet.indexOf(forskyvning[x])
+                if(alfabet.indexOf(navn[i]) + nummer < alfabet.length){
+                    solved.push(alfabet[alfabet.indexOf(navn[i]) + nummer])
+                }
+                else{
+                    solved.push(alfabet[alfabet.indexOf(navn[i]) + nummer - alfabet.length])
+                }
+            }
+            x++
+        }else {
+            solved.push(" ")
+        } 
     }
-    svarEl.innerHTML = lost
+    svarEl.innerHTML = solved.join("")
+    solved = []
+}
+
+function dekrypter(navn, forskyvning){
+    let x = 0; //for forskyvning
+    for(let i = 0; i < navn.length; i++){
+        if(x >= forskyvning.length) x = 0
+
+        if(navn[i] !== " "){//hopper over hvis det er mellomrom
+            if(!alfabet.includes(forskyvning[x])){//hvis det er et tall
+                if(alfabet.indexOf(navn[i]) - Number(forskyvning) >= 0){
+                    solved.push(alfabet[alfabet.indexOf(navn[i]) - Number(forskyvning)])
+                }else{
+                    solved.push(alfabet[alfabet.indexOf(navn[i]) - Number(forskyvning) + alfabet.length])
+                }
+            }
+
+            else{//hvis det er et ord
+                nummer = alfabet.indexOf(forskyvning[x])
+                if(alfabet.indexOf(navn[i]) - nummer >= 0){
+                    solved.push(alfabet[alfabet.indexOf(navn[i]) - nummer])
+                }
+                else{
+                    solved.push(alfabet[alfabet.indexOf(navn[i]) - nummer + alfabet.length])
+                }
+            }
+            x++
+        }else {
+            solved.push(" ")
+        } 
+    }
+    svarEl.innerHTML = solved.join("")
+    solved = []
 }
