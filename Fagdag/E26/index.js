@@ -18,6 +18,7 @@ let restartEl = document.getElementById("restart")
 let poeng = 0;
 let navn;
 
+//navn og poeng
 if (localStorage.poengIT1fagdag !== undefined) {
     poeng = Number(localStorage.poengIT1fagdag);
 }
@@ -34,7 +35,6 @@ else {
 poengEl.innerHTML = poeng;
 
 start()
-console.log(navn)
 function start() {
     let ValgEL = document.getElementsByClassName("hidden")
     localStorage.levelIT1fagdag = "E26"
@@ -51,24 +51,27 @@ function start() {
     reset_animation2()
     let lever = true;
 
-    const fruits = ["Du går en tur i skogen", "Du ser noe i øyekroken", "Noe hopper ut foran deg", "Det er et troll!!!!!!", "Du får ikke gå på min sti", "nå må jeg drepe deg", "du ber for livet ditt", "Nei, spar meg", "Jeg skal la deg leve", "På en betingelse!!!", "Du må slå meg i stein, saks, papir"];
+    const tekst = ["Du går en tur i skogen", "Du ser noe i øyekroken", "Noe hopper ut foran deg", "Det er et troll!!!!!!", "Du får ikke gå på min sti", "nå må jeg drepe deg", "du ber for livet ditt", "Nei, spar meg", "Jeg skal la deg leve", "På en betingelse!!!", "Du må slå meg i stein, saks, papir"];
 
     next.addEventListener("click", reset_animation)
     setTimeout(ButtonAppear, 4000)
     function ButtonAppear() {
         next.style.display = "inline-block"
     }
-    //endre så i endrer seg når klikker på knapp
+
+
+
     let animasjons_i = 0;
+    //kjører animasjon på nytt, bytter ut
     function reset_animation() {
         next.style.display = "none"
-        text.innerHTML = fruits[animasjons_i];
+        text.innerHTML = tekst[animasjons_i];
         animasjons_i++;
 
         text.style.animation = 'none';
-        text.offsetHeight; /* trigger reflow */
+        text.offsetHeight;
         text.style.animation = null;
-        if (animasjons_i < fruits.length) {
+        if (animasjons_i < tekst.length) {
             setTimeout(reset_animation, 3700)
         }
         else {
@@ -119,7 +122,7 @@ function restart() {
 }
 function reset_animation2() {
     text.style.animation = 'none';
-    text.offsetHeight; /* trigger reflow */
+    text.offsetHeight;
     text.style.animation = null;
 }
 
@@ -148,7 +151,7 @@ function JaTilStein() {
     saksK.addEventListener("click", saks)
     papirK.addEventListener("click", papir)
 }
-//kondisjoner
+//kriterier for s, s, p
 function stein() {
     if (MonsterV === 0) {
         draw()
@@ -253,6 +256,5 @@ function restart2() {
     restartEl.style.display = "inline-block"
     restartEl.addEventListener("click", JaTilStein)
 }
-localStorage.poengIT1fagdag = String(poeng);
-localStorage.navnIt1fagdag = String(navn);
-localStorage.levelIT1fagdag = 26;
+localStorage.setItem("levelIT1fagdag", "E26");
+localStorage.setItem("poengIT1fagdag", poeng);
