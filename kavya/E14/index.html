@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="no" onkeydown="jump()">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jump Game</title>
+    <link rel="stylesheet" href="E14.css">
+    <link rel="stylesheet" href="alleBrukDenne.css"
+</head>
+<body>
+    <div class="game">
+        <div id="karakter"></div>
+        <div id="hinder"></div>
+    </div>
+    <p>Poeng: <span id="Poeng"></span></p>
+    <h3>Trykk på en random tast for å spille. Trykk på knappen for å gå til neste spill. <br> <br> 
+    <button> <a href="../E15/index.html"> Neste spill</a> </button> </h3>
+    
+    </div>
+</body>
+
+<script>
+    let karakter = document.getElementById("karakter");
+    let hinder = document.getElementById("hinder");
+    let counter= 0;
+
+    function jump(){
+        karakter.classList.add("animate");
+        setTimeout(function(){
+            karakter.classList.remove("animate");
+        },600);
+    }
+    let deAd = setInterval(function() {
+        let karakterTop = parseInt(window.getComputedStyle(karakter).getPropertyValue("top"));
+        let hinderLeft = parseInt(window.getComputedStyle(hinder).getPropertyValue("left"));
+        
+        if(hinderLeft<20 && hinderLeft>-40 && karakterTop>=130){
+            hinder.style.animation = "none";
+            let tekst= "Det var synd. Din poengsum ble: "+Math.floor(counter/100);
+            alert(tekst)
+            counter=0;
+            hinder.style.animation = "hinder 1s infinite linear";
+            
+        }
+        
+        else{
+            counter++;
+            document.getElementById("Poeng").innerHTML = Math.floor(counter/100);
+        }
+    }, 10);
+
+
+</script>
+</html>
+
+
+
