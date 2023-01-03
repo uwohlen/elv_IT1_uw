@@ -76,7 +76,7 @@ let krypteringene = [
     },
     {
         bokstav: "p",
-        kryptering: "skummel",
+        kryptering: "mast",
 
     },
     {
