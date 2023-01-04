@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator</title>
+</head>
+
+<body>
+    <h3>Kalkulator</h3>
+    <p>Avslutt med enter!</p>
+    <input id="idKalk" placeholder="Skriv inn ett regnestykket">
+    <p id="idSvar">= </p>
+    <script>
+        let KalkEl = document.getElementById("idKalk");  //definerer ulike variabler
+        let SvarEl = document.getElementById("idSvar");  
+        let operator;
+        let tall1 = 0;
+        let tall2 = 0;
+        let sum;
+        KalkEl.addEventListener("keydown", Kalkulator); //keydown=hendelse so skjer når en tast blir trykket på
+
+
+
+        function Kalkulator(event) {                     //funskjon= selvstendig enhet av en kode som utfører en oppgave
+           {                                          //kan ha parametere, og retunere verdier
+                if(KalkEl.value.includes("+")){
+                    operator = KalkEl.value.indexOf("+");
+                    tall()
+                    sum = tall1 + tall2
+                }
+                else if(KalkEl.value.includes("-", 1)){
+                    operator = KalkEl.value.indexOf("-", 1);
+                    tall()
+                    sum = tall1 - tall2
+                }
+                else if(KalkEl.value.includes("*")){
+                    operator = KalkEl.value.indexOf("*");
+                    tall()
+                    sum = tall1 * tall2
+                }
+                else if(KalkEl.value.includes("/")){
+                    operator = KalkEl.value.indexOf("/");
+                    tall()
+                    if(tall2!=0)sum = tall1 / tall2
+                    else sum = "kan ikke dele på null"
+                }
+
+                function tall(){
+                    tall1 = Number(KalkEl.value.slice(0, operator));                             //konverterer javascript variabler til tall
+                    tall2 = Number(KalkEl.value.slice(operator + 1, KalkEl.value.length));       //??
+                }
+                SvarEl.innerHTML = "= " + sum
+               
+            }
+        }
+    </script>
+</body>
+
+</html>
