@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <title>kryptering</title>
+    </head>
+    <body>
+      <p><a href="../index.html">Til index</a></p>
+        <form>
+          <textarea id="klar_tekst"></textarea>
+          <br>
+          <input type="text" id="nøkkel" value="nøkkel">
+          <br>
+          <input type="button" value="Krypter" onclick="encrypt()">
+          <br>
+          <textarea id="kryptert_tekst" disabled></textarea>
+        </form>
+        <script>
+          function encrypt(klar_tekst, nøkkel) {
+            var kryptert_tekst = "";
+            return kryptert_tekst;
+          }
+    
+          function encrypt() {
+            let klar_tekst = document.getElementById('klar_tekst').value;
+            let nøkkel = document.getElementById('nøkkel').value;
+            let kryptert_tekst = encrypt(klar_tekst, nøkkel);
+            document.getElementById('kryptert_tekst').value = kryptert_tekst;
+          }
+        </script>
+      </body>
+    </html>

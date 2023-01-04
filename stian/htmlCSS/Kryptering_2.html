@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>kryptering 2</title>
+  </head>
+  <body>
+    <p><a href="../index.html">Til index</a></p>
+    <form>
+      <textarea id="plaintext"></textarea>
+      <br>
+      <input type="number" id="shift" value="0">
+      <br>
+      <input type="button" value="Encrypt" onclick="encrypt()">
+      <br>
+      <textarea id="ciphertext" disabled></textarea>
+    </form>
+    <script>
+      function encrypt(plaintext, shift) {
+        let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+        let shiftedAlphabet = alphabet.slice(shift).concat(alphabet.slice(0, shift));
+        let alphabetMap = {};
+        for (var i = 0; i < 26; i++) {
+          alphabetMap[alphabet[i]] = shiftedAlphabet[i];
+        }
+        let ciphertext = '';
+        for (var i = 0; i < plaintext.length; i++) {
+          var plaintextChar = plaintext[i].toLowerCase();
+          if (alphabetMap.hasOwnProperty(plaintextChar)) {
+            ciphertext += alphabetMap[plaintextChar];
+          } else {
+            ciphertext += plaintextChar;
+          }
+        }
+        return ciphertext;
+      }
+
+      function encrypt() {
+        let plaintext = document.getElementById('plaintext').value;
+        let shift = parseInt(document.getElementById('shift').value);
+        let ciphertext = encrypt(plaintext, shift);
+        document.getElementById('ciphertext').value = ciphertext;
+      }
+    </script>
+  </body>
+</html>

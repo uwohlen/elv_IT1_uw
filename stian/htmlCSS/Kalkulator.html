@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <title>Kalkulator</title>
+    </head>
+    <body>
+        <p><a href="../index.html">Til index</a></p>
+        <form>
+            <input type="text" id="operand1" value="0">
+            <select id="operation">
+              <option value="+">+</option>
+              <option value="-">-</option>
+              <option value="*">*</option>
+              <option value="/">/</option>
+            </select>
+            <input type="text" id="operand2" value="0">
+            <input type="button" value="=" onclick="calculate()">
+            <input type="text" id="result" value="0" disabled>
+          </form>
+
+        <script>
+            function calculator(operation, operand1, operand2) {
+                if (operation === '+') {
+                    return operand1 + operand2;
+                } else if (operation === '-') {
+                    return operand1 - operand2;
+                } else if (operation === '*') {
+                    return operand1 * operand2;
+                } else if (operation === '/') {
+                    return operand1 / operand2;
+                } else {
+                    return 'Invalid operation';
+                }
+            }
+
+            function calculate() {
+                let operand1 = parseFloat(document.getElementById('operand1').value);
+                let operation = document.getElementById('operation').value;
+                let operand2 = parseFloat(document.getElementById('operand2').value);
+                let result = calculator(operation, operand1, operand2);
+                document.getElementById('result').value = result;
+            }
+        </script>
+    </body>
+</html>
