@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../standardmeny.css">
+    <link rel="stylesheet" href="../css-reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top">
+        <p class="overskrift">Toras krypteringside</p>
+    </div>
+    <a href="../index.html">
+        <div id="hjemknapp" class="menydel">
+            <p>&#x2302</p>
+        </div>
+    </a>
+    <div class="meny">
+        <a class="menydel" id="menyuthevet" href="kryptering.html">Kryptering</a>
+        <a class="menydel" href="dekryptering.html">Dekryptering</a>
+
+    </div>
+    <main>
+        <p> skriv inn det du vil kryptere her:</p>
+        <input id="ukryptert" type="text"> <button onclick="tøm()">Tøm</button> <br> <br>
+        <p>skriv inn kodeord her:</p>
+        <input id="kodeord" type="password"> <br>
+        <p><input type="checkbox" onclick="vis()">Vis kodeord</p> <br>
+        <p class="menydel" onclick="krypter()">Krypter</p>
+        <p>Kryptert blir koden:</p>
+        <div id="k">
+            <p id="kryptert"></p>
+        </div>
+        <button id="kopier" onclick="kopier()">Kopier</button>
+
+    </main>
+    <script src="kryptering.js"></script>
+</body>
+</html>

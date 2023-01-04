@@ -1,0 +1,15 @@
+
+
+main{
+    padding: 20px;
+}
+#k{
+    border: 1px black solid;
+    max-width: fit-content;
+    padding: 3px;
+    border-radius: 2px;
+    display: none;
+}
+#kopier{
+    display: none;
+}

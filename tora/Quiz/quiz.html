@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dataquiz</title>
+    <link rel="icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css-reset.css">
     <link rel="stylesheet" href="Style/style.css">
 </head>
@@ -17,27 +18,27 @@
         <main>
         <div class="spm">
             <div class="center">
-                <p class="spørsmål">spørsmål 1: Hva står RAM for?</p> <br>
+                <p class="spørsmål">Spørsmål 1: Hva står RAM for?</p> <br>
                 <img src="Media/CPU1.jpg" alt="bilde" height="200px"> <br>
-                <button class="feil">A: Rapid Eye Movement</button> <br>
-                <button class="riktig">B: Random Access Memory </button> <br>
-                <button class="feil">c:Rapid Access Management</button> <br>
-                <button class="feil">d: Random Access Management</button> <br> <br>
+                <button class="feil">Rapid Eye Movement</button> <br>
+                <button class="riktig">Random Access Memory </button> <br>
+                <button class="feil">Rapid Access Management</button> <br>
+                <button class="feil">Random Access Management</button> <br> <br>
             </div>
         </div> 
         <div class="spm">
             <div class="center">                    
-                <p class="spørsmål">spørsmål 2: Hva kobler alle komponentene i en datamaskin?</p>
+                <p class="spørsmål">Spørsmål 2: Hva kobler alle komponentene i en datamaskin?</p>
                 <img src="Media/skjermkort.jpg" alt="bilde" height="200px"> <br>
-                <button class="feil">A: Skjermkort</button> <br> 
-                <button class="feil">B: prosessor</button> <br>
-                <button class="feil">C: RAM</button> <br>
-                <button class="riktig">D: hovedkort</button><br>
+                <button class="feil">Skjermkort</button> <br> 
+                <button class="feil">Prosessor</button> <br>
+                <button class="feil">RAM</button> <br>
+                <button class="riktig">Hovedkort</button><br>
             </div>
         </div> 
         <div class="spm">
             <div class="center">
-                <p class="spørsmål">spørsmål 3: hva foretar beregninger i en datamaskin?</p>
+                <p class="spørsmål">Spørsmål 3: Hva foretar beregninger i en datamaskin?</p>
                 <img src="Media/CPU.jpg" alt="bilde" height="200px"> <br>
                 <button class="feil">Skjermkort</button> <br>
                 <button class="riktig">Prosessor</button> <br>
@@ -47,12 +48,22 @@
         </div> 
         <div class="spm">
             <div class="center">
-                <p class="spørsmål">spørsmål 4: hvor kan det lages midlertidig informasjon?</p> 
+                <p class="spørsmål">Spørsmål 4: Hvor kan det lages midlertidig informasjon?</p> 
                 <img src="Media/Hovedkort.jpg" alt="bilde" height="200px"> <br>
                 <button class="feil">Skjermkort</button> <br>
                 <button class="feil">Prosessor</button> <br>
                 <button class="riktig"> RAM</button> <br>
-                <button class="feil"> hovedkort</button> 
+                <button class="feil"> Hovedkort</button> 
+            </div>
+        </div>
+        <div class="spm">
+            <div class="center">
+                <p class="spørsmål">Spørsmål 5: Hva heter grunnlegeren av microsoft?</p> 
+                <img src="Media/Hovedkort.jpg" alt="bilde" height="200px"> <br>
+                <button class="riktig">Bill Gates</button> <br>
+                <button class="feil">Elon Musk</button> <br>
+                <button class="feil"> Bill Clinton</button> <br>
+                <button class="feil"> Elon Jackson</button> 
             </div>
         </div>
         <div class="spm">
@@ -64,15 +75,18 @@
 
         <div class="spm">
             <div class="center" id="score">
-                <ol id="idol">
-                    <h1>Highscore</h1>
-                    <h2>Navn</h2>
-                    <h2>Poengsum</H2>
-                    <h2>Plassering</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th> Navn</th>
+                            <th> Poengscore</th>
+                        </tr>
+                    </thead>
+                    <tbody id="liste">
                     
-
-
-                </ol>
+        
+                    </tbody>
+                </table>
             </div>
         </div>
 
@@ -80,10 +94,13 @@
     <p class="neste">Neste spørsmål ---></p>
     <p class="neste">Neste spørsmål ---></p>
     <p class="neste">Neste spørsmål ---></p>
+    <p class="neste">Neste spørsmål ---></p>
     <p class="neste">Fullfør ---></p>
     <p class="neste" id="highscore">Lagre Highscore</p> 
     <p id="hjem"><a href="index.html">Tilbake til forsiden</a></p>
     
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
     <script src="Script/script.js"></script>
 
 </body>

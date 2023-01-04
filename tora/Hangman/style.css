@@ -1,0 +1,82 @@
+body{
+    text-align: center;
+}
+#hjem{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+}
+.menydel:hover{
+    border: 0px;
+    background-color:rgb(210, 244, 255);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 6px rgba(35, 173, 278, 1);
+}
+#mittCanvas{
+    border: 1px black solid;
+}
+#hoved{
+    display: none;
+}
+.poenghjørne{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+#lagre_progresjon{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.knapp, #poeng, #mulige_poeng {
+    border-radius: 3px;
+    padding: 5px;
+    width: 200px;
+    font-size: medium;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 10px;
+    color: rgba(29, 29, 29, 0.92);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    transition: all 200ms ease-out;
+
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.knapp:hover{
+    border: 0px;
+    background-color:rgb(210, 244, 255);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 6px rgba(35, 173, 278, 1);
+}
+.skygge{
+    color: black;
+    display: none;
+    z-index: 1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.315)  ;
+}
+.slide{
+    background-color: white;
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+    border: 1px black solid;
+    border-radius: 10px;
+
+}
+a{
+    text-decoration: none;
+}

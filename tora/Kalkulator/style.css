@@ -1,0 +1,10 @@
+
+.kalkulator{
+    position:fixed;
+    margin: 2% 30% 2% 30%;
+    height: 73%;
+    width: 38%;
+    border: 1px black solid;
+    border-radius: 10px;
+    padding: 1%;
+}

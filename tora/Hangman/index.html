@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../alleBrukDenne.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../index.html">
+        <p class="knapp" id="hjem">Hjem</p>
+    </a>
+    <main>
+        <h1> Hangman</h1>
+        <div id="start">
+            <p id="velkommen"></p>
+            <div class="center">
+                <p class="knapp" id="startknapp">Start spillet</p>
+            </div>
+        </div>
+        <div id="hoved">
+        
+            <p id="sjanser">Antall sjanser igjen: 7</p>
+        
+        
+            <p id="riktige">Riktige bokstaver:</p>
+            <p id="gjettede">Gjettede bokstaver:</p>
+
+            <div class="tegning">
+                <canvas id="mittCanvas" width="500" height="300"></canvas>
+            </div>
+
+            <input id="bokstav" type="text" placeholder="gjett her">
+
+            <div class="center">
+                <p class="knapp" id="test">Test bokstav</p>
+            </div>
+            <div class="poenghjørne">
+                <div>
+                    <p id="poeng">Totalpoeng: 5</p>
+                </div>
+                <div>
+                    <p id="mulige_poeng">Mulige poeng: 5</p>
+                </div>
+
+            </div>
+        </div>
+
+        
+        
+
+    </main>
+    
+    <div class="skygge" id="igjenblokk">
+        <div class="slide">
+            <H1 id="taper">Ånei du tapte!</H1><br>
+            <p id="riktig_ord"></p>
+            <div class="center">
+                <p id="igjen" class="knapp">Prøv igjen</p>
+                <a href="../index.html"><p  class="knapp">Tilbake til hovedsiden</p></a>
+                
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
