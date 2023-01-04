@@ -12,7 +12,7 @@ let liv_display = document.getElementById("liv_display");
 let poeng = document.getElementById("poeng")
 let poeng_nr = 0
 let gameOver = document.getElementById("gameOver")
-let ja = document.getElementByID("ja")
+let ja = document.getElementById("ja")
 
 let playerName = window.localStorage.getItem("navnIT1fagdag")
 let total_poeng = window.localStorage.getItem("poengIT1fagdag")
