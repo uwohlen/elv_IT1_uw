@@ -1,6 +1,6 @@
 let mynter = 2;
 let mynter_veddet = 0;
-let liv = 1;
+let liv = 2;
 let motstander_text = document.getElementById("motstander_text");
 let etterRunde = document.getElementById("etterRunde");
 let eR = document.getElementById("eR");
