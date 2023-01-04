@@ -40,21 +40,24 @@
                     let i = 0;
                     let sitat = inputEl.value; //bruker elementet jeg definerte tidligere
 
-                    if (abc.indexOf(sitat[i])!==-1) { // hvis det er mellomrom
-                        while (i < sitat.length) {                
-                        let bokstav = sitat[i];
-                        let nybokstav = abc.indexOf(bokstav);
+                    while (i < sitat.length) {                
+                        if (abc.indexOf(sitat[i])!==-1) { // hvis det er mellomrom
+                            let bokstav = sitat[i];
+                            let nybokstav = abc.indexOf(bokstav);
+                            
+                            let nyindex = nybokstav - 1;
+                            if (nyindex === - 1) { // denne if setningen spesialbehandler a
+                                    nyindex = abc.length - 1;
+                                }
+                                tekst+=abc[nyindex]; //gjør nummerene om til bokstaver 
 
-                        let nyindex = nybokstav - 1;
-                        if (nyindex === - 1) { // denne if setningen spesialbehandler a
-                            nyindex = abc.length - 1;
+
+                               
                         }
-                        tekst+=abc[nyindex]; //gjør nummerene om til bokstaver 
-
-
+                        else {
+                            tekst+=" "
+                        }
                         i++;
-                        }
-
                     }
 
                     outputEl.innerHTML = (tekst); // skriver ut den kyrpterte koden
