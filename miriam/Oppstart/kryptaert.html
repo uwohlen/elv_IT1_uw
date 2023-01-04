@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            let abc="abcdefghijklmnopqrstuvwxyzæøå"
+            let sitat="njsjbn"
+            
+            i= 0;
+            
+            while (i<=sitat.length) {
+                let bokstav = sitat[i];
+                let nybokstav =abc.indexOf(bokstav);
+
+                let nyindex=nybokstav-1;
+                console.log(abc[nyindex]);
+
+                i++;
+            }
+        </script>
+    </body>
+</html>
