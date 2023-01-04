@@ -12,6 +12,7 @@ let liv_display = document.getElementById("liv_display");
 let poeng = document.getElementById("poeng")
 let poeng_nr = 0
 let gameOver = document.getElementById("gameOver")
+let ja = document.getElementByID("ja")
 
 let playerName = window.localStorage.getItem("navnIT1fagdag")
 let total_poeng = window.localStorage.getItem("poengIT1fagdag")
@@ -144,6 +145,7 @@ if (liv >= 0) {
 
   if (liv == 0){
     gameOver.className = "h-screen w-screen absolute bg-[#ED4337] flex justify-center items-center "
+    ja.innerHTML = playerName + ": " + total_poeng 
     console.log(playerName)
     console.log(total_poeng)
 }
