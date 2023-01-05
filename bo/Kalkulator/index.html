@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+    />
+  </head>
+  <body class="bg-gray-200 h-screen flex flex-col justify-center items-center">
+    <div class="w-1/3 border border-gray-400 rounded-lg p-4">
+      <form id="calculator-form">
+        <input
+    
+          id="equation"
+          class="w-full px-2 py-1 text-xl rounded-lg"
+        />
+        <div class="flex justify-between mt-4">
+          <button
+            type="button"
+            class="px-4 py-2 rounded-lg bg-gray-300 hover:bg-gray-400"
+            onclick="clearEquation()"
+          >
+            Clear
+          </button>
+          <button
+            type="submit"
+            class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white"
+          >
+            Calculate
+          </button>
+        </div>
+      </form>
+    </div>
+    <div id="result" class="mt-4 text-4xl font-bold"></div>
+    <script src="kalkulator.js"></script>
+  </body>
+</html>

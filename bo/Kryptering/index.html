@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kryptering</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <script src="encrypt.js"></script>
+  </head>
+  <body class="bg-gray-300">
+    <div class="container mx-auto p-6">
+      <h1 class="text-3xl font-bold text-gray-700">Caesar kryptering</h1>
+      <p class="text-gray-700">Skriv inn tekst til kryptering:</p>
+      <textarea id="input" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full leading-5 appearance-none"></textarea>
+      <br />
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="encrypt()">Krypter</button>
+      <br /><br />
+      <p class="text-gray-700">Kryptert tekst:</p>
+      <p id="output" class="text-gray-700"></p>
+    </div>
+  </body>
+</html>
