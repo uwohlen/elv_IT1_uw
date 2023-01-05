@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Krypteringsverktøy</h2>
+
+<!-- Skriv inn teksten du ønsker å kryptere eller dekryptere -->
+<p>Skriv inn teksten du ønsker å kryptere eller dekryptere:</p>
+<textarea id="input"></textarea>
+<br>
+
+<!-- Knapper for å kryptere og dekryptere teksten -->
+<button onclick="encrypt()">Krypter</button>
+<button onclick="decrypt()">Dekrypter</button>
+<br>
+<br>
+
+<!-- Vis resultatet av krypteringen eller dekrypteringen -->
+<p>Resultat:</p>
+<textarea id="output"></textarea>
+
+<script>
+function encrypt() {
+  // Hent input og lagre den i en variabel
+  var input = document.getElementById("input").value;
+
+  // Spør brukeren om krypteringspassordet
+  var password = prompt("Skriv inn krypteringspassordet:");
+
+  // Bruk en krypteringsalgoritme til å kryptere teksten med passordet
+  var encrypted = btoa(input +password); // btoa er en innebygd JavaScript-funksjon som krypterer en tekststreng ved å bruke base64-koding
+
+  // Sett resultatet i output-feltet
+  document.getElementById("output").value = encrypted;
+}
+
+function decrypt() {
+  // Hent input og lagre den i en variabel
+  var input = document.getElementById("input").value;
+
+  // Spør brukeren om dekrypteringspassordet
+  var password = prompt("Skriv inn dekrypteringspassordet:");
+
+  // Bruk en dekrypteringsalgoritme til å dekryptere teksten med passordet
+  var decrypted = atob(input); // atob er en innebygd JavaScript-funksjon som dekrypterer en tekststreng ved å bruke base64-koding
+
+  // Fjern passordet fra dekryptert tekst
+  decrypted = decrypted.substring(0, decrypted.length - password.length);
+
+  // Sett resultatet i output-feltet
+  document.getElementById("output").value = decrypted;
+}
+</script>
+
+</body>
+</html>
