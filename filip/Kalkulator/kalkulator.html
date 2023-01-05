@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta chartset="utf-8">
+    <title>KALKULATOR</title>
+    <style>
+        body {
+            background-color: #a9a9a9;
+            text-align: center;
+        }
+        
+        input {
+            border: 2px solid black;
+            border-radius: 6px;
+        }
+
+        #idOut {
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <p><a href="../index.html">Tilbake til Filip sin nettside.</a></p>
+    <h1>KALKULATOR</h1>
+    <input id="idInn" placeholder="Skriv regnestykke her">
+    <p id="idOut">Svar = </p>
+</body>
+<script>
+    let operator;
+    let tall1;
+    let tall2;
+    let sum;
+    let innE1 = document.getElementById("idInn")
+    let outE1 = document.getElementById("idOut")
+
+    innE1.addEventListener("keydown", innSum)
+
+    function innSum(event) {
+        if (event.keyCode === 13 && innE1.value !== null) {  //event.keyCode === 13 sjekker om det er enter som blir trykket, mens !== sørger for at det er noe i input feltet.
+            if (innE1.value.includes("-")) { // Her sjekker jeg etter operatoren brukt av personen.
+                operator = innE1.value.indexOf("-")
+                tall1 = Number(innE1.value.slice(0, operator)); // Her bruker jeg slice til å velge tallet mellom begynnelsen av inputen til operanden brukt.
+                tall2 = Number(innE1.value.slice(operator + 1, innE1.value.length)); // Mens her velger jeg tallet mellom operanden og slutten av inputen
+                sum = tall1 - tall2 // Her definnerer jeg en ny variabel som blir svaret på regnestykket som blir skrivet ned.
+            }
+
+            if (innE1.value.includes("+")) {
+                operator = innE1.value.indexOf("+")
+                tall1 = Number(innE1.value.slice(0, operator));
+                tall2 = Number(innE1.value.slice(operator + 1, innE1.value.length));
+                sum = tall1 + tall2
+            }
+
+            if (innE1.value.includes("/")) {
+                operator = innE1.value.indexOf("/")
+                tall1 = Number(innE1.value.slice(0, operator));
+                tall2 = Number(innE1.value.slice(operator + 1, innE1.value.length));
+                sum = tall1 / tall2
+            }
+
+            if (innE1.value.includes("*")) {
+                tegn = innE1.value.indexOf("*")
+                tall1 = Number(innE1.value.slice(0, operator)); 
+                tall2 = Number(innE1.value.slice(operator + 1, innE1.value.length));
+                sum = tall1 * tall2
+            }
+
+            if (innE1.value.includes("/0")) { // Her sjekker jeg om noen deler på null. Hadde jeg ikke hatt denne ville det stått "infinity" hvis jeg delte på null.
+                sum = "kan ikke dele på null"
+            }
+
+            outE1.innerHTML = "Svar = " + sum
+            tall1 = 0 // Viktig å om definere disse tilbake til null, sånn at man kan bruke kalkulatoren flere ganger uten at den blir feil.
+            tall2 = 0
+        }
+    }
+</script>
+
+</html>
