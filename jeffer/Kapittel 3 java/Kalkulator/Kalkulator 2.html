@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Kalkulator</title>
+ 
+  <link rel="stylesheet" href="Kalkulator 2.css">
+</head>
+<body>
+  <div class="calculator">
+    <h1>Kalkulator</h1>
+
+    <form>
+      <input type="text" id="input" placeholder="Skriv et regnestykke" />
+      <button type="button" onclick="calculate()">Regn ut</button>
+    </form>
+
+    <p id="output"></p>
+  </div>
+
+  <script>
+    function calculate() {
+ 
+      input = document.getElementById('input').value;
+      result = eval(input);
+
+      
+      document.getElementById('output').innerHTML = result;
+    }
+
+  
+    document.querySelector('form').addEventListener('submit', function(event) {
+
+      event.preventDefault();
+
+     
+      calculate();
+    });
+  </script>
+</body>
+</html>

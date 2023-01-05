@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>
+        Passord: <input type="text" id="passordInput">
+        <button type="button" onclick="checkPassword()">Klikk</button>
+    </h1>
+      
+    <p id ="Feil" style="display:none"> Feil passord, Prøv igjen</p>
+      <p id="hiddenText" style="display:none">Hallo</p>
+</body>
+      <script>
+      function checkPassword() {
+    
+        let password = document.getElementById("passordInput").value;
+      
+      
+
+        if (password == "12345") {
+
+          document.getElementById("hiddenText").style.display = "block";
+        } else {
+            document.getElementById("Feil").style.display="block";
+       
+
+        }
+      }
+      let hiddenTextEl = document.getElementById("hiddenText")
+      let passordInputEl = document.getElementById("passordInput"); 
+    navnEl.addEventListener("keydown",lagrefunk); 
+    function lagrefunk(event) {
+        if (event.keyCode === 13) { 
+            passordInputEl.style.display="inline"
+        localStorage.setItem("Navn",navnEl.value); 
+        } 
+    }
+            
+      </script>
+      
+</html>

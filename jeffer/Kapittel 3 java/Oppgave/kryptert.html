@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <script>
+    function decrypt() {
+        var encryptedText = "Hemmelig TEKST";
+        var password = prompt("Vennligst skriv passord:");
+        if (password == "Passord") {
+            document.getElementById("message").innerHTML = encryptedText;
+        } else {
+            alert("Feil passord");
+        }
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Kryptert Tekst</h1>
+    <p>Denne teksten er kryptert, skriv passord for å se den</p>
+    <button onclick="decrypt()">Åpne tekst</button>
+    <p id="message"></p>
+  </body>
+</html>
