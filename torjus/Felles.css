@@ -1,0 +1,33 @@
+.Menus {
+    position: relative;
+    top: 0;
+    display: inline;
+    margin-left: 4%;
+    cursor: pointer;
+    font-size:xx-large;
+}
+.MenuL {
+    text-decoration: none;
+    color: black;
+    background-color: aqua;
+    border: 0;
+    font-size: xx-large;
+}
+.Menu {
+    margin: auto;
+    width: 100%;
+    background-color: aqua;
+    height: 50px;
+}
+body {
+    background-color: rebeccapurple;
+    margin:0;
+}
+
+#Hovedside {
+    margin-left: 10px;
+    text-decoration: none;
+}
+button {
+    cursor: pointer;
+}
