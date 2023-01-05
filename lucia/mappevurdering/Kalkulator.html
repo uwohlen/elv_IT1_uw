@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kalkulator</title>
+        <link rel="stylesheet" href="../oppstart/alltid.css">
+        <link rel="stylesheet" href=""> 
+    </head>
+    <body>
+        <div id = "IdUtsende">
+            <h1>Kalkulator</h1>
+            </div>
+            <form id= "IdForm">
+                <input name = "inndata" type = "text" required>
+                <button name = "submit">Regn ut</button>
+            </form>
+            <p>Fasiten er: <span id = "IdTilbake"></span></p> <!-- Lite element -->
+
+        <script>
+            let formEl = document.getElementById("IdForm");
+            let tilbakeEl = document.getElementById("IdTilbake")
+        
+            formEl.addEventListener("submit", fasit); // addvent = hører etter når noe skjer - Så når du trykker på knappen for skjer funksjonen Sunfunk
+            formEl.inndata.focus();//inndata er data som mates inn i en datamaskin for behandling focus er fokus på elementet
+            function fasit(event){ //funksjonen kjører , event aktivere funskjonen 
+                event.preventDefault();
+                let tekst = formEl.inndata.value //la tekst være formen der tallene blir skrevet inn i, som er en verdi
+                
+                if (tekst.indexOf("+") != -1){ //dersom tallene har en verdi indexOF finner "+" så ikke ta -1
+                    let verdi = Number(formEl.inndata.value); //la verdi være nummer, som er tallene som blir skrevet inn
+                    let ipluss=tekst.indexOf("+"); //la ipluss være tekst (tallene som er skrevet inn) med et + tegn
+                    let tall1 = Number(tekst.substr(0,ipluss)); //la tall1 være nummer ta ut tallene fra 0 og ipluss
+                    let tall2 = Number(tekst.substr(ipluss+1)); //la tall2 = være nummeret fra ipluss pluss 1 
+                    tilbakeEl.innerHTML = tall1 + tall2; //print ut på på skjermen tall1 + tall2 
+                }
+            
+                else if(tekst.indexOf("-") != -1){
+                    let verdi = Number(formEl.inndata.value);
+                    let ipluss = tekst.indexOf("-");
+                    let tall1 = Number(tekst.substr(0,ipluss));
+                    let tall2 = Number(tekst.substr(ipluss+1));
+                    tilbakeEl.innerHTML = tall1 - tall2;
+                }
+
+                else if(tekst.indexOf("*")!=- 1){
+                    let verdi = Number(formEl.inndata.value);
+                    let ipluss = tekst.indexOf("*");
+                    let tall1 = Number(tekst.substr(0,ipluss));
+                    let tall2 = Number(tekst.substr(ipluss+1));
+                    tilbakeEl.innerHTML=tall1*tall2
+                }
+                
+                else if(tekst.indexOf("/") != -1){
+                    let verdi = Number(formEl.inndata.value);
+                    let ipluss = tekst.indexOf("/");
+                    let tall1 = Number(tekst.substr(0,ipluss));
+                    let tall2 = Number(tekst.substr(ipluss+1));
+                    tilbakeEl.innerHTML = tall1 / tall2;
+                }
+        }
+
+        </script>
+
+    </body>
+</html>

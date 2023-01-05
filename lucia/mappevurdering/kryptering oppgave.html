@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>koder</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../oppstart/alltid.css">
+    <link rel="stylesheet" href=""> 
+
+    <style>
+        #knapp1{
+             display: fixed; 
+          
+          
+        }
+        
+        #knapp2{
+             display: fixed; 
+          
+        }
+        #knapp3{
+             display: none; 
+             margin-left: 550px;
+          
+        }
+        #grid-1{
+            position: center;
+        }
+        #grid{
+            margin-top: 10%;
+            position: center;
+        }
+        #hintel{
+            display: none; 
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="grid-1">
+    <h1> Prøv å dekrypter denne mld</h1> <br>
+    <h2 id="kryptertmelding"> mêujw%iz%kêw%js%kns%ifl </h2>
+        <h3 id="hintel">det starter på B</h3>
+        <input id="kodeord">skriv inn kodeordet</input>
+        <br><br>
+        <button id="knapp3" onclick="funktre()">dekrypter den skjulte meldingen</button>
+    </div>
+    <BR></BR><BR></BR>
+    <div>
+        <input id="dekrypter">krypter meldingen</input>
+        <input id="kryptert">dekrypter</input>
+        <br><br><br>
+            <button id="knapp1" onclick="myfunk()">krypter</button>
+            <button id="knapp2" onclick="funktwo();">dekrypter</button>
+            <!-- <button id="knapp3" onclick="funktre()">Dekrypter</button> -->
+    </div>
+
+</body>
+<script>
+    let ukryptert=(""); // la kryptert være tom for å skrive
+    let i=0; // la variabelen i være 0 
+
+    while (i< ukryptert.length){ //i er mindre en ukryptert lenght 
+        console.log(ukryptert[i]); //flytt alle de tommene fletene til i 
+        i++; //pluss på 
+    }
+ 
+    
+    addEventListener("keydown",kodefunk);
+    let kodeordel = document.getElementById("kodeord")
+    function kodefunk(event) {
+        if (event.keyCode===13){
+            let hint = document.getElementById("hintel").style.display="block"
+        }
+        if (kodeordel.value+event.key === "BAMSE" || kodeordel.value === "LØSNING") { //key down kaller funksjonen kodefunk
+            let knappkrypterskjultmld =  document.getElementById("knapp3").style.display="block";
+        } 
+        
+     /*    else {
+            window.alert("feil kode")
+            let hint= document.getElementById("").innerHTML="hei på deg"; 
+        }
+ */
+
+           
+            // else{
+            // window.alert("sometext");
+            // }
+            /* else if {window.alert() */
+           /*  let knappkrypter = document.getElementById("knapp1").style.display="block";
+            let knappdekrypter= document.getElementById("knapp2").style.display="block"; */
+            //let kryptertmelding= document.getElementById("kryptertmelding").innerHTML="hei på deg"; 
+        
+    
+    }
+
+   
+    
+   
+    let n = 5
+
+    function myfunk() {
+        var txt = document.getElementById("dekrypter").value
+        var _txt = ""
+        for (let i = 0; i < txt.length; i++) { //for en en løkke , som gjør at hvis betingelsen er sann så skjer den neste koden
+            _txt += String.fromCharCode(txt[i].charCodeAt(0) + n) //som er å bevege framchartcode med 5
+         
+        } 
+        document.getElementById("kryptert").value = _txt
+    }
+
+    function funktwo() {
+        var txt = document.getElementById("kryptert").value
+        var _txt = ""
+        for (let i = 0; i < txt.length; i++) {
+            _txt += String.fromCharCode(txt[i].charCodeAt(0) - n)
+
+        } 
+        document.getElementById("dekrypter").value = _txt
+    }
+
+    function funktre() {
+        var txt = document.getElementById("kryptertmelding").innerHTML
+        var _txt = ""
+        for (let i = 0; i < txt.length; i++) {
+            _txt += String.fromCharCode(txt[i].charCodeAt(0) - n)
+        } 
+        document.getElementById("kryptertmelding").innerHTML = _txt
+    }
+
+ 
+
+
+    
+</script>
+</html>
