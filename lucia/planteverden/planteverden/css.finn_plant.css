@@ -1,0 +1,171 @@
+
+
+Meny for nettsiden 
+body{
+  margin:0;
+  font-family: Lucida Handwriting;
+  flex: 3;
+}
+
+a{
+  color: #000;     
+}
+
+.header{
+  font-family: Lucida Handwriting;
+  justify-content: center;
+  /*box-shadow: 1px 1px 1px 0 rgba(221, 233, 221, 0.679);*/
+  position:relative;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+  left: 0px;
+  width: 200px;
+  z-index:3;
+  border-right: #000;
+}
+
+.header ul{
+margin: 0;
+padding:0;
+list-style:none;
+overflow:hidden;
+background-color:rgba(221, 233, 221, 0.679);
+}
+
+.header ul a{
+  display:block;
+  outline:1px solid black;
+  padding:20px;
+  border-right:"";
+  border-left:"";
+  text-decoration:none;
+}
+
+.header ul a:hover{
+  background-color:rgb(213, 39, 39);
+}
+
+.header .logo{
+  float:left;
+  display:block;
+  font-size:2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.header .menu{
+  clear:both;
+  max-height:0;
+  transition:max-height .2s ease-out;
+}
+ 
+.header .menu-icon{
+  padding: 28px 20px;
+  position:relative;
+  float:left;
+  cursor:pointer;
+}
+
+.header .menu-icon .nav-icon{
+  background:#333;
+  display:block;
+  height:2px;
+  width:18px;
+  position:relative;
+  transition:background all .2s ease-out;
+}
+
+.header .menu-icon .nav-icon:before{
+  background:#333;
+  content:"";
+  display:block;
+  height:100%;
+  width:100%;
+  position:absolute;
+  transition:all .2 ease-out;
+  top:5px;
+}
+
+.header .menu-icon .nav-icon:after{
+  background:#333;
+  content:"";
+  display:block;
+  height:100%;
+  width:100%;
+  position:absolute;
+  transition:all .2 ease-out;
+  top:-5px;
+}
+
+.header .menu-btn{
+    display:none;
+}
+
+.header .menu-btn:checked ~.menu{
+  display:block;
+  max-height:240px;
+}
+
+/* HER KOMMER CONTAINERS */ 
+
+body{
+      background-image:url(""); 
+      background-size: 100%;
+      background-repeat: no-repeat;
+      margin: 0%;
+      }
+
+.hovedmeny {
+  border: rgba(255, 255, 255, 0.661) 5px solid;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(221, 233, 221, 0.679);
+  font-family: Lucida Handwriting;
+  }
+.titel { 
+  font-family: Lucida Handwriting;
+  flex: 3;
+       }
+
+.midtstill{
+  text-align: center;
+  }
+
+#quiz {
+    font-family: Lucida Handwriting;
+    text-align: center;
+    padding-bottom: 10px;
+    /* background-image:url("../planteverden/Plante-bilder/monstera.png");  */
+    height: 1000px;
+}
+
+#resultat{
+  background-color: pink;
+  text-decoration-style: dotted;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+.spm{
+    background-color: rgba(221, 233, 221, 0.679);
+    border-radius: 10%;
+    border-top: 10%;
+    border-bottom: 10%;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    margin: 35px;
+}
+.bilde {
+
+  border-color: blue solid 10px;
+  width:50%;
+  height:50%;
+  position:center;
+
+}
+
+
+#quiz > div > button, #quiz > button {
+  
+  font-size: 20px;
+}

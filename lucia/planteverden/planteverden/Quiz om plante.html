@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    
+    <title> Spillverden </title>
+    <!-- utf-8 gjør at vi kan bruke æ, ø og å -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="css.finn_plant.css">
+
+    <style>
+        body{
+            background-image: url("../planteverden/Plante-bilder/hawaii.png") ;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 0%;
+        }
+    
+
+    </style>
+</head>
+
+<body>
+    <div class="hovedmeny">
+        <header class="header">
+          <a href="Index.html" class="logo">Meny</a>
+          <input class="menu-btn" type="checkbox" id="menu-btn" />
+          <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+              <ul class="menu">
+                  <li><a href="../index.html">Mine prosjekter</a></li>
+                  <li><a href="bildegalleri.html">Bildegalleri</a></li>
+                  <li><a href="Plante.html"> Plante</a></li>
+                  <li><a href="Quiz om plante.html"> Quiz </a></li>
+              </ul>
+        </header>
+     
+      <div class="titel midtstill">
+        <marquee><h1> Ta en quiz om dine plante kunnskaper! </h1> </marquee>
+        <p id="brøktekst"> Hvor mange poeng klarer du?</p>
+        <p id="brøktekst"> Og her er et lengre avsnitt, med tekst fra</p>  
+        
+      </div>
+      </div>
+    
+  <div id="quiz">
+    
+    <h3 id="poeng">Poeng 0 av 4</h3>
+
+    <div class="spm">
+        <h1>Første spørsmål</h1>
+        <h2>hvor mange poeng kan man av å ta it som programfag</h2>
+    <p></p>
+        <button class="knappPåAlle" id="id1a">ingen poeng</button>
+        <button class="knappPåAlle" id="id1b">2</button>
+        <button class="riktig" id="id1c">0.5</button>
+        <button class="knappPåAlle" id="id1d">1</button>
+    </div>
+
+    <div class="spm">
+        <h1>Spørsmål 2</h1>
+        <h2>hvilken plante er dette</h2>
+        <img src="../planteverden/Plante-bilder/silver dragon.png" width ="336" height ="448"> <br> <div> trykk på svaret?</div>
+    <p></p>
+        <button class="riktig">silver dragon</button>
+        <button class="knappPåAlle" >green dragon</button>
+        <button class="knappPåAlle" >alocasia</button>
+        <button class="knappPåAlle" >colocasia</button>
+    </div>
+
+    <div class="spm">
+        <h1>Spørsmål 3</h1>
+        <h2>hvilken av påstandene er riktig</h2>
+    <p></p>
+        <button class="knappPåAlle" >Alle planter er grønne</button>
+        <button class="riktig" >Under omstedigheter kan ikke en plante dø</button>
+        <button class=knappPåAlle >Mennesket trenger ikke planter for å overleve</button>
+        <button class="knappPåAlle">Planter kan føle smerte</button>
+    </div>
+
+    <div class="spm">
+        <h1>Spørsmål 4</h1>
+        <h2>hva trenger planter for å overleve</h2>
+    <p></p>
+        <button onclick="totalpoeng ()" class="riktig"> sol</button>
+        <button class="riktig" >vann</button>
+        <button class="riktig">karbondioksid </button>
+        <button class="knappPåAlle">ingen</button>
+    </div>
+    <h3 id="idtotalpoeng">Poeng 0 av 4</h3>
+   
+</div>
+
+
+
+    
+<script>
+
+
+    let _feil = document.getElementsByClassName("knappPåAlle");
+     for (let i = 0; i < _feil.length; i++) { //knapp alle lager liste som går gjennom en løkke , som 
+        _feil[i].addEventListener("click",Feil)            
+    }
+
+    function Feil(){
+        this.innerHTML = "Feil :(";
+        this.style.backgroundColor = "red";
+        this.removeEventListener("click",Feil);
+
+        poengNed()
+
+    }
+    
+    let _riktig = document.getElementsByClassName("riktig");
+    for (let i = 0; i < _riktig.length; i++) { //knapp alle lager liste som går gjennom en løkke , som 
+        _riktig[i].addEventListener("click",Riktig)            
+    }
+    function Riktig(){
+        this.innerHTML = "Riktig, nice";
+        this.style.backgroundColor = "green";
+        this.removeEventListener("click",Riktig);
+
+        poengOpp()
+    }
+    
+    let totalpoengel= document.getElementById("idtotalpoeng")
+    let poengEl=document.getElementById("poeng");
+    let poeng=0;
+    function poengOpp() {
+        poeng ++;
+        poengEl.innerHTML = "Poeng " + poeng + " av 4";
+    } 
+    function poengNed (){
+        poeng --;
+        poengEl.innerHTML="Poeng"+ poeng+ " av 4"
+    }
+    function totalpoeng (){
+        totalpoengel.innerHTML= "Din totalsum er " + String(parseFloat(poeng)+1);
+
+    } 
+
+      
+   /*  let totalpoengel=document.getElementById("idtotalpoeng");
+    let totalpoeng =0;
+    function poengOpp() {
+        totalpoeng ++;
+        totalpoengel.innerHTML = "totalpoeng " + totalpoeng + " av 4";
+    } 
+    function poengNed (){
+        totalpoeng --;
+        totalpoengel.innerHTML="Poeng"+ totalpoeng+ " av 4"
+    } */
+
+    // let totalpoengel = getElementById("idtotalpoeng");
+    // function totalpoengel(){
+        
+
+    // }
+  
+
+
+</script>
+
+ 
+</body>
+</html>
+
+
