@@ -1,6 +1,6 @@
 .Menyer{
     display:flex;
-    flex-flow: rad wrap;
+    flex-flow: row wrap;
     justify-content: space-around;
 }
 .Menyer > div {
