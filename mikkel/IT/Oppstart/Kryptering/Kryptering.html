@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="no">
+<meta charset="UTF-8">
+<title>Min nettside</title>
+<link rel="stylesheet" href="../CssFil/Css.css"> 
+
+<body class="body">
+
+    <p class="TilbakeLink"><a class="Standard" href="../index.html">Tilbake</a></p>
+    <div class="Heading">
+        <h1 class="Overskrift">Prøv å dekrypter da vel</h1>
+    </div>
+
+    <h2 class="Standard">  Her kan du prøve deg opp til 3 ganger</h2>
+    <h2 id=Inputfelt class="Standard" style="font-size: 11px; color: rgb(25, 91, 150);"><input id="input" type="text" placeholder="Test krypteringen her..."> Ditt ord krypterer til: <h2 id="KryptText"></h2></h2>
+    <h2 class="Standard"> Prøv deretter å dekryptere dette: </h2>
+    <h3 class="Standard">  IGV FUEJQQNGF </h3>
+    <button id="hint">Få et hint</button>
+    <h3 id="Hinttext" style="visibility: hidden;">+2</h3>
+
+
+    <script>
+        let InputEl= document.getElementById("input");
+        InputEl.addEventListener("keydown", lagreInput);
+
+        let HintEl = document.getElementById("hint");
+        HintEl.addEventListener("click", vis);
+
+        function vis(){
+            document.getElementById("Hinttext").style.visibility="visible";
+        }
+
+        x=0;
+        let InputOrd=[];
+
+
+        function lagreInput(event){ 
+            if (event.keyCode===13){
+                x+=1;
+                krypter();
+                if (x>2){
+                    document.getElementById("Inputfelt").style.visibility="hidden";
+                }
+            }
+            if(event.keyCode===8){
+            }
+            else{
+                InputOrd.push(event.keyCode);
+            }
+        }
+        
+
+        function krypter(){
+            let p=0;
+            OutputOrd="";
+            while (p<(InputOrd.length)){
+                if (InputOrd[p]===32){
+                    OutputOrd+=String.fromCharCode(32);
+                }
+                else if (InputOrd[p]===13||InputOrd[p]===127){
+                }
+                else if (InputOrd[p]===222){
+                    OutputOrd+=String.fromCharCode(219);
+                }
+                else if (InputOrd[p]===186){
+                    OutputOrd+=String.fromCharCode(65);
+                }
+                else if (InputOrd[p]===219){
+                    OutputOrd+=String.fromCharCode(66);
+                }
+                else{
+                    console.log(InputOrd[p]);
+                    Code=((InputOrd[p])+2);
+                    OutputOrd+=String.fromCharCode(Code);
+                }
+                p++;
+            }            
+            document.getElementById("KryptText").innerHTML=OutputOrd;
+            InputOrd=[];
+        }
+
+        </script>
+    </body>
+</html>

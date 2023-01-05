@@ -1,0 +1,80 @@
+.body{
+    background-color: bisque;
+    text-align: center;
+}
+
+.body {
+    background-color:rgb(156, 189, 117);
+    text-align: center;
+}
+
+.Standard{
+    color:rgb(241, 241, 243);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Heading{
+    margin:auto;
+    width: 780px;
+    border: 2px;
+    border-color: rgb(7, 4, 4);
+    background-color: rgb(143, 175, 175);
+    border-radius: 13px;
+    border-style: solid;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.TilbakeLink{
+    position: fixed;
+    top: 3%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+
+.Bilde1{
+    position:absolute;
+    top:5px;
+    right: 5px;
+    border: 5px solid rgb(0, 0, 0);
+}
+
+.Bilde2{
+    position:absolute;
+    top:5px;
+    left: 5px;
+    border: 5px solid rgb(0, 0, 0);
+}
+
+.Bilde3{
+    position:absolute;
+    top:516px;
+    left: 5px;
+    border: 5px solid rgb(0, 0, 0);
+}
+
+.Bilde4{
+    position:absolute;
+    top:516px;
+    right: 5px;
+    border: 5px solid rgb(0, 0, 0);
+}
+
+.AvslutteCookies{
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}
+
+
+
+
+
+
+* {
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+.fagdag {
+    background-color: #28282B;
+    color: white;
+}

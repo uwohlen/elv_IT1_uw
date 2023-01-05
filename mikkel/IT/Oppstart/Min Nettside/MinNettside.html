@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="no">
+<title>MinNettside</title>
+<link rel="stylesheet" href="../CssFil/Css.css">
+
+    <body class="body">
+        <div class="Heading">
+            <h1>Lag dine egne trommer!</h1>
+        </div>
+
+        <p class="TilbakeLink"><a class="Standard" href="../index.html">Tilbake</a></p>
+        <h2>Trykk på A for klapp</h2>
+        <h2>Trykk på S for hi-hat</h2>
+        <h2>Trykk på D for kick</h2>
+        <h2>Trykk på F for snare</h2>
+        <h2>Trykk på G for open-hat</h2>
+        <h2>Trykk på H for perc</h2>
+        <script>
+            document.addEventListener("keydown", function(event) {
+            switch (event.key) {
+                case "a":
+                playSound("lyder/klapp.mp3");
+                break;
+                case "s":
+                playSound("lyder/hihat.mp3");
+                break;
+                case "d":
+                playSound("lyder/kick.mp3");
+                break;
+                case "f":
+                playSound("lyder/snare.mp3");
+                break;
+                case "g":
+                playSound("lyder/openhat.mp3");
+                break;
+                case "h":
+                playSound("lyder/perc.mp3");
+                break;
+            }
+            });
+
+
+            function playSound(src) {
+            var audio = new Audio(src);
+            audio.play();
+            }
+        </script>
+    </body>
+</html>
