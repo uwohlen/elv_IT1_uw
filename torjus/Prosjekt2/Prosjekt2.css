@@ -1,0 +1,55 @@
+.Menyer{
+    display:flex;
+    flex-flow: rad wrap;
+    justify-content: space-around;
+}
+.Menyer > div {
+    height: 18.33vw;
+    width: 25vw;
+    border: 2px solid black;
+    border-radius: 100%;
+    text-align: center;
+    background-color: #cccccc;
+    position: relative;
+    margin-bottom: 5vh;
+    cursor: pointer;
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+.test{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 225%;
+    font-weight: bold;
+}
+#Overskrift{
+    font-family: "Brush Script MT", "Brush Script";
+    font-size: 500%;
+    text-align: center;
+    margin-bottom: 3vh;
+}
+#Intro{
+    text-align: left;
+    width: 80vw;
+    margin-left: 10vw;
+    font-size: 150%;
+    margin-bottom: 10vh;
+}
+#Introoverskrift{
+    font-size: 200%;
+}
+.Bilde{
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+}
+#Land_med, #Skilt_Bil_Vei{
+    color: black;
+}
+#Orientering, #Veier{
+    color: darkorange;
+}
+#Spraak, #Spesielle_tips{
+    color: red;
+}
