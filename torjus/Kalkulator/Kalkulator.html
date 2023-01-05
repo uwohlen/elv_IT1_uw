@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <title>Kalkulator</title>
+        <link rel="Stylesheet" href="../Felles.css">
+        <style>
+            body {background-color: white;}
+        </style>
+    </head>
+    <body>
+        <div class="Menu">
+            <p id="Hovedside" class="Menus"><button id="Hovedsideb" class="MenuL" onclick="document.location='../index.html'">Hjem</button></p>                     <p id="Quiz" class="Menus"><button id="Quizb" class="MenuL" onclick="document.location='../Quiz/Quiz_om_datamaskinvaredeler.html'">Quiz</button></p>
+            <p id="Prosjekt2" class="Menus"><button id="Prosjekt2b" class="MenuL" onclick="document.location='../Prosjekt2/Prosjekt2.html'">Geoguessr</button></p><p id="Prosjekt3" class="Menus"><button id="Prosjekt3b" class="MenuL" onclick="document.location='../Prosjekt3/Prosjekt3.html'">Prosjekt 3</button></p>
+            <p id="Prosjekt4" class="Menus"><button id="Prosjekt4b" class="MenuL" onclick="document.location='../Kalkulator/Kalkulator.html'">Prosjekt 4</button></p><p id="Prosjekt5" class="Menus"><button id="Prosjekt5b" class="MenuL" onclick="document.location='../Prosjekt5/Prosjekt5.html'">Prosjekt 5</button></p>
+            <p id="Prosjekt6" class="Menus"><button id="Prosjekt6b" class="MenuL" onclick="document.location='../Prosjekt6/Prosjekt6.html'">Prosjekt 6</button></p>
+        </div>
+
+        <input id="idInn" type="text" placeholder="Skriv inn et simpelt regnestykke her">
+        <p>
+            Svaret blir : <br>
+            <span id="idSvar"></span>
+        </p>
+        <script>
+            let elInn = document.getElementById("idInn");
+            let elSvar = document.getElementById("idSvar");
+            elInn.focus();
+            elInn.addEventListener("keydown", innfunk)
+            function innfunk (event){
+                if(event.keyCode === 13){
+                    //let verdi = Number(elInn.value);
+                    let tekst = elInn.value;
+                    let tall1 = 0
+                    let tall2 = 0
+                    let ipluss = tekst.indexOf ("+");
+                    let iminus = tekst.indexOf ("-");
+                    let igange = tekst.indexOf ("*");
+                    let idele = tekst.indexOf ("/");
+                    
+                    if (tekst.indexOf ("+") !== (-1)){
+                        tall1 = Number(tekst.substr(0,ipluss));
+                        tall2 = Number(tekst.substr(ipluss+1));
+                        elSvar.innerHTML = tall1 + tall2;}
+                    else if (tekst.indexOf ("*") !== (-1)){
+                        tall1 = Number(tekst.substr(0, igange));
+                        tall2 = Number(tekst.substr(igange+1));
+                        console.log(tall1, tall2)
+                        elSvar.innerHTML = tall1 * tall2;
+                        }
+                    else if (tekst.indexOf ("/") !==(-1)){
+                        tall1 = Number(tekst.substr(0, idele));
+                        tall2 = Number(tekst.substr(idele+1));
+                        if (tall2 !== (0)){
+                            console.log("hei")
+                            elSvar.innerHTML = tall1 / tall2;}
+                    }
+                    else if (tekst.indexOf ("-") !==(-1)){
+                        tall1 = Number(tekst.substr(0,iminus));
+                        tall2 = Number(tekst.substr(iminus+1));
+                        elSvar.innerHTML = tall1 - tall2;
+                        }                    
+                    }
+                }
+            
+        </script>
+    </body>
+</html>
+<!--
+Lag en kalkulator-nettside. 
+Minstekrav
+	• Ett tekstfelt hvor du forventer at det skrives inn to tall med et regnetegn mellom
+	• Den skal minst kunne takle +, -, * og / mellom to tall.
+	• Er en del av "Mappa" til vurdering
+Andre versjoner av kalkulatorer kan du lage ETTER at du har lagd den beskrevet over.-->
+
