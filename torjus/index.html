@@ -3,17 +3,19 @@
         <head>
             <meta charset="UTF-8">
             <link rel="Stylesheet" href="Styleark.css">
+            <link rel="Stylesheet" href="Felles.css">
             <title>En Sau's nettside</title>
             <style>
-                #en {
+                /*#en {
                     left: 0;
                 }
                 #to {
-                    right: 0;
+                    margin-left: 10%;
                     display: inline-block;
                 }
                 #tre {
                     left: 0;
+                    display: inline-block;
                 }
                 #fire {
                     right: 0;
@@ -21,36 +23,12 @@
                 }
                 #fem {
                     left: 0;
+                    display: inline-block;
                 }
                 #seks {
                     right: 0;
                     display: inline-block;
-                }
-                .click {
-                    cursor: pointer;
-                    font-family: "Comic Sans MS", "Comic Sans";
-                    width: 45%;
-                    height: 20%;
-                    text-align: center;
-                    background-color: blueviolet;
-                }
-                .aclick {
-                    text-decoration: none;
-                    color: black;
-                }
-                #ubrukeligside {
-                    filter: blur(5px);
-                    z-index: 1;
-                }
-                #tilquiz {
-                    background-color: blueviolet;
-                    border: 0;
-                }
-                #felles {
-                    background-color: aqua ;
-                    border: 0;
-                    font-size: xx-large;
-                }
+                }*/
 
             </style>
         </head>
@@ -71,49 +49,59 @@
             <div id="ubrukeligside">
                 <div class="Menu">
                     <p id="Hovedside" class="Menus"><button id="Hovedsideb" class="MenuL" onclick="document.location='index.html'" disabled>Hjem</button></p> <p id="Quiz" class="Menus"><button id="Quizb" class="MenuL" onclick="document.location='Quiz/Quiz_om_datamaskinvaredeler.html'" disabled>Quiz</button></p>
-                    <p id="Prosjekt3" class="Menus"><button id="Prosjekt3b" class="MenuL" onclick="document.location='Prosjekt3.html'" disabled>Prosjekt 3</button></p><p id="Prosjekt4" class="Menus"><button id="Prosjekt4b" class="MenuL" onclick="document.location='Prosjekt4.html'" disabled>Prosjekt 4</button></p>
-                    <p id="Prosjekt5" class="Menus"><button id="Prosjekt5b" class="MenuL" onclick="document.location='Prosjekt5.html'" disabled>Prosjekt 5</button></p><p id="Prosjekt6" class="Menus"><button id="Prosjekt6b" class="MenuL" onclick="document.location='Prosjekt6.html'" disabled>Prosjekt 6</button></p>
+                    <p id="Prosjekt2" class="Menus"><button id="Prosjekt2b" class="MenuL" onclick="document.location='Prosjekt2/Prosjekt2.html'" disabled>Geoguessr</button></p><p id="Prosjekt3" class="Menus"><button id="Prosjekt3b" class="MenuL" onclick="document.location='Prosjekt3/Prosjekt3.html'" disabled>Kryptering</button></p>
+                    <p id="Prosjekt4" class="Menus"><button id="Prosjekt4b" class="MenuL" onclick="document.location='Kalkulator/Kalkulator.html'" disabled>Kalkulator</button></p><p id="Prosjekt5" class="Menus"><button id="Prosjekt5b" class="MenuL" onclick="document.location='Prosjekt5.html'" disabled>Prosjekt 5</button></p>
+                    <p id="Prosjekt6" class="Menus"><button id="Prosjekt6b" class="MenuL" onclick="document.location='Prosjekt6.html'" disabled>Prosjekt 6</button></p>
                 </div>
                 <h1 id="hoved">Velkommen til paradis</h1>
-                <button id="felles" onclick="document.location='../index.html'" disabled>Tilbake til fellessiden</button>
-                <p id="AvsluttCookies">Avslutt Cookies</p>
-                <div id="en" class="click">
-                    <button id="tilquiz"class="aclick" onclick="document.location='Quiz/Quiz_om_datamaskinvaredeler.html'" disabled>
-                    <h1>Er du like smart som Stian? Ta quizzen her</h1>
-                    <img src="Bilder/Stian_Angel.jpg" width="100%" height="100%" alt="En mann som bygger PC">
-                    </button>
+                <div id="flex">
+                    <div id="en" class="click">
+                        <button id="tilquiz"class="aclick" onclick="document.location='Quiz/Quiz_om_datamaskinvaredeler.html'" disabled>
+                        <h1>Er du like smart som Stian? Ta quizzen her</h1>
+                        <img id="Bilde1" src="Bilder/Stian_Angel.jpg" width="100%" height="100%" alt="En mann som bygger PC">
+                        </button>
+                    </div>
+                    <div id="to" class="click">
+                        <button id="tilprosjekt2"class="aclick" onclick="document.location='Prosjekt2/Prosjekt2.html'" disabled> 
+                        <h1>Tips til geoguessr</h1>
+                        <img id="Bilde2" src="Prosjekt2/bilder/geoguessr.jpg" alt="animert verden">
+                        </button> 
+                    </div>
+                  <div id="tre" class="click">
+                        <!-- <button id="tilprosjekt3"class="aclick" onclick="document.location='Prosjekt3/Prosjekt3.html'" disabled> -->
+                        <h1>Prosjekt 3</h1>
+                        <!--  <img src="Prosjekt3/Bilder/Prosjekt3.jpg" width="100%" height="100%" alt="Prosjekt3"> -->
+                        <!--  </button> -->
+                    </div>
+                     <div id="fire" class="click">
+                        <!-- <button id="tilprosjekt4"class="aclick" onclick="document.location='Prosjekt4/Prosjekt4.html'" disabled> -->
+                        <h1>Prosjekt 4</h1>
+                        <!--  <img src="Prosjekt4/Bilder/Prosjekt4.jpg" width="100%" height="100%" alt="Prosjekt4"> -->
+                        <!--  </button> -->
+                     </div>
+                     <div id="fem" class="click">
+                        <!-- <button id="tilprosjekt5"class="aclick" onclick="document.location='Prosjekt5/Prosjekt5.html'" disabled> -->
+                        <h1>Prosjekt 5</h1>
+                        <!--  <img src="Prosjekt5/Bilder/Prosjekt5.jpg" width="100%" height="100%" alt="Prosjekt5"> -->
+                        <!--  </button> -->
+                     </div>
+                    <div id="seks" class="click">
+                        <!-- <button id="tilprosjekt6"class="aclick" onclick="document.location='Prosjekt6/Prosjekt6.html'" disabled> -->
+                        <h1>Prosjekt 6</h1>
+                        <!--  <img src="Prosjekt6/Bilder/Prosjekt6.jpg" width="100%" height="100%" alt="Prosjekt6"> -->
+                        <!--  </button> -->
+                    </div>
                 </div>
-                <div id="to" class="click">
-                    <!-- <a href="Prosjekt2.html" class="aclick"> -->
-                    <h1>Prosjekt 2</h1>
-                    <!--  <img src="Prosjekt2.jpg" width="100%" height="100%" alt="Prosjekt2"> -->
-                    <!--  </a> -->
-                </div>
-                <div id="tre" class="click">
-                    <!-- <a href="Prosjekt2.html" class="aclick"> -->
-                    <h1>Prosjekt 3</h1>
-                    <!--  <img src="Prosjekt2.jpg" width="100%" height="100%" alt="Prosjekt2"> -->
-                    <!--  </a> -->
-                </div>
-                 <div id="fire" class="click">
-                    <!-- <a href="Prosjekt2.html" class="aclick"> -->
-                    <h1>Prosjekt 4</h1>
-                    <!--  <img src="Prosjekt2.jpg" width="100%" height="100%" alt="Prosjekt2"> -->
-                    <!--  </a> -->
-                 </div>
-                 <div id="fem" class="click">
-                    <!-- <a href="Prosjekt2.html" class="aclick"> -->
-                    <h1>Prosjekt 5</h1>
-                    <!--  <img src="Prosjekt2.jpg" width="100%" height="100%" alt="Prosjekt2"> -->
-                    <!--  </a> -->
-                 </div>
-                <div id="seks" class="click">
-                    <!-- <a href="Prosjekt2.html" class="aclick"> -->
-                    <h1>Prosjekt 6</h1>
-                    <!--  <img src="Prosjekt2.jpg" width="100%" height="100%" alt="Prosjekt2"> -->
-                    <!--  </a> -->
+                <div class="post-side">
+                    <div>Utvikler: Torjus Opheim Sauar</div>
+                    <div></div>
+                    <div>Sist oppdatert: 18.10.22</div> 
+                    <div><p id="felles" onclick="document.location='../index.html'" disabled>Tilbake til fellessiden</p></div>
+                    <div><p id="AvsluttCookies">Avslutt Cookies</p></div>
+                    <div>Utviklerdato: 30.09.22</div>
                 </div>
             </div>
+
             <script>
                 let Elubrukeligside = document.getElementById("ubrukeligside");
                 let ElCookies = document.getElementById("Cookies");
@@ -141,11 +129,17 @@
                     ElCookies.style.display= "none";          
                     document.getElementById("Hovedsideb").disabled = false;
                     document.getElementById("Quizb").disabled = false;
+                    document.getElementById("Prosjekt2b").disabled = false;
                     document.getElementById("Prosjekt3b").disabled = false;
                     document.getElementById("Prosjekt4b").disabled = false;
                     document.getElementById("Prosjekt5b").disabled = false;
                     document.getElementById("Prosjekt6b").disabled = false;
                     document.getElementById("tilquiz").disabled = false;
+                    document.getElementById("tilprosjekt2").disabled = false;
+ //                   document.getElementById("tilprosjekt3").disabled = false;
+   //                 document.getElementById("tilprosjekt4").disabled = false;
+     //               document.getElementById("tilprosjekt5").disabled = false;
+       //             document.getElementById("tilprosjekt6").disabled = false;
                     document.getElementById("felles").disabled = false;
                     Elubrukeligside.style.filter = "blur(0px)";
                 } 
@@ -160,11 +154,17 @@
                     ElCookies.style.display = "none";
                     document.getElementById("Hovedsideb").disabled = false;
                     document.getElementById("Quizb").disabled = false;
-                    document.getElementById("Prosjekt3").disabled = false;
-                    document.getElementById("Prosjekt4").disabled = false;
-                    document.getElementById("Prosjekt5").disabled = false;
-                    document.getElementById("Prosjekt6").disabled = false;
+                    document.getElementById("Prosjekt2b").disabled = false;
+                    document.getElementById("Prosjekt3b").disabled = false;
+                    document.getElementById("Prosjekt4b").disabled = false;
+                    document.getElementById("Prosjekt5b").disabled = false;
+                    document.getElementById("Prosjekt6b").disabled = false;
                     document.getElementById("tilquiz").disabled = false;
+                    document.getElementById("tilprosjekt2").disabled = false;
+  //                  document.getElementById("tilprosjekt3").disabled = false;
+    //                document.getElementById("tilprosjekt4").disabled = false;
+      //              document.getElementById("tilprosjekt5").disabled = false;
+        //            document.getElementById("tilprosjekt6").disabled = false;
                     document.getElementById("felles").disabled = false;
                     Elubrukeligside.style.filter = "blur(0px)";
                 }
@@ -176,11 +176,17 @@
                         localStorage.setItem("CookiesGodkjentForIndex", "Ja");
                         document.getElementById("Hovedsideb").disabled = false;
                         document.getElementById("Quizb").disabled = false;
-                        document.getElementById("Prosjekt3").disabled = false;
-                        document.getElementById("Prosjekt4").disabled = false;
-                        document.getElementById("Prosjekt5").disabled = false;
-                        document.getElementById("Prosjekt6").disabled = false;
+                        document.getElementById("Prosjekt2b").disabled = false;
+                        document.getElementById("Prosjekt3b").disabled = false;
+                        document.getElementById("Prosjekt4b").disabled = false;
+                        document.getElementById("Prosjekt5b").disabled = false;
+                        document.getElementById("Prosjekt6b").disabled = false;
                         document.getElementById("tilquiz").disabled = false;
+                        document.getElementById("tilprosjekt2").disabled = false;
+//                        document.getElementById("tilprosjekt3").disabled = false;
+  //                      document.getElementById("tilprosjekt4").disabled = false;
+    //                    document.getElementById("tilprosjekt5").disabled = false;
+      //                  document.getElementById("tilprosjekt6").disabled = false;
                         document.getElementById("felles").disabled = false;
                         Elubrukeligside.style.filter = "blur(0px)";
                 }
