@@ -1,0 +1,45 @@
+body{
+    color: rgb(0, 0, 0);
+    background-color:rgb(194, 188, 189);
+}
+.text{
+    margin-left: 5%
+}
+.text2{
+    margin-left: 5%;
+}
+#idImg1{
+    display: none;
+}
+#idImg2{
+    display: none;
+}
+#idImg3{
+    display: none;
+}
+#idImg4{
+    display: none;
+}
+/* #idimg5{
+    background-image 
+} */
+
+.adobe logo{
+    display: inline-block; 
+
+}
+body{
+
+font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+}
+
+button{
+    cursor: pointer;
+
+}
+.button:hover{
+    background-color: rgb(13, 69, 109);
+    transition: all;
+    transition-duration: 0.3s;
+}
