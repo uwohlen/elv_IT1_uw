@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta chartset="utf-8">
+    <title>Krypterer</title>
+</head>
+
+<body>
+  <p>kan anbefale å sjekke console...</p>
+  <br><br><br>
+  <a href="../index.html">Tilbake til Filip sin nettside.</a>
+</body>
+<script>
+
+
+let navn = "gjmjq";
+let alfa = "abcdefghijklmnopqrstuvwxyz";
+let lostNavn = ""; // Vil egentlig skrive "løstNavn" men kan ikke bruke ø
+
+for (let i = 0; i < navn.length; i++) { // Her begynner jeg med å definnere i, si at programmet slutter nå i er større enn lengden til det krypterte navnet, og få i til å øke hver runde
+  let alfaBokstav = navn[i];
+  let alfaIndex = alfa.indexOf(alfaBokstav);
+  let nesteIndex = alfaIndex - 1;
+  let navnBokstav = alfa[nesteIndex];
+  lostNavn += navnBokstav;
+}
+
+console.log("kryptert navn:", navn)
+console.log("ukryptert navn:", lostNavn); // "Filip "
+
+</script>
+</html>
