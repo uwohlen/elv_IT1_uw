@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Kalkulator</title>
+    </head>
+  <body> 
+      <input type="text" id="input1" />
+      <input type="text" id="input2" />
+      <br>
+      <br>
+      <input type="radio" name="operator" value="pluss" checked> Pluss
+      <br>
+      <input type="radio" name="operator" value="minus"> Minus
+      <br>
+      <input type="radio" name="operator" value="ganger"> Ganger
+      <br>
+      <input type="radio" name="operator" value="deler"> Deler
+      <br>
+      <br>
+      <input type="button" value="Calculate" onclick="calculate()" />
+
+    <script>
+      function calculate() {
+        // Henter verdier fra input feltene
+        var input1 = document.getElementById("input1").value;
+        var input2 = document.getElementById("input2").value;
+
+        // Konverterer strings til tall
+        var num1 = Number(input1);
+        var num2 = Number(input2);
+
+        // Henter verdien til den valgt operatoren
+        var operator = document.querySelector('input[name="operator"]:checked').value;
+
+        // Definerer en variabel for resultater
+        var result;
+
+        // Utfører kalkulasjonen basert på operatoren.
+        if (operator === "pluss") {
+          result = num1 + num2;
+        } else if (operator === "minus") {
+          result = num1 - num2;
+        } else if (operator === "ganger") {
+          result = num1 * num2;
+        } else if (operator === "deler") {
+          result = num1 / num2;
+        }
+
+        // Viser resultatet
+        alert(result);
+          }
+    </script>
+  </body>
+</html>
