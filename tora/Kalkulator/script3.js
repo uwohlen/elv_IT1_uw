@@ -15,7 +15,6 @@ function lagrefunk(event) {
 
 function kalkuler(input) {
     let plussminusdeler = input.split(/([+-])/g);
-    console.log(plussminusdeler)
     let ledd = plussminusdeler[0]
     let gangedele = ledd.split(/([/*])/g); 
     let result = parseFloat(gangedele[0])
@@ -42,18 +41,13 @@ function kalkuler(input) {
     for (let i = 1; i < plussminusdeler.length; i += 2) {
         let operator = plussminusdeler[i];
         let operand = plussminusdeler[i + 1];
-        console.log(operator)
-        console.log(operand)
        
-        ledd = plussminusdeler[i+1]
-        let gangedele = ledd.split(/([/*])/g); 
-        console.log("gangedelr",gangedele)
+        let gangedele = operand.split(/([/*])/g); 
         let delresult = parseFloat(gangedele[0])
 
         for(let i=1;i<gangedele.length;i+=2){
             let minioperator = gangedele[i];
             let minioperand = parseFloat(gangedele[i + 1]);
-            console.log("mini",minioperator)
             if (minioperator === '*') {
                 delresult *= minioperand;
             } else if (minioperator === '/') {
