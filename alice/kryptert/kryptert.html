@@ -40,29 +40,25 @@
                     let i = 0;
                     let sitat = inputEl.value; //bruker elementet jeg definerte tidligere
 
-                    while (i < sitat.length) {                
-                        if (abc.indexOf(sitat[i])!==-1) { // hvis det er mellomrom
-                            let bokstav = sitat[i];
-                            let nybokstav = abc.indexOf(bokstav);
-                            
-                            let nyindex = nybokstav - 1;
-                            if (nyindex === - 1) { // denne if setningen spesialbehandler a
-                                    nyindex = abc.length - 1;
-                                }
-                                tekst+=abc[nyindex]; //gjør nummerene om til bokstaver 
+                    if (abc.indexOf(sitat[i])!==-1) { // hvis det er mellomrom (funker ikke)
+                        while (i < sitat.length) {                
+                        let bokstav = sitat[i];
+                        let nybokstav = abc.indexOf(bokstav);
+
+                        let nyindex = nybokstav - 1; //forskyver en til venstre
+                        if (nyindex === - 1) { // denne if setningen spesialbehandler a
+                            nyindex = abc.length - 1;
+                        }
+                        tekst+=abc[nyindex]; //gjør nummerene om til bokstaver 
 
 
-                               
-                        }
-                        else {
-                            tekst+=" "
-                        }
                         i++;
+                        }
+
                     }
 
                     outputEl.innerHTML = (tekst); // skriver ut den kyrpterte koden
 
-                    // lage ny funksjon og input felt og spesial behandle å 
                 }
             }
 
@@ -73,7 +69,8 @@
                     let j = 0;
                     let sit = input2El.value; //bruker elementet jeg definerte tidligere
 
-                    while (j < sit.length) {                
+                    if (abc.indexOf(sitat[i])!==-1) {
+                        while (j < sit.length) {                
                         let bokstav2 = sit[j];
                         let nybokstav2 = abc.indexOf(bokstav2);
 
@@ -85,8 +82,9 @@
 
 
                         j++;
+                        }
                     }
-
+                 
                     output2El.innerHTML = (text);
                 }
             }
