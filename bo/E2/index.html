@@ -1,1 +1,73 @@
-DOCTYPE=html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level 2</title>
+    <!--><link rel="stylesheet" href="snake.css"></!-->
+    <script src="./snake.js"></script>
+  </head>
+  <body class="bg-[#28282B]">
+    <div class="hidden" id="modal">
+      <div
+        id="modalBoks"
+        class="h-0 w-0 bg-white rounded-3xl text-xl text-center flex flex-col justify-center items-center pt-3 transition ease-in-out delay-150"
+      >
+        <p id="modalTekst"></p>
+        <div class="flex flex-row justify-between w-[385px] pt-20">
+          <a
+            class="h-[35px] w-[180px] bg-gray-300 rounded-xl text-base flex justify-center items-center text-center"
+            onclick="startSpill()"
+          >
+            Prøv på nytt
+          </a>
+          <a
+            class="h-[35px] w-[180px] bg-gray-300 rounded-xl text-base flex justify-center items-center text-center"
+            href="../E3/index.html"
+            onclick="nesteSpill()"
+            >Neste spill</a
+          >
+        </div>
+      </div>
+    </div>
+    <div id="blurSkjerm">
+      <h1 class="text-2xl text-white font-sans">Velkommen til level 2, <span id="navn"></span></h1>
+    <h2 class="text-white font-sans">Her skal du spille snake</h2>
+    <div class="flex flex-row justify-evenly mt-[30px]">
+      <canvas id="board"></canvas>
+      <div class="flex flex-col text-left">
+        <h3 class="text-white font-sans text-xl">
+          0-3 i score gir deg -1 poeng
+        </h3>
+        <h3 class="text-white font-sans text-xl">
+          4-7 i score gir deg 0 poeng
+        </h3>
+        <h3 class="text-white font-sans text-xl">
+          8-11 i score gir deg 1 poeng
+        </h3>
+        <h3 class="text-white font-sans text-xl">
+          12-15 i score gir deg 2 poeng
+        </h3>
+        <h3 class="text-white font-sans text-xl">
+          16-19 i score gir deg 3 poeng
+        </h3>
+        <h3 class="text-white font-sans text-xl">
+          20-23 i score gir deg 4 poeng
+        </h3>
+        <h3 class="text-white font-sans text-xl">
+          24+ i score gir deg 1 poeng
+        </h3>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <div class="flex text-left w-[150px] mt-[20px]">
+        <h3 class="text-white font-sans text-4xl">
+          Score: <span id="score">0</span>
+        </h3>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
