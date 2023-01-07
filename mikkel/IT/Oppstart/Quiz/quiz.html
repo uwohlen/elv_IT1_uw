@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="no">
+<meta charset="UTF-8">
+<title>quiz</title>
+<link rel="stylesheet" href="../Cssfil/Css.css">
+
+
+
+<body class="body">
+
+   
+    <div class="SpørsmålCookies" id="Cookies">
+        <h2 class="Standard"> Denne nettsiden vil lagre informasjon på datamaskinen din</h2>
+        <button id="godkjenning">OK</button>
+
+    </div>
+
+    <div id="brukernavnspørsmål" class="Brukernavn">
+       <p class="Standard"><input id="navn" type="text" placeholder="Skriv navnet ditt her"><br> /Enter</p>
+    </div>
+
+ 
+
+    <div id="Nettside" style="width: 1300px;">
+        <button class="AvslutteCookies" id="AvsluttCookies">Avslutt alle cookies</button>
+        <div class="Heading">
+            <h1 class="Overskrift">Velkommen til quiz <span id="Navn"></span>!</h1>
+        </div>
+
+ 
+
+        <h1 class="PoengSkrift">Poeng =    
+        <button id="SCORE" class="SCORE">     0     </button></h1>
+        <p class="TilbakeLink"><a class="Standard" href="../index.html">Tilbake</a></p>
+        <div id="Spørsmål1">
+            <h2 class="Standard">Spørsmål 1. Hva står CPU for?</h2>
+            <button id="S1A1" class="Black">     Central Processing Unit       </button>
+            <button id="S1A2" class="Black">     Controll Processing Unit      </button>
+            <button id="S1A3" class="Black">     Cold Problem Unit             </button>
+            <button id="S1A4" class="Black">     Crease Problem unit           </button><br>
+            <br>
+
+            <img src="Bilder/MicrosoftTeams-image (10).png" 
+                width="400"
+                height="500" />
+
+       
+        <div id="Spørsmål2" style="visibility: hidden;">
+            <h2 class="Standard">Spørsmål 2. Hvordan kjøler vi ned skole-pc'en?</h2>
+            <button id="S2A1" class="Black">     Fryserelement             </button>
+            <button id="S2A2" class="Black">     Kjøleveske                </button>
+            <button id="S2A3" class="Black">     Vifter                    </button>
+            <button id="S2A4" class="Black">     Vi må ikke kjøle ned pc    </button><br>´
+            <br>
+
+        </div>
+
+   
+        <div id="Spørsmål3" style="visibility: hidden;">
+            <img src="Bilder/MicrosoftTeams-image (8).png"
+                width="400"
+                height="500" />
+            <h2 class="Standard">Spørsmål 3. Hva styrer hvor mange programmer du kan ha åpne samtidig?</h2>
+            <button id="S3A1" class="Black">     CPU           </button>
+            <button id="S3A2" class="Black">     Skjermkort    </button>
+            <button id="S3A3" class="Black">     Viftene       </button>
+            <button id="S3A4" class="Black">     RAM           </button><br>
+            <br>
+        </div>
+
+
+        <div id="Spørsmål4" style="visibility: hidden;">
+            <img src="Bilder/MicrosoftTeams-image (7).png" 
+                width="400"
+                height="500" />
+            <h2 class="Standard">Spørsmål 4. Hvor hadde man filmer lagret før netflix?</h2>
+            <button id="S4A1" class="Black">     E-post     </button>
+            <button id="S4A2" class="Black">     CD         </button>
+            <button id="S4A3" class="Black">     Brevdue    </button>
+            <button id="S4A4" class="Black">     Hardisk    </button><br>
+            <br>
+        </div>
+
+
+        <div id="Bilde4" style="visibility: hidden; ">
+            <img src="Bilder/MicrosoftTeams-image (9).png" 
+                width="400"
+                height="500" />
+        </div>
+    </div>
+
+    <h1 id="Ferdig" class="Score"> Gratulerer! du fikk <span id=Poeng2></span> av 4 poeng</h1>
+
+    <script>
+
+ 
+
+        let brukernavnspørsmålEl = document.getElementById("brukernavnspørsmål");
+        let KnappAvsluttCookiesEl = document.getElementById("AvsluttCookies");
+        let GodkjenningEl = document.getElementById("godkjenning");
+        let Spørsmål1El = document.getElementById("Spørsmål1");
+        let Spørsmål2El = document.getElementById("Spørsmål2");
+        let Spørsmål3El = document.getElementById("Spørsmål3");
+        let Spørsmål4El = document.getElementById("Spørsmål4");  
+        let nettsideEl = document.getElementById("Nettside");  
+        let CookiesEl = document.getElementById("Cookies");
+        let Poeng2El = document.getElementById("Poeng2");
+        let Bilde4El = document.getElementById("Bilde4");
+        let FerdigEl = document.getElementById("Ferdig");
+        let HilsenEl = document.getElementById("Navn");
+        let Poeng = document.getElementById("SCORE");
+        let OmMegEl=document.getElementById("OmMeg");
+        let NavnEl=document.getElementById("navn");
+        let HjemEl=document.getElementById("Hjem");
+        let QuizEl=document.getElementById("Quiz");
+
+      
+
+        if(localStorage.getItem("CookiesLagring")!=="OK"){
+                CookiesEl.style.display="inline-block";
+                brukernavnspørsmålEl.style.display="none";
+                nettsideEl.style.display="none";
+                GodkjenningEl.addEventListener("click", LagreCookies);
+            }
+
+ 
+
+        else{
+            VisNettside();
+        }
+
+ 
+
+        function LagreCookies(){
+            localStorage.setItem("CookiesLagring","OK");
+            Brukernavn();
+        }
+
+ 
+
+        function Brukernavn(){
+            CookiesEl.style.display = "none";
+            nettsideEl.style.display = "none";
+            brukernavnspørsmålEl.style.display="inline-block";
+            NavnEl.addEventListener("keydown", lagreBruker);
+        }
+
+ 
+
+        function lagreBruker(event){
+            console.log(NavnEl.value);
+            if (event.keyCode=== 13){
+                localStorage.setItem("Brukernavn", NavnEl.value);
+                VisNettside();
+
+            }
+
+        }
+
+ 
+
+        function VisNettside(){
+            HilsenEl.innerHTML=" " + localStorage.getItem("Brukernavn");
+            CookiesEl.style.display="none";
+            brukernavnspørsmålEl.style.display="none";
+            nettsideEl.style.display = "inline-block";
+        }
+
+ 
+
+        poeng=0;
+
+ 
+
+        let KnappS1A1=document.getElementById("S1A1");
+        KnappS1A1.addEventListener("click",riktig1)
+        function riktig1() {
+            KnappS1A1.innerHTML="Riktig"
+            KnappS1A1.style.backgroundColor = 'green';
+            poeng++
+            Poeng.innerHTML=(poeng)
+            KnappS1A1.disabled = true;
+            Spørsmål2El.style.visibility = "visible";
+        }  
+
+ 
+
+        let KnappS1A2=document.getElementById("S1A2");
+        KnappS1A2.addEventListener("click",feil1)
+        function feil1() {
+            KnappS1A2.innerHTML="Feil"
+            KnappS1A2.style.backgroundColor = 'red';
+            poeng--
+            Poeng.innerHTML=(poeng)
+            KnappS1A2.disabled = true;
+
+        }
+
+
+
+        let KnappS1A3=document.getElementById("S1A3");
+        KnappS1A3.addEventListener("click",feil2)
+        function feil2() {
+            KnappS1A3.innerHTML="Feil"
+            KnappS1A3.style.backgroundColor = 'red';
+            poeng--
+            Poeng.innerHTML=(poeng)
+            KnappS1A3.disabled = true;
+        }
+
+
+
+        let KnappS1A4=document.getElementById("S1A4");
+        KnappS1A4.addEventListener("click",feil3)
+        function feil3() {
+            KnappS1A4.innerHTML="Feil"
+            KnappS1A4.style.backgroundColor = 'red';
+            poeng--
+            Poeng.innerHTML=(poeng)
+            KnappS1A4.disabled = true;
+        }
+
+
+
+        let KnappS2A1=document.getElementById("S2A1");
+        KnappS2A1.addEventListener("click",feil5)
+        function feil5() {
+            KnappS2A1.innerHTML="Feil"
+            KnappS2A1.style.backgroundColor = 'red';
+            poeng--
+            Poeng.innerHTML=(poeng)
+            KnappS2A1.disabled = true;
+        }  
+
+
+
+        let KnappS2A2=document.getElementById("S2A2");
+        KnappS2A2.addEventListener("click",feil4)
+        function feil4() {
+            KnappS2A2.innerHTML="Feil"
+            KnappS2A2.style.backgroundColor = 'red';
+            poeng--
+            Poeng.innerHTML=(poeng)
+            KnappS2A2.disabled = true;
+        }
+
+
+
+        let KnappS2A3=document.getElementById("S2A3");
+        KnappS2A3.addEventListener("click",riktig2)
+        function riktig2() {
+            KnappS2A3.innerHTML="Riktig"
+            KnappS2A3.style.backgroundColor = 'green';
+            poeng++
+            Poeng.innerHTML=(poeng)
+            KnappS2A3.disabled = true;
+            Spørsmål3El.style.visibility = "visible";
+        }
+
+
+
+        let KnappS2A4=document.getElementById("S2A4");
+        KnappS2A4.addEventListener("click",feil6)
+        function feil6() {
+            KnappS2A4.innerHTML="Feil"
+            KnappS2A4.style.backgroundColor = 'red';
+            poeng--
+            Poeng.innerHTML=(poeng)
+            KnappS2A4.disabled = true;
+        }
+
+
+
+        let KnappS3A1=document.getElementById("S3A1");
+        KnappS3A1.addEventListener("click",feil9)
+        function feil9() {
+            KnappS3A1.innerHTML="Feil"
+            KnappS3A1.style.backgroundColor = 'red';
+            poeng--
+            Poeng.innerHTML=(poeng)
+            KnappS3A1.disabled = true;
+        }  
+
+
+
+        let KnappS3A2=document.getElementById("S3A2");
+        KnappS3A2.addEventListener("click",feil7)
+        function feil7() {
+            KnappS3A2.innerHTML="Feil"
+            KnappS3A2.style.backgroundColor = 'red';
+            poeng--
+            Poeng.innerHTML=(poeng)
+            KnappS3A2.disabled = true;
+
+        }
+
+
+
+        let KnappS3A3=document.getElementById("S3A3");
+        KnappS3A3.addEventListener("click",feil8)
+        function feil8() {
+            KnappS3A3.innerHTML="Feil"
+            KnappS3A3.style.backgroundColor = 'red';
+            poeng--
+            Poeng.innerHTML=(poeng)
+            KnappS3A3.disabled = true;
+        }
+
+        let KnappS3A4=document.getElementById("S3A4");
+
+        KnappS3A4.addEventListener("click",riktig3)
+            function riktig3(){
+            KnappS3A4.innerHTML="Riktig"
+            KnappS3A4.style.backgroundColor = 'green';
+            poeng++
+            Poeng.innerHTML=(poeng)
+            KnappS3A4.disabled = true;
+            Spørsmål4El.style.visibility = "visible";
+        }
+
+
+
+        let KnappS4A1=document.getElementById("S4A1");
+        KnappS4A1.addEventListener("click",feil10)
+        function feil10() {
+            KnappS4A1.innerHTML="Feil"
+            KnappS4A1.style.backgroundColor = 'red';
+            poeng--
+            Poeng.innerHTML=(poeng)
+            KnappS4A1.disabled = true;
+        }  
+
+        let KnappS4A2=document.getElementById("S4A2");
+        KnappS4A2.addEventListener("click",riktig4);
+
+        function riktig4() {
+            KnappS4A2.innerHTML="Riktig";
+            KnappS4A2.style.backgroundColor = 'green';
+            poeng++;
+            Poeng.innerHTML=(poeng);
+            KnappS4A2.disabled = true;
+            Bilde4El.style.visibility = "visible";
+            Poeng2El.innerHTML=poeng;
+            FerdigEl.style.visibility = "visible";
+        }
+
+
+        let KnappS4A3=document.getElementById("S4A3");
+        KnappS4A3.addEventListener("click",feil11)
+        function feil11() {
+            KnappS4A3.innerHTML="Feil"
+            KnappS4A3.style.backgroundColor = 'red';
+            poeng--
+            Poeng.innerHTML=(poeng)
+            KnappS4A3.disabled = true;
+        }
+
+
+
+        let KnappS4A4=document.getElementById("S4A4");
+        KnappS4A4.addEventListener("click",feil12)
+        function feil12() {
+            KnappS4A4.innerHTML="Feil"
+            KnappS4A4.style.backgroundColor = 'red';
+            poeng--
+            Poeng.innerHTML=(poeng)
+            KnappS4A4.disabled = true;
+        }
+
+
+
+        KnappAvsluttCookiesEl.addEventListener("click", AvsluttCookies1);
+        function AvsluttCookies1() {
+            localStorage.removeItem("CookiesLagring");
+            localStorage.removeItem("Brukernavn");
+            location.reload();
+        }
+
+        </script>
+    </body>
+</html>

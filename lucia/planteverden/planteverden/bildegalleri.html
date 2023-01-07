@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="no">
+<head> 
+  <title> Planteverden </title>
+  <!-- utf-8 gjør at vi kan bruke æ, ø og å -->
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* 
+.header {
+  text-align: center;
+  padding: 32px;
+} */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+</style>
+<body>
+  <div class="hovedmeny">
+    <header class="header">
+      <a href="Index.html" class="logo">Meny</a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+          <ul class="menu">
+              <li><a href="../index.html">Mine prosjekter</a></li>
+              <li><a href="bildegalleri.html">Bildegalleri</a></li>
+              <li><a href="Plante.html"> Plante</a></li>
+              <li><a href="Quiz om plante.html"> Quiz </a></li>
+          </ul>
+    </header>
+ 
+  <div class="titel midtstill">
+    <marquee><h1> Hvilken plante er du! </h1> </marquee>
+    <p id="brøktekst">bla deg ned for å se alt det spennende du kan lære</p>
+    <p id="brøktekst"> Og her er et lengre avsnitt, med tekst fra</p>  
+    
+  </div>
+  </div>
+
+
+<!-- Photo Grid -->
+<p><h1 class="midtstill">Alocasia</h1></p>
+<div class="row">
+  <div class="column">
+    <img src="../planteverden/Plante-bilder/silver dragon.png" style= "width:100%">
+    <p><h3 class="midtstill">Alocasia Silver dragon</h3></p>
+    <img src="../planteverden/Plante-bilder/Black_velvet_liten.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/Red_heart.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/silver dragon.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/MicrosoftTeams-image (46).png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/silver dragon.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/colues.png" style="width:100%">
+  </div>
+
+  <div class="column">
+    <img src="../planteverden/Plante-bilder/Black_velvet_liten.png" style="width:100%">
+    <p><h3 class="midtstill">Alocasia Black velvet</h3></p>
+    <img src="../planteverden/Plante-bilder/Silver_dragon.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/collection.jpg" style="width:100%">
+    <img src="../planteverden/Plante-bilder/Black_velvet_stor.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/colues.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/collection.png" style="width:100%">
+  </div> 
+   
+  <div class="column">
+    <img src="../planteverden/Plante-bilder/poly.png" style="width:100%">
+    <p><h3 class="midtstill">Alocasia Poly</h3></p>
+    <img src="../planteverden/Plante-bilder/red heart 2.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/black velvet liten.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/silver dragon.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/collection2.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/MicrosoftTeams-image (46).png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/silver dragon 2.png" style="width:100%">
+  </div>
+  
+  <div class="column">
+    <img src="../planteverden/Plante-bilder/Dragon1.png" style="width:100%">
+    <p><h3 class="midtstill">Alocasia Dragon Scale</h3></p>
+    <img src="../planteverden/Plante-bilder/collection.jpg" style="width:100%">
+    <img src="../planteverden/Plante-bilder/black velvet stor.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/silver dragon 2.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/collection2.png" style="width:100%">
+    <img src="../planteverden/Plante-bilder/MicrosoftTeams-image (46).png" style="width:100%">
+  </div>
+</div>
+
+</body>
+</html>
+
+

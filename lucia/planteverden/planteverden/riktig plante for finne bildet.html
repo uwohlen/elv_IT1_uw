@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="no">
+<head> 
+  <title> Planteverden </title>
+  <link rel="stylesheet" href="css.finn_plant.css">
+  <link rel="stylesheet" href="css.css">
+
+  <!-- utf-8 gjør at vi kan bruke æ, ø og å -->
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1> Hvilken plante er du</h1>
+  <p> finn ut hvilken plante som passer deg best ved å svare på disse spørsmålene:</p>
+
+  <div id="quiz">
+    <div class="spm">
+      <h2>Hva er favoritt årstiden din?</h2>
+      <button onclick="knappTrykket(this)">Sommer</button>
+      <button onclick="knappTrykket(this)">Vinter</button>
+      <button onclick="knappTrykket(this)">Vår</button>
+      <button onclick="knappTrykket(this)">Høst</button>
+    </div>
+    <div class="spm">
+      <h2>Hva liker du å gjøre på fritiden?</h2>
+      <button onclick="knappTrykket(this)">Sove</button>
+      <button onclick="knappTrykket(this)">Spise</button>
+      <button onclick="knappTrykket(this)">Gå ut med venner</button>
+      <button onclick="knappTrykket(this)">Trene</button>
+    </div>
+    <div class="spm">
+      <h2>Hvordan hadde du beskrevet deg selv med ett ord?</h2>
+      <button onclick="knappTrykket(this)">Rolig</button>
+      <button onclick="knappTrykket(this)">Stressa</button>
+      <button onclick="knappTrykket(this)">Smexy</button>
+      <button onclick="knappTrykket(this)">Morsom</button>
+    </div>
+    <div class="spm">
+      <h2>Hva er din største styrke?</h2>
+      <button onclick="knappTrykket(this)">Holde hodet kaldt</button>
+      <button onclick="knappTrykket(this)">Lytte til andre</button>
+      <button onclick="knappTrykket(this)">Modig og lidenskaplig</button>
+      <button onclick="knappTrykket(this)">Tilgivende og lojal</button>
+    </div>
+    <button onclick="lastPlante()">Finn din egen plante!</button>
+    <button onclick="nyQuiz()">Last Quizen på nytt</button>
+  </div>
+
+
+
+  <div id="output"></div>
+ 
+  <script>
+    let tags = [] //her kommer svarene våre inn
+
+    class plante {
+        constructor(navn, tags, bilde,beskrivelse, link) {
+            this.navn = navn;
+            this.tags = tags;
+            this.bilde = bilde;
+            this.link = link;
+            this.beskrivelse=beskrivelse;
+        }
+    }
+
+    let planter = [new plante("Alocacia",["Vinter", "Spise", "Morsom","Modig og lidenskaplig"],"planteverden/Plante-bilder/collection 4.jpg","beskrivelse", "Alocasia.no"),
+                  new plante("Pathos",["Vår", "Gå ut med venner", "Smexy","Tilgivende og lojal"],"Bilder/Pathos.jpg", "", ""),
+                  new plante("Monstera",["Høst", "Sove", "Rolig","Holde hodet kaldt"],"Bilder/Monstera.jpg", "", ""),
+                  new plante("Calathea",["Sommer", "Trene", "Stressa","Lytte til andre"],"Bilder/Calathea.jfif", "", "")]
+
+    function knappTrykket(knapp) {
+      knapp.style.backgroundColor = "Green"
+      alle_knapper = knapp.parentElement.getElementsByTagName("button")
+      for (let i = 0; i < alle_knapper.length; i++) {
+        alle_knapper[i].disabled = true; //dette er løken som gjør at alle knappen i samme spm blir grået ut(disabled)
+      }
+      tags.push(knapp.innerHTML)
+      console.log(tags) //da kan jeg se på inspiser
+    }
+
+    function finnPlante() {
+        if (tags==[]) {
+            return "Legg til noen tags"
+        }
+        let beste
+        let høyeste = 0
+        let beste_lik_liste
+        for (let i = 0; i < planter.length; i++) {
+            let liste = planter[i].tags
+            let lik_liste = []
+            for (let j = 0; j < tags.length; j++) {
+                if (liste.indexOf(tags[j]) != -1) {
+                    lik_liste.push(tags[j])
+                }
+            }
+            if (lik_liste.length>høyeste) {
+                console.log(planter[i])
+                høyeste = lik_liste.length
+                beste = planter[i]
+                beste_lik_liste = lik_liste
+            }
+        }
+        if (beste == undefined) {
+            return "Legg til noen tags"
+        }
+        txt = "<div id='resultat'><img src=" + beste.bilde + "><h2>" + beste.navn + "</h2><p>Fordi du valgte: " + beste_lik_liste + "</p><p>" + beste.beskrivelse + "</p><a href='" + beste.link + "'>Trykk her for mer info</a></div>"
+        return txt
+    }      
+    function lastPlante() {
+        document.getElementById("output").innerHTML = finnPlante()
+    }
+    
+    function nyQuiz() {
+      tags = [] //tømmer tagsa
+      quiz_spm = document.getElementById("quiz").getElementsByClassName("spm")
+      for (let i = 0; i < quiz_spm.length; i++) {
+        quiz_svar = quiz_spm[i].getElementsByTagName("button")
+        for (let j = 0; j < quiz_svar.length; j++) {
+          quiz_svar[j].disabled = false
+          quiz_svar[j].style.backgroundColor = "rgb(240,240,240)"
+        }
+        
+      }
+
+    }
+  </script>
+</body>
+</html>

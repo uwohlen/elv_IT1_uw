@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ok</title>
+        <link rel="stylesheet" href="../oppstart/alltid.css">
+        <link rel="stylesheet" href="spill.css">
+        <link rel="stylesheet" href="../alleBrukDenne.css">
+        <style>
+            
+
+        </style>
+    </head>
+    <body>
+        <div class="menytilquiz">
+            <span id="idNavn"></span>
+            <h1 id="velkommen">Velkommen til ITQuizen<span id="idnavn"></span>!</h1>  
+        </div>
+        
+        <h3 id="poeng">Poeng 0 av 4</h3>
+
+        <div id="spm1">
+            <h1>Første spørsmål</h1>
+            <h2>hvor mange poeng kan man av å ta it som programfag</h2>
+        <p></p>
+            <button class="knappPåAlle" id="id1a">ingen poeng</button>
+            <button class="knappPåAlle" id="id1b">2</button>
+            <button class="riktig" id="id1c">0.5</button>
+            <button class="knappPåAlle" id="id1d">1</button>
+        </div>
+
+        <div id="spm2">
+            <h1>Andre spørsmål</h1>
+            <h2>hvor mange It1 klasser en det på skolen</h2>
+        <p></p>
+            <button class="riktig">2</button>
+            <button class="knappPåAlle" >5</button>
+            <button class="knappPåAlle" >0.5</button>
+            <button class="knappPåAlle" >ingen</button>
+        </div>
+
+        <div id="spm3">
+            <h1>Tredje spørsmål</h1>
+            <h2>En while løkke er en løkke som...</h2>
+        <p></p>
+            <button class="riktig" >lar oss gjenta nåe så lenge en betingelse er (true)</button>
+            <button class="knappPåAlle" >vi angir en start, betingelse , endring</button>
+            <button class="riktig" >er nyttig å bruke når vi ikke vet hvor mange ganger løkken skal gjentas</button>
+            <button class="knappPåAlle">en kan brukes for å kode</button>
+        </div>
+
+        <div id="spm3">
+            <h1>Andre spørsmål</h1>
+            <h2>hvor mange It1 klasser en det på skolen</h2>
+        <p></p>
+            <button class="riktig"> 2</button>
+            <button class="knappPåAlle" >5</button>
+            <button class="knappPåAlle">0.5</button>
+            <button class="knappPåAlle">ingen</button>
+        </div>
+
+        <h1 id="e16"><a href="../E16/index.html" class="kult"> neste spill </a></h1> 
+
+//FORKLARE Uni
+-hvorfor har jeg valgt å ha ikke ha med id ? 
+
+        
+    <script>
+
+    
+    
+
+        let _feil = document.getElementsByClassName("knappPåAlle");
+         for (let i = 0; i < _feil.length; i++) { //knapp alle lager liste som går gjennom en løkke , som 
+            _feil[i].addEventListener("click",Feil)            
+        }
+
+        function Feil(){
+            this.innerHTML = "Feil :(";
+            this.style.backgroundColor = "red";
+            this.removeEventListener("click",Feil);
+
+            poengNed()
+
+        }
+        
+        let _riktig = document.getElementsByClassName("riktig");
+        for (let i = 0; i < _riktig.length; i++) { //knapp alle lager liste som går gjennom en løkke , som 
+            _riktig[i].addEventListener("click",Riktig)            
+        }
+        function Riktig(){
+            this.innerHTML = "Riktig, nice";
+            this.style.backgroundColor = "green";
+            this.removeEventListener("click",Riktig);
+
+            poengOpp()
+        }
+        
+        let poengEl=document.getElementById("poeng");
+        let poeng=0;
+        function poengOpp() {
+            poeng ++;
+            poengEl.innerHTML = "Poeng " + poeng + " av 4";
+        } 
+        function poengNed (){
+            poeng --;
+            poengEl.innerHTML="Poeng"+ poeng+ " av 4"
+        }
+        
+        localStorage.levelIT1fagdag = "E15";
+        let navnEl = document.getElementById("idNavn");
+        navnEl.addEventListener("keydown",navnLagre);
+
+        function navnLagre(event) {
+            if (event.keyCode === 13) {
+                console.log(event.keyCode)
+                localStorage.setItem("navnIT1fagdag",navnEl.value);
+            }
+        }
+    
+
+ 
+        
+    //Spørsmål 1 
+/*        let knapp1a = document.getElementById("id1a");
+            knapp1a.addEventListener("click",Feil1a )
+            function Feil1a(){
+
+                knapp1a.innerHTML = "Feil :(";
+                knapp1a.style.backgroundColor = "red";
+
+
+            }
+ 
+      let knapp1b = document.getElementById("id1b");
+            knapp1b.addEventListener("click",Feil1b )
+            function Feil1b(){
+
+                knapp1b.innerHTML = "Feil :(";
+                knapp1b.style.backgroundColor = "red";
+            }
+
+
+        let knapp1d = document.getElementById("id1d");
+            knapp1d.addEventListener("click",Feil1d )
+            function Feil1d(){
+
+                knapp1d.innerHTML = "Bra gjettet, men feil";
+                knapp1d.style.backgroundColor = "red";
+
+            }    */       
+
+        /* let knapp1c = document.getElementById("id1c");
+            knapp1c.addEventListener("click",riktig1c )
+            function riktig1c(){
+
+                knapp1c.innerHTML = "Riktig, nice";
+                knapp1c.style.backgroundColor = "green";
+                knapp1c.removeEventListener("click",riktig1c);
+
+                poengOpp()
+            }  */
+        
+    </script>
+    </body>
+
+</html>
