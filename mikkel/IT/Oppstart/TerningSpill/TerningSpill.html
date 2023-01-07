@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+<title>TerningSpill</title>
+<link rel="stylesheet" href="../CssFil/Css.css">
+
+    <body class="fagdag" style="text-align:center;">
+        <div class="Heading">
+            <h1>Prøv å få 6 på terningen!</h1>
+        </div>
+
+        <div id="HundeBilde" style="visibility: hidden;">
+            <img src="HundeBilde.png"
+                width="400"
+                height="500"/>
+        </div>
+
+        <p class="TilbakeLink"><a class="*" href="../index.html">Tilbake</a></p>
+        
+        <button onclick="rollDice()">Trill terning</button>
+
+        <p id="result"></p>
+
+        <script>
+            let HundeBildeEl=document.getElementById("HundeBilde")
+            function rollDice() {
+                HundeBildeEl.style.visibility="hidden";
+                var result = Math.floor(Math.random() * 6) + 1;
+                
+                if (result===6){
+                    HundeBildeEl.style.visibility="visible";
+                    document.getElementById("result").innerHTML = "Du trillet " + result + ", gratulerer!";
+                }
+                else{
+                    document.getElementById("result").innerHTML = "Du trillet " + result + "!";
+                }
+            }
+        </script>
+    </body>
+</html>

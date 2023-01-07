@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalkulator</title>
+  <link rel="stylesheet" href="Kalkulator.css">
+</head>
+<body>
+  <div id="calculator">
+    <div id="result">0</div>
+    <button onclick="addNumber(7)">7</button>
+    <button onclick="addNumber(8)">8</button>
+    <button onclick="addNumber(9)">9</button>
+    <button onclick="addOperator('+')">+</button>
+    <br>
+    <button onclick="addNumber(4)">4</button>
+    <button onclick="addNumber(5)">5</button>
+    <button onclick="addNumber(6)">6</button>
+    <button onclick="addOperator('-')">-</button>
+    <br>
+    <button onclick="addNumber(1)">1</button>
+    <button onclick="addNumber(2)">2</button>
+    <button onclick="addNumber(3)">3</button>
+    <button onclick="addOperator('*')">*</button>
+    <br>
+    <button onclick="addNumber(0)">0</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="addOperator('/')">/</button>
+    <button onclick="clear()">C</button>
+  </div>
+  
+  <script>
+
+let num1 = 0;
+let num2 = 0;
+let result = 0;
+let operator = '';
+
+
+function addNumber(number) {
+ 
+  if (operator) {
+    num2 = parseInt(num2.toString() + number.toString());
+    document.getElementById('result').innerHTML = num2;
+  }
+
+  else {
+    num1 = parseInt(num1.toString() + number.toString());
+    document.getElementById('result').innerHTML = num1;
+  }
+}
+
+
+function addOperator(op) {
+
+  operator = op;
+  document.getElementById('result').innerHTML = '';
+}
+
+
+function calculate() {
+
+  num1 = parseInt(num1);
+  num2 = parseInt(num2);
+
+  switch (operator) {
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '*':
+      result = num1 * num2;
+      break;
+    case '/':
+      result = num1 / num2;
+      break;
+  }
+
+  document.getElementById('result').innerHTML = result;
+}
+
+
+function clear() {
+
+  num1 = 0;
+  num2 = 0;
+  result = 0;
+  operator = '';
+  document.getElementById('result').innerHTML = '';
+}
+
+    
+    
+
+    
+  </script>
+</body>
+</html>
+

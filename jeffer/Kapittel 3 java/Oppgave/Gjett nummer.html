@@ -1,0 +1,42 @@
+<html>
+<head>
+<script>
+
+let numberToGuess = Math.floor(Math.random() * 100) + 1;
+
+function guess() {
+   
+    let guess = document.getElementById("guess").value;
+    if (guess == numberToGuess) {
+ 
+        alert("Gratulerer, du gjettet tallet!");
+        numberToGuess = Math.floor(Math.random() * 100) + 1;
+        document.getElementById("guess").value = "";
+    } else if (guess > numberToGuess) {
+      
+        alert("Tallet er for høyt, prøv igjen");
+    } else {
+
+        alert("Tallet er for lavt, prøv igjen");
+    }
+    document.getElementById("guess").addEventListener("keydown", function(event) {
+    if (event.keyCode === 13) {
+        guess();
+    }
+});
+
+}
+
+
+
+</script>
+</head>
+<body>
+<h1>Gjett et tall</h1>
+<p>Jeg tenker på et tall mellom 1 og 100, kan du gjette det?</p>
+<input type="text" id="guess">
+<button onclick="guess()">Gjett</button>
+</body>
+
+
+</html>
