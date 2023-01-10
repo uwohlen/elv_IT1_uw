@@ -9,7 +9,7 @@
             background-color: #a9a9a9;
             text-align: center;
         }
-        
+
         input {
             border: 2px solid black;
             border-radius: 6px;
@@ -46,29 +46,30 @@
                 sum = tall1 - tall2 // Her definnerer jeg en ny variabel som blir svaret på regnestykket som blir skrivet ned.
             }
 
-            if (innE1.value.includes("+")) {
+            else if (innE1.value.includes("+")) {
                 operator = innE1.value.indexOf("+")
                 tall1 = Number(innE1.value.slice(0, operator));
                 tall2 = Number(innE1.value.slice(operator + 1, innE1.value.length));
                 sum = tall1 + tall2
             }
 
-            if (innE1.value.includes("/")) {
-                operator = innE1.value.indexOf("/")
+            else if (innE1.value.includes("/")) {
+                if (innE1.value.includes("/0")) {
+                    sum = "kan ikke dele på null"
+                }
+                else {
+                    operator = innE1.value.indexOf("/")
+                    tall1 = Number(innE1.value.slice(0, operator));
+                    tall2 = Number(innE1.value.slice(operator + 1, innE1.value.length));
+                    sum = tall1 / tall2
+                }
+            }
+
+            else if (innE1.value.includes("*")) {
+                operator = innE1.value.indexOf("*")
                 tall1 = Number(innE1.value.slice(0, operator));
                 tall2 = Number(innE1.value.slice(operator + 1, innE1.value.length));
-                sum = tall1 / tall2
-            }
-
-            if (innE1.value.includes("*")) {
-                tegn = innE1.value.indexOf("*")
-                tall1 = Number(innE1.value.slice(0, operator)); 
-                tall2 = Number(innE1.value.slice(operator + 1, innE1.value.length));
                 sum = tall1 * tall2
-            }
-
-            if (innE1.value.includes("/0")) { // Her sjekker jeg om noen deler på null. Hadde jeg ikke hatt denne ville det stått "infinity" hvis jeg delte på null.
-                sum = "kan ikke dele på null"
             }
 
             outE1.innerHTML = "Svar = " + sum
