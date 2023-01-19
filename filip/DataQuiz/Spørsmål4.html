@@ -8,6 +8,7 @@
 
 <body>
     <p> <a href="QuizStart.html">Tilbake til start</a></p>
+    <h2>Hello <span id="navnGet"></span></h2>
     <h1 id="lengreTekst">Hva gjør Harddisken (dette er en dvd-spiller men ignorer det)?</h1>
     <img id="spørsmålbilde" src="bilder/harddisk1.jpg" width="150">
 
@@ -32,6 +33,11 @@
             let NesteEl = document.getElementById("Neste");
             let knapp1aEl = document.getElementById("id1a");
             let poeng4 = 0;
+
+            let navnEl = document.getElementById("navnGet")
+            let navnVerdi = String(localStorage.getItem("lagretNavn"))
+            navnEl.innerHTML = navnVerdi;
+            
             localStorage.setItem("poeng4", poeng4)
             knapp1aEl.addEventListener("click", siste)
             function siste() {

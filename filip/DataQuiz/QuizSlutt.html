@@ -12,7 +12,7 @@
 	<br>
 	<br>
 	<br>
-	<h2>Du fikk <br><span id="poengsum"></span><br>poeng</h2>
+	<h2><span id="navnGet"></span> fikk <span id="poengsum"></span> poeng</h2>
 	<br>
 	<br>
 	<br>
@@ -24,6 +24,10 @@
 	</div>
 
 	<script>
+		let navnEl = document.getElementById("navnGet")
+        let navnVerdi = String(localStorage.getItem("lagretNavn"))
+        navnEl.innerHTML = navnVerdi;
+
 		let tilbakeE1 = document.getElementById("tilbake")
 		let poengsumEl = document.getElementById("poengsum")
 		let poeng1 = Number(localStorage.getItem("poeng1"));

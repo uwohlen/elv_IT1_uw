@@ -70,6 +70,10 @@ button {
     visibility: hidden;
 }
 
+#navnInput {
+    visibility: hidden;
+}
+
 #varsel {
     visibility: visible;
     background-color: grey;

@@ -8,6 +8,7 @@
 
 <body>
     <p> <a href="QuizStart.html">Tilbake til start</a></p>
+    <h2>Hello <span id="navnGet"></span></h2>
     <h1 id="lengreTekst">Hva er et annet ord for skjermkort?</h1>
     <img id="spørsmålbilde" src="bilder/skjermkort1.jpg" width="150">
 
@@ -32,6 +33,11 @@
             let NesteEl = document.getElementById("Neste");
             let knapp1aEl = document.getElementById("id1a");
             let poeng6 = 0;
+
+            let navnEl = document.getElementById("navnGet")
+            let navnVerdi = String(localStorage.getItem("lagretNavn"))
+            navnEl.innerHTML = navnVerdi;
+            
             localStorage.setItem("poeng6", poeng6)
             knapp1aEl.addEventListener("click", siste)
             function siste() {

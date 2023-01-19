@@ -29,6 +29,7 @@
 	<br>
 	<br>
 	<br>
+	<input id="navnInput" placeholder="Skriv navnet ditt her">
 	<br>
 	<div id="varsel">
 		<h3>Denne nettsiden vil lagre informasjon på datamaskinen din, er det ok?</h3><button>OK</button>
@@ -36,11 +37,22 @@
 	<script>
 		let bildeEl = document.getElementById("bilde")
 		let varselEl = document.getElementById("varsel")
+		let inputEl = document.getElementById("navnInput")
 		varselEl.addEventListener("click", første)
+		inputEl.addEventListener("keydown", andre)
 		function første() {
 			varselEl.style.visibility = "hidden"
-			bildeEl.style.visibility = "visible"
+			inputEl.style.visibility = "visible"
+		}
+
+		function andre(event) {
+			if (event.keyCode === 13 && inputEl.value !== null) {
+				localStorage.setItem("lagretNavn", inputEl.value)
+				bildeEl.style.visibility = "visible"
+				inputEl.style.visibility = "hidden"
+			}
 		}
 	</script>
+</body>
 
 </html>
