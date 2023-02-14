@@ -1,11 +1,10 @@
-const canvas = document.querySelector("canvas")
+const canvas = document.getElementById("IdCanvas")
 const c = canvas.getContext("2d")
 
 canvas.width = 64 * 16 //1024
 canvas.height = 64 * 9 //576
 
 let TouchGround = false
-let wPressed = false
 //hopp
 
 let hopp = 0
