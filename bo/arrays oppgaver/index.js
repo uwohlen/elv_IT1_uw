@@ -1,7 +1,7 @@
 let array1 = [1, 2, 3, 4, 5, 6];
 function findLength(array) {
   let i = 0;
-  for (const element of array) {
+  for (const {} of array) {
     i++;
   }
   return i;
@@ -87,10 +87,23 @@ for (let i = 0; i < array7.length; i++) {
 let avg = sum_o7 / array7.length;
 console.log("Oppgave 7: ", avg);
 
+let array8 = [
+  20, 95, 50, 52, 91, 2, 41, 50, 91, 12, 45, 60, 42, 22, 3, 1, 98, 79, 16, 81,
+  8, 59, 63, 26, 68, 87, 64, 33, 77, 37,
+];
+
+
 function BosIndexOf(array, verdi) {
-  for (i = 0; i < array.length; i++) {
-    if (array[i] == verdi) {
+  for(let i = 0, n = 0; n==0;i++) {
+    if (array[i]== verdi){
+      n++;
       return i;
     }
   }
 }
+
+let indexofsvar = array8.indexOf(50)
+let boindexofsvar = BosIndexOf(array8,50)
+console.log()
+
+
