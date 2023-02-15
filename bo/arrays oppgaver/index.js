@@ -35,6 +35,62 @@ function findElement(array, element) {
   }
   return i;
 }
-console.log("Oppgave 2; Finn B:", findElement(array2, "b"));
+console.log("Oppgave 2: Finn B:", findElement(array2, "b"));
 
-let array3 = [];
+let array3 = [3, 7, 2, 9, 5, 10, 8, 1, 6, 4];
+
+let størst = array3[0];
+
+for (let i = 1; i < array3.length; i++) {
+  if (størst < array3[i]) {
+    størst = array3[i];
+  }
+}
+console.log("Oppgave 3: ", størst);
+
+let array4 = [3, 10, 5, 2, 4, 7, 6, 8, 9, 1];
+
+let minst = array4[0];
+
+for (let i = 1; i < array4.length; i++) {
+  if (minst > array4[i]) {
+    minst = array4[i];
+  }
+}
+console.log("Oppgave 4: ", minst);
+
+let array5 = [6, 10, 7, 6, 3, 10, 1, 1, 7, 4, 1, 10, 3, 9, 1, 3];
+let sum_o5 = 0;
+
+for (let i = 0; i < array5.length; i++) {
+  sum_o5 += array5[i];
+}
+console.log("Oppgave 5: ", sum_o5);
+
+let array6 = [
+  15, 17, 3, 15, 15, 2, 16, 1, 4, 8, 13, 1, 2, 14, 17, 9, 12, 12, 18, 12,
+];
+let sum_o6 = 0;
+
+for (let i = 4; i < array6.length; i++) {
+  sum_o6 += array6[i];
+}
+
+console.log("Oppgave 6: ", sum_o6);
+
+let array7 = [19, 3, 3, 15, 7, 3, 5, 1, 12, 4, 7, 3, 13, 10, 6, 3, 12];
+let sum_o7 = 0;
+
+for (let i = 0; i < array7.length; i++) {
+  sum_o7 += array7[i];
+}
+let avg = sum_o7 / array7.length;
+console.log("Oppgave 7: ", avg);
+
+function BosIndexOf(array, verdi) {
+  for (i = 0; i < array.length; i++) {
+    if (array[i] == verdi) {
+      return i;
+    }
+  }
+}
