@@ -1,0 +1,51 @@
+:root {
+    --quiz-font-storrelse: 1.4rem;
+    --normal-font-storrelse: 1.1rem;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+#container {
+    margin: auto;
+    max-width: 1080px;
+    font-size: var(--normal-font-storrelse);
+}
+
+.quiz-tekst {
+    margin-bottom: 1.5rem;
+    font-size: var(--quiz-font-storrelse);
+}
+
+.quiz-tekst-liten {
+    margin-top: 1.5rem;
+}
+
+button {
+    font-size: var(--normal-font-storrelse);
+    width: 8rem;
+}
+
+.alt {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.dropp-boks {
+    display: inline-block;
+    min-width: 10rem;
+    padding: 0.3rem;
+    margin: 0.1rem;
+    border: 1px solid grey;
+}
+
+p {
+    margin: 0;
+}
+
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+}
