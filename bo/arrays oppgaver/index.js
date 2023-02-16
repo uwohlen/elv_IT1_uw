@@ -94,16 +94,17 @@ let array8 = [
 
 
 function BosIndexOf(array, verdi) {
-  for(let i = 0, n = 0; n==0;i++) {
+  for(let i = 0, n = 0; i<=array.length;i++) {
     if (array[i]== verdi){
       n++;
       return i;
     }
   }
+  return 
 }
 
-let indexofsvar = array8.indexOf(50)
-let boindexofsvar = BosIndexOf(array8,50)
-console.log()
+let indexofsvar = array7.indexOf(50)
+let boindexofsvar = BosIndexOf(array7,50)
+console.log("Oppgave 8: ", indexofsvar, boindexofsvar)
 
 
