@@ -18,6 +18,25 @@ bId.innerHTML = "Velkommen " + localStorage.lagretNavnForQuiz1;
 
 let knapper = false
 
+let spørsmål=[
+    {"spørsmål":"Hva står RAM for?",
+    "riktig":"random access memory",
+    "feil":["Random access management","Rapid eye movement","rapid access management"]
+    },
+    {"spørsmål":"Hva kobler alle komponentene i en datamaskin?",
+    "riktig":"hovedkort",
+    "feil":["skjermkort","RAM","prosessor"]
+    },
+    {"spørsmål":"Hva foretar beregninger i en datamaskin?",
+    "riktig":"prosessor",
+    "feil":["skjermkort","RAM","Hovedkort"]
+    },
+    {"spørsmål":"Hvor kan det lagres midlertidig informasjon?",
+    "riktig":"RAM",
+    "feil":["skjermkort","Prosessor","Hovedkort"]
+    }
+]
+
 spmArray[spm].style.display="block";
 
 for (ele of riktigSvarArray) { //når et svar med class=riktig trykkes kjøres riktig svar funksjonen
