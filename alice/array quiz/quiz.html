@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8"> 
+        
+        <title>Quiz om datamaskin</title>
+    </head>
+    <body>
+        <h1>Velkommen til denne quizzen om kapittel 1B "Fra 0 til 1 til tekst, lyd og bilde"!</h1>
+        <h3>
+            <input id="IdNavn" type="text" placeholder="Skriv inn navn her: ">
+        </h3>
+        <h3><span id="IdHei"></span></h3>
+
+        <div id="IdQuiz">
+        </div>
+    
+        <button id="IdAvslutt">Ferdig</button>
+
+        <script>
+            let navnEl = document.getElementById("IdNavn");
+            let avsluttEl = document.getElementById("IdAvslutt"); //må jeg skrive El??
+            let poengEl = document.getElementById("IdPoeng");
+            let quiz = document.getElementById("IdQuiz");
+            let heiEl = document.getElementById("IdHei");
+
+            let spm = [
+                "Hvilket tall system baserer datamaskinen seg på, og hvilke siffer består dette systemet av?",
+                "Hvorfor er det lurt å bruke UTF-8?",
+                "Hvilke farger baserer RGB-modellen seg på?",
+                "Bør man bruke PNG eller JPEG for en større fil?",
+                "Hva måles filer i?",
+            ];
+
+            let svaralt = [
+                ["tiervennene, 1-10", "det binære tallsystemet, 0 og 1", "titalls systemet, 1-10", "sekstentallsystemet, 1-16"],
+                ["det gjør farger klarere", "det kan kun lese tegn fra det engelske tegnsettet", "det viser emojies", "det kan lese tegn fra det ikke-engelskspråklige tegnsettet"],
+                ["rød", "gul", "grønn", "blå"],
+                ["JPEG", "PNG"],
+                ["meter", "antall byte", "antall tall", "kilogram"]
+            ];
+
+            let fasit = [
+                [-1,1,-1,-1],
+                [-1,-1,-1,1],
+                [1/3,-1,1/3,1/3],
+                [1,-1],
+                [-1,1,-1,-1]
+            ];
+
+            let type = [
+                "radio",
+                "radio",
+                "checkbox",
+                "radio",
+                "radio"
+            ];
+
+            let svarname = [
+                "en",
+                "to",
+                "tre",
+                "fire",
+                "fem"
+            ];
+
+            navnEl.addEventListener("keydown",lagrefunk);
+
+            function lagrefunk(event) {
+               if (event.keyCode === 13) {
+                   heiEl.innerHTML = "Lykke til  " + navnEl.value + "!<br>";
+                   navnEl.value = "";
+               }
+            }
+
+            let tekst = "";
+
+            function visSpm(nr) {
+                tekst += "<p id='idSpm'>" + spm[nr]+ "</p>"
+                
+                tekst += "<p id='idAlternativ'>"
+                
+                for (let j=0; j<svaralt[nr].length; j++) {
+                    tekst += "<input class='altClass' type='" + type[nr] + "' name='" + svarname[nr] + "' value="+ fasit[nr][j] +">" + svaralt[nr][j] + "<br>";
+                }
+
+                tekst += "</p>"
+                
+            }
+            
+            for (let i=0; i<5; i++) {
+                visSpm(i);
+            }
+
+            let i  = 0;
+
+            quiz.innerHTML = tekst;
+
+            let poeng = [];
+            let riktig = [];
+            let svar = [];
+
+            avsluttEl.addEventListener("click",ferdigFunk);
+
+            function ferdigFunk () {
+                
+                poeng[i] = 0;
+                riktig[i] = "";
+                svar[i] = "";
+                
+                let bokser = document.getElementsByClassName("altClass");
+                
+                for (let k=0; k<bokser.length; k++) {
+                    if (riktig[i][k] > 0) {
+                        svar[i] += svaralt[i][k] + " ";
+                    }
+                    if (bokser[k].checked) {
+                        poeng[i] += Number(bokser[k].value);
+                        riktig[i] += svaralt[i][k] + " ";
+                    }
+                }
+
+                i++;
+                if (i < spm.length) {
+                    visSpm(i);
+                }
+                else {
+                    spmP.innerHTML = "";
+                    alternativP.innerHTML = "";
+                    avsluttEl.style.visibility = "hidden";
+                    
+                    tekst = "<table><tr><th>Spørsmål</th><th>Fasit</th><th>Svar avgitt</th><th>Poeng</th>";
+                    
+                    let totalpoeng = 0;
+                    for (let m=0; m<spm.length; m++) {
+                        totalpoeng += poeng[m];
+                        
+                        tekst += "<tr><td>" + spm[m] 
+                            + "</td><td>" + svar[m]
+                            + "</td><td>" + riktig[m]
+                            + "</td><td>" + (poeng[m]).toFixed(1)
+                            + "</td></tr>";
+                    }
+                    
+                    tekst += "</table>";
+                    spmP.innerHTML = tekst;
+                    
+                    spmP.innerHTML += "<br><p>Du fikk " + totalpoeng.toFixed(1) + " poeng totalt.</p>";
+                }
+
+                let poeng = [];
+
+                function poengFunk () {
+                    poeng = fasit[i]
+                    
+                }
+            }   
+        
+        
+            
+            
+        </script>
+    </body>
+</html>
