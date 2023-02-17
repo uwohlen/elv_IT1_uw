@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style_1B.css">
+        <title>Quiz om datating</title>
+    </head>
+    <body>
+        <p id="top"><a href="../index.html">Til index</a></p>
+        <div id="hoved">
+            <h1> Quiz om datating </h1><br>
+
+            <div id="quiz">
+          
+            </div>
+            <div id="resultat"></div>
+        </div>
+        <script>
+            let quizEl = document.querySelector("#quiz");
+            let resultatEl = document.querySelector("#resultat");
+            let quiz = [
+                { sporsmaal: "Hva er unicode?",
+                  alternativer: ["Vet ikke", "Tegnsett som inneholder bare latinske bokstaver", "Tegnsett som inneholder alle skriftspråk", "Tegnsett som bare inneholder symboler som ikke er bokstaver"],
+                  fasit: "Tegnsett som inneholder alle skriftspråk"},
+                { sporsmaal: "Hva representerer tallene 1 og 0?",
+                  alternativer: ["Transistor som er av for 0 og på for 1", "Transistor som er av for 1 og på for 0"],
+                  fasit: "Transistor som er av for 0 og på for 1"},
+                { sporsmaal: "Hva er en bit?",
+                  alternativer: ["Åtte sammensetninger av 0 og 1", "En enkel enhet av 1 eller 0", "To sammensetninger av 1 og 0"],
+                  fasit: "En enkel enhet av 1 eller 0"}, 
+                { sporsmaal: "Hvilke tre farger er vanligvis utgangspunktet for farge på datamaskiner?",
+                  alternativer: ["Rød, gul og blå", "Rød, gul og grønn", "Rød, grønn og blå"],
+                  fasit: "Rød, grønn og blå"} 
+            ];
+            for (let i = 0; i < quiz.length; i++){
+                let sporsmaalEl = document.createElement("div");
+                sporsmaalEl.className = "checkboxradio";
+                let h3El = document.createElement("h3");
+                h3El.innerHTML = quiz[i].sporsmaal;
+                sporsmaalEl.appendChild(h3El);
+
+                for (let j = 0; j < quiz[i].alternativer.length; j++) {
+                    let labelEl = document.createElement("label");
+                    let radioEl = document.createElement("input");
+                    radioEl.type = "radio";
+                    radioEl.name = i;
+                    if (quiz[i].fasit === quiz[i].alternativer[j]) {
+                        radioEl.value = "riktig";
+                    } else {
+                        radioEl.value = "galt";
+                    }
+                    labelEl.appendChild(radioEl);
+                    labelEl.innerHTML += quiz[i].alternativer[j];
+                    sporsmaalEl.appendChild(labelEl);
+                }
+                quizEl.appendChild(sporsmaalEl);
+            }
+            let knappEl = document.createElement("button");
+            knappEl.innerHTML = "Sjekk svar";
+            knappEl.addEventListener("click", finnPoeng);
+            quizEl.appendChild(knappEl);
+            function finnPoeng (){
+                alleRadioEl = document.querySelectorAll("input[type='radio']");
+                let antallPoeng = 0;
+                for (var i = 0; i < alleRadioEl.length; i++) {
+                    if (alleRadioEl[i].checked) {
+                        if (alleRadioEl[i].value === "riktig") {
+                            antallPoeng ++;
+                        }
+                    }
+                }
+                resultatEl.innerHTML = "Du fikk " + antallPoeng + " poeng";
+            }
+        </script>
+    </body>
+</html>

@@ -16,3 +16,10 @@ body{
     outline-style:double;
     text-align: center;
 }
+
+#id_funksjonalitet{/* teksten som sier hva kalkulatoren ikke kan gjøre */
+    font-size: small;
+    position: relative;
+    right: -10vw;
+    top: -5vw;
+}

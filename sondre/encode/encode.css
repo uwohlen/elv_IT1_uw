@@ -17,7 +17,7 @@ body{
     margin-top: 5vw;
 }
 
-::placeholder {
+::placeholder {/* teksten som står når ingenting er skrevet i input feltet for tekst */
     text-align: center; 
 }
 

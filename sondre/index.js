@@ -12,6 +12,7 @@ slett_cookies_btnEl.addEventListener("click",slett_funk)
 function cookies_ok_funk(){
     cookies_pop_upEl.style.display = "none";
     skrivnavn.style.display ="block";
+    navnwrite.focus
     slett_cookies_btnEl.style.display ="inline-block";
 }
 
