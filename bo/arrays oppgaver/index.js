@@ -92,19 +92,37 @@ let array8 = [
   8, 59, 63, 26, 68, 87, 64, 33, 77, 37,
 ];
 
-
 function BosIndexOf(array, verdi) {
-  for(let i = 0, n = 0; i<=array.length;i++) {
-    if (array[i]== verdi){
+  for (let i = 0, n = 0; i <= array.length; i++) {
+    if (array[i] == verdi) {
       n++;
       return i;
     }
   }
-  return 
+  return -1;
 }
 
-let indexofsvar = array7.indexOf(50)
-let boindexofsvar = BosIndexOf(array7,50)
-console.log("Oppgave 8: ", indexofsvar, boindexofsvar)
+let indexofsvar = array8.indexOf(50);
+let boindexofsvar = BosIndexOf(array8, 50);
+console.log("Oppgave 8: IndexOf:", indexofsvar, boindexofsvar);
 
+function BosReverse(array) {
+  let reversed = [];
+  for (i = array.length - 1; i >= 0; i--) reversed.push(array[i]);
+  return reversed;
+}
 
+let reversesvar = array8.reverse();
+let boreversesvar = BosReverse(array8);
+
+console.log("Reverse: ", array8, reversesvar, boreversesvar);
+
+function BosIncludes(array, verdi) {
+  svar = BosIndexOf(array, verdi);
+  if (svar == -1) return false;
+  else return true;
+}
+
+includessvar = array8.includes(3)
+boincludessvar = BosIncludes(array8,3)
+console.log("Includes: ", )
