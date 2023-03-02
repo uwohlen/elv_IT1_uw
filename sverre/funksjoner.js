@@ -44,6 +44,12 @@ Parameter (Array) liste - liste med tall eller strings
 Retunerer (String) den opplistede teksten
 */
 function opplisting_funk(liste) {
+    if (liste.length === 0) {
+        return "";
+    }
+    if (liste.length === 1) {
+        return liste[0];
+    }
     let stopp = liste.length - 2;
     let resultat = "";
     let i = 0;
