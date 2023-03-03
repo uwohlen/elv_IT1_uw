@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <script src="../funksjoner.js" defer></script>
+    <script src="forms.js" defer></script>
+</head>
+
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>Personalia: </legend>
+            <p><label>Navn: <input name="navn" value="Ola Nordmann" required></label></p>
+            <p><label>Klasse: <input name="klasse" value="2STX" required></label></p>
+            <p><label>Alder: <input type="number" name="alder" min="0" max="150" step="1" value="18" required></label>
+            </p>
+            <p>Kontaktlærer:<br>
+                <label><input type="radio" name="kontaktlaerer" value="2" required checked="true">Anne Lise</label><br>
+                <label><input type="radio" name="kontaktlaerer" value="1">Knut Kornelius Christiansen-Olsen</label>
+            </p>
+        </fieldset>
+        <fieldset name="interesser">
+            <legend>Interesser: </legend>
+            <label><input type="checkbox" name="interesse" value="1" data-interesse="jakt" checked="true">Jakt</label>
+            <label><input type="checkbox" name="interesse" value="2" data-interesse="fiske">Fiske</label>
+            <label><input type="checkbox" name="interesse" value="3" data-interesse="aske">Aske</label>
+            <label><input type="checkbox" name="interesse" value="4" data-interesse="programmering"
+                    checked="true">Programmering</label>
+        </fieldset>
+        <p><input type="submit"></p>
+    </form>
+    <p id="tilbakemelding"></p>
+</body>
+
+</html>
