@@ -123,6 +123,8 @@ function BosIncludes(array, verdi) {
   else return true;
 }
 
-includessvar = array8.includes(3);
+includessvar = array8.includes(4);
 boincludessvar = BosIncludes(array8, 3);
 console.log("Includes: ", boincludessvar, includessvar);
+
+
