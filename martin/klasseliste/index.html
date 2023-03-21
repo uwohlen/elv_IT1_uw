@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Innsendings skjema</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css">
+
+    </head>
+
+    <h1>Legg til elev</h1>
+
+    <form action="process.php" method="post">
+        <label for="fornavn">Fornavn</label>
+        <input type="text" name="fornavn">
+
+        <label for="etternavn">Etternavn</label>
+        <input type="text" name="etternavn">
+
+        <label for="klasse">Klasse</label>
+        <input type="text" name="klasse">
+
+        <label for="kontaktlærer">Kontaktlærer</label>
+        <input type="text" name="kontaktlaerer">
+        <br>
+        <label>
+            <input type="checkbox" name="terms">
+            Jeg godkjenner til at dataen prosesseres og lagres.
+        </label>
+
+        <br><br>
+
+        <button>Send inn</button>
+    </form>
+
+</html>
