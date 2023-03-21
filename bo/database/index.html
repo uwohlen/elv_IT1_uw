@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <title>Huskeliste</title>
+    <meta charset="utf-8" />
+    <style>
+      /* Her kommer CSS-koden vår */
+    </style>
+  </head>
+  <body>
+    <!-- Her kommer HTML-koden vår -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDoc,
+        doc,
+      } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyD07i2IQoKQJnVShF86ppBQ6r2c77W-qvk",
+        authDomain: "databaaae.firebaseapp.com",
+        projectId: "databaaae",
+        storageBucket: "databaaae.appspot.com",
+        messagingSenderId: "675401463184",
+        appId: "1:675401463184:web:9ebddb541e9352f3d0af15",
+        measurementId: "G-EZRZ19XC6L",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      // Lager en referanse til databasen
+      const db = getFirestore(app);
+      // Henter data. Når dataene er ferdig hentet, starter "then"-biten
+      const docRef = doc(db, "Fotballspillere");
+const docSnap = await getDoc(docRef);
+
+console.log(docSnap)
+
+
+    </script>
+  </body>
+</html>
