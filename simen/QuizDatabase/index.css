@@ -1,0 +1,66 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+#idQuiz{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items:center;
+}
+#child3{
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+#child3 > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#child2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+body{
+    font-family: 'Courier New', monospace;
+    text-align: start;
+    font-weight: bold;
+    background-color: rgb(129, 150, 151);
+}
+img{
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    /*box-shadow: -10px 10px 0px rgba(33, 33, 33, 1), -20px 20px 0px rgba(33, 33, 33, 0.7), -30px 30px 0px rgba(33, 33, 33, 0.4), -40px 40px 0px rgba(33, 33, 33, 0.1);*/
+    width: 30%;
+    height: auto;
+}
+/*
+#buttonId{
+    margin-top: 10px;
+    margin-left: 6px;
+}
+*/
+table, td, th {
+    border: 1px solid black;
+  }
+
+.position{
+    position: fixed;
+    bottom: 2.4em;
+    left: 2.4em;
+}
+#idToggle{
+    visibility: collapse;
+    background-color: rgb(107, 104, 120);
+}
+#idForm{
+    margin-top: 20px;
+}
