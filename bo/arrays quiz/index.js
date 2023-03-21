@@ -1,5 +1,9 @@
-let quizEl = document.querySelector("#quiz");
-let resultatEl = document.querySelector("#resultat");
+
+
+
+function init() {
+  let quizEl = document.getElementById("quiz");
+let resultatEl = document.getElementById("resultat");
 
 // Array med spørsmål
 var quiz = [
@@ -62,7 +66,7 @@ for (let i = 0; i < quiz.length; i++) {
     // Legger til <label>-elementet i <div>-elementet
     sporsmaalEl.appendChild(labelEl);
   }
-
+console.log(quizEl)
   // Legger til <div>-elementet i quiz-elementet
   quizEl.appendChild(sporsmaalEl);
 }
@@ -99,3 +103,8 @@ function finnPoeng() {
 
   resultatEl.innerHTML = "Du fikk " + antallPoeng + " poeng!";
 }
+
+}
+
+window.onload = init
+
