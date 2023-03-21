@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='no'>
+
+<head>
+    <meta charset='UTF-8'>
+    <link rel="stylesheet" href="indexStyle.css">
+    <title>Avatar Skaper - Fagdag</title>
+    <style>
+        div {
+            padding: 5px;
+        }
+
+        label {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="intro">Velkommen</h1>
+    <h2>Lag din egen karakter her!<h2>
+    <br>
+    <form method="POST" action="resultat.php" id="IdForm"> 
+        <input name="idBruker" type="text" placeholder="Skriv navnet ditt her:">
+        <br><br>
+        <input name="idChar" type="text" placeholder="Skriv karakterens navn her:">
+        <br><br>
+        <select name="idHobby">
+            <option disabled selected>Velg hobby her:</option>
+            <option>Sport</option>
+            <option>Programmering</option>
+            <option>Film</option>
+            <option>Spill</option>
+            <option>Skole</option>
+            <option>Jobbe</option>
+            <option>Klatring</option>
+        </select>
+        <br><br>
+
+        <input name="idAlder" type="number" placeholder="Skriv alder her:" min="18" max="200">
+
+        <br><br>
+        <select name="idSmak">
+            <option disabled selected>Velg favoritt smak her:</option>
+            <option>Søtt</option>
+            <option>Sur</option>
+            <option>Salt</option>
+            <option>Bitter</option>
+            <option>Umami</option>
+        </select>
+        <br><br>
+        <select name="idPerson">
+            <option disabled selected>Velg personlighet her:</option>
+            <option>Positiv</option>
+            <option>Negativ</option>
+            <option>Likegyldig</option>
+            <option>Naiv</option>
+        </select>
+        <br><br>
+        <select name="idMening">
+            <option disabled selected>Hva føler du for den?</option>
+            <option>Fornøyd</option>
+            <option>Ufornøyd</option>
+            <option>Ingenting</option>
+            <option>Avsky</option>
+            <option>Stolt</option>
+        </select>
+        <br>
+        <p><input type="submit" value="Lagre" name="submitForm"></p>
+    </form>
+    <script>
+    </script>
+</body>
+
+</html>
