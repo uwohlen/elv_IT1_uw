@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
   <head>
-    <title>Huskeliste</title>
-    <meta charset="utf-8" />
-    <style>
-      /* Her kommer CSS-koden vår */
-    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fotballspillere</title>
   </head>
   <body>
     <!-- Her kommer HTML-koden vår -->
@@ -24,7 +23,7 @@
         getFirestore,
         collection,
         addDoc,
-        getDoc,
+        getDocs,
         doc,
       } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
 
@@ -50,12 +49,11 @@
       // Lager en referanse til databasen
       const db = getFirestore(app);
       // Henter data. Når dataene er ferdig hentet, starter "then"-biten
-      const docRef = doc(db, "Fotballspillere");
-const docSnap = await getDoc(docRef);
-
-console.log(docSnap)
-
-
+      const querySnapshot = await getDocs(collection(db, "Fotballspillere"));
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+      });
     </script>
   </body>
 </html>
