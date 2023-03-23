@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Oppdatere Top Scorers Liste</title>
+</head>
+<body>
+    <h1>Oppdatere Top Scorers Liste</h1>
+
+    <form method = "POST" action= "update.php">
+        <label for ="idnr">Spiller nr</label>
+        <input type="number" id="idnr" name="idnr" required>
+
+        <label for ="Fornavn">Fornavn</label>
+        <input type="text" id="Fornavn" name="Fornavn" required>
+
+        <label for ="Etternavn">Etternavn</label>
+        <input type="text" id="Etternavn" name="Etternavn" required>
+
+        <label for ="Goals">Antall mål</label>
+        <input type="number" id="Goals" name="Goals" required>
+
+        <label for ="Antall_kamper">Antall kamper spilt:</label>
+        <input type="number" id="Antall_kamper" name="Antall_kamper" required>
+
+        <input type="submit" name="submit" value= "Oppdater">
+    </form>
+
+
+    <form method = "POST" action= "insert.php">
+        <label for ="idnr">Spiller nr</label>
+        <input type="number" id="idnr" name="idnr" required>
+
+        <label for ="Fornavn">Fornavn</label>
+        <input type="text" id="Fornavn" name="Fornavn" required>
+
+        <label for ="Etternavn">Etternavn</label>
+        <input type="text" id="Etternavn" name="Etternavn" required>
+
+        <label for ="Goals">Antall mål</label>
+        <input type="number" id="Goals" name="Goals" required>
+
+        <label for ="Antall_kamper">Antall kamper spilt:</label>
+        <input type="number" id="Antall_kamper" name="Antall_kamper" required>
+
+        <input type="submit" name="submit" value= "Oppdater">
+    </form>
+</body>
+</html>
