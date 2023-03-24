@@ -11,7 +11,7 @@ let navn = navnEl.value
 
 console.log(navn)
 
-toggleEl.addEventListener("click", endre)
+//toggleEl.addEventListener("click", endre)
 
 let quizTekst = ""
 let quiz = [
@@ -26,7 +26,7 @@ let quiz = [
         spm: "Hvilke tall er dette i titallsystemet?",
         alt: ["10", "6", "5"],
         fasit: [0, 0, 1,],
-        media: "<img src='media/Tall.png' alt='akord'>",
+        media: "<img src='media/Tall.png' alt='101'>",
         type: "radio"
     },
     {
@@ -58,6 +58,7 @@ function next() {
         }
     }
     quizTekst = ""
+    quizTekst += "<a href='index2.php'><button id='idTilbake'>Tilbake</button></a>"
     quizTekst += "<div id='child1'>"
     quizTekst += "<p>" + quiz[i].spm + "</p>";
     quizTekst += "</div>"

@@ -26,15 +26,15 @@
         }
     ?>
 
-
+    
     <div class="container">
         <div id="idQuiz" style="<?php
             if (!isset($_GET['navn'])) {
                 echo "display: none;";
             }
         ?>"></div>
-
-
+    
+            
         <div style="<?php
             if (isset($_GET['navn'])) {
                 echo "display: none;";
@@ -52,12 +52,14 @@
                 <input type="submit">
             </form>
         </div>
-    </div>
 
-    <div>
+        <div>   <!--lagre resultat knapp-->
         <form method="POST" action="highscore_v2.php" id="idForm"></form>
+        </div>
     </div>
 
+    
+    <!--putter ut tabellen-->
     <div id="idTable" class="position" style="<?php
             if ($highscore->num_rows == 0) {
                 echo "display: none;";
