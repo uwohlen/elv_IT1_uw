@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fotballspillere</title>
+  </head>
+  <body>
+    <h1>Fotballspillere</h1>
+    <form id="addPlayerForm">
+      <input type="text" id="playerNameInput" placeholder="Player Name" />
+      <input type="number" id="playerAgeInput" placeholder="Player Age" />
+      <input type="text" id="playerClubInput" placeholder="Player Club" />
+      <button type="submit">Add Player</button>
+    </form>
+    <ul id="playerList"></ul>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs,
+        doc,
+        updateDoc,
+        deleteDoc,
+      } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_AUTH_DOMAIN",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_STORAGE_BUCKET",
+        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+        appId: "YOUR_APP_ID",
+        measurementId: "YOUR_MEASUREMENT_ID",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      const db = getFirestore(app);
+      const playerList = document.getElementById("playerList");
+      const addPlayerForm = document.getElementById("addPlayerForm");
+      const playerNameInput = document.getElementById("playerNameInput");
+      const playerAgeInput = document.getElementById("playerAgeInput");
+      const playerClubInput = document.getElementById("playerClubInput");
+
+      // Function to render player data to the UI
+      function renderPlayer(doc) {
+        const li = document.createElement("li");
+        li.textContent = `Name: ${doc.data().name}, Age: ${
+          doc.data().age
+        }, Club: ${doc.data().club}`;
+
+        // Create edit button
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.addEventListener("click", () => {
+          const updatedName = prompt("Enter updated name", doc.data().name);
+          const updatedAge = prompt("Enter updated age", doc.data().age);
+          const updatedClub = prompt("Enter updated club", doc.data().club);
+
+          // Update player data in the database
+          updateDoc(doc(db, "Fotballspillere", doc.id), {
+            name: updatedName,
+            age: parseInt(updatedAge),
+            club: updatedClub,
+          });
+        });
+
+        // Create delete button
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", () => {
+          // Delete player data from the database
+          deleteDoc(doc(db, "Fotballspillere", doc.id));
+        });
+
+        li.appendChild(editButton);
+
+        li.appendChild(deleteButton);
+        playerList.appendChild(li);
+      }
+
+      // Function to fetch and render all players from the database
+      async function fetchAndRenderPlayers() {
+        playerList.innerHTML = ""; // Clear the playerList element
+        const querySnapshot = await getDocs(collection(db, "Fotballspillere"));
+        querySnapshot.forEach((doc) => {
+          renderPlayer(doc);
+        });
+      }
+
+      // Add event listener for form submission
+      addPlayerForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Get input values
+        const playerName = playerNameInput.value.trim();
+        const playerAge = parseInt(playerAgeInput.value);
+        const playerClub = playerClubInput.value.trim();
+
+        // Add player data to the database
+        await addDoc(collection(db, "Fotballspillere"), {
+          name: playerName,
+          age: playerAge,
+          club: playerClub,
+        });
+
+        // Clear input fields
+        playerNameInput.value = "";
+        playerAgeInput.value = "";
+        playerClubInput.value = "";
+
+        // Fetch and render updated player list
+        fetchAndRenderPlayers();
+      });
+
+      // Fetch and render players on page load
+      fetchAndRenderPlayers();
+    </script>
+  </body>
+</html>
