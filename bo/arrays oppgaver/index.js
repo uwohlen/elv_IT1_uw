@@ -106,4 +106,4 @@ let indexofsvar = array8.indexOf(50)
 let boindexofsvar = BosIndexOf(array8,50)
 console.log()
 
-
+  
