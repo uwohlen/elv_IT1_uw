@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title></title>
+    <link rel='stylesheet' href='css/quiztermin2.css'>
+    <style>
+        div {
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+         <h1>Velkommen til Klasselisten!</h1>
+    </div>
+    <?php include "login.php";?>
+    <?php
+        $sqlkode1 = "SELECT elever.*,laerere.fornavn AS LFnavn,laerere.etternavn AS LEnavn FROM elever, laerere WHERE elever.kontaktlaererNr = laerere.idNr";
+        $sqlkode2 = "SELECT * FROM elever, interesser, elever_med_interesser WHERE elever.elevNr = elever_med_interesser.elevNr AND interesser.interesseNr = elever_med_interesser.interesseNr ORDER BY `elever`.`elevNr` ASC";
+    
+    
+        $elevinfo1= $kobling->query($sqlkode1);
+        $elevinfo2 = $kobling->query($sqlkode2);
+        //echo "Spørringen $sqlkode ga $elevinfo->num_rows rader.";
+    ?>
+
+    <table>
+        <thead id="idTabell1"></thead>
+        <tbody>
+            <?php
+                while ($rad = $elevinfo1->fetch_assoc()) {
+                    echo "<tr>
+                        <td>$rad[elevNr]</td>
+                        <td>$rad[fornavn]</td>
+                        <td>$rad[etternavn]</td>
+                        <td>$rad[klasse]</td>
+                        <td>$rad[telefonNr]</td>
+                        <td>$rad[LFnavn]</td>
+                        <td>$rad[LEnavn]</td>
+                    </tr>";
+                }
+            ?>
+        </tbody>
+        
+        
+        <thead id="idTabell2"></thead>
+        <tbody>
+            <?php
+                while ($rad = $elevinfo2->fetch_assoc()) {
+                    echo "<tr>
+                        <td>$rad[elevNr]</td>
+                        <td>$rad[interesse]</td>
+                        <td>$rad[sted]</td>
+                        <td>$rad[utbytte]</td>
+                        
+                    </tr>";
+                }
+            ?>
+        </tbody>
+    </table>
+    
+    <form method="POST" action="bok_action.php">
+        <label for="fornavn">Fornavn:</label><br>
+        <input type="text" id="fornavn" name="fornavn" value=""><br><br>
+        <label for="etternavn">Etternavn:</label><br>
+        <input type="text" id="etternavn" name="etternavn" value=""><br><br>
+        <label for="interesse">Interesse:</label><br>
+        <input type="text" id="interesse" name="interesse" value=""><br><br>
+        <label for="sted">Sted:</label><br>
+        <input type="text" id="sted" name="sted" value=""><br><br>
+        <label for="utbytte">Utbytte:</label><br>
+        <input type="text" id="utbytte" name="utbytte" value=""><br><br>
+
+
+        <input name="submit" type="submit" value="Submit">
+        <input type="reset" value="Tilbakestill">
+     </form>
+    
+    <script>
+        let tabell1El = document.getElementById("idTabell1");
+
+        let titler = ["Elev nr.","Fornavn","Etternavn","Klasse","Telefon","Lærer FN", "Lærer EN"];
+
+        let tekst = "<tr>";
+        for (let i=0; i<titler.length; i++) {
+            tekst += "<th>" + titler[i] + "</th>";
+        }
+        tekst += "</tr>";
+        tabell1El.innerHTML = tekst;
+        
+        let tabell2El = document.getElementById("idTabell2");
+
+        let titler2 = ["Elev nr.", "Interesse", "Sted", "Utbytte"];
+
+        let tekst2 = "<tr>";
+        for (let i=0; i<titler2.length; i++) {
+            tekst2 += "<th>" + titler2[i] + "</th>";
+        }
+        tekst2 += "</tr>";
+        tabell2El.innerHTML = tekst2;
+
+    </script>
+
+ 
+   
+</body>
+</html>

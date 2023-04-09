@@ -1,0 +1,46 @@
+/*body */
+* {
+    box-sizing: border-box;
+    }
+
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color:#f1d4d9ea; 
+    }
+    
+    h1{
+    font-family: "Calibri light";
+    font-size: 300%;
+    color: rgb(255, 255, 255);
+    }
+    
+    h2, h3{
+    font-family: "NSimSun";
+    text-align: center;
+    
+    }
+    tr{
+        text-align: center;
+        font-family: "Calibri light";
+        font-size: 21px;
+    }
+    td{
+        text-align: center;
+        padding: 10px;
+        font-family: "Calibri light";
+    }
+    
+    p {
+    font-family: 'Courier New', Courier, monospace;
+    }
+
+          
+                
+    .header {
+    padding: 20px;
+    background: rgba(182, 57, 73, 0.945);   
+    }
+    
+        

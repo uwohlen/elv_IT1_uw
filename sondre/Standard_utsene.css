@@ -15,9 +15,7 @@ body{
 
 .cl_btn:hover {
     background-color: RoyalBlue;
-    margin-top: -2.5%;
-    margin:  -2.5% -2.5% -2.5% -2.5%; 
-    height: +110%;
+    padding: 16px;
 }
 
 button:hover{
@@ -43,7 +41,7 @@ button:hover{
     margin-left: 10%;
 }
 
-#id_navnditt{
+#id_navnditt, #id_navn_skriv{
     background-color: gray;
     position: sticky;
     bottom: 20px;
@@ -64,6 +62,7 @@ button:hover{
 
 .cl_menu_button_flex{
     display: flex;
+    flex-wrap: wrap;
     background-image: url("media/Sondre.jpeg");
     background-size: cover;
     background-position: center;
@@ -72,12 +71,15 @@ button:hover{
     padding-top: 80px;
     padding-bottom: 80px;
 
+    margin: 10px;
+
     position: relative;
     text-align: center;
     color: white;
 }
 
 .cl_velg{
+    display: inline-block;
     text-align: center;
     width: auto;
     padding: 10px;
@@ -115,8 +117,6 @@ button:hover{
 }
 
 .cl_flex_menu{
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- <link rel="icon" href="media/favicon.ico">-->
+        <link rel="stylesheet" href="css/quiztermin2.css">
+        <title>Quiz Kavya</title>
+        <style>
+
+        </style>
+
+    </head>
+    <body>
+
+        <div class="dropdown">
+            <button id="minKnapp" class="dropbtn">Meny</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="../index.html">Hjem</a>
+            </div>
+        </div>
+
+
+        <div class="header">
+            <h1>Quiz</h1>
+        </div>
+        <div class="row"> 
+            <div class="side">
+                <div id="idMedia"></div>
+            </div>
+            <div class="main">
+                <p id="idSpm"></p>
+                <p id="idAlternativ"></p>
+                <button id="idNeste">Neste</button>
+            </div>
+            
+        </div>
+
+    <script>
+        document.getElementById("minKnapp").onclick = function() {myFunction()};
+
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }  
+
+
+        let mediaDiv = document.getElementById("idMedia");
+        let spmP = document.getElementById("idSpm");
+        let altn = document.getElementById("idAlternativ");
+        let next = document.getElementById("idNeste");
+
+
+        let media = [
+            "<img src='Media/spm1.jpg' height='50'>", //bilde spm 1
+            "<img src='Media/spm2.jpg' height='200'>", //bild spm2
+            "<img src='Media/spm3.jpg' height='300'>", //ingen media spm 3
+            "<img src='Media/spm4.jpg' height='200'>" //bilde spm 4
+        ]
+
+        let spm = [
+            "1. Hva benyttes filendelser til? ",
+            "2. Skjermer er basert på punkter (piksler). Hvilke 3 farger består hvert punkt av?",
+            "3. Hva er de vanligste bildeformatene som benyttes på nettsider?",
+            "4. Bør man lagre bilder som vektorbilder eller punktgrafitt dersom man ønsker å forstørre et bilde uten at kvaliteten reduseres?"
+        ];
+
+        let alternativer = [
+            [
+               "A) Filendelser benyttes for å angi hvilke programmer som kan tolke en fil", 
+                "B) Filendelser benyttes for å måle antall bite", 
+                "C) Filendelser benyttes for å slette en fil" 
+            ], //alternativ til spørsmål 1:Hva benyttes filendelser til?
+            [
+                "A) rød, gul, og blå", 
+                "B) rød, grønn og blå", 
+                "C) gul, blå og grønn", 
+                "D) blå, rosa og oransje" 
+            ],//alternativ til spørsmål 2:Skjermer er basert på punkter (piksler). Hvilke 3 farger består hvert punkt av?
+            [   
+                "A) HTML og CSS", 
+                "B) JS og DOCX", 
+                "C) PNG og JPG", 
+                "D) IMG og PDF" 
+            ],//alternativ til spørsmål 3: Hva er de vanligste bildeformatene som benyttes på nettsider?
+            [
+                "A) Vektorbilder", 
+                "B) Punktgrafitt", 
+                "C) Ingen av dem fungerer bra dersom man skal forstørre", 
+                "D) Begge to fungerer like bra om man skal forstørre" 
+            ],//alternativ til spørsmål 4: Bør man lagre bilder som vektorbilder eller punktgrafitt dersom man ønsker å forstørre et bilde uten at kvaliteten reduseres?
+         ];
+
+        let fasit = [
+            [1,0,0], //poeng til alternativ til spørsmål 1
+            [0,1,0,0],
+            [0,0,1,0],
+            [1,0,0,0],
+         ];
+
+        let typeboks = [
+             "radio", // kun 1 riktig alternativ
+             "radio",
+             "radio",
+             "radio"
+         ];
+
+
+    function visSpm(nr) {
+        mediaDiv.innerHTML = media[nr];
+        spmP.innerHTML = spm[nr];
+        
+        let slutten = "";
+        for (let i=0; i<alternativer[nr].length; i++) {
+            slutten += "<input class='altClass' type='" + typeboks[nr] + "' name='svaralternativer' value="+ fasit[nr][i] +">" + alternativer[nr][i] + "<br>";
+        }
+        altn.innerHTML = slutten;
+        }
+    
+        let i = 0;
+        visSpm(i);
+        
+        let poeng = [];
+        let svar = [];
+        let riktigsvar=[];
+        
+        next.addEventListener("click",svarAvgittFunk);
+    
+    function svarAvgittFunk() {
+        poeng[i] = 0;
+        svar[i] = "";
+        riktigsvar[i] = "";
+        
+        let sjekkbokser = document.getElementsByClassName("altClass");
+        
+        for (let k=0; k<sjekkbokser.length; k++) {
+            if (fasit[i][k] > 0) {
+                riktigsvar[i] += alternativer[i][k] + " ";
+            }
+            if (sjekkbokser[k].checked) {
+                poeng[i] += Number(sjekkbokser[k].value);
+                svar[i] += alternativer[i][k] + " ";
+            }
+        }
+        
+        i++;
+        if (i < spm.length) {
+            visSpm(i);
+        }
+        else {
+            mediaDiv.innerHTML = "";
+            spmP.innerHTML = "";
+            altn.innerHTML = "";
+            next.style.visibility = "hidden";
+            
+            slutten = "<table><tr><th>Spørsmål</th><th>Fasit</th><th>Svar avgitt</th><th>Poeng</th>";
+            
+            let totalpoeng = 0;
+            for (let m=0; m<spm.length; m++) {
+                totalpoeng += poeng[m];
+                
+                slutten += "<tr><td>" + spm[m] 
+                    + "</td><td>" + riktigsvar[m]
+                    + "</td><td>" + svar[m]
+                    + "</td><td>" + (poeng[m]).toFixed(1)
+                    + "</td></tr>";
+            }
+            
+            slutten += "</table>";
+            spmP.innerHTML = slutten;
+            
+            spmP.innerHTML += "<br><p>Du fikk " + totalpoeng.toFixed(1) + " poeng totalt.</p>";
+            
+            if (totalpoeng > 2) {
+                mediaDiv.innerHTML = "<img src='Media/smil.jpg' height='170'>";
+            }
+            else {
+                mediaDiv.innerHTML = "<img src='Media/sur.jpg' height='170'>";
+            }
+        }
+    }
+    
+</script>
+</body>
+</html>

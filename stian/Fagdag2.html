@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="no">
+<head> 
+  <title> Fremtidige vurderinger </title>
+  <meta charset="utf-8">
+  <style>
+    /* Eventuell CSS */
+  </style>
+</head>
+<body>
+  <div id="idHigh">
+    <table>
+      <thead>
+        <tr>
+          <th>Vurderinger</th>
+          <th>Dato</th>
+          <th>Ferdig</th>
+        </tr>
+      </thead>
+      <tbody id="idTabell">
+      </tbody>
+    </table>
+  </div>
+  <div id="hoved">
+      <h1>Vurderinger</h1> 
+      <input type="text" id="input1" placeholder="Skriv inn kommende vurdering"> 
+      <div id="liste"></div>
+      <input type="text" id="input2" placeholder="Skriv inn dato for vurdering"> <button class="ok">Legg til</button>
+      <div id="liste"></div>    
+  </div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCcDTVOa-sstwok0fgTXvQM4G05zFRV0aA",
+      authDomain: "it-fagdag-4857e.firebaseapp.com",
+      projectId: "it-fagdag-4857e",
+      storageBucket: "it-fagdag-4857e.appspot.com",
+      messagingSenderId: "713005408886",
+      appId: "1:713005408886:web:d8db0727f6de012a3ef557",
+      measurementId: "G-Z52XGLN217"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // Lager en referanse til databasen
+    let db = firebase.firestore();
+    let tabellEl = document.getElementById("idTabell");
+            
+    // Henter data. Når dataene er ferdig hentet, starter "then"-biten
+    function oppdater() {    
+      db.collection("it").get().then((snapshot) => {
+        // Henter ut dokumentene
+        let dokumenter = snapshot.docs;
+                  
+        // Skriver dokumentene til konsollen
+        console.log(dokumenter);
+
+        let tekst = "";
+
+        // Går gjennom dokumentene og bruker informasjonen 
+        for (let i = 0; i < dokumenter.length; i++) {
+          tekst += "<tr><td>" + dokumenter[i].data().vurdering + "</td><td>" + dokumenter[i].data().dato + "</td><td>" + dokumenter[i].data().ferdig + "</td></tr>";
+        }
+
+                  tabellEl.innerHTML = tekst;
+        });
+
+    }
+    oppdater();
+
+    // Lytter etter endringer i databasen
+    db.collection("it").onSnapshot(snapshot => {
+        // Kaller funksjonen oppdater(), som lager lista på nytt
+        oppdater();
+    }); 
+
+    let listeEl = document.querySelector("#liste");
+    let inputEl = document.querySelector("#input1");
+    let input2El = document.querySelector("#input2");
+    let knappEl = document.querySelector("button");
+    // Legger til lytter på knappen
+    knappEl.addEventListener("click", leggTilHuskepunkt);
+
+    // Funksjon som legger til vurdering og dato
+    function leggTilHuskepunkt() {
+      db.collection("it").add({
+        vurdering: inputEl.value,
+        dato: input2El.value,
+        ferdig: false    
+      });
+    }
+  </script>
+
+</body>
+</html>

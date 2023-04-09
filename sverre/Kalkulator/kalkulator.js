@@ -60,11 +60,8 @@ function regn_ut_rekursiv(tekst) {
 }
 
 function operasjon_funk(a, b, operasjon) {
-    console.log(a, b, operasjon);
     a = Number(a);
     b = Number(b);
-    console.warn(a, b, operasjon);
-
     if (operasjon === "+") {
         return a + b;
     }
@@ -83,17 +80,6 @@ function operasjon_funk(a, b, operasjon) {
     if (operasjon === "^") {
         return a ** b;
     }
-}
-
-function opplisting_funk(liste) {
-    let stopp = liste.length - 2;
-    let resultat = "";
-    let i = 0;
-    for (; i < stopp; i++) {
-        resultat += liste[i] + ", ";
-    }
-    resultat += liste[i] + " og " + liste[i + 1];
-    return resultat;
 }
 
 function komma_til_punktum(tekst) {

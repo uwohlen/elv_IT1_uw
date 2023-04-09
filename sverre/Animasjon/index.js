@@ -73,10 +73,6 @@ sirkler.push(
     )
 );
 
-function tilfeldig_tall(a, b) {
-    return Math.round(Math.random() * (b - a)) + a;
-}
-
 function tegn_sirkel(x, y, radius) {
     ctx.beginPath();
     ctx.arc(x, y, radius, 0, 2 * Math.PI);

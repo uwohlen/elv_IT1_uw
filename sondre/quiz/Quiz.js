@@ -2,8 +2,6 @@ let poeng =0 ;
 let antsvar = 0;
 let i =0
 
-let skrivnavn = document.getElementById("id_navnditt");
-let navnwrite = document.getElementById("navnskriv");
 let navn0 = document.getElementById("idNavn0");
 let navn1 = document.getElementById("idNavn1");
 let cookies = document.getElementById("id_cookies");
@@ -35,7 +33,7 @@ let knappr2El = document.getElementById("idr2");
 let knappr3El = document.getElementById("idr3");
 let knappr4El = document.getElementById("idr4");
 
-navnwrite.addEventListener("keydown",lagrefunk)
+navnskriv_inputEl.addEventListener("keydown",lagrefunk)
 knapp_ok_btnEl.addEventListener("click", cookies_ok_funk)
 slett_cookies_btnEl.addEventListener("click",slett_funk)
 
@@ -66,6 +64,7 @@ if (localStorage.getItem("cookiesGodkjentForIndex1")=== "Ja"){
     else{
         navn0.innerHTML="Navn ikke kjent"
         skrivnavn.style.display ="block";
+        
     }
 }
 else {
@@ -99,7 +98,7 @@ function cookies_ok_funk(){
 
 function lagrefunk(event) {
     if (event.keyCode === 13) {
-        localStorage.setItem("lagretNavnForQuiz1",navnwrite.value);
+        localStorage.setItem("lagretNavnForQuiz1",navnskriv_inputEl.value);
         navn0.innerHTML=" "+ localStorage.getItem("lagretNavnForQuiz1");
         skrivnavn.style.display ="none";
     }
