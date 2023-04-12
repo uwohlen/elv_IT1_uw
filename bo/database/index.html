@@ -4,43 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fotballspillere</title>
+    <title>Tottenham spillere</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+    />
   </head>
   <body>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
-      import {
-        getFirestore,
-        collection,
-        addDoc,
-        getDocs,
-        doc,
-      } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
-
-      const firebaseConfig = {
-        apiKey: "AIzaSyD07i2IQoKQJnVShF86ppBQ6r2c77W-qvk",
-        authDomain: "databaaae.firebaseapp.com",
-        projectId: "databaaae",
-        storageBucket: "databaaae.appspot.com",
-        messagingSenderId: "675401463184",
-        appId: "1:675401463184:web:9ebddb541e9352f3d0af15",
-        measurementId: "G-EZRZ19XC6L",
-      };
-
-
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-
-
-      const db = getFirestore(app);
-
-      const querySnapshot = await getDocs(collection(db, "Fotballspillere"));
-      querySnapshot.forEach((doc) => {
-
-        console.log(doc.id, " => ", doc.data());
-      });
-    </script>
+    <script src="index.js" type="module"></script>
+    <div class="bg-red-500">hello hello</div>
+    <div class="pt-[500px] flex justify-center bg-red-300">
+      <div><h1 class="text-xl">Tottenham spillere database</h1></div>
+    </div>
   </body>
 </html>
