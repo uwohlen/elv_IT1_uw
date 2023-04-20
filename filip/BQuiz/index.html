@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang='no'>
+
+<head>
+    <meta charset='UTF-8'>
+    <link rel="stylesheet" href="indexStyle.css">
+    <title>Quiz - Kapittel 1B</title>
+</head>
+
+<body>
+    <h1>Quiz - Spørsmål <span id="overSkrift">1</span></h1>
+
+    <table id="resultatId"></table>
+    <div id="quizId">
+    </div>
+
+    <button id="nesteId">Neste Spørsmål</button>
+
+    <script>
+        let tittelEl = document.getElementById("overSkrift");
+        let quizEl = document.getElementById("quizId");
+        let nesteEl = document.getElementById("nesteId");
+        let resultatEl = document.getElementById("resultatId");
+
+
+
+        let quizMal = [ // Her lager jeg "malen" til quizen, der jeg lager flere arrays som innholder objekter. Hver array er sitt eget spørsmål
+            {
+                media: "<img src='media/rgbBilde.png' width='200'></img>",
+                spm: "Hvilken fargekode gir oss helt rød farge?",
+                svar: ["#0000FF", "#00FF00", "#FF0000"],
+                typebox: "radio",
+                riktigVerdi: [-1, -1, 1],
+                riktigAntall: 1
+            },
+
+            {
+                media: "<img src='media/spm2.PNG' width='500'></img>",
+                spm: "Kryss av riktige påstander",
+                svar: ["Det binære tallsystemet er et titallsystem", "ASCII-koden 32 representerer mellomrom", "Filer som skal åpnes i Word har endelse .docx", "PNG står for 'Picture Network Grapher"],
+                typebox: "checkbox",
+                riktigVerdi: [-1, 0.5, 0.5, -1],
+                riktigAntall: 2
+            },
+
+            {
+                media: "<img src='media/spm3.png' width='400'></img>",
+                spm: "Velg riktig rekkefølge som går: 'ukomprimert, komprimert uten tap og komprimert med tap'",
+                svar: ["MP3, FLAC, WAV", "FLAC, MP3, WAV", "WAV, FLAC, MP3"],
+                typebox: "radio",
+                riktigVerdi: [-1, -1, 1],
+                riktigAntall: 1
+            },
+
+            {
+                media: "<img src='media/spm4.png' width='500'></img>",
+                spm: "Hvilken representerer tallet 4?",
+                svar: ["0101", "1100", "0001", "0100"],
+                typebox: "radio",
+                riktigVerdi: [-1, -1, -1, 1],
+                riktigAntall: 1
+            }
+        ];
+
+        let quizInsert = "";
+        function spmInput(i) { // Her lager jeg en funksjon som lager et nytt spørsmål i quizen. Siden jeg bruker arrays så kan jeg bruke parameteren "i" for å bestemme hvilket spørsmål vi er på
+            quizInsert += "<h2>" + quizMal[i].spm + "</h2>";
+            quizInsert += "<div>" + quizMal[i].media + "</div>";
+            quizInsert += "<p>";
+            for (let j = 0; j < quizMal[i].svar.length; j++) { // Andelen svar alternativ kan variere fra hvert spørsmål, så jeg måtte lage en løkke som skriver alle spørsmålene ned. Ved å skrive "j < quizMal[i].svar.length;" skriver bare løkken så mange spørsmål den kan finne.
+                quizInsert += "<input id='id" + i + j + "' class='svarClass' type='" + quizMal[i].typebox + "' name='svaralternativer" + i + "' value=" + quizMal[i].riktigVerdi[j] + "><label for='id" + i + j + "'>" + quizMal[i].svar[j] + "</label><br>";
+            }
+            quizInsert += "</p>";
+            quizEl.innerHTML = quizInsert;
+
+            let sjekkBokser = document.getElementsByClassName("svarClass");
+            for (let o = 0; o < sjekkBokser.length; o++) {
+                sjekkBokser[o].addEventListener("click", visNeste)
+            }
+        }
+
+        function visNeste() {
+            nesteEl.addEventListener("click", nesteSpm);
+        }
+
+        let y = 0
+        spmInput(y); // Her skriver jeg ut første spørsmål
+
+        let poeng = [] // Her lager jeg en tom array for poeng
+
+        function nesteSpm() { // Her lager jeg en ny funksjon som finner ut hvor mye poeng jeg fikk, og går til neste spørsmål.
+            poeng[y] = 0;
+
+            let sjekkBokser = document.getElementsByClassName("svarClass");
+            for (let k = 0; k < quizMal[y].svar.length; k++) {
+                if (sjekkBokser[k].checked) {
+                    poeng[y] += Number(sjekkBokser[k].value);
+                }
+            }
+
+            quizInsert = "";
+            y++
+
+            if (y < quizMal.length) { //Her sjekker jeg om vi har flere spørsmål å gå gjennom
+                spmInput(y);
+                nesteEl.removeEventListener("click", nesteSpm);
+                tittelEl.innerHTML = y + 1;
+            }
+
+            else {
+                let poengSum = poeng[0] + poeng[1] + poeng[2] + poeng[3];
+                let ferdigSide = "";
+                ferdigSide += "<h1>Ferdig!</h1>";
+                ferdigSide += "<h2> Du fikk " + poengSum + " av 4 </h2>";
+                quizEl.innerHTML = ferdigSide;
+
+            }
+        }
+    </script>
+</body>
+
+</html>
