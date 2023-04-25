@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase database</title>
+</head>
+<body>
+    
+
+    <div id="hoved">
+        <h1>Klasseliste</h1>
+        <ul id="list"> </ul>
+    </div>
+
+<script src=""https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js""></script>
+<script src=""https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDlalZdmh-xz5V5wjW-zN38Xr0BrnIrm6s",
+    authDomain: "klasseliste-1a9ed.firebaseapp.com",
+    projectId: "klasseliste-1a9ed",
+    storageBucket: "klasseliste-1a9ed.appspot.com",
+    messagingSenderId: "910068926377",
+    appId: "1:910068926377:web:b85197805d5cbf8baaa6b8"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  let db = firbase.firestore(); 
+  // Henter <ul>-elementet
+  let ulEl = document.getElementById("list");
+
+  db.collection("klasseliste").get().then((snapshot) =>{
+    // Henter ut dokumentene
+  let dokumenter = snapshot.docs;
+
+    // // Går gjennom dokumentene og sender dem videre      
+  for (let i = 0; i < dokumenter.length; i++) {
+    visKlasseElement(dokumenter[i]);
+  }
+
+
+
+});
+
+// Funksjon som viser hvert element
+function visKlasseElement(dokument) {
+  // Lager et <li>-element
+  let liEl = document.createElement("li");
+  
+  // Legger til klasselisteteksten i <li>-elementet
+  liEl.innerHTML = dokument.data().klassetekst;
+  
+  // Legger til <li>-elementet i <ul>-elementet
+  ulEl.appendChild(liEl);   
+}
+
+
+</script>
+
+</body>
+</html>

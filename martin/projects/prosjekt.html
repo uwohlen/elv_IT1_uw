@@ -2,6 +2,7 @@
 <html lang="no">
     <head>
         <title>Prosjekter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../stylesheet/prosjekt.css">
         <link rel="stylesheet" href="../stylesheet/navbar.css">
     </head>
@@ -14,7 +15,7 @@
             
             
 
-            <div class="navbar">
+            <div class="navbar" id="navbar">
            
                 <ul>
                     <li><a href="../index.html">Hjem</a></li>
@@ -64,7 +65,7 @@
                     <h4>JS</h4>
                 </div>
 
-                <div class="column" onclick="window.open('./Quiz/quiz.html')">
+                <div class="column" onclick="window.open('./Quiz/index.html')">
 
                     <h3>Quiz om Datamaskiner</h3>
                     <img src="../media/computer.jpg">
@@ -94,6 +95,19 @@
                         Et hobbyprosjekt for å vise min interesse for musikk og min kunnskap rundt det.
                     </p>
                     <h4>HTML</h4>
+                </div>
+
+
+                <div class="column" onclick="window.open('./nyQuiz/index.html')">
+
+                    <h3>Dynamisk Quiz</h3>
+                    <img src="../media/quiz.jpg">
+                    <p>Test prosjekt for dynamisk innhold (2023) 
+                        <br> <br>
+                        Test prosjekt for å sjekke dynamisk innlasting av innhold i JavaScript til HTML.
+                    </p>
+                    <h4>JS</h4>
+
                 </div>
 
 
@@ -130,6 +144,7 @@
                 <h4 style="font-weight: 500;">Avslutt cookies</h4>
             </div>
 
+            <br><br>
            
         </div>
 
@@ -142,11 +157,35 @@
         let projectsEl = document.getElementById("projectsId");
         
 
-        console.log(localStorage.getItem("lagretNavn"));
-        
         if(localStorage.getItem("lagretNavn") == null){
 
             CookiesNotActive();
+
+        }
+        else{
+            CookiesActive();
+
+        }
+
+        function FjernCookies(){
+            localStorage.removeItem("lagretNavn");
+            navnEl.value = "";
+            CookiesNotActive();
+
+        }
+
+        
+        
+        function CookiesActive(){
+            cookiesEl.style.display = "none";
+            projectsEl.style.display = "block";
+
+            savedNavnEl.innerHTML = " " + localStorage.getItem("lagretNavn");
+        }
+        function CookiesNotActive(){
+
+            projectsEl.style.display = "none";
+            cookiesEl.style.display = "block";
 
             navnEl.addEventListener("keydown",lagrefunk); 
             
@@ -157,7 +196,7 @@
                 if (event.keyCode == 13) { 
                 
                     localStorage.setItem("lagretNavn",navnEl.value);
-                    
+
                     CookiesActive();
                     savedNavnEl.innerHTML = " " + localStorage.getItem("lagretNavn");
 
@@ -165,31 +204,11 @@
                 } 
                 
             } 
-        }
-        else{
-            CookiesActive();
-            savedNavnEl.innerHTML = " " + localStorage.getItem("lagretNavn");
-        }
 
-        function FjernCookies(){
-            localStorage.removeItem("lagretNavn");
-            CookiesNotActive();
-        }
-
-        
-        
-        function CookiesActive(){
-            cookiesEl.style.display = "none";
-            projectsEl.style.display = "block";
-        }
-        function CookiesNotActive(){
-
-            projectsEl.style.display = "none";
-            cookiesEl.style.display = "block";
         }
 
         </script> 
 
-        
+        <script src="../scripts/navbarScroll.js"></script>
     </body>
 </html>

@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+}
+
+
+.banner{
+
+    margin: auto;
+    width: 75%;
+    height: 20vw;
+
+    padding: 3vh;
+    text-align: center;
+
+    
+}
+
+.banner h1{
+    margin: auto;
+    padding: 3vh;
+
+    font-size: 7vh;
+
+}
+
+.banner h2{
+    margin: auto;
+    padding: 2vh;
+    font-size: 4vh;
+}
+
+.quiz{
+    margin: auto;
+    width: 75%;
+    height: 100vh;
+}
+
+#questions{
+    margin: auto;
+    padding: 5vh;
+
+    text-align: center;
+}
+
+.question{
+    margin: auto;
+    height: auto;
+    width: 50%;
+
+
+    border-radius: 1vh;
+    border:2px;
+
+    border-style: solid;
+    border-color: #262626;
+
+    padding: 2vh;
+
+}
+
+
+.question h1{
+    padding: 5vh;
+    font-size: 2vw;
+}
+.question button{
+    cursor:pointer;
+    width: 32%;
+    height: 5vh;
+    font-size: 0.9vw;
+    border-radius: 1vh;
+    
+}
+

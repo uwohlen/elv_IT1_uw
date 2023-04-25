@@ -31,9 +31,9 @@ var questions = [
 for (let i = 0; i < questions.length; i++) {
 
     var innerArrayLength = questions[i].length;
-    var tempQstion
+    var tempQstion;
 
-    var options = []
+    var options = [];
     var answerIndex;
 
     console.log("");
@@ -94,6 +94,34 @@ for (let i = 0; i < questions.length; i++) {
 
 }
 
+
 //DEBUG-ELEMENT
-console.log(quiz)
+console.log(quiz);
+
+
+for(let i = 0; i < quiz.length; i++){
+
+    document.getElementById('questions').innerHTML += '<Div class="question">' +
+                                '<h1>' +  quiz[i].question + '</h1>' +
+                                '<button>' + quiz[i].svar_1 + '</button>'+
+
+                                '<button id="'+ i + '">' + quiz[i].svar_2 + '</button>';
+                                
+                                
+                                if(typeof quiz[i].svar_3 != "undefined"){
+                                    document.getElementById(i).innerHTML += '<button>' + quiz[i].svar_3 + '</button>';
+                                }
+                                    
+                                if(typeof quiz[i].svar_4 != "undefined")
+                                {
+                                    document.getElementById(i).innerHTML += '<button>' + quiz[i].svar_3 + '</button>';
+                                }
+
+
+    document.getElementById('questions').innerHTML += '</Div> <br>';
+    
+    
+
+}
+
 

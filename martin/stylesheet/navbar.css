@@ -4,12 +4,14 @@
     padding: 35px 0;
     display: flex;
     align-items: center;
-    position: fixed;
+
 
 }
 
 .navbar ul{
     margin: auto;
+    
+
     
 }
 
@@ -18,21 +20,37 @@
     display: inline-block;
     margin: 0 30px;
 
+
     transition-duration: 0.4s;
 
 }
 
+@media screen and (min-width:600px) {
+    
+    .navbar ul li a{
+        text-decoration: none;
+        font-weight: lighter;
+        letter-spacing: 2px;
+        color: #262626;
+        text-transform: uppercase;
+        
+        transition-duration: 0.4s;
+        
+    }
 
-.navbar ul li a{
-    text-decoration: none;
-    font-weight: lighter;
-    letter-spacing: 2px;
-    color: #262626;
-    text-transform: uppercase;
-    
-    transition-duration: 0.4s;
-    
+} @media screen and (max-width:600px) {
+    .navbar ul li a {
+        text-decoration: none;
+        font-weight: lighter;
+        color: #262626;
+        text-transform: uppercase;
+        
+        transition-duration: 0.4s;
+        font-size: 3vw;
+    }    
 }
+
+
 
 .navbar ul li a:hover{
     color: #777777;
