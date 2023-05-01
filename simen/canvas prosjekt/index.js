@@ -81,7 +81,6 @@ function test3() {
 }
 
 knappEl.addEventListener("click", function () {
-  // put the code that you want to run when the button is clicked here
   if(KanSpille){
     tid = 100
     tid2 = 100
