@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+      background-color: rebeccapurple;
+      margin:0;
+  }
+  
+  .Menus {
+      position: relative;
+      top: 0;
+      display: inline;
+      margin-left: 4%;
+      cursor: pointer;
+      font-size:xx-large;
+  }
+  .MenuL {
+      text-decoration: none;
+      color: black;
+      background-color: aqua;
+      border: 0;
+      font-size: xx-large;
+  }
+  button {
+      cursor: pointer;
+  }
+  .navbar {
+      margin: auto;
+      width: 100%;
+      background-color: aqua;
+      height: 50px;
+  }
+  
+  .navbar a, button {
+    float: left;
+    font-size: large;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: xx-large;  
+    border: none;
+    outline: none;
+    color: black;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: turquoise;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: aqua;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: turquoise;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+#Hovedside {
+    margin-left: 10px;
+    text-decoration: none;
+}
+button {
+    cursor: pointer;
+}

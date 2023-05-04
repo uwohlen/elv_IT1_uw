@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <link rel="Stylesheet" href="../Felles.css">
+            <link rel="Stylesheet" href="Prosjekt3.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <title>Dekrypteringsnettside</title>
+            <style>
+              #IdTøm{
+                float: none;
+              }
+            </style>
+        </head>
+        <body>
+            <div class="navbar">
+                <p id="Hjem" class="Menus"><button id="Hjemb" class="MenuL" onclick="document.location='../index.html'">Hjem</button></p>
+              <div class="dropdown">
+                <button class="dropbtn">Quiz 
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="../Quiz/index.html">Quiz</a>
+                  <a href="../Arrayquiz/index.html">Arrayquiz</a>
+                </div>
+              </div> 
+              <div class="dropdown">
+                <button class="dropbtn">Kryptering 
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="../Kryptering/index.html">Kryptering</a>
+                  <a href="../Dekryptering/index.html">Dekryptering</a>
+                </div>
+              </div>
+              <p id="Kalkulator" class="Menus"><button id="Kalkulatorb" class="MenuL" onclick="document.location='../Kalkulator/index.html'">Kalkulator</button></p>
+              <p id="Geoguessr" class="Menus"><button id="Geoguessrb" class="MenuL" onclick="document.location='../Geoguessr/index.html'">Geoguessr</button></p>
+              <p id="Prosjekt" class="Menus"><button id="Prosjektb" class="MenuL" onclick="document.location='../Prosjekt/index.html'">Prosjekt</button></p>
+            </div>
+            <main>
+                <p> skriv inn det du vil dekryptere her:</p>
+                <input id="kryptert" type="text"><button id="IdTøm" onclick="tøm()">Tøm</button> <br> <br>
+                <p>skriv inn kodeord her:</p>
+                <input id="kodeord" type="password"> <br>
+                <p><input type="checkbox" onclick="vis()">Vis kodeord</p> <br>
+                <button class="menydel" onclick="dekrypter()">Dekrypter</button> <br>
+                <p>Dekryptert blir koden:</p>
+                <div id="k">
+                    <p id="dekryptert"></p>
+                </div>
+                <button id="kopier" onclick="kopier()">Kopier</button>
+            </main>
+            <script src="dekryptering.js"></script>
+        </body>
+    </html>

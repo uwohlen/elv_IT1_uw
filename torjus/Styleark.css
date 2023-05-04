@@ -1,0 +1,136 @@
+
+#hoved {
+    font-family: "Brush Script MT", "Brush Script";
+    font-size: 500%;
+    text-align: center;
+}
+.Cookies {
+    background-color: white;
+    width: 1260px;
+    border: 1px ;
+    padding: 10px;
+    margin-left: 20px;
+    position: fixed;
+    bottom: 10px;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
+    z-index: 2;
+}
+#Vilkår {
+    display: none;
+    height: 83.594px;
+}
+#LNavn {
+    display: none;
+    height: 83.594px;
+}
+#SeVilkår {
+    border-radius: 10px;
+    width: 150px;
+    height: 29.6px;
+}
+#AvslåCookies {
+    margin-left: 800px;
+    border-radius: 10px;
+    background-color:blue;
+    width: 150px;
+    height: 29.6px;
+}
+#GodtaCookies {
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: blue;
+    width: 150px;
+    height: 29.6px;
+}
+#LagreNavn {
+    margin-left: 10px;
+}
+#TNavn {
+    text-align: center;
+}
+#Tilbake {
+    margin-left: 1110px;
+    border-radius: 10px;
+    width: 150px;
+    height: 29.6px;
+}
+#AvsluttCookies {
+    cursor: pointer;
+}
+
+#en {
+    margin-left: 1.5%;
+}
+#to {
+    margin-left: 3%;
+}
+#tre {
+    margin-left: 1.5%;
+    margin-top: 1%;
+}
+#fire {
+    margin-left: 3%;
+    margin-top: 1%;
+}
+#fem {
+    margin-left: 1.5%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+#seks {
+    margin-left: 3%;
+    margin-top: 1%;
+    margin-bottom: 2%
+}
+.click {
+    cursor: pointer;
+    font-family: "Comic Sans MS", "Comic Sans";
+    width: 47%;
+    height: 68vh;
+    text-align: center;
+    background-color: blueviolet;
+}
+.aclick {
+    text-decoration: none;
+    color: black;
+    background-color: blueviolet;
+    border: 0;
+}
+#ubrukeligside {
+    filter: blur(5px);
+    z-index: 1;
+}
+
+#felles {
+    cursor: pointer;
+}
+#flex {
+    display: flex;
+    flex-direction: rad;
+    flex-wrap: wrap;
+}
+.post-side{
+    display: flex;
+    flex-direction: rad;
+    flex-wrap: wrap;
+    background-color: black;
+    height: 20vh;
+    color: white;
+    bottom: 0;
+    align-content: space-around;
+    align-items: baseline;
+}
+.post-side > div {
+    width: 26vw ;
+    margin-left: 5%;
+}
+#Bilde1{
+    width: 44vw;
+    height: 55vh;
+}
+#Bilde2{
+    width: 44vw;
+    height: 55vh;
+}

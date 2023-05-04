@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <link rel="Stylesheet" href="Styleark.css">
+            <link rel="Stylesheet" href="Felles.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <title>En Sau's nettside</title>
+            <style>
+                .dropdown:hover .dropdown-content {
+                    display: none;
+                }
+            </style>
+        </head>
+        <body>
+            <div id="Cookies" class="Cookies">
+                Dette nettstedet bruker Cookies for å sørge for at du får en bedre opplevelse. Ved å trykke "Godta Cookies" godtar du bruken av cookies henholdsvis til vår Cookie policy.<br> For å vite mer trykk "Se Vilkår"<br><br>
+                <button id="SeVilkår">Se Vilkår</button><button id="AvslåCookies">Avslå Cookies</button><button id="GodtaCookies">Godta Cookies</button>
+            </div>
+            <div id="LNavn" class="Cookies">
+                <p id="TNavn">For å fullføre godkjenning av Cookies, skriv inn navnet ditt i feltet under og trykk deretter Enter eller "Ok". <br><br>
+                <input id="IdNavn" type="text" placeholder="Skriv inn navnet ditt her"><button id="LagreNavn">Ok</button></p>
+            </div>
+            <div id="Vilkår" class="Cookies">
+                Dette nettstedet vil lagre informasjon på din datamaskin, og hente den fram igjen ved et senere tidspunkt
+                Informasjonen vi samtidig låner av deg vil kunne brukes til å øke nettstedets rikdom og verdier. 
+                Dette gjelder både dine materialistiske og levende verdier. Takk for din tillatelse. <br> <br> <button id="Tilbake">Tilbake</button>
+            </div>
+            <div id="ubrukeligside">
+                <div class="navbar">
+                    <p id="Hovedside" class="Menus"><button id="Hovedsideb" class="MenuL" onclick="document.location='index.html'" disabled>Hjem</button></p>
+                    <div class="dropdown">
+                        <button class="dropbtn">Quiz 
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                          <a class="links" href="Quiz/index.html">Quiz</a>
+                          <a class="links" href="Arrayquiz/index.html">Arrayquiz</a>
+                        </div>
+                      </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Kryptering 
+                          <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                          <a href="../Kryptering/index.html">Kryptering</a>
+                          <a href="../Dekryptering/index.html">Dekryptering</a>
+                    </div>
+                    </div>
+                    <p id="Prosjekt2" class="Menus"><button id="Prosjekt2b" class="MenuL" onclick="document.location='Geoguessr/index.html'" disabled>Geoguessr</button></p>
+                    <p id="Prosjekt4" class="Menus"><button id="Prosjekt4b" class="MenuL" onclick="document.location='Kalkulator/index.html'" disabled>Kalkulator</button></p>
+                    <p id="Prosjekt5" class="Menus"><button id="Prosjekt5b" class="MenuL" onclick="document.location='Prosjekt/index.html'" disabled>Prosjekt 5</button></p>
+                </div>
+                <h1 id="hoved">Velkommen til paradis</h1>
+                <div id="flex">
+                    <div id="en" class="click">
+                        <button id="tilquiz"class="aclick" onclick="document.location='Quiz/index.html'" disabled>
+                        <h1>Er du like smart som Stian? Ta quizzen her</h1>
+                        <img id="Bilde1" src="Bilder/Stian_Angel.jpg" width="100%" height="100%" alt="En mann som bygger PC">
+                        </button>
+                    </div>
+                    <div id="to" class="click">
+                        <button id="tilprosjekt2"class="aclick" onclick="document.location='Geoguessr/index.html'" disabled> 
+                        <h1>Tips til geoguessr</h1>
+                        <img id="Bilde2" src="Geoguessr/bilder/geoguessr.jpg" alt="animert verden">
+                        </button> 
+                    </div>
+                  <div id="tre" class="click">
+                        <!-- <button id="tilprosjekt3"class="aclick" onclick="document.location='Prosjekt3/Prosjekt3.html'" disabled> -->
+                        <h1>Prosjekt 3</h1>
+                        <!--  <img src="Prosjekt3/Bilder/Prosjekt3.jpg" width="100%" height="100%" alt="Prosjekt3"> -->
+                        <!--  </button> -->
+                    </div>
+                     <div id="fire" class="click">
+                        <!-- <button id="tilprosjekt4"class="aclick" onclick="document.location='Prosjekt4/Prosjekt4.html'" disabled> -->
+                        <h1>Prosjekt 4</h1>
+                        <!--  <img src="Prosjekt4/Bilder/Prosjekt4.jpg" width="100%" height="100%" alt="Prosjekt4"> -->
+                        <!--  </button> -->
+                     </div>
+                     <div id="fem" class="click">
+                        <!-- <button id="tilprosjekt5"class="aclick" onclick="document.location='Prosjekt5/Prosjekt5.html'" disabled> -->
+                        <h1>Prosjekt 5</h1>
+                        <!--  <img src="Prosjekt5/Bilder/Prosjekt5.jpg" width="100%" height="100%" alt="Prosjekt5"> -->
+                        <!--  </button> -->
+                     </div>
+                    <div id="seks" class="click">
+                        <!-- <button id="tilprosjekt6"class="aclick" onclick="document.location='Prosjekt6/Prosjekt6.html'" disabled> -->
+                        <h1>Prosjekt 6</h1>
+                        <!--  <img src="Prosjekt6/Bilder/Prosjekt6.jpg" width="100%" height="100%" alt="Prosjekt6"> -->
+                        <!--  </button> -->
+                    </div>
+                </div>
+                <div class="post-side">
+                    <div>Utvikler: Torjus Opheim Sauar</div>
+                    <div></div>
+                    <div>Sist oppdatert: 18.10.22</div> 
+                    <div><p id="felles" onclick="document.location='../index.html'" disabled>Tilbake til fellessiden</p></div>
+                    <div><p id="AvsluttCookies">Avslutt Cookies</p></div>
+                    <div>Utviklerdato: 30.09.22</div>
+                </div>
+            </div>
+
+            <script>
+                let Elubrukeligside = document.getElementById("ubrukeligside");
+                let ElCookies = document.getElementById("Cookies");
+                let ElGodtaCookies = document.getElementById("GodtaCookies");
+                let ElAvslåCookies = document.getElementById("AvslåCookies");
+                let ElSeVilkår = document.getElementById("SeVilkår");
+                let ElNavn = document.getElementById("IdNavn");
+                let ElLagreNavn = document.getElementById("LagreNavn");
+                let ElLNavn = document.getElementById("LNavn");
+                let ElTilbake = document.getElementById("Tilbake");
+                let ElAvsluttCookies = document.getElementById("AvsluttCookies");
+                var dropdown = document.querySelector(".dropdown"); 
+                var dropdownContent = document.querySelector(".dropdown-content");
+
+
+                ElGodtaCookies.addEventListener("click", GodtaCookiesfunk);
+                ElAvslåCookies.addEventListener("click", AvslåCookiesfunk);
+                ElSeVilkår.addEventListener("click", SeVilkårfunk);
+                ElTilbake.addEventListener("click", Tilbakefunk);
+                ElNavn.addEventListener("keydown", lagrefunk);
+                ElLagreNavn.addEventListener("click", lagrefunk1);
+                ElAvsluttCookies.addEventListener("click", AvsluttCookiesfunk);
+
+                
+
+                if (localStorage.getItem("CookiesGodkjentForIndex") === "Ja") {
+                    ElCookies.style.display= "none";          
+                    document.getElementById("Hovedsideb").disabled = false;
+                    document.getElementById("Prosjekt2b").disabled = false;
+                    document.getElementById("Prosjekt4b").disabled = false;
+                    document.getElementById("Prosjekt5b").disabled = false;
+                    document.getElementById("tilquiz").disabled = false;
+                    document.getElementById("tilprosjekt2").disabled = false;
+ //                   document.getElementById("tilprosjekt3").disabled = false;
+   //                 document.getElementById("tilprosjekt4").disabled = false;
+     //               document.getElementById("tilprosjekt5").disabled = false;
+       //             document.getElementById("tilprosjekt6").disabled = false;
+                    document.getElementById("felles").disabled = false;
+             //       document.getElementsByClassName("dropdown:hover").style.display = "block"
+               //     document.getElementsByClassName("dropdown-content").style.display = "block"
+                  //Displaye hover-greia på kryptering
+                    Elubrukeligside.style.filter = "blur(0px)";
+                    dropdown.addEventListener("mouseover", function() { 
+                        dropdownContent.style.display = "block"; 
+                    }); 
+                    dropdown.addEventListener("mouseout", function() { 
+                        dropdownContent.style.display = "none"; 
+                    });
+                } 
+
+                
+
+                function GodtaCookiesfunk() {
+                    ElCookies.style.display = "none";
+                    ElLNavn.style.display = "block";
+                }
+                function AvslåCookiesfunk() {
+                    ElCookies.style.display = "none";
+                    document.getElementById("Hovedsideb").disabled = false;
+                    document.getElementById("Prosjekt2b").disabled = false;
+                    document.getElementById("Prosjekt4b").disabled = false;
+                    document.getElementById("Prosjekt5b").disabled = false;
+                    document.getElementById("tilquiz").disabled = false;
+                    document.getElementById("tilprosjekt2").disabled = false;
+  //                  document.getElementById("tilprosjekt3").disabled = false;
+    //                document.getElementById("tilprosjekt4").disabled = false;
+      //              document.getElementById("tilprosjekt5").disabled = false;
+        //            document.getElementById("tilprosjekt6").disabled = false;
+                    document.getElementById("felles").disabled = false;
+                    dropdown.addEventListener("mouseover", function() { 
+                        dropdownContent.style.display = "block"; 
+                    }); 
+                    dropdown.addEventListener("mouseout", function() { 
+                        dropdownContent.style.display = "none"; 
+                    });
+                    Elubrukeligside.style.filter = "blur(0px)";
+                }
+                function lagrefunk1 () {
+                    localStorage.removeItem("LagretNavnForQuiz");
+                        localStorage.setItem("LagretNavnForQuiz", ElNavn.value);
+                        console.log(ElNavn.value);
+                        ElLNavn.style.display = "none" ;
+                        localStorage.setItem("CookiesGodkjentForIndex", "Ja");
+                        document.getElementById("Hovedsideb").disabled = false;
+                        document.getElementById("Prosjekt2b").disabled = false;
+                        document.getElementById("Prosjekt4b").disabled = false;
+                        document.getElementById("Prosjekt5b").disabled = false;
+                        document.getElementById("tilquiz").disabled = false;
+                        document.getElementById("tilprosjekt2").disabled = false;
+//                        document.getElementById("tilprosjekt3").disabled = false;
+  //                      document.getElementById("tilprosjekt4").disabled = false;
+    //                    document.getElementById("tilprosjekt5").disabled = false;
+      //                  document.getElementById("tilprosjekt6").disabled = false;
+                        document.getElementById("felles").disabled = false;
+                        dropdown.addEventListener("mouseover", function() { 
+                            dropdownContent.style.display = "block"; 
+                        }); 
+                        dropdown.addEventListener("mouseout", function() { 
+                            dropdownContent.style.display = "none"; 
+                        });      
+                      //Displaye hover-greia på kryptering                 
+                        Elubrukeligside.style.filter = "blur(0px)";
+                }
+                function lagrefunk(event) {
+                    if (event.keyCode === 13) {
+                        lagrefunk1()    
+                    }
+                }
+                function SeVilkårfunk() {
+                    Vilkår.style.display = "block";
+                    ElCookies.style.display = "none";
+                }
+                function Tilbakefunk() {
+                    Vilkår.style.display = "none";
+                    ElCookies.style.display = "inline-block";
+                }
+                function AvsluttCookiesfunk() {
+                    localStorage.removeItem("CookiesGodkjentForIndex");
+                    localStorage.removeItem("LagretNavnForQuiz");
+                }
+            </script>
+        </body>
+    </html>

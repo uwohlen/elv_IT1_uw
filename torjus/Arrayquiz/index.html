@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8">
+        <link rel="Stylesheet" href="../Felles.css">
+        <link rel="Stylesheet" href="Arrayquiz.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Quiz med arrays</title>
+        <style>
+            /*Midlertidig, mens senere flyttet over til Arrayquiz.css */
+            #IdForrige {
+                visibility: hidden;
+            }
+            p, h1{
+                color: lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <p id="Hjem" class="Menus"><button id="Hjemb" class="MenuL" onclick="document.location='../index.html'">Hjem</button></p>
+          <div class="dropdown">
+            <button class="dropbtn">Quiz 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="../Quiz/index.html">Quiz</a>
+              <a href="../Arrayquiz/index.html">Arrayquiz</a>
+            </div>
+          </div> 
+          <div class="dropdown">
+            <button class="dropbtn">Kryptering 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="../Kryptering/index.html">Kryptering</a>
+              <a href="../Dekryptering/index.html">Dekryptering</a>
+            </div>
+          </div>
+          <p id="Kalkulator" class="Menus"><button id="Kalkulatorb" class="MenuL" onclick="document.location='../Kalkulator/index.html'">Kalkulator</button></p>
+          <p id="Geoguessr" class="Menus"><button id="Geoguessrb" class="MenuL" onclick="document.location='../Geoguessr/index.html'">Geoguessr</button></p>
+          <p id="Prosjekt" class="Menus"><button id="Prosjektb" class="MenuL" onclick="document.location='../Prosjekt/index.html'">Prosjekt</button></p>
+        </div>
+
+        <h1>Hvordan fungerer en pc?</h1>
+        <p id="IdSpm"></p>
+        <p id="IdAlt"></p>
+        <button id="IdForrige" class="Knapp">Forrige spørsmål</button>
+        <button id="IdNeste" class="Knapp">Neste spørsmål</button>
+    
+        
+        
+        
+    <script>
+        let SpmP = document.getElementById("IdSpm");
+        let AltP = document.getElementById("IdAlt");
+        let NesteBTN = document.getElementById("IdNeste");
+        let ForrigeBTN = document.getElementById("IdForrige");
+        
+    
+        //Lager arrays for spørsmål, Alternativer per spørsmål, fasiten per spørsmål og om spørsmålet er flervalgs eller ikke
+        let Spm = [
+            "Hva er riktig om tallsystemer?",
+            "Hva er riktig om punktgrafikk og vektorgrafikk?",
+            "Hvilke to tall er grunnlaget for koding?",
+            "Hvilke tre farger er vanligvis utgangspunktet for alle farger på datamaskiner?",
+            "Hvilken farge tilhører denne koden: #808000"
+        ];
+        
+        let Alt = [
+            ["Sekstentallsystemet brukes i datasammenheng fordi det er lett å regne mellom to- og sekstentallsystemet.",
+            "Datamaskiner bruker 10-tallsystemet.",
+            "Heksadesimale fargekoder baserer seg på totallsystemet.",
+            "Heksidesimale fargekoder baserer seg på sekstentallsystemet."],
+            ["Vektorgrafikk kan forstørres så mye vi ønsker, uten tap av kvalitet.",
+            "Bilder med punktgrafikk blir ofte komprimert.",
+            "Punktgrafikk kan forstørres så mye vi ønsker, uten tap av kvalitet.",
+            "Vektorgrafikk egner seg godt til lagring av fotografier."],
+            ["1 og -1","1 og 0","10 og 1","Programmering bruker ikke tall"],
+            ["Rød, Gul og Blå","Hvit, Sort og Rød","Hvit, Blå og Grønn","Blå, Grønn og Rød"],
+            ["Turkis","Akvamarin","Beige","Orange","Grå","Oliven","Aspargus","Bever","Lime","Banansplitt"]
+        ];
+        
+        let Fasit = [
+            [1/2,-1/2,-1/2,1/2],
+            [1/2,1/2,-1/2,-1/2],
+            [0,1,0,0],
+            [0,0,0,1],
+            [0,0,0,0,0,1,0,0,0,0]
+        ];
+        
+        let Typeboks = [
+            "checkbox",
+            "checkbox",
+            "radio",
+            "radio",
+            "radio"
+        ];
+        
+        
+        
+        function VisSpm(nr) {
+            SpmP.innerHTML = Spm[nr];
+            
+            let Tekst = "";
+            for (let j=0; j<Alt[nr].length; j++) {
+                Tekst += "<input class='AltClass' type='" + Typeboks[nr] + "' name='SvarAlt' value="+ Fasit[nr][j] +">" + Alt[nr][j] + "<br>";
+            }
+            AltP.innerHTML = Tekst;
+            if (i>0) {
+                ForrigeBTN.style.visibility = "visible"
+            }
+            else {
+                ForrigeBTN.style.visibility = "hidden"
+            }
+        }
+        
+        let i = 0;
+        VisSpm(i);
+        
+        let Poeng = [];
+        let Svar = [];
+        let Neste=[];
+    
+        ForrigeBTN.addEventListener("click",ForrigeFunk);
+        NesteBTN.addEventListener("click",NesteFunk);
+        
+        function ForrigeFunk() {
+            i--;
+            VisSpm(i);
+        }
+        function NesteFunk() {
+            Poeng[i] = 0;
+            Svar[i] = "";
+            Neste[i] = "";
+            
+            let Sjekkboks = document.getElementsByClassName("AltClass");
+            
+            for (let k=0; k<Sjekkboks.length; k++) {
+                if (Fasit[i][k] > 0) {
+                    Neste[i] += Alt[i][k] + " ";
+                }
+                if (Sjekkboks[k].checked) {
+                    Poeng[i] += Number(Sjekkboks[k].value);
+                    Svar[i] += Alt[i][k] + " ";
+                }
+            }
+            
+            i++;
+            if (i < Spm.length-1) {
+                VisSpm(i);
+            }
+            else if (i < Spm.length) {
+                VisSpm(i);
+                NesteBTN.innerHTML = "Fullfør Quiz";
+            }
+            else {
+                SpmP.innerHTML = "";
+                AltP.innerHTML = "";
+                NesteBTN.style.visibility = "hidden";
+                ForrigeBTN.style.visibility = "hidden";
+                
+                Tekst = "<table><tr><th>Spørsmål</th><th>Fasit</th><th>Svar avgitt</th><th>Poeng</th>";
+                
+                let TotPoeng = 0;
+                for (let m=0; m<Spm.length; m++) {
+                    TotPoeng += Poeng[m];
+                    
+                    Tekst += "<tr><td>" + Spm[m] 
+                        + "</td><td>" + Neste[m]
+                        + "</td><td>" + Svar[m]
+                        + "</td><td>" + (Poeng[m]).toFixed(1)
+                        + "</td></tr>";
+                }
+                
+                Tekst += "</table>";
+                SpmP.innerHTML = Tekst;
+                
+                SpmP.innerHTML += "<br><p>Du fikk " + TotPoeng.toFixed(1) + " Poeng totalt.</p>";
+            }
+        }
+        </script>
+    </body>
