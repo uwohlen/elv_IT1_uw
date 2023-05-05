@@ -1,0 +1,17 @@
+img {
+    display: inline-block;
+}
+.hspm {
+    display: none;
+}
+#nstspm {
+    bottom: 5px;
+    right: 5px;
+    position: fixed;
+}
+#frgspm {
+    display: none;
+    bottom: 5px;
+    left: 5px;
+    position: fixed;
+}

@@ -4,14 +4,33 @@
         <meta charset="utf-8">
         <link rel="Stylesheet" href="../Felles.css">
         <link rel="Stylesheet" href="Prosjekt2.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Geoguessr</title>
     </head>
     <body>
-        <div class="Menu">
-            <p id="Hovedside" class="Menus"><button id="Hovedsideb" class="MenuL" onclick="document.location='../index.html'">Hjem</button></p>                     <p id="Quiz" class="Menus"><button id="Quizb" class="MenuL" onclick="document.location='../Quiz/Quiz_om_datamaskinvaredeler.html'">Quiz</button></p>
-            <p id="Prosjekt2" class="Menus"><button id="Prosjekt2b" class="MenuL" onclick="document.location='../Prosjekt2/Prosjekt2.html'">Geoguessr</button></p><p id="Prosjekt3" class="Menus"><button id="Prosjekt3b" class="MenuL" onclick="document.location='../Prosjekt3/Prosjekt3.html'">Prosjekt 3</button></p>
-            <p id="Prosjekt4" class="Menus"><button id="Prosjekt4b" class="MenuL" onclick="document.location='../Kalkulator/Kalkulator.html'">Prosjekt 4</button></p><p id="Prosjekt5" class="Menus"><button id="Prosjekt5b" class="MenuL" onclick="document.location='../Prosjekt5/Prosjekt5.html'">Prosjekt 5</button></p>
-            <p id="Prosjekt6" class="Menus"><button id="Prosjekt6b" class="MenuL" onclick="document.location='../Prosjekt6/Prosjekt6.html'">Prosjekt 6</button></p>
+        <div class="navbar">
+            <p id="Hjem" class="Menus"><button id="Hjemb" class="MenuL" onclick="document.location='../index.html'">Hjem</button></p>
+          <div class="dropdown">
+            <button class="dropbtn">Quiz 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="../Quiz/index.html">Quiz</a>
+              <a href="../Arrayquiz/index.html">Arrayquiz</a>
+            </div>
+          </div> 
+          <div class="dropdown">
+            <button class="dropbtn">Kryptering 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="../Kryptering/index.html">Kryptering</a>
+              <a href="../Dekryptering/index.html">Dekryptering</a>
+            </div>
+          </div>
+          <p id="Kalkulator" class="Menus"><button id="Kalkulatorb" class="MenuL" onclick="document.location='../Kalkulator/index.html'">Kalkulator</button></p>
+          <p id="Geoguessr" class="Menus"><button id="Geoguessrb" class="MenuL" onclick="document.location='../Geoguessr/index.html'">Geoguessr</button></p>
+          <p id="Prosjekt" class="Menus"><button id="Prosjektb" class="MenuL" onclick="document.location='../Prosjekt/index.html'">Prosjekt</button></p>
         </div>
         <h1 id="Overskrift">
             Geoguessr Tips
