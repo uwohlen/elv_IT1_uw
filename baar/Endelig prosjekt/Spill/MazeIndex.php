@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-<html>
 <head>
     <link rel="stylesheet" href="../Css/Css.css"> 
     <html lang="no">
@@ -32,6 +30,7 @@
         <!-- Tilbake link -->
         <p class="TilbakeLink"><a class="Standard" href="../index.html">Tilbake</a></p>
 
+        <!-- Lager en grid/spillbane -->
         <div id="brett" class="grid"></div>
 
         <!-- Lage tabell med php -->
@@ -57,14 +56,8 @@
             </table>
         </div>
 
-        
-
-        
-        
-        
-        
         <script>
-            localStorage.setItem("Brukernavn", "NEI");
+            //Definerer strings
             let BrettEl=document.getElementById("brett");
             let StartEl=document.getElementById("start");
             let TekstEl=document.getElementById("tekst");
@@ -74,19 +67,24 @@
             let titler = ["Navn","Level","Tid(s)"];
             NavnEl.addEventListener("keydown", lagreBruker);
 
-            const nivåer = [[0,0],[20,10],[32,16],[40,20],[52,26],[60,30],[72,36],[80,40],[92,46],[100,50],[112,56],[120,60],[132,66],[140,70],[152,76],[160,80],[172,86],[180,90],[192,96],[200,100],[212,106],[220,110],[232,116]];
+            //Definerer variabler
             var AntallNivåer = nivåer.length;
             var start_column=0;
             var slutt_column=0;
             var start_row=0;
             var slutt_row=0;
             var nivå=0;
-
+            
+            //Definerer en array med de forkjellige levlene.
+            const nivåer = [[0,0],[20,10],[32,16],[40,20],[52,26],[60,30],[72,36],[80,40],[92,46],[100,50],[112,56],[120,60],[132,66],[140,70],[152,76],[160,80],[172,86],[180,90],[192,96],[200,100],[212,106],[220,110],[232,116]];
+            
+            //Sjekker om brukernavn er satt fra tidligere bruk
             if (localStorage.getItem("Brukernavn")=="OK"){
                 TekstEl.style.display="inline-block";
                 document.getElementById("brukernavnspørsmål").style.display="none";
             }
 
+            //Legger inn titler i tabell
             let tekst = "<tr style='color:rgb(241, 241, 243)';>";
             for (let i=0; i<titler.length; i++) {
                     tekst += "<th>" + titler[i] + "</th>";
@@ -94,7 +92,7 @@
             tekst += "</tr>";
             tabellEl.innerHTML = tekst;
             
-
+            //Bruker localStorage til å lagre brukernavn
             function lagreBruker(event){ 
                     console.log(NavnEl.value);
                     if (event.keyCode=== 13){
@@ -103,8 +101,9 @@
                         localStorage.setItem("Brukernavn", "OK");
                         localStorage.setItem("navn", NavnEl.value);
                     }
-                }
+            }
 
+            //Fuksjonen som bytter til neste level
             function NesteNivå(){
                 nivå++;
                 if (nivå>(AntallNivåer-1)){
@@ -123,10 +122,12 @@
                 }
             }   
 
+            //definere en funksjon for en variabel jeg ofte bruker
             function Lag(){
                 BrettEl.innerHTML+='<div class="grid-item" style="grid-column-start: '+start_column+';grid-column-end: '+slutt_column+';grid-row-start: '+start_row+';grid-row-end: '+slutt_row+'; background-color: rgb(3, 3, 3);" onmouseleave="sjekk()"></div>';
             }
 
+            //Bruker classname for å identifisere om musen har bevegd seg utenfor banen
             function sjekk(){
                 var e = window.event;
                 if(((document.elementFromPoint(e.clientX, e.clientY)).className)!=="grid-item"){
@@ -134,6 +135,8 @@
                 }
                 
             }
+
+            //Fjerner banen og gir mulighet til å lagre resultatene ved bruk av PHP
             function Gameover(){
                 BrettEl.style.display = "inline-block";
                 TekstEl.style.display="inline-block";
@@ -148,7 +151,7 @@
                 console.log(tid);
             }
             
-
+            //Lager startpunktet på banen
             function lag_startpunkt(){
                 BrettEl.style.gridTemplateColumns="repeat("+lengde+",auto)";
                 BrettEl.style.gridTemplateRows="repeat("+høyde+",auto)";
@@ -159,7 +162,7 @@
                 BrettEl.innerHTML+='<div class="grid-item" style="grid-column-start: '+start_column+';grid-column-end: '+slutt_column+';grid-row-start: '+start_row+';grid-row-end: '+slutt_row+'; background-color: rgb(202, 4, 4);" onmouseenter="lag_bane()" onmouseleave="sjekk()" ></div>';
             }
 
-
+            //Lager banen 
             function lag_bane(){
                 while (slutt_column<(lengde-4)){
                     start_column=slutt_column-1;
