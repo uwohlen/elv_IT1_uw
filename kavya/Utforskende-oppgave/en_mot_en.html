@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel='stylesheet' href='css/en_mot_en.css'>
+    <link rel='stylesheet' href='css/utforskende_oppgave_hoved.css'>
+    <title> Tre på rad!</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Spill tre på rad! </h1>
+    </div>
+    <div id="stickymeny" class="grid-container">
+        <div><a href="index.html">FORSIDE</a></div>
+    </div>
+
+    <div class="row"> 
+        <div class="side">
+            <h2><div id="runde"> </div></h2>
+            <h3><div id="tur" > </div></h3>
+            <div id="resultater">
+                <h2>Resultater:</h2>
+                <h3>Antall vunnet runder:</h3>
+                <h3>Spiller X: <span id="vunnetRunderX">0</span></h3>
+                <h3>Spiller O: <span id="vunnetRunderO">0</span></h3>
+            </div>
+    </div>
+        <div class="main">
+            <div class="brett" id="brett"> <!-- class brukes til grupper, div brukes til en unik-->
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vinner-melding" id="vinnerMelding">
+        <div id="vinnerMeldingText"></div>
+        <button id="prøvIgjenKnapp">Neste runde</button>
+        <button id="tilbakeTilForsideKnapp"> Tilbake til Forsiden</button>
+    </div>
+    
+      
+
+
+
+
+
+    <script src="javascript/script.js"></script>
+
+
+    
+    <div class="footer">
+        <h2></h2>
+        </div>
+
+</body>
+</html>
