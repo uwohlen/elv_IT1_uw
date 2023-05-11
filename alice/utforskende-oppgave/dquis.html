@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Quiz om demokrati</title>
+        <p><a href="pom.html">Tilbake til hovedsiden</a></p>
+        <link rel="stylesheet" href="alltid.css">
+    </head>
+    <body>
+        <h1>Velkommen til denne quizzen om demokrati! Test hvor mye du har lært!</h1>
+        <h3>
+            <input id="IdNavn" type="text" placeholder="Skriv inn navnet ditt her: ">
+        </h3>
+        <h3><span id="IdHer"></span></h3>
+
+        <div id="IdQuiz"></div>
+        
+        <button id="IdFerdig">Ferdig</button>
+
+        <p id="PoengUt"> </p>
+
+        <script>
+            let navnEl = document.getElementById("IdNavn");
+            let ferdigEl = document.getElementById("IdFerdig"); 
+            let poengEl = document.getElementById("IdPoeng");
+            let quiz = document.getElementById("IdQuiz");
+            let herEl = document.getElementById("IdHer");
+            let poengUt = document.getElementById("PoengUt");
+
+            let spm = [
+                "Hvilke kriterier må en stat oppfylle for å defineres som et valgdemokrati?",
+                "Fører demokrati til mindre økonomisk ulikhet?",
+                "Hva skiller et totalitært regime fra et autoritært regime?",
+                "Hvordan kan innbyggere ha en innflytelse på politikken i et deltaker demokrati? (bortsett fra å stemme)",
+                "Hva kan være en utfordring for demokratiet?",
+            ];
+
+            let svaralt = [
+                ["De som ønsker kan stille til valg", "Reell konkurranse mellom partene", "Muligheter for korrupsjon", "Kun menn som har eiendom kan stemme"],
+                ["Nei, ikke alltid", "Ja, alltid"],
+                ["Sterkere ideologi og bredere samfunnskontroll", "Mer demokratisk", "Er inspirert av the hunger games"],
+                ["Delta i protester", "La være å stemme", "Utføre kriminelle handlinger", "Delta i underskriftskampanjer"],
+                ["Gluten", "Korrupsjon", "Urbanisering", "Menneskerettigheter"]
+            ];
+
+            let fasit = [
+                ["De som ønsker kan stille til valg","Reell konkurranse mellom partene", "feil", "feil"],
+                ["Nei, ikke alltid", "feil"],
+                ["Sterkere ideologi og bredere samfunnskontroll", "feil", "feil"],
+                ["Delta i protester","feil", "feil","Delta i underskriftskampanjer"],
+                ["feil", "Korrupsjon", "feil", "feil"]
+            ];
+
+            let type = [
+                "checkbox",
+                "radio",
+                "radio",
+                "checkbox",
+                "radio"
+            ];
+
+            let svarnavn = [
+                "en",
+                "to",
+                "tre",
+                "fire",
+                "fem"
+            ];
+
+            navnEl.addEventListener("keydown",lagrefunk);
+
+            function lagrefunk(event) {
+               if (event.keyCode === 13) {
+                   herEl.innerHTML = "Lykke til  " + navnEl.value + "!<br>";
+                   navnEl.value = "";
+               }
+            }
+
+            let tekst = "";
+
+            function visSpm(nr) {
+                tekst += "<p id='idSpm'>" + spm[nr]+ "</p>"
+                
+                tekst += "<p id='idAlternativ'>"
+                
+                for (let j=0; j<svaralt[nr].length; j++) {
+                    tekst += "<input class='altClass' type='" + type[nr] + "' name='" + svarnavn[nr] + "' value="+ fasit[nr][j] +">" + svaralt[nr][j] + "<br>";
+                }
+
+                tekst += "</p>"
+                
+            }
+            
+            for (let i=0; i<5; i++) {
+                visSpm(i);
+            }
+
+
+            quiz.innerHTML = tekst;
+
+            ferdigEl.addEventListener("click",poengFunk);
+
+
+            
+            function poengFunk() {
+                let poeng = 0;
+
+                let bokser = document.getElementsByClassName("altClass");
+
+                for (let k=0; k<bokser.length; k++) {
+                    if (bokser[k].checked) {
+                        if (bokser[k].value !== "feil") {
+                            poeng++;
+                        }
+                    }
+                }
+
+                if (poeng < 2) {
+                    poengUt.innerHTML += "<p>Du fikk " + poeng + " poeng totalt... Ser ut som du må øve litt mer!</p>";
+                }
+
+                else {
+                    poengUt.innerHTML += "<p>Gratulerer du fikk " + poeng + " poeng totalt!!</p>";
+                }  
+
+            }
+
+        </script>
+
+        
+    </body>
+</html>

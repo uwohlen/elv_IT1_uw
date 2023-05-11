@@ -1,0 +1,49 @@
+﻿@model Handleliste.Models.HandleElementViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>Handleliste App</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="container">
+        <h3 class="bg-primary text-center p-2 text-white mt-5">Dette blir tidenes største fest</h3>
+        <form asp-controller="Home" asp-action="Index" method="get">
+            <p>
+                Name: <input type="text" asp-for="InputName" />
+                <input type="submit" value="Add" />
+            </p>
+        </form>
+        <table class="table table-hover table-sm">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HandleElementer![0].Name)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (HandleElement response in Model.HandleElementer!)
+                {
+                    @if (response.IsChecked == false)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => response.Name)
+                            </td>
+                            <td>
+                                <a asp-action="Done" asp-route-id="@response.Id">Done</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

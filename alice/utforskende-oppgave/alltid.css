@@ -1,0 +1,20 @@
+body {
+    background-color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+#linkId {
+
+}
+
+#linkId:hover {
+    color: red;
+}

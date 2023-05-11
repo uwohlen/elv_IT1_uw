@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+    <meta charset='UTF-8'/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width" />
+    <link rel='stylesheet' href='css/utforskende_oppgave_hoved.css'>
+    <title> Kavyas spill</title>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Velkommen til Tre på Rad!</h1>
+        </div>
+
+
+        <div id="stickymeny" class="grid-container" >
+            <div><a href="../index.html" target="_blank">TILBAKE TIL HOVEDSIDEN</a></div>
+
+        </div>
+
+       
+
+
+        <div class="row">
+            
+        <div class="side">
+            <h2> Spillregler! </h2>
+            <p> Tre på rad er et spill laget for 2 spillere der hver spiller har sitt symbol, enten X eller en O. I dette spillet begynner alltid spiller X runden. 
+                Spillbrettet består av et kvadrat med 3x3 ruter. Hver spiller kan sette symbolet sitt i én tom rute om gangen før de skifter tur. 
+                Førstemann som har tre av sine symboler langs en rett linje eller på skrå har vunnet spillet. Det spilles 3 runder, og vinneren kåres ut ifra antall runder man har vunnet. 
+            </p>
+            <h3>Lykke til!</h3>
+        
+
+           
+        </div>
+        <div class="main">
+        
+            <h2> Skriv inn navnene på spillerne </h2>
+            <h3> 
+                Spiller X: <input id="spillerX" type="text" placeholder="navn"> <button onclick="lagreNavnX()" id="LAGRETx"> lagre</button><br><br>
+                Spiller O: <input id="spillerO" type="text" placeholder="navn"> <button onclick="lagreNavnO()" id="LAGRETo"> lagre</button>
+            </h3>
+            <h1> <a class="knapp" href="en_mot_en.html" target="_blank"> Sett i gang!</a></h1>
+            
+        </div>
+        </div>
+
+        <script>
+            function lagreNavnX() {
+            const spillerX = document.getElementById("spillerX").value; // henter verdiene fra spiller X input-felt
+            localStorage.setItem("spillerXNavn", spillerX);// lagrer verdiene i localStorage
+            let formXEl=document.getElementById("LAGRETx");
+            formXEl.style.backgroundColor="#0E5E6F";
+            formXEl.style.color="white";
+            formXEl.innerHTML="LAGRET";
+
+            }
+
+            function lagreNavnO() {
+            const spillerO = document.getElementById("spillerO").value;
+            localStorage.setItem("spillerONavn", spillerO);
+            let formOEl=document.getElementById("LAGRETo");
+            formOEl.style.backgroundColor="#0E5E6F";
+            formOEl.style.color="white";
+            formOEl.innerHTML="LAGRET";
+            }
+
+        </script>
+
+        
+        <div class="footer">
+        <h2></h2>
+        </div>
+
+
+</body> 
+</html>

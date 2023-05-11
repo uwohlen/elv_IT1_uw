@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+    }
+    
+    /*body */
+    body {
+    font-family: 'Courier New';
+    margin: 0;
+    background-color: #fbf5eb;
+    }
+    
+    h1{
+    font-family: "Book Antiqua";
+    font-size: 250%;
+    padding: 5px;
+    }
+    
+    h2, h3{
+    font-family: "Book Antiqua";
+    }
+    
+    p {
+    font-family: 'Book Antiqua';
+    }
+    
+        
+    .header {
+    padding: 20px;
+    text-align: center;
+    background: #0E5E6F;
+    color: white;
+    }
+
+    /* deler siden inn i 2, row og side del*/        
+    .row {  
+    display: flex;
+    flex-wrap: wrap;
+    }
+        
+    .side {
+    flex: 50%;
+    background-color: #E8D5C4; 
+    padding: 30px;
+    }
+        
+    .main {
+    flex: 50%;
+    background-color: #E8D5C4; 
+    padding: 30px;
+    }
+    
+              
+    .grid-container {
+    display: flex;
+    justify-content: center;
+    font-family: Courier New;
+    background-color: #FFF1DC;
+    padding: 1px;
+    padding: 10px 0;
+    font-size: 20px;
+    
+    }
+    
+    /* gjelder alle elementer i a-taggen i grid container*/
+    .grid-container a {
+    color: black;
+    padding: 10px 50px;
+    text-decoration: none;
+    text-align: center;
+    }
+    
+   
+    /* endre farge når du har pilen på grid container */
+    .grid-container a:hover {
+    background-color: #103d42;
+    color: white;          
+    }
+    
+
+
+    .footer {
+        padding: 20px;
+        text-align: center;
+        background: #3b666bb7;
+        
+        }
+
+    .knapp {
+        border: 2px solid #0E5E6F;
+        border-radius: 2px;
+        background-color: #ebf1f2c1;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    
+    .knapp:hover{
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
+    }
+
+    /* for å få resonsive sider*/    
+    @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+        #content{
+                width: 100%;
+        }    
+    }
+    
+    
