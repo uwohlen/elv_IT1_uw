@@ -28,8 +28,8 @@ querySnapshot.forEach((doc) => {
   console.log(doc.id, " => ", doc.data());
   var element = document.createElement("tr");
   element.innerHTML = `
-  <td class="border-2 border-black">${doc.data().Norsk}</td>
-  <td class="border-2 border-black">${doc.data().Kinesisk}</td>
+  <td class="border-4 border-white text-3xl text-white">${doc.data().Norsk}</td>
+  <td class="border-4 border-white text-3xl text-white">${doc.data().Kinesisk}</td>
   `;
   document.getElementById("table").appendChild(element);
 });
