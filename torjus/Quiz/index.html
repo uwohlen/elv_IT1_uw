@@ -8,6 +8,7 @@
         <title>Quiz om datamaskinvaredeler</title>
     </head>
     <body>
+        <!--Navigasjonsbar/meny-->
         <div class="navbar">
             <p id="Hjem" class="Menus"><button id="Hjemb" class="MenuL" onclick="document.location='../index.html'">Hjem</button></p>
           <div class="dropdown">
@@ -34,6 +35,7 @@
         </div>
         
         <Center>
+        <!-- Lager div-er med spørsmål og knapper for hvert spørsmål inni seg-->
         <h1>Velkommen til quizzen, <span id="IdNavn"></span></h1>
         <h2 id="idPoeng">Poeng : 0/4</h2>
         <div id="spm1">
@@ -69,6 +71,7 @@
             <button id="id4d" class="ans">D) CPU</button>
         </div>
         </Center>
+        <!-- To knapper for å se forrige og neste spørsmål-->
         <div id="frgspm" class="swspm"><button id="lastspm">Forrige spørsmål</button></div>
         <div id="nstspm" class="swspm"><button id="nxtspm">Neste spørsmål</button></div>
     <script>
@@ -82,12 +85,12 @@
         let spm3 = document.getElementById("spm3")
         let spm4 = document.getElementById("spm4")
         
-
+        // Importerer det tidligere lagede navnet, hvis det eksisterer. 
         let ElNavn = document.getElementById("IdNavn");
         if (localStorage.getItem("LagretNavnForQuiz") !== null) {
             ElNavn.innerHTML = " " + localStorage.getItem("LagretNavnForQuiz");
         }
-        
+        // Funksjon for å gå til forrige spørsmål
         var nxtspmclick = 0;
         function lastspms() {
             nxtspmclick --
@@ -108,6 +111,7 @@
                 nstspm.style.display= "block"
             }
         }
+        // Funksjon for å gå til neste spørsmål
         function nxtspms () {
             nxtspmclick ++
             console.log(nxtspmclick)
@@ -135,7 +139,7 @@
 
         let Knapp1aEl = document.getElementById("id1a");
         Knapp1aEl.addEventListener("click",Korrekt1a);
-
+        // Overkomplisert poengsystem. 
         function Korrekt1a () {
             Knapp1aEl.innerHTML="Riktig";
             Poeng ++ ;
