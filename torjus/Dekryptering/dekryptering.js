@@ -3,15 +3,16 @@ let kodeordEl = document.getElementById("kodeord");
 let knappEl = document.getElementById("knapp");
 let kryptertEl = document.getElementById("kryptert");
 
-
+// Definerer kodeordet
 let kodeord = "noe";
 
-
+// Dekrypterer ordet
 function dekrypter(){
     let a=5
     let b=-1
     dekryptertEl.innerHTML="";
     let kryptert = kryptertEl.value;
+    // Hvis det er riktig kodeord, dekrypterer ordet. 
     if(kodeord===kodeordEl.value){
         kodeordEl.value=""
         document.getElementById("kopier").style.display="block"
@@ -29,11 +30,13 @@ function dekrypter(){
         }
         
     }
+    // Hvis kodeordet ikke stemmer kommer en pop-up om feil kodeord. 
     else{
         alert("Feil kodeord");
     }
 
 }
+// Funksjon som hviser det "skjulte" ordet som man skriver inn i kodeord-feltet. 
 function vis() { 
     if (kodeordEl.type === "password") {
       kodeordEl.type = "text";
