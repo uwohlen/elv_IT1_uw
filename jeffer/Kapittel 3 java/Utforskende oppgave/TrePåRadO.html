@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tre på rad</title>
+    <style>
+		body {
+			background-color: #1a1a1a;
+			font-family: 'Press Start 2P', cursive;
+			color: white;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 60px;
+			margin-top: 100px;
+			text-shadow: 2px 2px 2px black;
+		}
+
+		table {
+			margin: auto;
+			border-collapse: collapse;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+
+		td {
+			border: 1px solid white;
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			font-size: 60px;
+			font-weight: bold;
+			cursor: pointer;
+			background-color: #ddd;
+			text-shadow: 2px 2px 2px black;
+		}
+
+		td:hover {
+			background-color: #ccc;
+		}
+
+		#winner {
+			display: none;
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			margin-top: 20px;
+			text-shadow: 2px 2px 2px black;
+		}
+
+		button {
+			display: block;
+			margin: auto;
+			font-size: 20px;
+			font-weight: bold;
+			padding: 10px 20px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			cursor: pointer;
+			border-radius: 5px;
+			margin-top: 20px;
+			text-shadow: 2px 2px 2px black;
+		}
+
+		button:hover {
+			background-color: #3e8e41;
+		}
+    </style>
+</head>
+<body>
+    <h1>Tre på rad</h1>
+    <table>
+        <tr>
+            <td id ="0"></td>
+            <td id ="2"></td>
+            <td id ="2"></td>
+        </tr>
+        <tr>
+            <td id ="3"></td>
+            <td id ="4"></td>
+            <td id ="5"></td>
+        </tr>
+        <tr>
+            <td id ="6"></td>
+            <td id ="7"></td>
+            <td id ="8"></td>
+        </tr>
+    </table>
+    <div id="winner"></div>
+    <a href="TrePåRadO.html"><button>Restart game</button></a>
+    <script src="Trepårad.js"></script>
+
+</body>

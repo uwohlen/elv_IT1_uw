@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Password Page</title>
+    <style>
+        body {
+  background-color: #1a1a1a;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 100px;
+  text-shadow: 2px 2px 2px black;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+td {
+  border: 1px solid white;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #ddd;
+  text-shadow: 2px 2px 2px black;
+}
+
+td:hover {
+  background-color: #ccc;
+}
+
+#winner {
+  display: none;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-shadow: 2px 2px 2px black;
+}
+
+button {
+  display: block;
+  margin: auto;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-shadow: 2px 2px 2px black;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>Velkommen til innlogging</h1>
+    <p>skriv passordet for å spille tic tac</p>
+    <input type="password" id="password">
+    <button onclick="checkPassword()">Submit</button>
+
+    <script>
+      const passwordArray = ["password123"]; 
+      
+      function checkPassword() {
+        const inputPassword = document.getElementById("password").value; 
+        if (passwordArray.includes(inputPassword)) {
+          window.location.href = "TrePåRadO.html";
+        } else {
+          alert("Incorrect password. Please try again."); 
+        }
+      }
+      const passwordInput = document.getElementById("password"); // Get the password input field
+      passwordInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          checkPassword(); // Call the checkPassword function when the "Enter" key is pressed
+        }
+      });
+    </script>
+  </body>
+</html>
