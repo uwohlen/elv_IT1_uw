@@ -10,6 +10,7 @@
         </style>
     </head>
     <body>
+      <!-- Navigasjonsbar/meny-->
       <div class="navbar">
         <p id="Hjem" class="Menus"><button id="Hjemb" class="MenuL" onclick="document.location='../index.html'">Hjem</button></p>
       <div class="dropdown">
@@ -34,7 +35,7 @@
       <p id="Geoguessr" class="Menus"><button id="Geoguessrb" class="MenuL" onclick="document.location='../Geoguessr/index.html'">Geoguessr</button></p>
       <p id="Prosjekt" class="Menus"><button id="Prosjektb" class="MenuL" onclick="document.location='../Prosjekt/index.html'">Prosjekt</button></p>
     </div>
-
+    <!-- Inputfelt til et regnestykket-->
         <input id="idInn" type="text" placeholder="Skriv inn et simpelt regnestykke her">
         <p>
             Svaret blir : <br>
@@ -45,6 +46,7 @@
             let elSvar = document.getElementById("idSvar");
             elInn.focus();
             elInn.addEventListener("keydown", innfunk)
+            // Funksjon som kalkulerer
             function innfunk (event){
                 if(event.keyCode === 13){
                     //let verdi = Number(elInn.value);
@@ -55,17 +57,19 @@
                     let iminus = tekst.indexOf ("-");
                     let igange = tekst.indexOf ("*");
                     let idele = tekst.indexOf ("/");
-                    
+                    // Hvis det er et pluss-tegn
                     if (tekst.indexOf ("+") !== (-1)){
                         tall1 = Number(tekst.substr(0,ipluss));
                         tall2 = Number(tekst.substr(ipluss+1));
                         elSvar.innerHTML = tall1 + tall2;}
+                    //Hvis det er et gangetegn
                     else if (tekst.indexOf ("*") !== (-1)){
                         tall1 = Number(tekst.substr(0, igange));
                         tall2 = Number(tekst.substr(igange+1));
                         console.log(tall1, tall2)
                         elSvar.innerHTML = tall1 * tall2;
                         }
+                    // Hvis det er et deletegn
                     else if (tekst.indexOf ("/") !==(-1)){
                         tall1 = Number(tekst.substr(0, idele));
                         tall2 = Number(tekst.substr(idele+1));
@@ -73,6 +77,7 @@
                             console.log("hei")
                             elSvar.innerHTML = tall1 / tall2;}
                     }
+                    // Hvis det er et minustegn
                     else if (tekst.indexOf ("-") !==(-1)){
                         tall1 = Number(tekst.substr(0,iminus));
                         tall2 = Number(tekst.substr(iminus+1));
