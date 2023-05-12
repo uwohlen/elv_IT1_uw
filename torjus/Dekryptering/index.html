@@ -13,6 +13,7 @@
             </style>
         </head>
         <body>
+          <!--Navigasjonsbar/meny-->
             <div class="navbar">
                 <p id="Hjem" class="Menus"><button id="Hjemb" class="MenuL" onclick="document.location='../index.html'">Hjem</button></p>
               <div class="dropdown">
@@ -38,6 +39,9 @@
               <p id="Prosjekt" class="Menus"><button id="Prosjektb" class="MenuL" onclick="document.location='../Prosjekt/index.html'">Prosjekt</button></p>
             </div>
             <main>
+              <!--tre inputfelt og tre knapper. Et inputfelt til det som skal dekrypteres med en knapp for å tømme feltet ved siden av, 
+                et til å skrive inn (riktig) kodeord med et annet inputfelt som checkbox for å vise hva du skriver, 
+                en knapp til å dekryptere og en til å kopiere den dekrypterte meldingen-->
                 <p> skriv inn det du vil dekryptere her:</p>
                 <input id="kryptert" type="text"><button id="IdTøm" onclick="tøm()">Tøm</button> <br> <br>
                 <p>skriv inn kodeord her:</p>
