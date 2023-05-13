@@ -1,12 +1,9 @@
-console.log("Halla");
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
 import {
   getFirestore,
   collection,
   addDoc,
   getDocs,
-  doc,
 } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -29,7 +26,9 @@ querySnapshot.forEach((doc) => {
   var element = document.createElement("tr");
   element.innerHTML = `
   <td class="border-4 border-white text-3xl text-white">${doc.data().Norsk}</td>
-  <td class="border-4 border-white text-3xl text-white">${doc.data().Kinesisk}</td>
+  <td class="border-4 border-white text-3xl text-white">${
+    doc.data().Kinesisk
+  }</td>
   `;
   document.getElementById("table").appendChild(element);
 });
@@ -40,7 +39,7 @@ async function nyttOrd(e) {
   e.preventDefault();
   const docRef = await addDoc(collection(db, "flashcards"), {
     Norsk: document.getElementById("nyNorsk").value,
-    Kinesisk: document.getElementById("nyKinesisk").value
+    Kinesisk: document.getElementById("nyKinesisk").value,
   });
-window.location.reload()
+  window.location.reload();
 }
