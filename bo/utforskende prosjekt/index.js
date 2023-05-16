@@ -29,3 +29,6 @@ querySnapshot.forEach((doc) => {
   kinesiskeOrd.push(doc.data().Kinesisk);
   norskeOrd.push(doc.data().Norsk);
 });
+
+console.log(kinesiskeOrd)
+console.log(norskeOrd)
