@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tre på rad</title>
+    <title>Document</title>
 
     <style>
         .grid-container{
@@ -23,70 +23,90 @@
             height: 50px;
             text-align: center;
         }
-
-        .x{
-            color: blue;
-            font-size: 50px;
-        }
-
-        .o{
-            color: red;
-            font-size: 50px;
-        }
-
     </style>
 </head>
 <body>
     <h1>Velkommen til tre på rad!</h1>
-    <div class = "grid-container">
-        <table>
-        <div id = "1" class="grid-item"></div>
-        <div id = "2" class="grid-item"></div>
-        <div id = "3" class="grid-item"></div>
-        <div id = "4" class="grid-item"></div>
-        <div id = "5" class="grid-item"></div>
-        <div id = "6" class="grid-item"></div>
-        <div id = "7" class="grid-item"></div>
-        <div id = "8" class="grid-item"></div>
-        <div id = "9" class="grid-item"></div>
-        </table>
+        <div class="grid-container">
+            <div id="1" class="grid-item"></div>
+            <div id="2" class="grid-item"></div>
+            <div id="3" class="grid-item"></div>
+            <div id="4" class="grid-item"></div>
+            <div id="5" class="grid-item"></div>
+            <div id="6" class="grid-item"></div>
+            <div id="7" class="grid-item"></div>
+            <div id="8" class="grid-item"></div>
+            <div id="9" class="grid-item"></div>
+        </div>
     </div>
-    <button id = "idNy">Start på nytt</button>
+    <button id = "idNullstill">Nullstill</button>
+    <p id = "idSvaret"></p>
     <script>
         let spiller = "X";
         let spilletferdig = false;
+        let svaretEl = document.getElementById("idSvaret");
 
-        let vinne = [
+        let vinnerplassen = [
             [1, 2, 3], [4, 5, 6],
             [7, 8, 9], [1, 4, 7],
             [2, 5, 8], [3, 6, 9],
             [1, 5, 9], [3, 5, 7],
         ];
-
-       for (let i = 1; i < 9; i++){                         //Når en rute blir klikket
-           document.getElementById(i.toString()).addEventListener("click", klikkfunk);
-           function klikkfunk() {
-               if (this.innerhtml === "" && !spilletferdig){
-                   this.innerhtml = spiller;
-                   this.classList.add(spiller.toLowerCase());
-
-                    vunnet();
-
-                    if (spiller === "X")
-                        spiller === "O"
-                    else
-                        spiller === "X"
-               }
-           }
+        
+        let gridItems = document.getElementsByClassName("grid-item");
+        for (let i = 0; i< gridItems.length; i++){
+            gridItems[i].addEventListener("click", klikkfunk);
         }
 
+        function klikkfunk(){
+           if (this.innerHTML === "" && !spilletferdig){
+             this.innerHTML = spiller; 
+             this.classList.add(spiller.toLowerCase()); 
+           }
+           
+           sjekke();
 
-        
-        
-        
-        
-        
-        
+           if (spiller === "X"){
+               spiller = "O";
+            } else{
+                spiller = "X";
+            }
+            
+                
+            
+        }
+
+        function sjekke(){
+            for (let i = 0; i < vinnerplassen.length; i++){
+                if (
+                    document.getElementById(vinnerplassen[i][0]).innerHTML === spiller &&
+                    document.getElementById(vinnerplassen[i][1]).innerHTML === spiller &&
+                    document.getElementById(vinnerplassen[i][2]).innerHTML === spiller
+                ){
+                    document.getElementById(vinnerplassen[i][0]).classList.add("Vinn");
+                    document.getElementById(vinnerplassen[i][1]).classList.add("Vinn");
+                    document.getElementById(vinnerplassen[i][2]).classList.add("Vinn");
+                    spilletferdig = true;
+                    svaretEl.innerHTML = (spiller + ("vant!"));
+                }
+            }
+        }
+
+        let Nullstill = document.getElementById("idNullstill")
+        Nullstill.addEventListener("click", nullstillfunk)
+
+        function nullstillfunk(){
+            for (let i = 0; i < gridItems.length; i++){
+                gridItems[i].innerHTML = "";
+                gridItems[i].classList.remove("Vinn");
+            }
+            spiller = "X";
+            spilletferdig = false;
+            svaretEl.remove(spiller + ("vant!"));
+        }
+
+        //noe galt som gjorde at x kom to ganger på rad
     </script>
+
 </body>
 </html>
