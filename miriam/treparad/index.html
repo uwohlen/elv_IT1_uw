@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tre på rad</title>
+
+    <style>
+        body{
+            font-family: Tahoma, sans-serif;
+            text-align: center;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Velkommen til tre på rad!</h1>
+    <h2>Spiller 1:</h2>
+    <input id = "idNavnX" type = "text" placeholder = "Skriv navnet ditt her"> <span id = "idVelkommenx"></span>
+    <h2>Spiller 2:</h2>
+    <input id = "idNavnO" type = "text" placeholder = "Skriv navnet ditt her"> <span id = "idVelkommeno"></span>
+    <p>Trykk enter etter å ha skrevet inn begge navnene</p>
+
+    <script>
+        let NavnXEl = document.getElementById("idNavnX");
+        let NavnOEl = document.getElementById("idNavnO");
+
+        NavnOEl.addEventListener("keydown", navnxfunk);
+
+        function navnxfunk(event){
+            if(event.keyCode === 13){
+                localStorage.setItem("lagretx", NavnXEl.value);
+                localStorage.setItem("lagreto", NavnOEl.value);
+                NavnXEl.value = "";
+                NavnOEl.value = "";
+                if(localStorage.getItem("lagretx" && localStorage.getItem("lagreto"))){
+                    window.location.href = "spillet.html";
+                }
+            }
+        }
+
+    </script>
+
+</body>
+</html>
