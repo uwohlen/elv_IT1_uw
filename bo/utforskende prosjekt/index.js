@@ -42,6 +42,7 @@ let currentSpraak = "norsk";
 
 function byttOm() {
   currentSpraak = currentSpraak == "norsk" ? "kinesisk" : "norsk";
+  document.getElementById("nedre").className = "text-white text-3xl hidden";
   oppdaterKort();
   oppdaterTittel();
 }
@@ -50,6 +51,7 @@ document.getElementById("byttOmKnapp").addEventListener("click", byttOm);
 document.getElementById("vis").addEventListener("click", vis);
 document.getElementById("neste").addEventListener("click", neste);
 document.getElementById("forrige").addEventListener("click", forrige);
+document.getElementById("startPaaNytt").addEventListener("click", startPaaNytt);
 
 function oppdaterKort() {
   document.getElementById("nedre").innerText =
@@ -74,8 +76,9 @@ function vis() {
 }
 
 function neste() {
+  if (currentGlose == quizLength-1) return;
   currentGlose += 1;
-  document.getElementById("nedre").className = "text-white text-4xl hidden";
+  document.getElementById("nedre").className = "text-white text-3xl hidden";
   oppdaterKort();
   oppdaterTittel();
 }
@@ -83,15 +86,16 @@ function neste() {
 function forrige() {
   if (currentGlose == 0) return;
   currentGlose -= 1;
-  document.getElementById("nedre").className = "text-white text-4xl hidden";
+  document.getElementById("nedre").className = "text-white text-3xl hidden";
   oppdaterKort();
   oppdaterTittel();
 }
 
 function startPaaNytt() {
   currentGlose = 0
-  document.getElementById("nedre").className = "text-white text-4xl hidden";
+  document.getElementById("nedre").className = "text-white text-3xl hidden";
   [kinesiskeOrd, norskeOrd] = stokkArrays(kinesiskeOrd, norskeOrd);
+  oppdaterKort();
 
 }
 
