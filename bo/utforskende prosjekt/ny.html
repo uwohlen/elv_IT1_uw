@@ -14,9 +14,12 @@
     <script src="ny.js" type="module"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
     <div class="flex justify-center pt-5">
-      <h1 class="font-bold md:text-5xl text-2xl text-white">Oversikt over flashcards</h1>
+      <h1 class="font-bold md:text-5xl text-2xl text-white">
+        Oversikt over flashcards
+      </h1>
     </div>
     <div class="flex md:flex-row flex-col">
+      <!--Gjør nettsiden responsiv, for "md" og større vil tabellen og form'en være sortert etter row, og for mindre størrelser vil de være col-->
       <div class="flex justify-center pt-5 pl-5 pr-5 md:w-1/2 w-screen">
         <div>
           <table class="table-fixed w-11/12 pb-[100px]">
@@ -31,6 +34,7 @@
               </tr>
             </thead>
             <tbody id="table"></tbody>
+            <!--Lager en tom table-body som vi skal fylle dynamisk gjennom javascript-->
           </table>
         </div>
       </div>
@@ -43,13 +47,14 @@
             <div class="flex justify-center">
               <div>
                 <form id="nyttOrd" class="flex-row pb-4 pt-3">
+                  <!--lager en form for å legge til et nytt kort-->
                   <label class="text-2xl text-white" for="fname">Norsk:</label
                   ><br />
                   <input
                     type="text"
                     id="nyNorsk"
                     name="nyNorsk"
-                    class="border-2 border-black"
+                    class="border-2 border-white rounded"
                   /><br />
                   <label class="text-2xl text-white" for="lname"
                     >Kinesisk:</label
@@ -58,7 +63,7 @@
                     type="text"
                     id="nyKinesisk"
                     name="nyKinesisk"
-                    class="border-2 border-black"
+                    class="border-2 border-white rounded"
                   /><br /><br />
                   <input type="submit" value="Submit" />
                 </form>
