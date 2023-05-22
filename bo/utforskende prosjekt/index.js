@@ -102,6 +102,7 @@ function stokkArrays(array1, array2) {
     const j = Math.floor(Math.random() * (i + 1));
     [array1[i], array1[j]] = [array1[j], array1[i]];
     [array2[i], array2[j]] = [array2[j], array2[i]];
+    console.log(j)
   }
 
   return [array1, array2];
