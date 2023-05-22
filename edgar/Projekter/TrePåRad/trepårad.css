@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 5px;
+}
+
+body {
+    background-color: black;
+}
+
+#gameContainer {
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.header {
+    text-align: center;
+    margin-top: 5%;
+    color: white;
+}
+
+#cellContainer {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.cell {
+    border: 2px solid white;
+    min-height: 100px;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 50px;
+    color: white;
+}
+
+#resetBtn {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }  
+
+#statusText {
+    color: white;
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+
+}

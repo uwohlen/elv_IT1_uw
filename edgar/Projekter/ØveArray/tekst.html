@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputFelt">
+    <button onclick="leggTilTekst()" id="tekst">Magisk knapp</button>
+    <p id="statusText"></p>
+
+    <script>
+        let arr = [];
+
+        function leggTilTekst () {
+
+            let nyTekst = document.getElementById("inputFelt").value;
+            arr.push(nyTekst);
+            document.getElementById("statusText").innerHTML = arr.join(", ");
+
+        }
+    </script>
+</body>
+</html>
