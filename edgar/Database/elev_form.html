@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SQL</h1>
+        <form action="lagre_elever.php" method="POST">
+            <label for="fornavn">Fornavn</label>
+            <input type="text" id="fornavn" name="fornavn">
+            <br>
+            <label for="etternavn">Etternavn</label>
+            <input type="text" id="etternavn" name="etternavn">
+            <br>
+            <label for="klasse">Klasse</label>
+            <input type="text" id="klasse" name="klasse">
+            <br>
+            <label for="kontaktlaerernr">Kontaktlaerernr</label>
+            <input type="text" id="kontaktlaerernr" name="kontaktlaerernr">
+            <br>
+            <input type="submit" value="send" name="lagre">
+        </form>
+        
+        <script>
+            function deleteRow(button) {
+              // Get the row that the button is in
+              var row = button.parentNode.parentNode;
+              
+              // Remove the row from the table
+              row.parentNode.removeChild(row);
+            }
+            </script>
+            
+</body>
+</html>
