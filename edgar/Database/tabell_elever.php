@@ -1,19 +1,19 @@
 <?php
-// Connect to the database
+// Connecter til databasen
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "klasseliste";
 
-// Create connection
+// Lager connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-// Check connection
+// Sjekker connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-// Execute a SELECT statement
+// Gjør SELECT statement
 $sql = "SELECT * FROM elever";
 $result = mysqli_query($conn, $sql);
 
@@ -33,6 +33,6 @@ if (mysqli_num_rows($result) > 0) {
 
 
 
-// Close the connection
+// Lukker connection
 mysqli_close($conn);
 ?>
