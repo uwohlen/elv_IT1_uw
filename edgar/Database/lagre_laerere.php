@@ -8,25 +8,25 @@ $username = "root";
 $password = "";
 $dbname = "klasseliste";
 
-// Create connection
+// Lager connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-// Check connection
+// Sjekker connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-//Prepare SQL query
+//Gjør klar SQL query
 $sql = "INSERT INTO laerere (fornavn, etternavn) VALUES ('$fornavn', '$etternavn')";
 
-// Excute query
+// Utfører query
 if (mysqli_query($conn, $sql)) {
     echo "Dataen har blitt lagret";
 }    else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 
-// Close connection
+// Lukker connection
 mysqli_close($conn);
 
 header("Location: http://localhost/Database/tabell_laerere.php");
