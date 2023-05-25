@@ -1,0 +1,54 @@
+﻿@model Handleliste.Models.HandleElementViewModel
+@{
+    Layout = null;
+}
+<!--Siden tar i bruk en modell for å sende informasjon mellom bruker og server-->
+
+<!--Razorpage for ferdige elementer i handlelisten-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>Handleliste App</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-primary text-center p-4">Ferdige elementer</h1>
+        <a class="btn btn-primary" asp-action="Index">Tilbake</a>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        Navn
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!--C# koden lister alle ferdige elementer fra databasen-->
+                @foreach (HandleElement response in Model.HandleElementer!)
+                {
+                    @if (response.IsChecked == true)
+                    {
+                        <tr>
+                            <td scope="col">
+                                @Html.DisplayFor(modelItem => response.Name)
+                            </td>
+                            <td scope="col">
+                                <a class="btn btn-secondary btn-sm" asp-action="Restore" asp-route-id="@response.Id">Legg til igjen</a>
+                            </td>
+
+                            <td scope="col">
+                                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@response.Id">Slett</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

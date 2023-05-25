@@ -2,6 +2,16 @@
 @{
     Layout = null;
 }
+<!--Nettsiden tar i bruk en modell for å sende informasjon mellom bruker og server
+    
+    C# kode i razor page starter med alfakrøll
+-->
+
+
+<!--Index-/hovednettside
+
+    En såkalt razorpage som webserveren dyanmisk oppdaterer ved hjelp av C# kode.
+-->
 
 <!DOCTYPE html>
 <html>
@@ -12,38 +22,48 @@
 </head>
 <body>
     <div class="container">
-        <h3 class="bg-primary text-center p-2 text-white mt-5">Dette blir tidenes største fest</h3>
-        <form asp-controller="Home" asp-action="Index" method="get">
-            <p>
-                Name: <input type="text" asp-for="InputName" />
-                <input type="submit" value="Add" />
-            </p>
+        <h1 class="text-primary text-center p-4">Handleliste App</h1>
+        <!--ASP tagene kobler og kontrollerer informasjon mellom modellen og nettsiden-->
+        <form asp-action="Index" method="post">
+
+                <div class="input-group mb-3">
+                    <input type="text" asp-for="InputName" class="form-control" placeholder="Vare" aria-label="" aria-describedby="basic-addon1">
+                    <div class="input-group-prepend">
+                        <input class="btn btn-outline-secondary" type="submit" value="Legg til">
+                    </div>
+
+                </div>
+
         </form>
-        <table class="table table-hover table-sm">
+        <table class="table">
             <thead>
                 <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.HandleElementer![0].Name)
+                    <th scope="col">
+                        Navn
                     </th>
                 </tr>
             </thead>
             <tbody>
+                <!--C# koden lister alle elementer som ikke er sjekket av fra databasen-->
                 @foreach (HandleElement response in Model.HandleElementer!)
                 {
                     @if (response.IsChecked == false)
                     {
                         <tr>
-                            <td>
+                            <td scope="col">
                                 @Html.DisplayFor(modelItem => response.Name)
                             </td>
-                            <td>
-                                <a asp-action="Done" asp-route-id="@response.Id">Done</a>
+                            <td scope ="col">
+                                <a class="btn btn-success btn-sm" asp-action="Done" asp-route-id="@response.Id">Ferdig</a>
                             </td>
                         </tr>
                     }
                 }
             </tbody>
         </table>
+        <br>
+        <a class="btn btn-primary" asp-action="Restore">Se ferdige elementer</a>
+
     </div>
 </body>
 </html>
