@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terningspill</title>
+  <link rel="stylesheet" href="/Sander/Sjansespill/Sjanse.css">
+  <p><a href="../Hjemmeside/index.html"><button> <span>Hjem &#127968</span></button></a></p>
+</head>
+<body>
+  <h1>Terningspill</h1>
+
+  <div id="playerNameContainer">
+    <input type="text" id="playerName" placeholder="Skriv inn navnet ditt">
+    <button onclick="startGame()">Spill</button>
+  </div>
+
+  <div id="gameContainer" style="display: none;">
+    <div id="dice-container"></div>
+
+    <div class="buttons">
+      <button onclick="rollDice()">Trill terningene</button>
+      <button onclick="endGame()">Avslutt spill</button>
+      <button onclick="resetGame()">Tilbakestill spill</button>
+    </div>
+
+    <h2 id="result">Resultat:</h2>
+  </div>
+
+  <div id="leaderboard-container"></div>
+
+</body>
+<script src="/Sander/Sjansespill/Sjanse.js"></script>
+</html>

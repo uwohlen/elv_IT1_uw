@@ -1,0 +1,21 @@
+body{
+    background-image: url("/Sander/oppstart/media/DALL·E\ 2022-10-27\ 10.03.28\ -\ gradient\ background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+button{
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #8fa4c1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

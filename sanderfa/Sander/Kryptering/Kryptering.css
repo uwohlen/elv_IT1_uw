@@ -1,0 +1,61 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+margin: 0;
+padding: 20px;
+background-color: #f2f2f2;
+}
+
+h3 {
+font-size: 18px;
+margin-top: 0;
+}
+
+input[type="text"] {
+padding: 10px;
+font-size: 14px;
+border-radius: 5px;
+border: 1px solid #ccc;
+width: 300px;
+margin-bottom: 10px;
+}
+
+button {
+padding: 10px 20px;
+font-size: 14px;
+border-radius: 5px;
+border: none;
+background-color: #4caf50;
+color: #fff;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #45a049;
+}
+
+.result {
+margin-top: 20px;
+}
+
+.result p {
+font-size: 16px;
+}
+
+.clear-button {
+    margin-left: 10px;
+    background-color: #f44336;
+}
+
+.button2 {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #8fa4c1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

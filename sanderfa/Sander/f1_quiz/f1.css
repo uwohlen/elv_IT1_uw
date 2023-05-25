@@ -1,0 +1,33 @@
+.button1{
+    background-color: rgb(176, 15, 15);
+    margin-top: 10px;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 12px;
+    font-size: 18px;
+}
+body {
+    background-image: url("/Sander/oppstart/media/f1bakgrunn.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.text2{
+    color: rgb(255, 255, 255);
+
+}
+
+button{
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #8fa4c1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

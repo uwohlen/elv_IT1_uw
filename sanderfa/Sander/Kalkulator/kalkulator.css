@@ -1,0 +1,34 @@
+body{
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+}
+
+.button2{
+    background-color: rgb(57, 125, 199);
+    margin-top: 10px;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 12px;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    }
+
+    button{
+        cursor: pointer;
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 10px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #8fa4c1;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #6d92bc;
+      }
+      

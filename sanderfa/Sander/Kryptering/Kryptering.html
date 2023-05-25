@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kryptering</title>
+    <p><a class="button2" ""href="../Hjemmeside/index.html"> <span>Hjem &#127968</span></a></p>
+    <link rel="stylesheet" href="/Sander/Kryptering/Kryptering.css">
+</head>
+
+<body>
+    <h3>Skriv inn for å kryptere:</h3>
+
+    <div>
+        <!-- Inntastingsfelt for den krypterte teksten -->
+        <input id="KryptertTekst" type="text" placeholder="Skriv den krypterte setningen"></input>
+        <!-- Knapp for å utføre dekryptering -->
+        <button id="minKnapp" type="button" onclick="dekrypterTekst()">Trykk her</button>
+        <!-- Knapp for å slette inntastingsfelt og dekryptert svar -->
+        <button class="clear-button" onclick="clearInput('KryptertTekst', 'tekstTilbake')">Slett</button>
+    </div>
+    <div>
+        <!-- Overskrift for det dekrypterte svaret -->
+        <p>Kryptert:</p>
+        <!-- Plassholder for det dekrypterte svaret -->
+        <p id="tekstTilbake"></p>
+    </div>
+
+    <h3>Skriv inn en kryptert setning for å dekryptere den:</h3>
+    <div>
+        <!-- Inntastingsfelt for den vanlige teksten -->
+        <input id="DeKryptertTekst" type="text" placeholder="Skriv inn vanlig setning"></input>
+        <!-- Knapp for å utføre kryptering -->
+        <button id="Knapp2" type="button" onclick="krypterTekst()">Trykk her</button>
+        <!-- Knapp for å slette inntastingsfelt og kryptert svar -->
+        <button class="clear-button" onclick="clearInput('DeKryptertTekst', 'tekstTilbake2')">Slett</button>
+    </div>
+    <div>
+        <!-- Overskrift for det krypterte svaret -->
+        <p>Dekryptert:</p>
+        <!-- Plassholder for det krypterte svaret -->
+        <p id="tekstTilbake2"></p>
+    </div>
+</body>
+<script src="/Sander/Kryptering/Kryptering.js"></script>
+</html>

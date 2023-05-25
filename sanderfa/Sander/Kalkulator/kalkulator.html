@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="/Sander/Kalkulator/kalkulator.css">
+  </head>
+  <h3><p><a href="/Sander/Hjemmeside/index.html"><button>Hjem &#127968<span></span></button></a></p>
+  <body>
+    <h1>Kalkulator</h1>
+    <form>
+      <input type="nummer" id="num1" />
+      <input type="nummer" id="num2" />
+      <br />
+      <input type="radio" id="addere" name="operator" value="addere" checked>
+      <label for="addere">Addere</label>
+      <br />
+      <input type="radio" id="subtrahere" name="operator" value="subtrahere">
+      <label for="subtrahere">Subtrahere</label>
+      <br />
+      <input type="radio" id="multiplisere" name="operator" value="multiplisere">
+      <label for="multiplisere">Multiplisere</label>
+      <br />
+      <input type="radio" id="dividere" name="operator" value="dividere">
+      <label for="dividere">Dividere</label>
+      <br /><br />
+      <button class="button2" type="button" onclick="calculate()">Regn ut</button>
+    </form>
+    <br />
+    Svar: <span id="Svar"></span>
+
+  </body>
+  <script src="/Sander/Kalkulator/kalkulator.js"></script>
+  </html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terningspill</title>
+  <link rel="stylesheet" href="Sjanse.css">
+</head>
+<body>
+  <h1>Terningspill</h1>
+  
+  <div id="dice-container"></div>
+  
+  <div class="buttons">
+    <button onclick="rollDice()">Trill terningene</button>
+    <button onclick="endGame()">Avslutt spill</button>
+    <button onclick="resetGame()">Tilbakestill spill</button> <!-- Ny reset-knapp -->
+  </div>
+  
+  <h2 id="result">Resultat:</h2>
+
+  <script>
+    var diceValues = [];
+    var rollsLeft = 3;
+    var selectedDice = [];
+
+    function rollDice() {
+      if (rollsLeft > 0) {
+        var diceContainer = document.getElementById("dice-container");
+        diceContainer.innerHTML = "";
+        
+        for (var i = 0; i < 5; i++) {
+          if (!selectedDice.includes(i)) {
+            var diceValue = Math.floor(Math.random() * 6) + 1;
+            diceValues[i] = diceValue;
+          }
+          
+          var diceElement = document.createElement("div");
+          diceElement.className = "dice";
+          diceElement.textContent = diceValues[i];
+          diceElement.setAttribute("data-index", i);
+          diceElement.onclick = toggleSelectDice;
+          
+          if (selectedDice.includes(i)) {
+            diceElement.classList.add("selected");
+          }
+          
+          diceContainer.appendChild(diceElement);
+        }
+        
+        rollsLeft--;
+      }
+      
+      if (rollsLeft === 0) {
+        var result = calculateSum();
+        
+        var resultElement = document.getElementById("result");
+        resultElement.textContent = "Sum: " + result;
+      }
+    }
+
+    function toggleSelectDice() {
+      var index = parseInt(this.getAttribute("data-index"));
+      var diceElement = document.getElementsByClassName("dice")[index];
+      
+      if (selectedDice.includes(index)) {
+        var selectedIndex = selectedDice.indexOf(index);
+        selectedDice.splice(selectedIndex, 1);
+        diceElement.classList.remove("selected");
+      } else {
+        selectedDice.push(index);
+        diceElement.classList.add("selected");
+      }
+    }
+    
+    function calculateSum() {
+      var sum = 0;
+      
+      for (var i = 0; i < diceValues.length; i++) {
+        sum += diceValues[i];
+      }
+      
+      return sum;
+    }
+    
+    function endGame() {
+      rollsLeft = 0;
+      var result = calculateSum();
+      
+      var resultElement = document.getElementById("result");
+      resultElement.textContent = "Sum: " + result;
+    }
+    
+    function resetGame() {
+      diceValues = [];
+      rollsLeft = 3;
+      selectedDice = [];
+      
+      var diceContainer = document.getElementById("dice-container");
+      diceContainer.innerHTML = "";
+      
+      var resultElement = document.getElementById("result");
+      resultElement.textContent = "Resultat:";
+    }
+  </script>
+</body>
+</html>
