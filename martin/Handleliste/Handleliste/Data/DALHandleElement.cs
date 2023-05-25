@@ -5,17 +5,21 @@ using Handleliste.Models;
 
 namespace Handleliste.Data
 {
+
+    //Data access layer (DAL) håndterer komunikasjon mellom server og database
+    //(Databasen er satt opp med lagrede prosedyrer i MsSQL Server)
     public class DALHandleElement
     {
         private readonly string? sqlConnection;
 
+        //Setter opp en tilkobling til sql serveren ved å hente informasjonen fra appsettings
         public DALHandleElement()
         {
-            //Using ConfigurationBuilder to get information from appsetting regarding the database connection
             this.sqlConnection = new ConfigurationBuilder().AddJsonFile("appsettings.json")
                 .Build().GetSection("ConnectionStrings")["HandleListeContext"];
         }
 
+        //Legger til elementer i databasen
         public bool AddElement(HandleElement obj)
         {
 
@@ -39,6 +43,7 @@ namespace Handleliste.Data
                 return false;
         }
 
+        //Henter alle elementer i databasen
         public List<HandleElement> GetElements()
         {
             List<HandleElement> responseList = new();
@@ -73,6 +78,7 @@ namespace Handleliste.Data
             return responseList;
         }
 
+        //Oppdaterer elementet når det blir sjekket av som ferdig og motsatt
         public bool UpdateElement(HandleElement obj)
         {
             SqlConnection? connection = new(sqlConnection);
@@ -93,6 +99,42 @@ namespace Handleliste.Data
                 return true;
             else
                 return false;
+        }
+
+        //Sletter elementet fra databasen og oppdaterer index verdiene til elementene
+        public bool DeleteElement(HandleElement obj)
+        {
+            SqlConnection? connection = new(sqlConnection);
+            SqlCommand command = new("DeleteElement", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            command.Parameters.AddWithValue("@Id", obj.Id);
+            
+            connection.Open();
+
+            int i = command.ExecuteNonQuery();
+
+            if (i >= 1)
+            {
+                SqlCommand resetCommand = new("ResetIdCounter", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                
+                i = resetCommand.ExecuteNonQuery();
+
+                connection.Close();
+
+                return true;
+            }
+            else
+            {
+                connection.Close();
+                return false;
+            }
+            
         }
 
     }
