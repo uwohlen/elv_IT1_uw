@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tre på rad</title>
+
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            text-align: center;
+            background-color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        h1, h2, p {
+            color: aliceblue;
+        }
+
+        .content {
+            background: #1e5799;
+            height: 300px;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 10px solid green;
+            height: 400px;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            margin-bottom: 10px;
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Velkommen til tre på rad!</h1>
+            <h2>Spiller 1:</h2>
+            <input id="idNavnX" type="text" placeholder="Skriv navnet ditt her"> <span id="idVelkommenx"></span>
+            <h2>Spiller 2:</h2>
+            <input id="idNavnO" type="text" placeholder="Skriv navnet ditt her"> <span id="idVelkommeno"></span>
+            <p>Trykk enter etter å ha skrevet inn begge navnene</p>
+        </div>
+    </div>
+
+    <script>
+        let NavnXEl = document.getElementById("idNavnX");
+        let NavnOEl = document.getElementById("idNavnO");
+
+        NavnOEl.addEventListener("keydown", navnxfunk);
+
+        function navnxfunk(event) {                                     //lagrer verdien av navnene som blir skrevet inn slik at det kan brukes på nettsiden til selvet spillet
+            if (event.keyCode === 13) {
+                localStorage.setItem("lagretx", NavnXEl.value);
+                localStorage.setItem("lagreto", NavnOEl.value);
+                NavnXEl.value = "";
+                NavnOEl.value = "";
+                if (
+                    localStorage.getItem("lagretx") !== null &&
+                    localStorage.getItem("lagreto") !== null
+                ) {
+                    window.location.href = "spillet.html";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

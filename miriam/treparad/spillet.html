@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tre på rad</title>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .grid-item {
+            background-color: antiquewhite;
+            border: 2px solid black;
+            padding: 20px;
+            font-size: 30px;
+            height: 50px;
+            width: 60px;
+            text-align: center;
+        }
+
+        body {
+            font-family: Tahoma, sans-serif;
+            text-align: center;
+            background-color: aliceblue;
+        }
+
+        h1{
+            background-color:#1e5799;
+            border: 10px solid green;
+            padding: 20px;
+            color: white;
+            margin-top: 20px;  
+        }
+
+        .knappen {
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            font-family: Tahoma, sans-serif;
+            background-color: antiquewhite;
+            border: 5px;
+            border-color: black;
+            padding: 15px 30px;
+        }
+
+        .knappen:hover {
+            background-color: bisque;
+        }
+
+        #idPoenglista{
+            background-color:#1e5799;
+            border: 10px solid green;
+            padding: 20px;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Velkommen til tre på rad!</h1>
+    <h2>Spiller X: <span id = "idNavnX"></span></h2>
+    <h2>Spiller O: <span id = "idNavnO"></span></h2>
+    <div class = "grid-container">
+        <div id = "1" class="grid-item"></div>
+        <div id = "2" class="grid-item"></div>
+        <div id = "3" class="grid-item"></div>
+        <div id = "4" class="grid-item"></div>
+        <div id = "5" class="grid-item"></div>
+        <div id = "6" class="grid-item"></div>
+        <div id = "7" class="grid-item"></div>
+        <div id = "8" class="grid-item"></div>
+        <div id = "9" class="grid-item"></div>
+    </div>
+    <button id = "idTilbake" class = "knappen">Ta meg tilbake!</button>
+    <button id = "idNullstill" class = "knappen">Spill på nytt!</button>
+    <p id = "idSvaret"></p>
+    <div id = "idPoenglista">
+        <h2>Poengliste:</h2>
+        <div class="high-score-container">
+        <ol id="HighScore"></ol>
+        </div>
+    </div>
+    
+    <script>
+        let spiller = "X";
+        let spilletferdig = false;
+        let svaretEl = document.getElementById("idSvaret");
+        let NavnXEl = document.getElementById("idNavnX");
+        let NavnOEl = document.getElementById("idNavnO");
+        let HighScoreEl = document.getElementById("HighScore");
+        let HighScoreliste = [];
+
+        let vinnerplassen = [                                       //vinnerkombinasjonene til spillet
+            [1, 2, 3], [4, 5, 6],
+            [7, 8, 9], [1, 4, 7],
+            [2, 5, 8], [3, 6, 9],
+            [1, 5, 9], [3, 5, 7]
+        ];
+
+        let gridItems = document.getElementsByClassName("grid-item");
+        for (let i = 0; i < gridItems.length; i++) {
+            gridItems[i].addEventListener("click", klikkfunk);
+        }
+
+        if (localStorage.getItem("lagretx") !== null && localStorage.getItem("lagreto") !== null) {         //henter navnene til spillerne som ble skrevet inn i indexen
+            NavnXEl.innerHTML = " " + localStorage.getItem("lagretx");
+            NavnOEl.innerHTML = " " + localStorage.getItem("lagreto");
+        }
+
+        function klikkfunk() {
+            if (this.innerHTML === "" && !spilletferdig) {
+                this.innerHTML = spiller;
+                this.classList.add(spiller.toLowerCase());
+            }
+
+            sjekke();
+
+            if (spiller === "X") {                          //X og O får annenhver runde
+                spiller = "O";
+            } else {
+                spiller = "X";
+            }
+        }
+
+        function sjekke() {
+            let fyltopp = 0;
+            for (let i = 0; i < vinnerplassen.length; i++) {
+                if (
+                    document.getElementById(vinnerplassen[i][0]).innerHTML === spiller &&
+                    document.getElementById(vinnerplassen[i][1]).innerHTML === spiller &&
+                    document.getElementById(vinnerplassen[i][2]).innerHTML === spiller
+                ) {
+                    document.getElementById(vinnerplassen[i][0]).classList.add("Vinn");
+                    document.getElementById(vinnerplassen[i][1]).classList.add("Vinn");
+                    document.getElementById(vinnerplassen[i][2]).classList.add("Vinn");
+                    spilletferdig = true;
+                    svaretEl.innerHTML = "Vinneren er: " + (spiller === "X" ? localStorage.getItem("lagretx") : localStorage.getItem("lagreto"));
+                    oppdaterHighscore(spiller);
+                }
+            }
+            for (let i = 0; i < gridItems.length; i++) {                //sjekker om alle boksene har innhold, når alle er fulle er spillet ferdig og det ble uavgjort
+                if (gridItems[i].innerHTML !== "") {
+                    fyltopp++;
+                }
+            }
+            if (fyltopp === gridItems.length && !spilletferdig) {
+                spilletferdig = true;
+                svaretEl.innerHTML = "Uavgjort!";
+            }
+        }
+
+        function oppdaterHighscore(spiller) {
+            let funnet = false;
+            for (let i = 0; i < HighScoreliste.length; i++) {
+                if (HighScoreliste[i].Spiller === spiller) {
+                    HighScoreliste[i].Score++;
+                    funnet = true;
+                    break;
+                }
+            }
+            if (!funnet) {
+                HighScoreliste.push({ Spiller: spiller, Score: 1 });                //putter den som vant inn i arrayen
+            }
+
+            HighScoreliste.sort(function(a, b){return b.Score - a.Score});              //sorterer arrayen
+
+            HighScoreEl.innerHTML = "";
+            for (let i = 0; i < HighScoreliste.length; i++) {
+                const HighScorelisteItem = document.createElement("li");
+                HighScorelisteItem.innerHTML = HighScoreliste[i].Spiller + ": " + HighScoreliste[i].Score;
+                HighScoreEl.appendChild(HighScorelisteItem);
+            }
+        }
+
+        let NullstillEl = document.getElementById("idNullstill");
+        NullstillEl.addEventListener("click", nullstillfunk);
+
+        function nullstillfunk() {
+            for (let i = 0; i < gridItems.length; i++) {                    
+                gridItems[i].innerHTML = "";                            //fjerner innholdet i gridboksene når spilleren trykker på "spill på nytt!" knappen
+                gridItems[i].classList.remove("Vinn");
+            }
+            spiller = "X";
+            spilletferdig = false;
+            svaretEl.innerHTML = "";
+        }
+
+        let TilbakeEl = document.getElementById("idTilbake");
+        TilbakeEl.addEventListener("click", tilbakefunk);
+
+        function tilbakefunk() {
+            window.location.href = "index.html";
+        }
+
+    </script>
+
+</body>
+</html>
