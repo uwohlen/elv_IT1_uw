@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Her kan du skrive din krypterte kode:</h1>
+    <input id = "idInn" type = "text" placeholder="Skriv inn din krypterte kode">
+    <p id = "idUt"></p>
+
+    <script>
+        let InnEl = document.getElementById("idInn");
+        let UtEl = document.getElementById("idUt");
+        InnEl.addEventListener("keydown", innfunk);
+
+        let abc = "abcdefghijklmnopqrstuvwæøå";
+
+        function innfunk(event){
+            if (event.keyCode === 13){
+                let text = "";
+
+                let i = 0;
+                let teksten = InnEl.value;
+
+                if (abc.indexOf(teksten[i]) !== -1){
+                    while (i < teksten.length){
+                        let bokstav = teksten[i];
+                        let nybokstav = abc.indexOf(bokstav);               //finner posisjonen til bokstavene
+
+                        let nyindex = nybokstav + 1;                        //endrer verdien til bokstavene slik at a blir b, c blir d osv. 
+                        if (nyindex === abc.length){                        //når å blir skrevet inn, blir det skrevet ut a
+                            nyindex = 0;
+                    }
+                    text += abc[nyindex];
+                    i++;
+                    }
+                }
+                UtEl.innerHTML = (text);
+            }
+        }
+    </script>
+</body>
+</html>
