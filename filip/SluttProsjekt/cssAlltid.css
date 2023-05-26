@@ -1,0 +1,76 @@
+body {
+    background-color: lightgray;
+    font-family: sans-serif;
+    padding: 0px;
+    text-shadow: 0 0 3px white;
+}
+
+#tilbake{
+    background-color: red;
+}
+
+#span2 {
+    margin-left: 500px;
+}
+
+#span3 {
+    margin-left: 500px;
+}
+
+.h1Class {
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+.h2Class {
+    margin-top: -23px;
+    margin-left: 67px;
+}
+
+#innhold {
+    margin: 10px;
+    border:2px solid black;
+    border-radius: 6px;
+    background-color: rgb(85, 83, 83);
+    background-image: url(media/bakgrunn.jpg);
+    padding: 5px;
+}
+
+#sideBar {
+    background-color: goldenrod;
+    border:2px solid rgb(125, 93, 14);
+    border-radius: 6px;
+    position: sticky;
+    top: 0px;
+}
+
+#sideBar ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px; 
+}
+
+#sideBar li {
+    display: inline;
+    text-align: center;
+}
+
+#sideBar li a {
+    display: inline-block;
+    background-color: beige;
+    margin: 5px 30px;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: small;
+	width: 170px;
+}
+
+#sideBar ul li a:hover {
+    background-color: yellow;
+}
+
+#hoved {
+    margin-top: 20px;
+}

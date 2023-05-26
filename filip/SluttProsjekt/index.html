@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang='no'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Kinesisk Nettsted</title>
+    <link rel="stylesheet" href="cssAlltid.css">
+    <style>
+        #navnOver {
+            display: none;
+        }
+
+        #varsel {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            text-align: center;
+            padding: 5px;
+            right: 320px;
+            background-color: yellow;
+            border: 2px solid rgb(92, 92, 1);
+        }
+
+        #navnInput {
+            display: none;
+        }
+
+        .tegn {
+            background-color: beige;
+            border-radius: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -5px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .container>div {
+            margin-bottom: 10px;
+            flex-basis: 50%;
+            box-sizing: border-box;
+            padding: 5px;
+            background-color: red;
+            border: 2px solid rgb(103, 7, 7);
+            border-radius: 6px;
+        }
+
+        .container>div>p {
+            background-color: beige;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        #navnSlett {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="innhold">
+        <div id="banner">
+            <h1 class="h1Class">
+                <span id="span1">Kinesisk Nettsted</span>
+                <span id="span2">中文网站</span>
+            </h1>
+            <h2 class="h2Class">
+                Alt man trenger for VG2
+                <span id="span3">一流高中所需的一切</span>
+            </h2>
+        </div>
+        <div id="sideBar">
+            <ul>
+                <li><a id="tilbake" href="../index.html"> Tilbake til hovedside</a></li>
+                <li><a href="flashCard.html">Flashcards - 抽认卡</a></li>
+                <li><a href="leseSide.html">Kinesisk Lesing - 中文文本</a></li>
+                <li><a href="testSide.html">Test - 小考</a></li>
+                <li><span id="navnOut"></span></li>
+                <li><button id="navnSlett">Slett navn</button></li>
+            </ul>
+        </div>
+
+        <div id="varsel">
+            <h3 id="varselTekst">Denne nettsiden vil lagre informasjon på datamaskinen din. Er det greit?</h3>
+            <button id="varselKnapp">OK</button>
+            <h3 id="navnOver">Skriv navnet ditt her:</h3>
+            <input id="navnInput" placeholder="Skriv navnet ditt her">
+        </div>
+
+        <div id="hoved">
+            <div class="container">
+                <div>
+                    <p>Når mange tenker på det kinesisket språket, tenker man ofte at det er et helt umulig spårk. Det
+                        er ikke rart at man tenker sånn. Mange av språkene vi i Norge lærer er i samme spårkfamilie som
+                        Norsk. Tenk Tysk, Fransk, Spansk. Kineisk er jo i en helt annen språkfamilie, bruker ikke de
+                        samme bokstavene som oss, og har helt annen grammatikk Men når man først begynner å lære, er det
+                        ikke så vanskelig som man skulle tro. </p>
+                    <img class="tegn" src="media/forsideBilder/tegn1.png" width="300">
+                </div>
+                <div>
+                    <p>I kinesisk er det så godt som ingen grammatisk bøying. Et ord blir brukt likt uansett
+                        situasjonen. Snakker jeg om menneske (人rén), bruker jeg samme ordet uansett antall mennesker det
+                        er. For å si flere mennesker bruker jeg et annet ord derimot. For å si "mennesker" må jeg legge
+                        til -men 们, så 人们. Det kinesiske språket er også veldig fleksibelt. Bindeord og pronomen kan
+                        kuttes ned når en betydning blir utrykket. "Jeg liker det" kan bli kuttes ned til "like" hvis
+                        noen for eksempel spør deg om du liker noe.</p>
+                    <img class="tegn" src="media/forsideBilder/tegn2.PNG" width="300">
+                </div>
+                <div>
+                    <p>Kinesisk er et tonespråk. Det skiller seg skikkelig fra Europeiske språk med at tonen til et ord
+                        bestemmer betydningen til ordet. Du ser sikkert at når kinesisk er skrevet med latinske
+                        bokstaver, er det små tegn over et av bokstavene i hvert ord. Dette er aksenttegn. Det er 4
+                        stykker: ā = høy vedvarende tonegang. á = stigende tone. ǎ = fallende så stigende tonegang. à =
+                        fallende tonegang. Noen ord kan ha skikkelig forskjellig mening når de har forskjellige toner.
+                        Se under:</p>
+                    <img class="tegn" src="media/forsideBilder/tegn3.PNG" width="300">
+                </div>
+                <div>
+                    <p>I kinesisk er det 2 skriftspråk. 汉语 Hànyǔ - Kineiske tegn og 拼音 pīnyīn - fonetisk skrift. Hànyǔ
+                        er de kinesiske tegnene vi ser overalt. Hvert tegn er sitt eget ord, men mange tegn blir ofte
+                        kombinert for å gi ny betydning. Tegn er lagd opp av radikaler, enkelt sett er det byggeklossene
+                        til et tegn. Man kan gjennkjenne like radikaler og former i forskjellige tegn, som kan ofte si
+                        noe om betydningen. Pinyin er et skriftspråk brukt for å lære kinesisk. Det er basert på det
+                        latinske alfabetet og bruker de tonene vi snakket om før.</p>
+                    <img class="tegn" src="media/forsideBilder/tegn4.PNG" width="300">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let navnEl = document.getElementById("navnInput");
+        let navnOverEl = document.getElementById("navnOver")
+        let varselEl = document.getElementById("varsel");
+        let navnOutEl = document.getElementById("navnOut");
+
+        let navnHent = localStorage.getItem("lagretNavn");
+
+        if (navnHent) { //Sjekker om jeg allerede har laget navn før, viser ikke varsel dersom jeg har.
+            varselEl.style.display = "none";
+            navnOutEl.innerHTML = "你好 " + navnHent + "!";
+        }
+
+        else {
+            varselEl.style.display = "inline";
+        }
+
+        let varselTekstEl = document.getElementById("varselTekst");
+        let varselKnappEl = document.getElementById("varselKnapp");
+
+
+        varselEl.addEventListener("click", første);
+        navnEl.addEventListener("keydown", andre);
+
+        let slettNavnEl = document.getElementById("navnSlett");
+        slettNavnEl.addEventListener("click", tredje);
+
+
+        function første() { //Advarer folk om at det er cookies
+            varselTekstEl.style.display = "none";
+            varselKnappEl.style.display = "none";
+
+            navnOverEl.style.display = "inline";
+            navnEl.style.display = "inline";
+            varselEl.style.right = "450px";
+        }
+
+        function andre() { //Lagrer navn i lokal storage og får nettsiden til å si hei.
+            if (event.keyCode === 13 && navnEl.value !== null) {
+                localStorage.setItem("lagretNavn", navnEl.value);
+                varselEl.style.display = "none";
+                navnOutEl.innerHTML = "你好 " + navnEl.value + "!";
+                slettNavnEl.style.display = "inline";
+            }
+        }
+
+        function tredje() { //Har slett knapp her. Får varsel til å komme tilbake
+            localStorage.removeItem("lagretNavn");
+            navnOutEl.innerHTML = "";
+            varselEl.style.display = "inline";
+            slettNavnEl.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

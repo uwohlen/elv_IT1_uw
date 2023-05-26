@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang='no'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Kinesisk Nettsted</title>
+    <link rel="stylesheet" href="cssAlltid.css">
+    <style>
+        #hoved {
+            background-color: red;
+            border: 2px solid rgb(103, 7, 7);
+            border-radius: 6px;
+            height: 600px;
+            text-align: center;
+        }
+
+        #quizId input {
+            background-color: gold;
+            border: 2px solid goldenrod;
+            border-radius: 6px;
+        }
+
+        #lagreSpm {
+            display: none;
+        }
+
+        #lagrePoeng {
+            display: none;
+        }
+
+        button {
+            background-color: goldenrod;
+            border: 2px solid rgb(142, 105, 12);
+            border-radius: 6px;
+            width: 150px;
+            height: 50px;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+        
+        img {
+            border: 4px solid goldenrod;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="innhold">
+        <div id="banner">
+            <h1 class="h1Class">
+                <span id="span1">Kinesisk Quiz</span>
+                <span id="span2">中文小考</span>
+            </h1>
+            <h2 class="h2Class">
+                Test hva du kan!
+                <span id="span3">测试你的能！</span>
+            </h2>
+        </div>
+        <div id="sideBar">
+            <ul>
+                <li><a id="tilbake" href="../index.html"> Tilbake til hovedside</a></li>
+                <li><a href="flashCard.html">Flashcards - 抽认卡</a></li>
+                <li><a href="leseSide.html">Kinesisk Lesing - 中文文本</a></li>
+                <li><a href="index.html">Forside - 首页</a></li>
+                <li><span id="navnOut"></span></li>
+            </ul>
+        </div>
+
+        <div id="hoved">
+            <h1>Spørsmål <span id="tittelId">1</span></h1>
+            <div id="quizId"></div>
+            <button id="nesteId">Neste Spørsmål</button>
+        </div>
+    </div>
+
+    <script src='scriptAlltid.js'></script>
+    <script>
+        let navnEl = localStorage.getItem("lagretNavn");
+        let navnOutEl = document.getElementById("navnOut");
+        let nesteEl = document.getElementById("nesteId");
+        let quizEl = document.getElementById("quizId");
+        let tittelEl = document.getElementById("tittelId");
+        navnOutEl.innerHTML = "你好 " + navnEl + "!";
+
+        let quizMal = [ // "Mal" til quizen. Arrays med objekter, 1 for hvert spørsmål.
+            {
+                media: "<img src='media/testBilder/spm1.PNG' width='200'></img>",
+                spm: "Oversett fra kinesisk til norsk",
+                svar: ["Koster", "å Finne", "å Kjøpe", "å Betale"],
+                typebox: "radio",
+                riktigVerdi: [0, 0, 1, 0],
+                riktigAntall: 1
+            },
+
+            {
+                media: "<img src='media/testBilder/spm2.PNG' width='200'></img>",
+                spm: "Oversett fra kinesisk til norsk",
+                svar: ["Hade", "Hei", "Går det bra?", "å ha"],
+                typebox: "radio",
+                riktigVerdi: [0, 1, 0, 0],
+                riktigAntall: 1
+            },
+
+            {
+                media: "<img src='media/testBilder/spm3.PNG' width='200'></img>",
+                spm: "Oversett fra norsk til kinesisk",
+                svar: ["哙 - kuài", "钱 - qián", "贵 - guì", "五 - wǔ"],
+                typebox: "radio",
+                riktigVerdi: [0, 1, 0, 0],
+                riktigAntall: 1
+            },
+
+            {
+                media: "<img src='media/testBilder/spm4.PNG' width='200'></img>",
+                spm: "Oversett fra kinesisk til norsk",
+                svar: ["å Handle", "Skjell", "Øl", "Vann"],
+                typebox: "radio",
+                riktigVerdi: [0, 0, 0, 1],
+                riktigAntall: 1
+            },
+
+            {
+                media: "<img src='media/testBilder/spm5.PNG' width='200'></img>",
+                spm: "Oversett fra norsk til kinesisk",
+                svar: ["是 - shì", "你 - nǐ", "有 - yǒu", "我 - wǒ"],
+                typebox: "radio",
+                riktigVerdi: [1, 0, 0, 0],
+                riktigAntall: 1
+            },
+
+            {
+                media: "<img src='media/testBilder/spm6.PNG' width='200'></img>",
+                spm: "Oversett fra norsk til kinesisk",
+                svar: ["怎么 - zěnme", "什么 - shénme", "那 - nǎ", "哪里 - nǎli"],
+                typebox: "radio",
+                riktigVerdi: [0, 1, 0, 0],
+                riktigAntall: 1
+            }
+        ];
+
+        let quizInsert = "";
+        function spmInput(i) { // Funksjon som lager ny spørsmål. Parameteren i representerer nåværende spørsmål
+            quizInsert += "<h2>" + quizMal[i].spm + "</h2>";
+            quizInsert += "<div>" + quizMal[i].media + "</div>";
+            quizInsert += "<p>";
+            for (let j = 0; j < quizMal[i].svar.length; j++) { // Gammel kode, ville ha fler svaralternativer til å begynne med på noen spørsmål, men ombestemte meg.
+                quizInsert += "<input id='id" + i + j + "' class='svarClass' type='" + quizMal[i].typebox + "' name='svaralternativer" + i + "' value=" + quizMal[i].riktigVerdi[j] + "><label for='id" + i + j + "'>" + quizMal[i].svar[j] + "</label><br>";
+            }
+            quizInsert += "</p>";
+            quizEl.innerHTML = quizInsert;
+
+            let sjekkBokser = document.getElementsByClassName("svarClass");
+            for (let o = 0; o < sjekkBokser.length; o++) {
+                sjekkBokser[o].addEventListener("click", visNeste)
+            }
+        }
+
+        function visNeste() {
+            nesteEl.addEventListener("click", nesteSpm);
+        }
+
+        let y = 0
+        spmInput(y); // Her skriver jeg ut første spørsmål
+
+        let poeng = [] // Her lager jeg en tom array for poeng
+
+        function nesteSpm() { // Her lager jeg en ny funksjon som finner ut hvor mye poeng jeg fikk, og går til neste spørsmål.
+            poeng[y] = 0;
+
+            let sjekkBokser = document.getElementsByClassName("svarClass");
+            for (let k = 0; k < quizMal[y].svar.length; k++) {
+                if (sjekkBokser[k].checked) {
+                    poeng[y] += Number(sjekkBokser[k].value);
+                }
+            }
+
+            quizInsert = "";
+            y++
+
+            if (y < quizMal.length) { //Her sjekker jeg om vi har flere spørsmål å gå gjennom
+                spmInput(y);
+                nesteEl.removeEventListener("click", nesteSpm);
+                tittelEl.innerHTML = y + 1;
+            }
+
+            else { //Gjorde dette for å gjøre det litt mindre hardkoda. Bare plussa alle poeng arraysa før.
+                let poengSum = 0
+                for (let m = 0; m < poeng.length; m++) {
+                    poengSum = poengSum + poeng[m];
+                }
+
+                let ferdigSide = "";
+                ferdigSide += "<h1>Ferdig!</h1>";
+                ferdigSide += "<h2> Du fikk " + poengSum + " av 6 </h2>";
+                quizEl.innerHTML = ferdigSide;
+                nesteEl.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

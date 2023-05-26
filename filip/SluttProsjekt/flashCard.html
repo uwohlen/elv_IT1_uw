@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang='no'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Kinesisk Nettsted</title>
+    <link rel="stylesheet" href="cssAlltid.css">
+    <style>
+        img {
+            width: 90%;
+            height: 90%;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .container>div {
+            margin-bottom: 10px;
+            flex-basis: 33.3333%;
+            box-sizing: border-box;
+            padding: 5px;
+            background-color: red;
+            border: 2px solid rgb(103, 7, 7);
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .container>div>p {
+            background-color: beige;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        #knapper {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: orange;
+            border: 2px solid orangered;
+            border-radius: 6px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="innhold">
+        <div id="banner">
+            <h1 class="h1Class">
+                <span id="span1">Flashcards</span>
+                <span id="span2">抽认卡们</span>
+            </h1>
+            <h2 class="h2Class">
+                Øv på kinesiske ord og setninger
+                <span id="span3">学中文单词们短语们</span>
+            </h2>
+        </div>
+        <div id="sideBar">
+            <ul>
+                <li><a id="tilbake" href="../index.html"> Tilbake til hovedside</a></li>
+                <li><a href="index.html">Forside - 首页</a></li>
+                <li><a href="leseSide.html">Kinesisk Lesing - 中文文本</a></li>
+                <li><a href="testSide.html">Test - 小考</a></li>
+                <li><span id="navnOut"></span></li>
+            </ul>
+        </div>
+
+        <div id="hoved">
+            <div class="container" id="container">
+                <div><img id="bilde1" src="media/flashBilder/bilde1.PNG"></div>
+                <div><img id="bilde2" src="media/flashBilder/bilde2.PNG"></div>
+                <div><img id="bilde3" src="media/flashBilder/bilde3.PNG"></div>
+                <div><img id="bilde4" src="media/flashBilder/bilde4.PNG"></div>
+                <div><img id="bilde5" src="media/flashBilder/bilde5.PNG"></div>
+                <div><img id="bilde6" src="media/flashBilder/bilde6.PNG"></div>
+                <div><img id="bilde7" src="media/flashBilder/bilde7.PNG"></div>
+                <div><img id="bilde8" src="media/flashBilder/bilde8.PNG"></div>
+                <div><img id="bilde9" src="media/flashBilder/bilde9.PNG"></div>
+            </div>
+            <div id="knapper">
+                <button id="knapp1">1</button>
+                <button id="knapp2">2</button>
+                <button id="knapp3">3</button>
+            </div>
+        </div>
+    </div>
+
+    <script src='scriptAlltid.js'></script>
+    <script>
+        // Koden er temmelig hardkodet, kunne nok ha laget noen arrays og brukt funksjoner med parameter, men hadde ikke helt tid og føler jeg har vist evnen til det før.
+
+        let navnEl = localStorage.getItem("lagretNavn");
+        let navnOutEl = document.getElementById("navnOut");
+        navnOutEl.innerHTML = "你好 " + navnEl + "!";
+
+        let bilde1El = document.getElementById("bilde1");
+        let bilde2El = document.getElementById("bilde2");
+        let bilde3El = document.getElementById("bilde3");
+        let bilde4El = document.getElementById("bilde4");
+        let bilde5El = document.getElementById("bilde5");
+        let bilde6El = document.getElementById("bilde6");
+        let bilde7El = document.getElementById("bilde7");
+        let bilde8El = document.getElementById("bilde8");
+        let bilde9El = document.getElementById("bilde9");
+
+        bilde1El.addEventListener("click", bilde1);
+        bilde2El.addEventListener("click", bilde2);
+        bilde3El.addEventListener("click", bilde3);
+        bilde4El.addEventListener("click", bilde4);
+        bilde5El.addEventListener("click", bilde5);
+        bilde6El.addEventListener("click", bilde6);
+        bilde7El.addEventListener("click", bilde7);
+        bilde8El.addEventListener("click", bilde8);
+        bilde9El.addEventListener("click", bilde9);
+
+        let knapp1El = document.getElementById("knapp1");
+        let knapp2El = document.getElementById("knapp2");
+        let knapp3El = document.getElementById("knapp3");
+
+        knapp1El.addEventListener("click", knapp1);
+        knapp2El.addEventListener("click", knapp2);
+        knapp3El.addEventListener("click", knapp3);
+
+        let a = 0;
+        let b = 0;
+        let c = 0;
+        let d = 0;
+        let e = 0;
+        let f = 0;
+        let g = 0;
+        let h = 0;
+        let i = 0;
+
+        let container = document.getElementById("container");
+        let containerB = container.getElementsByTagName("div");
+
+        //Her gjør jeg det sånn at bildet endrer seg fram og tilbake når jeg klikker på det.
+        function bilde1() {
+            if (a == 0) {
+                bilde1El.src = "media/flashBilder/bilde11.PNG";
+                a = 1;
+            } else if (a == 1) {
+                bilde1El.src = "media/flashBilder/bilde1.PNG";
+                a = 0;
+            }
+        }
+
+        function bilde2() {
+            if (b == 0) {
+                bilde2El.src = "media/flashBilder/bilde22.PNG";
+                b = 1;
+            } else if (b == 1) {
+                bilde2El.src = "media/flashBilder/bilde2.PNG";
+                b = 0;
+            }
+        }
+
+        function bilde3() {
+            if (c == 0) {
+                bilde3El.src = "media/flashBilder/bilde33.PNG";
+                c = 1;
+            } else if (c == 1) {
+                bilde3El.src = "media/flashBilder/bilde3.PNG";
+                c = 0;
+            }
+        }
+
+        function bilde4() {
+            if (d == 0) {
+                bilde4El.src = "media/flashBilder/bilde44.PNG";
+                d = 1;
+            } else if (d == 1) {
+                bilde4El.src = "media/flashBilder/bilde4.PNG";
+                d = 0;
+            }
+        }
+
+        function bilde5() {
+            if (e == 0) {
+                bilde5El.src = "media/flashBilder/bilde55.PNG";
+                e = 1;
+            } else if (e == 1) {
+                bilde5El.src = "media/flashBilder/bilde5.PNG";
+                e = 0;
+            }
+        }
+
+        function bilde6() {
+            if (f == 0) {
+                bilde6El.src = "media/flashBilder/bilde66.PNG";
+                f = 1;
+            } else if (f == 1) {
+                bilde6El.src = "media/flashBilder/bilde6.PNG";
+                f = 0;
+            }
+        }
+
+        function bilde7() {
+            if (g == 0) {
+                bilde7El.src = "media/flashBilder/bilde77.PNG";
+                g = 1;
+            } else if (g == 1) {
+                bilde7El.src = "media/flashBilder/bilde7.PNG";
+                g = 0;
+            }
+        }
+
+        function bilde8() {
+            if (h == 0) {
+                bilde8El.src = "media/flashBilder/bilde88.PNG";
+                h = 1;
+            } else if (h == 1) {
+                bilde8El.src = "media/flashBilder/bilde8.PNG";
+                h = 0;
+            }
+        }
+
+        function bilde9() {
+            if (i == 0) {
+                bilde9El.src = "media/flashBilder/bilde99.PNG";
+                i = 1;
+            } else if (i == 1) {
+                bilde9El.src = "media/flashBilder/bilde9.PNG";
+                i = 0;
+            }
+        }
+
+        function knapp1() {
+            for (let i = 0; i < containerB.length; i++) {
+                containerB[i].style.flexBasis = "50%";
+            }
+        }
+
+        function knapp2() {
+            for (let i = 0; i < containerB.length; i++) {
+                containerB[i].style.flexBasis = "33.3333%";
+            }
+        }
+
+        function knapp3() {
+            for (let i = 0; i < containerB.length; i++) {
+                containerB[i].style.flexBasis = "25%";
+            }
+        }
+    </script>
+</body>
+
+</html>

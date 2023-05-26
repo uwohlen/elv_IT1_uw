@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang='no'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Kinesisk Nettsted</title>
+    <link rel="stylesheet" href="cssAlltid.css">
+    <style>
+        #navnOver {
+            display: none;
+        }
+
+        #varsel {
+            position: fixed;
+            bottom: 30px;
+            text-align: center;
+            padding: 5px;
+            right: 320px;
+            background-color: yellow;
+            border: 2px solid rgb(92, 92, 1);
+        }
+
+        #navnInput {
+            display: none;
+        }
+
+        .tegn {
+            background-color: beige;
+            border-radius: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -5px;
+        }
+
+        #hoved {
+            background-color: red;
+            border: 2px solid rgb(103, 7, 7);
+            border-radius: 6px;
+        }
+
+        #h1Lese {
+            font-size: 3em;
+            padding-left: 550px;
+        }
+
+        #hovedLese {
+            padding-left: 200px; 
+        }
+
+        #knapper {
+            margin-top: 20px;
+            padding-left: 450px;
+        }
+
+        button {
+            background-color: goldenrod;
+            border: 2px solid rgb(142, 105, 12);
+            border-radius: 6px;
+            width: 150px;
+            height: 50px;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        #tegnKnapp:hover span {
+            display: none;
+        }
+
+        #tegnKnapp:hover:before {
+            content: "Kinesisk Tegn";
+        }
+
+        #pinyinKnapp:hover span {
+            display: none;
+        }
+
+        #pinyinKnapp:hover:before {
+            content: "Kinesisk Lydskrift";
+        }
+
+        #norskKnapp:hover span {
+            display: none;
+        }
+
+        #norskKnapp:hover:before {
+            content: "Norsk";
+        }
+    </style>
+</head>
+
+<body>
+    <div id="innhold">
+        <div id="banner">
+            <h1 class="h1Class">
+                <span id="span1">Kinesisk Tekst</span>
+                <span id="span2">中文文本</span>
+            </h1>
+            <h2 id="h2Class">
+                Les en kinesisk dialog
+                <span id="span3">看一个中文对话</span>
+            </h2>
+        </div>
+        <div id="sideBar">
+            <ul>
+                <li><a id="tilbake" href="../index.html"> Tilbake til hovedside</a></li>
+                <li><a href="flashCard.html">Flashcards - 抽认卡</a></li>
+                <li><a href="index.html">Forside - 首页</a></li>
+                <li><a href="testSide.html">Test - 小考</a></li>
+                <li><span id="navnOut"></span></li>
+            </ul>
+        </div>
+
+        <div id="hoved">
+            <div id="knapper">
+                <button id="tegnKnapp"><span>汉字 - Hànzì</span></button>
+                <button id="pinyinKnapp"><span>拼音 - Pīnyīn</span></button>
+                <button id="norskKnapp"><span>挪威文 - Nuówēiwén</span></button>
+            </div>
+            <h1 id="h1Lese">买东西</h1>
+            <br>
+            <div id="hovedLese">
+                <h2>A: 先生，你想买什么?</h2>
+                <br>
+                <h2>B: 我很渴，有喝的东西吗?</h2>
+                <br>
+                <h2>A: 有。我们有水、茶、牛奶、咖啡、啤酒，你想喝什么?</h2>
+                <br>
+                <h2>B: 我要一瓶啤酒。</h2>
+                <br>
+                <h2>A: 好的，还要什么吗？</h2>
+                <br>
+                <h2>B: 我也买些吃的东西吧。</h2>
+                <br>
+                <h2>A: 没问题。我们有米饭、面条，也有面包，你想要哪个？</h2>
+                <br>
+                <h2>B: 一个面包。一共多少钱？</h2>
+                <br>
+                <h2>A: 啤酒三块五，面包十块，一共十三块五。</h2>
+                <br>
+                <h2>B: 好的，给你钱。</h2>
+                <br>
+                <h2>A: 这是你买的东西，再见。</h2>
+                <br>
+                <h2>B: 再见。</h2>
+            </div>
+        </div>
+    </div>
+
+    <script src='scriptAlltid.js'></script>
+    <script>
+        let navnEl = localStorage.getItem("lagretNavn");
+        let navnOutEl = document.getElementById("navnOut");
+
+        let overSkriftEl = document.getElementById("h1Lese");
+        let tekstEl = document.getElementById("hovedLese");
+
+        let tegnEl = document.getElementById("tegnKnapp");
+        let pinyinEl = document.getElementById("pinyinKnapp");
+        let norskEl = document.getElementById("norskKnapp");
+
+        tegnEl.addEventListener("click", tegnSkift);
+        pinyinEl.addEventListener("click", pinyinSkift);
+        norskEl.addEventListener("click", norskSkift);
+
+        navnOutEl.innerHTML = "你好 " + navnEl + "!";
+
+        // Funksjoner der jeg endrer hvilket språk teksten står i.
+        function tegnSkift() {
+            overSkriftEl.innerHTML = "买东西";
+            tekstEl.innerHTML = "<h2>A: 先生，你想买什么?</h2> <br> <h2>B: 我很渴，有喝的东西吗?</h2> <br> <h2>A: 有。我们有水、茶、牛奶、咖啡、啤酒，你想喝什么?</h2> <br> <h2>B: 我要一瓶啤酒。</h2> <br> <h2>A: 好的，还要什么吗？</h2> <br> <h2>B: 我也买些吃的东西吧。</h2> <br> <h2>A: 没问题。我们有米饭、面条，也有面包，你想要哪个？</h2> <br> <h2>B: 一个面包。一共多少钱？</h2> <br> <h2>A: 啤酒三块五，面包十块，一共十三块五。</h2> <br> <h2>B: 好的，给你钱。</h2> <br> <h2>A: 这是你买的东西，再见。</h2> <br> <h2>B: 再见。</h2>";
+        }
+
+        function pinyinSkift() {
+            overSkriftEl.innerHTML = "Mǎi dōngxi";
+            tekstEl.innerHTML = "<h2>A: xiānshēng, nǐ xiǎng mǎi shénme?</h2> <br> <h2>B: wǒ hěn kě, yǒu hē de dōngxi ma?</h2> <br> <h2>A: yǒu. wǒmen yǒu shuǐ, chá, niúnǎi, kāfēi, píjiǔ, nǐ xiǎng hē shénme?</h2> <br> <h2>B: wǒ yào yī píng píjiǔ.</h2> <br> <h2>A: hǎo de, hái yào shénme ma?</h2> <br> <h2>B: wǒ yě mǎi xiē chī de dōngxi ba.</h2> <br> <h2>A: méi wèntí. wǒmen yǒu mǐfàn, miàntiáo, yě yǒu miànbāo, nǐ xiǎng yào nǎ gè?</h2> <br> <h2>B: yī gè miànbāo. yīgòng duōshǎo qián?</h2> <br> <h2>A: píjiǔ sān kuài wǔ, miànbāo shí kuài, yīgòng shísān kuài wǔ.</h2> <br> <h2>B: hǎo de, gěi nǐ qián.</h2> <br> <h2>A: zhè shì nǐ mǎi de dōngxi, zàijiàn.</h2> <br> <h2>B: zàijiàn.</h2>";
+        }
+
+        function norskSkift() {
+            overSkriftEl.innerHTML = "Kjøpe Ting";
+            tekstEl.innerHTML = "<h2>A: Mr, hva ønsker du å kjøpe?</h2> <br> <h2>B: Jeg er veldig tørst, har dere noe å drikke?</h2> <br> <h2>A: Ja. Vi har vann, te, melk, kaffe, øl, hva vil du drikke?</h2> <br> <h2>B: Jeg vil ha en flaske øl.</h2> <br> <h2>A: Bra, har du ennå lyst på noe?</h2> <br> <h2>B: Jeg vil også kjøpe noe å spise, forslag?</h2> <br> <h2>A: Ikke noe problem. Vi har ris, nudler, i tillegg til brød, hvilken ønsker du å kjøpe?</h2> <br> <h2>B: Et stykk brød, hvor mye koster det totalt?</h2> <br> <h2>A: Øl koster 3 mynter 5 øre, brød koster 10 mynter, totalt koster det 13 mynter 5 øre.</h2> <br> <h2>B: Bra, jeg gir deg penger.</h2> <br> <h2>A: Dette er hva du kjøpte, hade.</h2> <br> <h2>B: Hade.</h2>";
+        }
+    </script>
+</body>
+
+</html>
