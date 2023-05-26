@@ -21,9 +21,9 @@
 <body>
     <h1>Monty Hall</h1>
     <p>Hvilken dør vil du velge?</p>
-    <img id = "r" src = "rod.jpg" width = "227" height = "324" alt = "Dør">
-    <img id = "g" src = "gronn.jpg" width = "227" height = "324" alt = "Dør">
-    <img id = "b" src = "blaa.jpg" width = "227" height = "324" alt = "Dør">
+    <img id = "r" src = "Media/rod.jpg" width = "227" height = "324" alt = "Dør">
+    <img id = "g" src = "Media/gronn.jpg" width = "227" height = "324" alt = "Dør">
+    <img id = "b" src = "Media/blaa.jpg" width = "227" height = "324" alt = "Dør">
 
     <script>
         let rodDorEl = document.querySelector("#r");
@@ -41,7 +41,7 @@
             if (trykketDor.id === "r"){
                 console.log("Du trykket på den røde døren.");
                 let carEl = document.createElement("img");
-                carEl.setAttribute("src", "bil.png");
+                carEl.setAttribute("src", "Media/bil.png");
                 carEl.setAttribute("width", "227");
                 carEl.setAttribute("height", "324");
                 carEl.setAttribute("alt", "bil");
@@ -51,7 +51,7 @@
             } else if(trykketDor.id ==="g"){
                 console.log("Du trykket på den grønne døren");
                 let goatEl = document.createElement("img");
-                goatEl.setAttribute("src", "geit.jpg");
+                goatEl.setAttribute("src", "Media/geit.jpg");
                 goatEl.setAttribute("width", "227");
                 goatEl.setAttribute("height", "324");
                 goatEl.setAttribute("alt", "geit");
@@ -61,7 +61,7 @@
             } else{
                 console.log("Du trykket på den blå døren");
                 let goatEl = document.createElement("img");
-                goatEl.setAttribute("src", "geit.jpg");
+                goatEl.setAttribute("src", "Media/geit.jpg");
                 goatEl.setAttribute("width", "227");
                 goatEl.setAttribute("height", "324");
                 goatEl.setAttribute("alt", "geit");
