@@ -6,6 +6,12 @@
 }
 
 
+#poengId{
+    position: fixed;
+    padding: 1vh;
+    font-size: 2vw;
+}
+
 .banner{
 
     margin: auto;

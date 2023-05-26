@@ -1,3 +1,5 @@
+//Scriptet er lånt fra: https://dev.to/areeburrub/hide-navbar-as-scroll-down-in-less-than-10-lines-of-javascript-1i00
+
 var lastScrollTop = 0;
 
 var navbar = document.getElementById("navbar");

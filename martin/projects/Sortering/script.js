@@ -1,4 +1,5 @@
 
+//Legger til elementer i en unsorted list
 function addToList() {
     var textbox = document.getElementById("textbox");
     var list = document.getElementById("list");
@@ -9,6 +10,8 @@ function addToList() {
     textbox.value = "";
   }
   
+
+  //Boblesorterer etter minst utf-8 verdi
   function sortList() {
     var listItems = document.getElementById("list").getElementsByTagName("li");
 

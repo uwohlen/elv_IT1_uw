@@ -2,28 +2,37 @@
 //Definerer en klasse for spørsmålene. Max antall spørsmål man kan ha er 4
 class Question{
 
-    constructor(question, svar_1, svar_2, svar_3, svar_4, riktig_svar){
+    constructor(question, answer_1, answer_2, answer_3, answer_4, correct_answer){
         this.question = question;
-        this.svar_1 = svar_1;
-        this.svar_2 = svar_2;
-        this.svar_3 = svar_3;
-        this.svar_4 = svar_4;
-        this.riktig_svar = riktig_svar;
+        this.answer_1 = answer_1;
+        this.answer_2 = answer_2;
+        this.answer_3 = answer_3;
+        this.answer_4 = answer_4;
+        this.correct_answer = correct_answer;
     }
 }
 
 //Setter opp en quiz buffer som skal loade informasjonen til HTML
 var quiz = [];
 
-
+/*
+   _____ _  _______  _______      __  ______ _____ _   _ ______    _____ _____   _____ _____   _____ __  __    _    _        _    _ ______ _____  
+  / ____| |/ /  __ \|_   _\ \    / / |  ____/ ____| \ | |  ____|  / ____|  __ \ / __//|  __ \ / ____|  \/  |  (o)  | |      | |  | |  ____|  __ \ 
+ | (___ | ' /| |__) | | |  \ \  / /  | |__ | |  __|  \| | |__    | (___ | |__) | | // | |__) | (___ | \  / |  / \  | |      | |__| | |__  | |__) |
+  \___ \|  < |  _  /  | |   \ \/ /   |  __|| | |_ | . ` |  __|    \___ \|  ___/| |//| |  _  / \___ \| |\/| | / _ \ | |      |  __  |  __| |  _  / 
+  ____) | . \| | \ \ _| |_   \  /    | |___| |__| | |\  | |____   ____) | |    | //_| | | \ \ ____) | |  | |/ ___ \| |____  | |  | | |____| | \ \ 
+ |_____/|_|\_\_|  \_\_____|   \/     |______\_____|_| \_|______| |_____/|_|     //___/|_|  \_\_____/|_|  |_/_/   \_\______| |_|  |_|______|_|  \_\
+                                                                                                                                                                                                                                                                                                    
+*/
 //TEMP_KODE -- Midlertidig spørsmåls dump inntil en bedre server løsning settes opp 
 var questions = [
-    ['Hvem er statsminister i Norge', 'Jesus', 'Jonas Gahr Støre', 2],
-    ['Hva heter tanta di', 'Vet ikke', 'Moren din', 1],
-    ['Hvem spurte', 'Jeg', 'Ingen', 'Tanta Di', 2],
-    ['Når slutter 2. verdenskrig', "Igår", "1945", 2]
+    ['Hvem er statsminister i Norge?', 'Jesus', 'Jonas Gahr Støre', 'Frank Gahr Støre', 'Jens Gahr Støre', 2],
+    ['Hva er hovedstaden i Norge?', 'Oslo', 'Christiania', 'Bergen', 1],
+    ['Hvor mange varmegrader er det på solens overflate?', '5500 °C', '5500 °K', 1],
+    ['Er det flere oppoverbakker enn nedoverbakker i Norge?', 'Ja', 'Nei', 'Av og til', 2],
+    ['En hund spiser en bolle med oreo kjeks, hva er volumet av katten?', 'A = pi*r^2', 'Eierne er tiltalt', 'Tilnærmet lik hunden', 2]
+
 ]
-//TEMP_KODE
 
 
 //Stripper ned spørsmålsmatrisen og pakker alt inn i quiz bufferen
@@ -74,22 +83,22 @@ for (let i = 0; i < questions.length; i++) {
 
 
     //Kontrollerer antall svar alternativer satt opp for hvert spørsmål
-    if (quiz[i].svar_3 == null && quiz[i].svar_4 == null){
+    if (quiz[i].answer_3 == null && quiz[i].answer_4 == null){
         
         //DEBUG-ELEMENT
         console.log("DEBUG_LOG_QUIZ: SVAR 3 OG 4 UDEFINERT");
         
 
-        delete quiz[i].svar_3;
-        delete quiz[i].svar_4;
+        delete quiz[i].answer_3;
+        delete quiz[i].answer_4;
     }
-    else if (quiz[i].svar_4 == null){
+    else if (quiz[i].answer_4 == null){
         
         //DEBUG-ELEMENT
         console.log("DEBUG_LOG_QUIZ: SVAR 4 UDEFINERT");
         
 
-        delete quiz[i].svar_4;
+        delete quiz[i].answer_4;
     }
 
 }
@@ -98,30 +107,91 @@ for (let i = 0; i < questions.length; i++) {
 //DEBUG-ELEMENT
 console.log(quiz);
 
-
+//Gjør quiz dataen om til html elementer
 for(let i = 0; i < quiz.length; i++){
 
     document.getElementById('questions').innerHTML += '<Div class="question">' +
                                 '<h1>' +  quiz[i].question + '</h1>' +
-                                '<button>' + quiz[i].svar_1 + '</button>'+
+                                '<button>' + quiz[i].answer_1 + '</button>'+
 
-                                '<button id="'+ i + '">' + quiz[i].svar_2 + '</button>';
+                                '<button id="'+ i + '">' + quiz[i].answer_2 + '</button>';
                                 
                                 
-                                if(typeof quiz[i].svar_3 != "undefined"){
-                                    document.getElementById(i).innerHTML += '<button>' + quiz[i].svar_3 + '</button>';
+                                if(typeof quiz[i].answer_3 != "undefined"){
+                                    document.getElementById(i).innerHTML += '<button>' + quiz[i].answer_3 + '</button>';
                                 }
                                     
-                                if(typeof quiz[i].svar_4 != "undefined")
+                                if(typeof quiz[i].answer_4 != "undefined")
                                 {
-                                    document.getElementById(i).innerHTML += '<button>' + quiz[i].svar_3 + '</button>';
+                                    document.getElementById(i).innerHTML += '<button>' + quiz[i].answer_3 + '</button>';
                                 }
 
 
     document.getElementById('questions').innerHTML += '</Div> <br>';
     
-    
 
+
+   
 }
+
+
+
+let points = 0
+
+let pointsEl = document.getElementById('pointsId');
+
+let buttons = document.querySelectorAll('button');
+
+
+//Legger til event listener på hver knapp og når knappen klikkes sjekker programmet om knappen er riktig svar til spørsmålet
+buttons.forEach((btn)=>{
+    btn.addEventListener('click', function(){
+
+
+        let buttonPressed;
+
+        let questionActivated = quiz.find(q =>{
+            if(q.answer_1 == btn.innerHTML){
+                
+                buttonPressed = q.answer_1
+                return q;
+            }
+            else if(q.answer_2 == btn.innerHTML)
+            {
+                buttonPressed = q.answer_2
+                return q
+            }  
+            else if(q.answer_3 == btn.innerHTML)
+            {
+                buttonPressed = q.answer_3
+                return q
+            }  
+            else if(q.answer_4 == btn.innerHTML)
+            {
+                buttonPressed = q.answer_4
+                return q
+            }        
+        });
+        
+
+        if (questionActivated.correct_answer == buttonPressed)
+        {
+            points++;
+            btn.style.backgroundColor = "Lime";
+        }
+        else   
+            btn.style.backgroundColor = "Red";
+
+            pointsEl.innerHTML = "Poeng: " + points;
+        
+    });
+
+});
+
+
+
+
+
+
 
 

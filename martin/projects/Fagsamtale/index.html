@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" id="inputId" id="">
+
+
+    <script>
+
+        let inputEL = document.getElementById("inputId");
+
+        let liste = [];
+
+        
+        inputEL.addEventListener("keypress", KeyPressed);
+
+        function KeyPressed(event){
+            
+            if(event.keyCode == 13){
+
+                liste.push(Number(inputEL.value))
+                inputEL.value = "";
+
+                console.log(liste);
+
+            }
+        }
+
+        let nyListe = [5, 2, 1, 3, 5];
+
+        for(let i = 0; i < nyListe.length; i++){
+
+
+
+            for (let j = 0; j < nyListe.length; j++){
+
+                console.log(nyListe[i] * nyListe[j]);
+
+            }
+
+
+        }
+
+
+    </script>
+</body>
+</html>

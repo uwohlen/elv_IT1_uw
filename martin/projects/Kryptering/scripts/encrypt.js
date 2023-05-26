@@ -1,14 +1,15 @@
-// Encryption
-function encrypt(message, key, ) {
+
+
+//Krypteringsalgoritmern
+function encrypt(id, key, output) {
     
-    
-  
+    let message = document.getElementById(id).value;
+    let outputEl = document.getElementById(output);
+
     let encrypted = "";
 
     for (let i = 0; i < message.length; i++) {
       
-      // Shift the character by the key, wrapping around the alphabet if necessary
-
       let shifted = message.charCodeAt(i) + key;
       
       if (shifted > 1114111) 
@@ -18,17 +19,19 @@ function encrypt(message, key, ) {
     
     }
 
-    return encrypted;
-  
+    console.log(encrypted);
+    outputEl.innerHTML = encrypted;
+
 }
-  
-  // Decryption
-  function decrypt(encrypted, key) {
+  //Dekrypteringsalgoritmen
+  function decrypt(id, key, output) {
+
+    let encrypted = document.getElementById(id).value;
+    let outputEl = document.getElementById(output);
 
     let decrypted = "";
     for (let i = 0; i < encrypted.length; i++) {
 
-        // Shift the character by the key, wrapping around the alphabet if necessary
         let shifted = encrypted.charCodeAt(i) - key;
 
         if (shifted < 0) 
@@ -37,15 +40,8 @@ function encrypt(message, key, ) {
         decrypted += String.fromCharCode(shifted);
 
     }
-    return decrypted;
+
+    console.log(decrypted);
+    outputEl.innerHTML = decrypted;
+
   }
-  
-  // Example
-  let message = "Hæææ";
-  let key = 5;
-  let encrypted = encrypt(message, key);
-  let decrypted = decrypt(encrypted, key);
-  
-  console.log("Original message: " + message);
-  console.log("Encrypted message: " + encrypted);
-  console.log("Decrypted message: " + decrypted);

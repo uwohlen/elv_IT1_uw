@@ -135,7 +135,21 @@
 
                 <h4>JS</h4>
                 </div>
+
+                <div class="column" onclick="window.open('./Kryptering/index.html')">
+                    <h3>Kryptering</h3>
+                    <img src="../media/kryptering.jpg">
+                    <p>Krypteringsalgortime (2023)
+                    <br><br>
+                    En enkel krypteringsalgoritme skrevet i JavaScript.
+    
+                    </p>
+    
+                    <h4>JS</h4>
+                    </div>
             </div>
+
+            
 
 
             <br><br><br>
@@ -157,6 +171,8 @@
         let projectsEl = document.getElementById("projectsId");
         
 
+        //Sjekker om cookies er godkjent eller ikke
+
         if(localStorage.getItem("lagretNavn") == null){
 
             CookiesNotActive();
@@ -167,6 +183,8 @@
 
         }
 
+
+        //Fjerner cookies
         function FjernCookies(){
             localStorage.removeItem("lagretNavn");
             navnEl.value = "";
@@ -175,13 +193,15 @@
         }
 
         
-        
+        //Aktiverer cookies for nettsiden
         function CookiesActive(){
             cookiesEl.style.display = "none";
             projectsEl.style.display = "block";
 
             savedNavnEl.innerHTML = " " + localStorage.getItem("lagretNavn");
         }
+
+        //Informerer brukeren om å godkjenne cookies for å fortsette
         function CookiesNotActive(){
 
             projectsEl.style.display = "none";
