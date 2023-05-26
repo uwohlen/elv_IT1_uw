@@ -1,0 +1,184 @@
+    <!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hoveside</title>
+    <style>
+        html {
+            height: 100vh;
+        }
+
+        body {
+            margin: 0px;
+            background-image: linear-gradient(rgb(138, 134, 134), lightgrey);
+            height: 100vh;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #header {
+            text-align: center;
+            border-radius: 2px;
+            padding: 6px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            margin-left: 0px;
+            margin-right: 0px;
+            vertical-align: middle;
+            border-bottom: 5px solid black;
+            background-image: linear-gradient(red, crimson);
+        }
+
+        a:link {
+            color: white;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+            font-family: 'Times New Roman', Times, serif;
+            text-decoration: none;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        a:visited {
+            color: white;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+            font-family: sans-serif;
+            text-decoration: none;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        a:hover {
+            color: yellow;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: navy;
+            text-decoration: underline;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        #meny {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0px;
+            left: 1148px;
+            margin-bottom: 0px;
+            background-image: linear-gradient(rgb(2, 133, 176), rgb(62, 62, 154));
+            border-radius: 2px;
+            padding: 6px;
+            border-left: 5px solid black;
+            transition: left 1s;
+        }
+
+        #menyPing {
+            margin: 0px;
+            position: absolute;
+            left: 90px;
+        }
+
+        #åpneMeny {
+            position: absolute;
+            right: 0px;
+            left: 13px;
+            top: 10px;
+            border: none;
+
+        }
+
+        p {
+            font-size: large;
+            margin-left: 20px;
+        }
+
+        #sideLinker {
+            display: none;
+        }
+
+        #infoText {
+            text-align: left;
+            border: 2px solid black;
+            border-radius: 6px;
+            margin-left: 80px;
+            margin-right: 300px;
+            box-shadow: 10px 10px 5px gray;
+            padding: 10px;
+            color: white;
+            background-color: gray;
+        }
+
+        #ping2 {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>
+            <img id="menyPing" src="media/ping1.png" width="80">
+            <a href="../index.html">Tilbake til Filip sin nettside</a>
+            <a href="../../index.html">Tilbake til IT1 nettsiden</a>
+        </h1>
+    </div>
+    <div id="meny">
+        <img id="åpneMeny" src="media/meny.PNG" width="100" height="80">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 id="sideLinker">
+            <a href="hovedSide.html">Forside</a>
+            <br>
+            <br>
+            <a href="basicSide.html">Bordtennis Basics</a>
+            <br>
+            <br>
+            <a href="Utstyr.html">Bordtennis Utstyr</a>
+            <br>
+            <br>
+            <a href="Utstyr.html">Klubber</a>
+            <br>
+            <br>
+            <a href="rankingSide.html">Ranking systemet</a>
+        </h1>
+    </div>
+    <div id="infoText">
+        <h1>Bordtennis Basics</h1>
+        <p><img id="ping2" src="media/filler.jpg" width="200">Til å begynne med må man holde rekkerten riktig. 
+            På bilde ser du "shakehand grip". Du må holde pekefingeren din og tommelen din langs den nedre delen av rekkerten.
+            <br>
+            <br> 
+            <img id="ping2" src="media/filler.jpg" width="200">For å spille må en av de to spillerene serve. 
+            For å serve må man holde ballen, kaste den opp og slå den sånn at den treffer din halvdel av bordet og motstanderen sin halvdel.
+            Etter serven må begge spillerne bare treffe ballen sånn at den lander på motstanderen sin side av bordet. Hvis en person ikke klarer å treffe motstanderen sin halvdel taper de poenget.
+            <br>
+            <br>
+            Hver person server 2 ganger i tur, og man spiller til en person får 11 poeng. Hvis det blir 10-10, begynner man å serve annenhver til en person leder med 2 poeng. Eks: 13-11.
+        </p>
+    </div>
+    <script>
+        let linker1 = document.getElementById("sideLinker")
+        let meny1 = document.getElementById("meny")
+        let menyÅpne = document.getElementById("åpneMeny")
+        let er_åpen = false
+        menyÅpne.addEventListener("click", åpne)
+        function åpne() {
+            if (er_åpen === false) {
+                er_åpen = true
+                meny1.style.left = "830px"
+                linker1.style.display = "inline"
+            }
+            else {
+                er_åpen = false
+                meny1.style.left = "1148px"
+                linker1.style.display = "none"
+            }
+        }
+    </script>
+</body>
+
+</html>

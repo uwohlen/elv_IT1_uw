@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ranking</title>
+    <style>
+        html {
+            height: 100vh;
+        }
+
+        body {
+            margin: 0px;
+            background-image: linear-gradient(rgb(138, 134, 134), lightgrey);
+            height: 100vh;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #header {
+            text-align: center;
+            border-radius: 2px;
+            padding: 6px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            margin-left: 0px;
+            margin-right: 0px;
+            vertical-align: middle;
+            border-bottom: 5px solid black;
+            background-image: linear-gradient(red, crimson);
+        }
+
+        a:link {
+            color: white;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+            font-family: 'Times New Roman', Times, serif;
+            text-decoration: none;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        a:visited {
+            color: white;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+            font-family: sans-serif;
+            text-decoration: none;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        a:hover {
+            color: yellow;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: navy;
+            text-decoration: underline;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        #meny {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0px;
+            left: 1148px;
+            margin-bottom: 0px;
+            background-image: linear-gradient(rgb(2, 133, 176), rgb(62, 62, 154));
+            border-radius: 2px;
+            padding: 6px;
+            border-left: 5px solid black;
+            transition: left 1s;
+        }
+
+        #menyPing {
+            margin: 0px;
+            position: absolute;
+            left: 90px;
+        }
+
+        #åpneMeny {
+            position: absolute;
+            right: 0px;
+            left: 13px;
+            top: 10px;
+            border: none;
+
+        }
+
+        p {
+            font-size: large;
+            margin-left: 20px;
+        }
+
+        #sideLinker {
+            display: none;
+        }
+
+        #infoText {
+            text-align: left;
+            border: 2px solid black;
+            border-radius: 6px;
+            margin-left: 80px;
+            margin-right: 300px;
+            box-shadow: 10px 10px 5px gray;
+            padding: 10px;
+            color: white;
+            background-color: gray;
+        }
+
+        #ping2 {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>
+            <img id="menyPing" src="media/ping1.png" width="80">
+            <a href="../index.html">Tilbake til Filip sin nettside</a>
+            <a href="../../index.html">Tilbake til IT1 nettsiden</a>
+        </h1>
+    </div>
+    <div id="meny">
+        <img id="åpneMeny" src="media/meny.PNG" width="100" height="80">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 id="sideLinker">
+            <a href="hovedSide.html">Forside</a>
+            <br>
+            <br>
+            <a href="basicSide.html">Bordtennis Basics</a>
+            <br>
+            <br>
+            <a href="Utstyr.html">Bordtennis Utstyr</a>
+            <br>
+            <br>
+            <a href="Utstyr.html">Klubber</a>
+            <br>
+            <br>
+            <a href="Utstyr.html">Ranking systemet</a>
+        </h1>
+    </div>
+    <div id="infoText">
+        <h1>Bordtennis Rankingsystem</h1>
+        <p><img id="ping2" src="media/filler.jpg" width="200">Når man begynner å spille turneringer må man kjøpe en spiller lisens for å registreres i NBTF (Norges Bordtennisforbund).
+            I tillegg til å kunne konkurerre vil du få en ranking.
+            <br>
+            <br> 
+            <img id="ping2" src="media/poeng.PNG" width="200">Rankingsystemet ligner mye på ELO systemer brukt i f.eks sjakk. Man har en andel poeng, og basert på 
+            poeng differansen mellom den som vinner og den som taper får man eller mister man en andel poeng. Hvis du vinner mot noen mye lavere ranking enn deg får du ikke mange poeng, men hvis du slår noen mye høyere ranket enn deg får du masse poeng.
+            Systemet fungerer på samme måte hvis du taper. Hvis du taper mot noen mye høyere ranket enn deg taper du få poeng, men hvis du taper mot noen mye lavere ranket enn deg taper du mye poeng. Se tabell til høyre.
+            <br>
+            <br>
+            Eksempel: Tormod (2972 poeng) og Egil (2790 poeng) møtes i en turnering. Poengdifferansen mellom Eskil og Lars (2972 - 2790) = 182 poeng.
+            Hvis Egil vinner vil det være et uventet resultat. Ser vi på tabellen finner vi ut at han vil få 14 poeng, mens Tormod taper 14 poeng.
+            Hvis Tormod vinnerm vil det være et forventet resultat. Ser vi på tabellen finner vi ut at Tormod vil da få 5 poeng, mens Egil taper 3 poeng.
+        </p>
+    </div>
+    <script>
+        let linker1 = document.getElementById("sideLinker")
+        let meny1 = document.getElementById("meny")
+        let menyÅpne = document.getElementById("åpneMeny")
+        let er_åpen = false
+        menyÅpne.addEventListener("click", åpne)
+        function åpne() {
+            if (er_åpen === false) {
+                er_åpen = true
+                meny1.style.left = "830px"
+                linker1.style.display = "inline"
+            }
+            else {
+                er_åpen = false
+                meny1.style.left = "1148px"
+                linker1.style.display = "none"
+            }
+        }
+    </script>
+</body>
+
+</html>
