@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <div id="idQuiz"></div>
+    <button id="idNeste">Neste spørsmål!</button>
+    <p id="idQuizpoeng"></p>
+    <script>
+        let QuizEl = document.getElementById("idQuiz");
+        let NesteEl = document.getElementById("idNeste");
+        let QuizpoengEl = document.getElementById("idQuizpoeng");
+
+        let Media = [];
+
+        let Sporsmal = [
+            "Hvilke tall baserer det binære tallsystemet seg på?",
+            "Hvor mange biter består en byte av?",
+            "Hvilke farger består RGB-modellen av?",
+            "Hva vil det si å sample lyd?"
+        ];
+
+        let Alternativ = [
+            ["1 og 10", "2 og 3", "1 og 2", "0 og 1"],
+            ["3", "8", "5", "2"],
+            ["rosa, gul, blå", "rød, gul, blå", "rød, grønn, blå", "rød, grønn, brun"],
+            [
+                "At enkeltpunkter fra lydkurvene registreres ved faste tidsintervaller",
+                "Å spille inn lyden",
+                "Å tegne lydkurven",
+                "Å ta den samme lyden flere ganger etter hverandre i en sang"
+            ]
+        ];
+
+        let fasit = [
+            [-1, -1, -1, 1],
+            [-1, 1, -1, -1],
+            [-1, -1, 1, -1],
+            [1, -1, -1, -1]
+        ];
+
+        let typeboks = [
+            "radio",
+            "radio",
+            "radio",
+            "radio"
+        ];
+
+        let i = 0;
+        vissporsmal(i);
+
+        let poeng = [];
+        let svar = [];
+        let riktigsvar = [];
+
+        function vissporsmal(nr) {
+            QuizEl.innerHTML = "";
+            QuizEl.innerHTML += "<p>" + Sporsmal[nr] + "</p>";
+            let tekst = "";
+            for (let j = 0; j < Alternativ[nr].length; j++) {
+                tekst += "<input class='altClass' type='" + typeboks[nr] + "' name='svaralternativer' value=" + fasit[nr][j] + ">" + Alternativ[nr][j] + "<br>";
+            }
+            QuizEl.innerHTML += tekst;
+        }
+
+        NesteEl.addEventListener("click", svargittFunk);
+
+        function svargittFunk() {
+            poeng[i] = 0;
+            svar[i] = "";
+            riktigsvar[i] = "";
+
+            let sjekkbokser = document.getElementsByClassName("altClass");
+            for (let k = 0; k < sjekkbokser.length; k++) {
+                if (fasit[i][k] > 0) {
+                    riktigsvar[i] += Alternativ[i][k] + " ";
+                }
+                if (sjekkbokser[k].checked) {
+                    poeng[i] += Number(sjekkbokser[k].value);
+                    svar[i] += Alternativ[i][k] + " ";
+                }
+            }
+
+            i++;
+            if (i < Sporsmal.length) {
+                vissporsmal(i);
+            } else {
+                QuizEl.innerHTML = "";
+                QuizpoengEl.innerHTML = "";
+                NesteEl.style.visibility = "hidden";
+
+                let tekst = "<table><tr><th>Spørsmål</th><th>Svar avgitt</th><th>Poeng</th>";
+
+                let totalpoeng = 0;
+                for (let m = 0; m < Sporsmal.length; m++) {
+                    totalpoeng += poeng[m];
+
+                    tekst += "<tr><td>" + Sporsmal[m] +
+                        "</td><td>" + riktigsvar[m] +
+                        "</td><td>" + svar[m] +
+                        "</td><td>" + (poeng[m].toFixed(1)) +
+                        "</td><td>";
+                }
+                tekst += "</table>";
+                QuizpoengEl.innerHTML = tekst;
+
+                QuizpoengEl.innerHTML += "<br><p>Du fikk " + totalpoeng.toFixed(1) + " poeng totalt.</p>";
+
+                if (totalpoeng > 0) {
+                    QuizEl.innerHTML = "<img src='media/smile.png' height='150'>";
+                } else {
+                    QuizEl.innerHTML = "<img src='media/frown.png' height='150'>";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
