@@ -1,0 +1,60 @@
+#body1{
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+}
+#shoottxt{
+    font-size: 120px;
+    color: aliceblue;
+}
+#regler{
+    font-size: large;
+    position:relative;
+    bottom: 100px;
+}
+#pistolImg{
+    position: absolute;
+    left: 500px;
+    bottom: 0px;
+}
+#pistolDiv{
+    display: none;
+}
+#StartBtn{
+    font-size: 80px;
+    background-image: linear-gradient(to right, black , brown, grey, brown, black);
+    cursor: pointer;
+    position: relative;
+    bottom: 50px;
+}
+.Knapp1{
+    border: solid 3px;
+}
+#idPoeng{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 40px;
+    color: white;
+}
+#nestespill{
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+    bottom: 10px;
+}
+.hjerter {
+    float: right;
+    margin-top: 20px;
+    margin-right: 15px;
+}
+#BangImg{
+    display: none;
+}
+#DogImg{
+display: block;
+}
+#CatImg{
+display: block;
+}

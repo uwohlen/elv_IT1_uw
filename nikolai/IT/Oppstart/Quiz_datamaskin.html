@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="CSSQuiz_datamaskin.css">
+        <link rel="icon" href="quizlogo.png">
+        <title> Quiz om datamaskinen</title>
+    </head>
+    <body id="background">
+        <button class="btn2"> <a href="home_quiz.html"> Tilbake igjen </button></a>
+
+        <a id="HeiNavn">Velkommen til pc-quizzien min <span id="idNavn"></span>!</a>
+
+        <div id="poeng"> <p id="sporsmol1av4">Spørsmål 1 av 4 </p> <p id="idPoeng">Poeng:0</p></div>
+        <div id="midten1">
+        <div id="sporsmol">Hva er dette for no?</div>
+        <img id="prosessorImg" src="Prosessor3.0.JPG" alt="bilde av prosessor"> <br> <br>
+        <div id="knapper">
+        <button class="btn1" id="id1" onclick="riktig(this.id);">Playdiscen</button>
+        <button class="btn1" id="id2" onclick="riktig(this.id);">Maindriven</button>
+        <button class="btn1" id="id3" onclick="riktig(this.id);">Prosessoren</button>
+        <button class="btn1" id="id4" onclick="riktig(this.id);">Moren din</button> <br> <br> <br>
+    </div id=knapper>
+    </div id=midten1>
+        <button class="btn3" onclick="neste_spr();" id="neste1">Neste spørsmål</button>
+        <button class="btn3" onclick="forrige_spr();" id="forrige1">Forrige spørsmål</button>
+    </body>
+    <script src="Quiz_datamaskin.js"></script>
+</html>

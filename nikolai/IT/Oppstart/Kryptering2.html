@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>koder</title>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            background-color: blue;
+        }
+
+        #knapp1{
+            display: none;
+        }
+
+        #knapp2{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1> Prøv å dekrypter denne mld</h1> <br>
+    <h2 id="kryptertmelding"> mêujw%iz%kêw%js%kns%ifl </h2>
+        <input id="kodeord">skriv inn kodeordet</input>
+        
+        <input id="kryptert">krypter meldingen</input>
+            <button id="knapp1" onclick="krypterfunk()">krypter</button>
+            <button id="knapp2" onclick="dekrypterfunk()">dekrypter</button>
+</body>
+<script>
+    let ukryptert=(""); // la kryptert være tom for å skrive
+    let i=0; // la variabelen i være 0 
+
+    while (i< ukryptert.length){ //i er mindre en ukryptert lenght 
+        console.log(ukryptert[i]); //flytt alle de tommene fletene til i 
+        i++; //pluss på 
+    }
+
+    let kode = "";
+   /*  let knapp1a = document.getElementById("id1a");
+            knapp1a.addEventListener("click",Feil1a )
+            function Feil1a(){
+
+                knapp1a.innerHTML = "Feil :(";
+                knapp1a.style.backgroundColor = "red";
+
+
+            }
+  */
+    
+    addEventListener("keydown",kodefunk);
+    let kodeordel = document.getElementById("kodeord");
+    function kodefunk(event) {
+        kode += String.fromCharCode(event.keyCode);
+        console.log(kode);
+       
+        if (kode === "BAMSE" || kode === "LØSNING") {
+            let knappkrypter = document.getElementById("knapp1").style.display="block"
+            let knappdekrypter= document.getElementById("knapp2").style.display="block"
+            
+        }
+    } 
+   
+    let n = 5
+    function krypterfunk() {
+        
+        var txt = document.getElementById("ukryptert").value
+        var _txt = ""
+        for (let i = 0; i < txt.length; i++) { //for en en løkke , som gjør at hvis betingelsen er sann så skjer den neste koden
+            _txt += String.fromCharCode(txt[i].charCodeAt(0) + n) //som er å bevege framchartcode med 5
+         
+        } 
+        document.getElementById("kryptert").value = _txt
+    }
+
+    function dekrypterfunk() {
+        var txt = document.getElementById("kryptert").value;
+        var _txt = "";
+        document.getElementById("kryptertmelding").innerHTML="hei på deg";
+        for (let i = 0; i < txt.length; i++) {
+            _txt += String.fromCharCode(txt[i].charCodeAt(0) - n);
+            console.log("hei");
+            let kryptertmelding= document.getElementById("kryptertmelding").innerHTML="hei på deg";
+        }
+
+        } 
+        document.getElementById("ukryptert").value = _txt;
+
+
+    
+</script>
+</html>

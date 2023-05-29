@@ -1,0 +1,52 @@
+body{
+    background-color: blueviolet;
+    overflow: hidden;
+    font-family: comic sans ms;
+}
+h1{
+    border: green dotted 5px;
+    margin: 0;
+    padding: 20px;
+    border-bottom-left-radius: 10%;
+    border-top-left-radius: 90%;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 90%;
+    text-align: center;
+    background-color: rgb(37, 253, 91);
+    color: white;
+}
+h2{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+#bilde1 {
+    margin: 10px;
+}
+#okbtn {
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 5px;
+}
+#cookibtns {
+    text-align: center;
+}
+#avsluttbtn {
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 5px;
+    display:none;
+}
+
+#quizbtn{
+    font-size: 25px;
+    border-radius: 5px;
+    position: absolute;
+    left: 40%;
+    right: 40%;
+    bottom: 10px;
+}
+#navn {
+    text-align: center;
+    display: none;
+}

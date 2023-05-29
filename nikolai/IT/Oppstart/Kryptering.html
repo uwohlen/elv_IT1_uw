@@ -1,0 +1,54 @@
+<!DOcTYPE html>
+<html>
+    <head>
+        <title>koder</title>
+        <meta charset="UTF-8">
+        <style>
+            body{
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Prøv å dekrypter denne meldingen</h1> <br>
+            <input id="ukryptert"> skriv inn en melding</input>
+        <h1>krpterer meldingen</h1>
+        
+            <input id="kryptert">krypter meldingen</input>
+                <button onclick="myfunk()">Knapp</button>
+                <button onclick="funktwo()">Knapp</button>
+    </body>
+    <script>
+        let ukryptert=("");
+        let i=0;
+    
+        while (i< ukryptert.length){
+            console.log(ukryptert[i]);
+            i++;
+        }
+    
+        let n = 5
+        function myfunk() {
+            var txt = document.getElementById("ukryptert").value
+            var _txt = ""
+            for (let i = 0; i < txt.length; i++) {
+                _txt += String.fromCharCode(txt[i].charCodeAt(0) + n)
+    
+            } 
+            document.getElementById("kryptert").value = _txt
+        }
+    
+        function funktwo() {
+            var txt = document.getElementById("kryptert").value
+            var _txt = ""
+            for (let i = 0; i < txt.length; i++) {
+                _txt += String.fromCharCode(txt[i].charCodeAt(0) - n)
+    
+            } 
+            document.getElementById("ukryptert").value = _txt
+        }
+    
+    
+        
+    </script>
+</html>

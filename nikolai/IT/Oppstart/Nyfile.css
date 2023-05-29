@@ -1,0 +1,59 @@
+html{
+    height:656px;
+}
+body{
+    background-color: lightpink;
+    margin: 5px;
+    height: 100%;
+}
+#overskrift1{
+    text-align: center;
+}
+#container1{
+    display: flex;
+    text-align: center;
+    border: solid;
+    border-color: maroon;
+    border-width: 10px;;
+    height: 500px;
+}
+#container1-box1{
+    width: 100%;
+    border: solid;
+    border-width: 7px;
+    border-color: red;
+    margin: 5px;
+    background-color: #DD3F15;
+}
+#container1-box2{
+    width: 100%;
+    border: solid;
+    border-width: 7px;
+    border-color: red;
+    margin: 5px;
+    background-color: #DD3F15;
+}
+#container1-box3{
+    width: 100%;
+    border: solid;
+    border-width: 7px;
+    border-color: red;
+    margin: 5px;
+    background-color: #DD3F15;
+}
+#container1-box4{
+    width: 100%;
+    border: solid;
+    border-width: 7px;
+    border-color: red;
+    margin: 5px;
+    background-color: #DD3F15;
+}
+#container1-box5{
+    width: 100%;
+    border: solid;
+    border-width: 7px;
+    border-color: red;
+    margin: 5px;
+    background-color: #DD3F15;
+}

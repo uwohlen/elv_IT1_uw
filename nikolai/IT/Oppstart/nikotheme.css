@@ -1,0 +1,22 @@
+body{
+    background-color: #0b5494;
+
+}
+.Overskrift1{
+    font-size: 30px;
+}
+.Overskrift2{
+    font-size: 20px;
+}
+.knapper1{
+    cursor: pointer;
+}
+.knapper2{
+    cursor: pointer;
+}
+.knapper3{
+    cursor: pointer;
+}
+.knapper4{
+    cursor: pointer;
+}
