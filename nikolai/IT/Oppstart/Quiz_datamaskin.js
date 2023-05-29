@@ -89,7 +89,7 @@ function neste_spr() {
 
     }
     if (spr_nummer==4) {
-        HovedkortImg.src="doggo2.jpg"
+        HovedkortImg.src="doggo2.jp"
         knapp1.style.display="none"
         knapp2.style.display="none"
         knapp3.style.display="none"
